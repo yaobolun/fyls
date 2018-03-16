@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>[title]</title>
+
+<!-- <script>
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "http://www.cscectr.com/Mobile/";//手机
+} else {
+    window.location.href = "#";//pc
+}
+</script> -->
+
+</head>
+<include file="Public/home/head1.html" title="北京中建天润文化发展有限公司" />
+<body class="body_head"> 
+  <div class='top' style=" background:url('__PUBLIC__/images/back.jpg'); width:100%; height:68px">
+  <div style='width:1200px;margin:0 auto;'>
+     <div class='com' style="width:95px">
+     <img src="__PUBLIC__/images/logo.png" width="65%" style="margin:1px 0;" />
+     </div>
+        <ul class="nav nav-pills">  
+           <volist name='nav' id='nav'>
+           <li <if condition='$nav.id eq $n'> class="active" </if>><a href="__ROOT__/Home/{$nav.url}?active={$nav.id}">{$nav.type}</a>
+               <ul class="dropdown-menu">  
+               
+               <volist name='nav.er' id='navs'>
+                 
+                    <li class="dier"><a href="__ROOT__/Home/{$nav.url}?active={$nav.id}&id={$navs.erid}">{$navs.ername}</a></li>  
+                 
+               </volist>      
+                </ul>  
+           </li>  
+        </volist>
+        </ul>  
+          
+    </div>
+  </div>
+

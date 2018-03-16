@@ -1,0 +1,911 @@
+[ 2017-07-16T03:53:09+08:00 ] 35.192.136.117 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 46 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news_top` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 51 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news_top` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 56 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 61 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `banner`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `od` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 66 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `od` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `client` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 71 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `client` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `whyus` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `whyus` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017110s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017148s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000473s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2017-07-16T03:53:09+08:00 ] 35.192.136.117 /Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 46 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news_top` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 51 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news_top` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 56 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 61 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `banner`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `od` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 66 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `od` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `client` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 71 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `client` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `whyus` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `whyus` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016982s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2017-07-16T03:53:09+08:00 ] 35.192.136.117 /Home/Report/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=7 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=8 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=10 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=11 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=13 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=14 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=15 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=16 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=17 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=18 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=19 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=20 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=21 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=22 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=23 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=24 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=25 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=26 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=27 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=28 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=29 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=30 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=31 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=32 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=33 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=34 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=35 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=36 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=37 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=38 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=39 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=40 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=41 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=42 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=43 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=44 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=45 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=46 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=47 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=48 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=49 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=50 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=52 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=53 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=54 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=55 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=56 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=57 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=58 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=59 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=60 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( n_id=61 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/ReportController.class.php on line 42 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/5d9ffd8bc988ac8d5fd55d1f886457f4.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011830s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011889s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2017-07-16T03:53:10+08:00 ] 35.192.136.117 /Home/Latest/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/LatestController.class.php on line 30 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: id /www/web/shtresearch/public_html/Application/Home/Controller/LatestController.class.php 第 40 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/Application/Home/Controller/LatestController.class.php 第 45 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/Application/Home/Controller/LatestController.class.php 第 54 行.
+SQL: SELECT * FROM `news` ORDER BY type_id desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/f7814e10e2b23f5a98aeabb1cc85dcb3.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010542s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010579s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000446s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2017-07-16T03:53:10+08:00 ] 35.192.136.117 /Home/News/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/NewsController.class.php on line 33 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `new_x` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/NewsController.class.php on line 50 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `new_x` ORDER BY id asc LIMIT 0,20   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/3e24b471de08a8366f7660bb176a5e74.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010073s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010106s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2017-07-16T03:53:10+08:00 ] 35.192.136.117 /Home/About/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/AboutController.class.php on line 33 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `about` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/AboutController.class.php on line 39 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `about` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/3b9bb8f59aaa4d1691c827dd64ddfa9b.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009340s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000430s ]
+
+[ 2017-07-16T03:53:11+08:00 ] 35.192.136.117 /Home/Contact/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/ContactController.class.php on line 46 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/9d0babcb361c76b4b54c521c429b1099.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009619s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009660s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000392s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2017-07-16T03:53:11+08:00 ] 35.192.136.117 /Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 46 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news_top` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 51 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news_top` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 56 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 61 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `banner`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `od` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 66 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `od` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `client` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 71 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `client` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `whyus` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `whyus` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015710s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000462s ]
+
+[ 2017-07-16T03:53:11+08:00 ] 35.192.136.117 /Home/Latest/gouwucart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000461s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Home/Controller/LatestController.class.php 第 125 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000479s ]
+
+[ 2017-07-16T03:53:11+08:00 ] 35.192.136.117 /Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/ccea6a400660ce54d68cab67b9f68781.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009181s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009215s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2017-07-16T03:53:12+08:00 ] 35.192.136.117 /Home/Index/sign
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/9d59da95e74e1e15b30560f02aedf428.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010176s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010214s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000164s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2017-07-16T03:53:12+08:00 ] 35.192.136.117 /Home/Latest/gouwu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/LatestController.class.php on line 30 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 46 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 84 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 85 行.
+NOTIC: [8] Undefined variable: news2 /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 85 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 85 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 85 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 85 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 88 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 94 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 99 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 103 行.
+NOTIC: [8] Undefined variable: news1 /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 108 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 139 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 142 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 143 行.
+NOTIC: [8] Undefined variable: n /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 148 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 193 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 193 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 196 行.
+NOTIC: [8] Undefined variable: news /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 196 行.
+NOTIC: [8] Undefined variable: news1 /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 198 行.
+NOTIC: [8] Undefined variable: news1 /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 200 行.
+NOTIC: [8] Undefined variable: dqqi /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/b3e9417807852ed58b1e2b7cf08fb117.php 第 207 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017282s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000770s ]
+
+[ 2017-07-16T03:53:13+08:00 ] 35.192.136.117 /Home/News/newxq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/NewsController.class.php on line 33 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/0ded4ad8c82c07c6886aa5ccb67e2418.php 第 46 行.
+NOTIC: [8] Undefined variable: n_xq /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/0ded4ad8c82c07c6886aa5ccb67e2418.php 第 55 行.
+NOTIC: [8] Undefined variable: n_xq /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/0ded4ad8c82c07c6886aa5ccb67e2418.php 第 59 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008536s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2017-07-16T03:53:13+08:00 ] 35.192.136.117 /Home/Index/samples
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `od` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 206 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `od`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/55f391f10597fbce9ae13b5e36e96a34.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008990s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009024s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2017-07-16T03:53:14+08:00 ] 35.192.136.117 /Home/Index/clients
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `client` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 187 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `client` ORDER BY id desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/bdeb09ea95e612b1cd9ce1d48939aa6d.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009112s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009143s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000380s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2017-07-16T03:53:14+08:00 ] 35.192.136.117 /Home/Index/report
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000415s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `whyus` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 196 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `whyus`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/524e35b7427eb1265b5f147e2baeef4e.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009327s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2017-07-16T03:53:14+08:00 ] 35.192.136.117 /Home/News/helpxq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0346s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/NewsController.class.php on line 33 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/6a16ba1a06912911aadc97bf0dd8e459.php 第 46 行.
+NOTIC: [8] Undefined variable: help1 /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/6a16ba1a06912911aadc97bf0dd8e459.php 第 55 行.
+NOTIC: [8] Undefined variable: help1 /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/6a16ba1a06912911aadc97bf0dd8e459.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008906s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000419s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2017-07-16T13:06:37+08:00 ] 89.145.95.70 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 ) ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `emph` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `help` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 32 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `help` ORDER BY id asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 46 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `news_top` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 51 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `news_top` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 56 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 5   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 61 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `banner`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `od` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 66 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `od` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `client` [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /www/web/shtresearch/public_html/Application/Home/Controller/IndexController.class.php on line 71 and defined /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `client` ORDER BY id desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `whyus` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `whyus` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined index: hid /www/web/shtresearch/public_html/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031908s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031947s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+

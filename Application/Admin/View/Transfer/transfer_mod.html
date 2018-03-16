@@ -1,0 +1,87 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改转账信息</h2>
+       <a href="__ROOT__/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">申请人：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请转账人姓名" name="transfer_name" value="{$sel.transfer_name}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">人才合同价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="本人合同上的价格" name="transfer_contract" value="{$sel.transfer_contract}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配置企业价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="企业价格" name="transfer_allocation" value="{$sel.transfer_allocation}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">证书类别：</span>
+        <input type="text" class="textbox textbox_295" placeholder="所属公司部门证书" name="transfer_certificate" value="{$sel.transfer_certificate}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配置企业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人企业" name="transfer_configuration" value="{$sel.transfer_configuration}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">人才姓名：</span>
+        <input type="text" class="textbox textbox_295" placeholder="本人姓名" name="transfer_talent" value="{$sel.transfer_talent}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配出年月：</span>
+        <input type="text" class="textbox textbox_295" placeholder="转账的年月日" name="transfer_match" value="{$sel.transfer_match}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">户名：</span>
+        <input type="text" class="textbox textbox_295" placeholder="收款人开户户名" name="transfer_huming" value="{$sel.transfer_huming}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">本次打款金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="transfer_amount" value="{$sel.transfer_amount}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">开户行：</span>
+        <input type="text" class="textbox textbox_295" placeholder="开户的银行" name="transfer_bank" value="{$sel.transfer_bank}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">账号：</span>
+        <input type="text" class="textbox textbox_295" placeholder="开户的账号" name="transfer_account" value="{$sel.transfer_account}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注说明：</span>
+        <input type="text" class="textbox textbox_295" placeholder="说明" name="transfer_note" value="{$sel.transfer_note}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">已付金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="已付金额" name="transfer_paid" value="{$sel.transfer_paid}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">上传图片：</span>
+          <label class="uploadImg">
+           <input type="file" name="transfer_pic"value="{$sel.transfer_pic}"/>
+           <span>上传图片</span>
+          </label>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">财务备注信息：</span>
+        <input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" value="{$sel.transfer_information}"/>
+       </li>
+      <input type="hidden" name='id' value="{$sel.id}"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>

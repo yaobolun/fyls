@@ -1,0 +1,86 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">图片修改</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Top/banner">返回</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+     <li>
+        <span class="item_name" style="width:120px;">修改图片：</span>
+        <input type="hidden" name="o_photo" value="{$sel.photo}" />
+       <!--  <img src="__PUBLIC__/{$sel.photo}" style=" width:150px"/> -->
+          <label class="uploadImg">
+
+           <input type="file" name="photo" id="doc" class="sr-only" onchange="javascript:setImagePreview();"/>
+           <div id="localImag"><img id="preview" src="__PUBLIC__/{$sel.photo}" width="500px" /></div>
+
+           <span>上传图片</span>
+          </label>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">修改链接：</span>
+           <input type="text" name="text" value="{$sel.url}" class="textbox textbox_295" />
+       </li>
+              <script language="javascript">
+//下面用于图片上传预览功能
+function setImagePreview(avalue) {
+var docObj=document.getElementById("doc");
+ 
+var imgObjPreview=document.getElementById("preview");
+if(docObj.files &&docObj.files[0])
+{
+//火狐下，直接设img属性
+imgObjPreview.style.display = 'block';
+imgObjPreview.style.width = '500px';
+//imgObjPreview.src = docObj.files[0].getAsDataURL();
+ 
+//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+}
+else
+{
+//IE下，使用滤镜
+docObj.select();
+var imgSrc = document.selection.createRange().text;
+var localImagId = document.getElementById("localImag");
+//必须设置初始大小
+localImagId.style.width = "500px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+try{
+localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+}
+catch(e)
+{
+alert("您上传的图片格式不正确，请重新选择!");
+return false;
+}
+imgObjPreview.style.display = 'none';
+document.selection.empty();
+}
+return true;
+}
+</script>
+       <li>
+        <span class="item_name" style="width:120px;">图片标准：</span>
+          <label class="uploadImg" style='color:#19A97B;border:0;background:#fff'>
+           手机banner图片：750x260(单位/像素)<br/>
+           电脑banner图片：1920X450(单位/像素)
+          </label>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>

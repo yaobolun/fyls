@@ -1,0 +1,35 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">信息修改</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Top/emph">返回信息列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">名称：</span>
+        <input type="text" class="textbox textbox_295" value="{$sel.name}" name="name" readonly/> <span style=" color:red">*禁止编辑</span>
+         
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">内容：</span>
+        <input type="text" class="textbox textbox_295" value="{$sel.emph}" name="emph" />
+        
+       </li>
+      
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+
+</body>
+</html>
