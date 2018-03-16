@@ -1,0 +1,262 @@
+[ 2017-07-28T14:42:01+08:00 ] 183.240.196.50 /Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+NOTIC: [8] Undefined index: id /www/web/shtresearch/public_html/Application/Admin/Controller/IndexController.class.php 第 7 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000441s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2017-07-28T14:42:02+08:00 ] 183.240.196.50 /Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2017-07-28T14:42:05+08:00 ] 183.240.196.50 /Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `password` = '21232f297a57a5a743894a0e4a801fc3' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `admin_user` WHERE `password` = '21232f297a57a5a743894a0e4a801fc3' LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: Name /www/web/shtresearch/public_html/Application/Admin/Controller/IndexController.class.php 第 45 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000431s ]
+
+[ 2017-07-28T14:42:06+08:00 ] 183.240.196.50 /Admin/Product/product
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( top_id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT news.title,news.abstract,news.table,news.figures,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages,news.u_price2,news.top_id FROM `news` INNER JOIN report_categories on news.n_id=report_categories.id  WHERE `top_id` = 1 ORDER BY news.time desc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006592s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
+
+[ 2017-07-28T14:42:18+08:00 ] 183.240.196.50 /admin.php/New/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `new_x` LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: map /www/web/shtresearch/public_html/Application/Admin/Controller/NewController.class.php 第 30 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 0,10   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033477s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2017-07-28T14:42:21+08:00 ] 183.240.196.50 /Admin/New/news_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014539s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000406s ]
+
+[ 2017-07-28T14:42:50+08:00 ] 106.120.160.119 /Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+NOTIC: [8] Undefined index: id /www/web/shtresearch/public_html/Application/Admin/Controller/IndexController.class.php 第 7 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2017-07-28T14:43:12+08:00 ] 101.199.108.53 /Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2017-07-28T14:44:01+08:00 ] 106.120.160.119 /Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000450s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000483s ]
+
+[ 2017-07-28T14:44:15+08:00 ] 101.199.108.57 /Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2017-07-28T14:44:16+08:00 ] 183.240.196.50 /Admin/New/news_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: validate /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /www/web/shtresearch/public_html/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `new_x` (`title`,`abstract`,`time`,`details`) VALUES ('寻找长效型β-干扰素及FSH合作方','我司受韩国一家拥有生物长效平台技术的生物医药公司委托在中国国内寻找长效型β-干扰素及FSH（不孕症治疗剂）的合作方。目前已上市的长效型β-干扰素施药周期为2周/次，该公司长效型β-干扰素拟制定为4周/次，该产品在施药周期上较目前市面产品有很强的竞争力。该公司的这种长效型β-干扰素及FSH（不孕症治疗剂）马上要进入前临床阶段。在此该公司寻找愿意参与两种产品的共同技术研发或者申请技术转让的国内公司作为合作方。','2017-07-28','&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;寻找长效型β-干扰素及FSH合作方&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;2017-7-28&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;我司受韩国一家拥有生物长效平台技术的生物医药公司委托在中国国内寻找长效型β-干扰素及&lt;a&gt;&lt;/a&gt;&lt;a&gt;FSH（不孕症治疗剂）&lt;/a&gt;的合作方。目前已上市的长效型&lt;a&gt;&lt;/a&gt;&lt;a&gt;β-干扰素&lt;/a&gt;施药周期为2周/次，该公司&lt;a&gt;&lt;/a&gt;&lt;a&gt;长效型β-干扰素&lt;/a&gt;拟制定为4周/次，该产品在施药周期上较目前市面产品有很强的竞争力。该公司的这种长效型β-干扰素及&lt;a&gt;&lt;/a&gt;&lt;a&gt;FSH（不孕症治疗剂）&lt;/a&gt;马上要进入前临床阶段。在此该公司寻找愿意参与两种产品的共同技术研发或者申请技术转让的国内公司作为合作方。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;目前市场上的β-干扰素产品被国外厂家垄断，包括美国的Biogen、德国的Merck Serono和Bayer、以及瑞士的Novartis。鉴于中国国内目前没有许可的注射型β-干扰素，且MS疾病在中国是属于罕见病，也鉴于中国目前对于罕见病拥有扶持政策（开通绿色通道_给予优先审核），我们认为该公司所研制的长效型β-干扰素FSH（不孕症治疗剂）产品在中国具有广阔的市场前景，掌握该技术的国内公司将会拥有强大的先发优势，占领市场先机。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;如果您对该产品同样感兴趣，希望共同研发或者申请技术转移，请及时与我们联系，我司将安排贵方与韩国公司的一切接洽事宜。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;联系人：林老师&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;联系电话：15210822689&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;邮箱：466938143@qq.com&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: 微软雅黑, sans-serif; font-size: 14px;&quot;&gt;QQ: 466938143&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;') [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2017-07-28T14:44:18+08:00 ] 183.240.196.50 /Admin/New/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `new_x` LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: map /www/web/shtresearch/public_html/Application/Admin/Controller/NewController.class.php 第 30 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000366s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000397s ]
+
+[ 2017-07-28T15:03:34+08:00 ] 183.240.196.50 /Admin/New/news_del?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0005s ]
+SQL: DELETE FROM `new_x` WHERE `id` = 4 [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000426s ]
+
+[ 2017-07-28T15:03:36+08:00 ] 183.240.196.50 /Admin/New/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `new_x` LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: map /www/web/shtresearch/public_html/Application/Admin/Controller/NewController.class.php 第 30 行.
+SQL: SELECT * FROM `new_x` ORDER BY time desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006063s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000414s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000447s ]
+

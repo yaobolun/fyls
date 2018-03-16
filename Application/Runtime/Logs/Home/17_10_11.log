@@ -1,0 +1,747 @@
+[ 2017-10-11T10:15:29+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0806s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0166s ]
+NOTIC: [8] Undefined index: PHPSESSID D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 103 行.
+SQL: SELECT * FROM `shopcart` WHERE `cook` = null  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: PHPSESSID D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 114 行.
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = null  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000369s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075890s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001042s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001504s ]
+
+[ 2017-10-11T10:15:34+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `shopcart` WHERE `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000366s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033336s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001070s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001608s ]
+
+[ 2017-10-11T11:36:55+08:00 ] ::1 /zjtr/Home/Mall/del?id=69
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0176s ]
+SQL: DELETE FROM `shopcart` WHERE `sid` = 69 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002713s ]
+
+[ 2017-10-11T11:36:59+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0617s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `shopcart` WHERE `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0013s ]
+SQL: UPDATE `shopcart` SET `l_id`='1' WHERE ( sid=68 ) [ RunTime:0.0011s ]
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0017s ]
+NOTIC: [8] Undefined variable: zongshu D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 133 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000331s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000499s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.090814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000900s ]
+
+[ 2017-10-11T18:23:38+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.1050s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `shopcart` WHERE `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0012s ]
+SQL: UPDATE `shopcart` SET `l_id`='1' WHERE ( sid=70 ) [ RunTime:0.0180s ]
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: zongshu D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 133 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000363s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.130420s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.130538s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001053s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001521s ]
+
+[ 2017-10-11T18:23:57+08:00 ] ::1 /zjtr/Home/Mall/product?active=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002210s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0027s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0049s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 301 行.
+SQL: SELECT * FROM `report_categories` WHERE ( Type_id=14 )  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN ('42') LIMIT 1   [ RunTime:0.1036s ]
+SQL: SELECT * FROM `new_x` WHERE `n_type` IN ('42') ORDER BY time desc LIMIT 0,12   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 14 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\e3117c840d18014a3e66d1d1620d3d4a.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\e3117c840d18014a3e66d1d1620d3d4a.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\e3117c840d18014a3e66d1d1620d3d4a.php 第 150 行.
+NOTIC: [8] Undefined variable: mbxs D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\e3117c840d18014a3e66d1d1620d3d4a.php 第 377 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028858s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000774s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+
+[ 2017-10-11T18:23:59+08:00 ] ::1 /zjtr/Home/Mall/details?active=14&id=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0667s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0023s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `colour` [ RunTime:0.0427s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `report_categories` WHERE `Id` = 42 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `colour` WHERE `col_id` IN ('2','4')  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `report_categories` WHERE ( id=42 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=14 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `new_x` WHERE `id` NOT IN ('12') AND `n_type` IN ('42') LIMIT 4   [ RunTime:0.0085s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\4ebb6ba449e803cd6ea9294f722af8d9.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\4ebb6ba449e803cd6ea9294f722af8d9.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\4ebb6ba449e803cd6ea9294f722af8d9.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000859s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000931s ]
+
+[ 2017-10-11T18:24:03+08:00 ] ::1 /zjtr/Home/Mall/goumai
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+SQL: SHOW COLUMNS FROM `transaction_information` [ RunTime:0.0531s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0056s ]
+NOTIC: [8] Undefined index: ljgm D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 571 行.
+SQL: INSERT INTO `shopcart` (`cook`,`w_id`,`l_id`,`license`,`shuliang`) VALUES ('1oq82pkbe9feddq6v4346hq1u1','12','1','黑色,蓝色','2,3') [ RunTime:0.0492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000982s ]
+
+[ 2017-10-11T18:24:06+08:00 ] ::1 /zjtr/Home/Mall/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0363s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `new_x` WHERE ( n_type=35 ) LIMIT 3   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `new_x` WHERE ( n_type=41 ) ORDER BY time desc LIMIT 6   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 138 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 144 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048412s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000764s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001135s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001242s ]
+
+[ 2017-10-11T18:24:09+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000103s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `shopcart` WHERE `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0010s ]
+SQL: UPDATE `shopcart` SET `l_id`='1' WHERE ( sid=71 ) [ RunTime:0.0008s ]
+SQL: UPDATE `shopcart` SET `l_id`='1' WHERE ( sid=70 ) [ RunTime:0.0006s ]
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: zongshu D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 133 行.
+SQL: SELECT * FROM `new_x` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: zongshu D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 133 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016416s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001012s ]
+
+[ 2017-10-11T18:24:28+08:00 ] ::1 /zjtr/Home/Mall/del?id=70
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0135s ]
+SQL: DELETE FROM `shopcart` WHERE `sid` = 70 [ RunTime:0.0459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001498s ]
+
+[ 2017-10-11T18:24:31+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `shopcart` WHERE `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0004s ]
+SQL: UPDATE `shopcart` SET `l_id`='1' WHERE ( sid=71 ) [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: zongshu D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 133 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017319s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2017-10-11T18:25:27+08:00 ] ::1 /zjtr/Home/Mall/goudel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: del D:\phpStudy\WWW\zjtr\Application\Home\Controller\MallController.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `transaction_information` [ RunTime:0.0067s ]
+SQL: INSERT INTO `transaction_information` (`state`,`cp_title`,`name`,`email`,`Order_number`,`companyaddress`,`companyphone`,`price`,`num`) VALUES ('12','产品展示1','111111','9','zjtr_711507717527','怡海花园111','15101574349','369','9') [ RunTime:0.0123s ]
+SQL: DELETE FROM `shopcart` WHERE `sid` = 71 [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002477s ]
+
+[ 2017-10-11T18:25:32+08:00 ] ::1 /zjtr/Home/Mall/cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001626s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `shopcart` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `shopcart` WHERE `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `shopcart` WHERE `l_id` = 1 AND `cook` = '1oq82pkbe9feddq6v4346hq1u1'  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3e0c3b6b225895a058de9b9c25e9ba52.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016043s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016124s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2017-10-11T18:25:37+08:00 ] ::1 /zjtr/Home/My/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `new_x` LIMIT 4   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0674s ]
+SQL: SELECT * FROM `user` WHERE `Id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
+[ 2017-10-11T18:25:40+08:00 ] ::1 /zjtr/Home/My/order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `new_x` LIMIT 4   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `transaction_information` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `transaction_information` WHERE ( name=111111 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `new_x` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000280s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 165 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 462 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 462 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 462 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\ea3cb4e52aec07a4b905ed1b6daab2b0.php 第 462 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.068402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068480s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001582s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001116s ]
+
+[ 2017-10-11T18:25:57+08:00 ] ::1 /zjtr/Home/My/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000100s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `new_x` LIMIT 4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `user` WHERE `Id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019321s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001447s ]
+
+[ 2017-10-11T18:26:26+08:00 ] ::1 /zjtr/Home/My/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003306s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0515s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `new_x` LIMIT 4   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `user` WHERE `Id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020557s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000899s ]
+
+[ 2017-10-11T18:26:30+08:00 ] ::1 /zjtr/Home/My/address
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002438s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `new_x` LIMIT 4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001894s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002524s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 165 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 557 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 557 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 557 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\816cb7d1f23c0e218176fd50c887e443.php 第 557 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.179674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.179740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2017-10-11T18:26:35+08:00 ] ::1 /zjtr/Home/My/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `new_x` LIMIT 4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `user` WHERE `Id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `address` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `address` WHERE ( a_user=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 139 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 145 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 150 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: n D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 165 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+NOTIC: [8] Undefined variable: r D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\3375be4febe9bbf400c079f5f448465c.php 第 576 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022546s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022654s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001027s ]
+
+[ 2017-10-11T18:37:26+08:00 ] ::1 /zjtr/Home/Mall/anquan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2017-10-11T18:37:28+08:00 ] ::1 /zjtr/Home/Mall/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=2 and ix=2 ) ORDER BY id asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=2 ) ORDER BY id asc  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `new_x` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `new_x` WHERE ( n_type=35 ) LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `new_x` WHERE ( n_type=41 ) ORDER BY time desc LIMIT 6   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined index: zjtr_id D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 66 行.
+NOTIC: [8] Undefined index: data D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 138 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 144 行.
+NOTIC: [8] Undefined variable: m D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\859ac05ab42bf124173f06e7cce2b592.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020038s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020131s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+

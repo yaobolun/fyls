@@ -1,0 +1,66 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">我要请假</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
+      </div>
+     <section>
+
+     <form action="__ROOT__/Admin/Leave/leave_edit" method="post">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:200px;">申请人:</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人..." value="{$show.applicant}" name="applicant" />
+       </li>
+       <li>
+        <span class="item_name" style="width:200px;">请假原因:</span>
+        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason">{$show.leave_reason}</textarea>
+       </li>
+       <li>
+          <span class="item_name" style="width: 200px" >开始日期:</span>
+          <div class="layui-input-inline">
+            <input type="text" name="start_time" class="textbox textbox_295" value="{$show.start_time}" id="test5" placeholder="请假开始日期">
+          </div>
+       </li>
+       <li>
+          <span class="item_name" style="width: 200px" >结束日期:</span>
+          <div class="layui-input-inline">
+            <input type="text" name="end_time" class="textbox textbox_295" value="{$show.end_time}" id="test1" placeholder="请假结束日期">
+          </div>
+       </li>
+       <li>
+        <span class="item_name" style="width:200px;"></span>
+        <input type="hidden" name="id" value="{$show.id}" />
+        <input type="submit" name="sub" class="link_btn"/>
+       </li>
+      </ul>
+      </form>
+
+     </section>
+ </div>
+</section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+
+
+  
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.m_gsjj img{
+	width:100%;
+}
+</style>
+<include file="Public/m/head.html"  title="{$d.type}"/>
+ 
+<img src='__PUBLIC__/images/m/lxwm.jpg' style='width:100%'>
+
+<div class='mindex_content'>
+     <p style='border-bottom:2px solid #37ADE7;width:75px;font-size:18px;margin:3%;'>{$d.type}</p>
+     <div class='m_gsjj' style='background:#FAFAFA;padding:2%'>
+         <volist name='data' id='data'>
+                <h4 style='text-align:center'>{$data.title}</h4>
+                <div id='editor{$e++}'></div>
+                <div hidden='hidden'  id='content{$c++}' >{$data.details}</div>
+			     <script type="text/javascript">
+			        // htmlspecialchars_decode
+
+			        document.getElementById('editor{$e_s++}').innerHTML=document.getElementById('content{$c_s++}').innerText;
+			     </script>
+          </volist>
+     </div>
+</div>
+
+<include file="Public/m/footer.html" title='Home'/>

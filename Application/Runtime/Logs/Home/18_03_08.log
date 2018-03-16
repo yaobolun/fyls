@@ -1,0 +1,66 @@
+[ 2018-03-08T11:02:46+08:00 ] ::1 /zjtr/Home/Mobile
+ERR: 无法加载控制器:Mobile
+
+[ 2018-03-08T11:03:10+08:00 ] ::1 /zjtr/Home/Mobile/index
+ERR: 无法加载控制器:Mobile
+
+[ 2018-03-08T14:54:20+08:00 ] ::1 /zjtr/Home/Mall/product?active=14
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+
+[ 2018-03-08T14:54:25+08:00 ] ::1 /zjtr/Home/Mall/product?active=14
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+
+[ 2018-03-08T14:57:20+08:00 ] ::1 /zjtr/Home/Mall/product?active=14
+ERR: 1054:Unknown column 'Type_id13' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `report_categories` WHERE ( Type_id13  or Type_id=14 or Type_id=15 or Type_id=16 or Type_id=17 or Type_id=18  ) 
+ERR: 1054:Unknown column 'Type_id13' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `report_categories` WHERE ( Type_id13  or Type_id=14 or Type_id=15 or Type_id=16 or Type_id=17 or Type_id=18  ) 
+
+[ 2018-03-08T14:57:42+08:00 ] ::1 /zjtr/Home/Mall/product?active=14
+ERR: 1054:Unknown column 'Type_id13' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `report_categories` WHERE ( Type_id13  or Type_id=14 or Type_id=15 or Type_id=16 or Type_id=17 or Type_id=18  ) 
+ERR: 1054:Unknown column 'Type_id13' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `report_categories` WHERE ( Type_id13  or Type_id=14 or Type_id=15 or Type_id=16 or Type_id=17 or Type_id=18  ) 
+
+[ 2018-03-08T15:08:35+08:00 ] ::1 /zjtr/Home/Mall/supplies?active=17
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+
+[ 2018-03-08T15:08:53+08:00 ] ::1 /zjtr/Home/Mall/supplies?active=17
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `new_x` WHERE `n_type` IN () LIMIT 1  
+
+[ 2018-03-08T15:32:05+08:00 ] ::1 /zjtr/Home/Mall/goumai
+ERR: 1048:Column 'name' cannot be null
+ [ SQL语句 ] : INSERT INTO `transaction_information` (`num`,`state`,`cp_title`,`name`,`email`,`Order_number`,`companyaddress`,`companyphone`,`price`) VALUES ('1','23','1',NULL,'黑色 数量1,黄色 数量0,蓝色 数量0','zjtr_231520494324',NULL,NULL,'11')
+ERR: 1048:Column 'name' cannot be null
+ [ SQL语句 ] : INSERT INTO `transaction_information` (`num`,`state`,`cp_title`,`name`,`email`,`Order_number`,`companyaddress`,`companyphone`,`price`) VALUES ('1','23','1',NULL,'黑色 数量1,黄色 数量0,蓝色 数量0','zjtr_231520494324',NULL,NULL,'11')
+
+[ 2018-03-08T15:34:43+08:00 ] ::1 /zjtr/Home/My/index
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `address` WHERE ( a_user= ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `address` WHERE ( a_user= ) 
+
+[ 2018-03-08T17:36:02+08:00 ] ::1 /zjtr/Home/My/index
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `address` WHERE ( a_user= ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `address` WHERE ( a_user= ) 
+
+[ 2018-03-08T17:37:21+08:00 ] ::1 /zjtr/Home/Mall/goumai
+ERR: 1048:Column 'name' cannot be null
+ [ SQL语句 ] : INSERT INTO `transaction_information` (`num`,`state`,`cp_title`,`name`,`email`,`Order_number`,`companyaddress`,`companyphone`,`price`) VALUES ('1','36','产品展示1',NULL,'黑色 数量1,蓝色 数量0','zjtr_361520501840',NULL,NULL,'41')
+ERR: 1048:Column 'name' cannot be null
+ [ SQL语句 ] : INSERT INTO `transaction_information` (`num`,`state`,`cp_title`,`name`,`email`,`Order_number`,`companyaddress`,`companyphone`,`price`) VALUES ('1','36','产品展示1',NULL,'黑色 数量1,蓝色 数量0','zjtr_361520501840',NULL,NULL,'41')
+
