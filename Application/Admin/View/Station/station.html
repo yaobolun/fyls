@@ -1,0 +1,40 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">岗位列表</h2>
+       
+       <a href="__ROOT__/Admin/Station/add" class="fr top_rt_btn add_icon">添加岗位</a>
+      </div>
+      <table class="table">
+       <tr>
+        <th>编号</th>
+        <th>部门名称</th>
+        <th>岗位名称</th>
+        <th>最后修改时间</th>
+        <th>操作</th>
+       </tr>
+       <volist name='Re' id='Re'>
+       <tr>
+        <td class="center">{$key+1}</td>
+        <td class="center">
+          {$Re.department_name}
+        </td>
+        <td class="center">{$Re.station_name}</td>
+        <td class="center">{$Re.updatetime}</td>
+        
+        <td class="center">
+         <a href="__ROOT__/Admin/Station/update?id={$Re.id}" title="编辑" class="link_icon">&#101;</a>
+         <a href="__ROOT__/Admin/Station/del?id={$Re.id}" title="删除" class="link_icon">&#100;</a>
+        </td>
+       </tr>
+       </volist>
+      
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

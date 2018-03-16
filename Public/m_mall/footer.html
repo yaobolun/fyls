@@ -1,0 +1,86 @@
+<style>
+p{
+  margin:0;
+  padding:0;
+}
+.f_dh{
+  overflow: hidden;
+  background:#fff;
+
+}
+.f_dh p{
+  float:left;
+  width: 20%;
+  
+  text-align: center;
+/*  border:1px solid red;*/
+
+}
+.f_dh p img{
+   margin-top: 5px;
+  width: 50%
+}
+.dl{
+  overflow: hidden;
+  margin-top: 10%;
+  background: #FAFAFA;
+  padding:2% 0;
+  margin-bottom:5%;
+  
+}
+.dl p{
+  float: left;
+    /*border:1px solid red;*/
+}  
+.dl  .dlzc2{
+  float:right;
+}
+.dl .x{
+  width:2%;
+  text-align: center;
+  color:#EDEDED;
+}
+.dl .dlzc1,.dlzc2{
+  color:#000;
+  width:49%;
+  text-align: center;
+/*  border:1px solid red;*/
+}
+.dbxx{
+  background: #D9D9D9;
+  padding: 2% 0;
+  color:#808080;
+  margin-bottom:5%;
+
+}
+</style>
+
+<div class='footer' >
+     <if condition='$_COOKIE["zjtr_id"] eq null'>
+      <div class='dl'>
+     
+             <a href='__ROOT__/Mobile/Mall/login'><p class='dlzc1'>登录</p></a><p class='x'>|</p><a href='__ROOT__/Mobile/Mall/register'><p class='dlzc2'>注册</p></a>
+            
+      </div>
+       </if>
+<!--       <div class='dbxx'>
+      <center>
+            <p>Copyright © 2017 北京中建天润文化发展有限公司</p>
+            <p>京ICP备 09059684号 -1</p>
+            <p>中国·北京·石景山杨庄路华信大厦</p> 
+        </center>    
+      </div> -->
+      
+     <div class='f_dh navbar-fixed-bottom'>
+           <a href='__ROOT__/Mobile/Mall/product?active=14'>
+            <p><if condition='$m eq 2'><img src='__PUBLIC__/images/m/xcp.png'>
+            <else/><img src='__PUBLIC__/images/m/cp.png'></if></p></a>
+           <a href='tel:18610151215'> <p><img src='__PUBLIC__/images/m/dh.png'></p></a>
+           <a href='__ROOT__/Mobile/Mall/index'> <p><if condition='$m eq 1'><img src='__PUBLIC__/images/m/xsc.png'>
+           <else/><img src='__PUBLIC__/images/m/sc.png'></if></p></a>
+           <a href='__ROOT__/Mobile/Mall/cart'> <p><if condition='$g eq 1'><img src='__PUBLIC__/images/m/xgwc.png'><else/><img src='__PUBLIC__/images/m/gwc.png'><span style='display: block;background:red;color:#FFF;border-radius: 10px;position: absolute;right: 20%;top: 0px;width:20px'>{$tishi}</span></if></p></a>
+           <a href='__ROOT__/Mobile/My/index'> <p><if condition='$p eq 1'><img src='__PUBLIC__/images/m/xwd.png'><else/><img src='__PUBLIC__/images/m/wd.png'></if></p></a>
+      </div>
+</div>
+</body>
+</html>

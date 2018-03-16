@@ -1,0 +1,1 @@
+a:6:{i:0;s:2:"id";i:1;s:5:"photo";i:2;s:3:"web";i:3;s:3:"url";s:3:"_pk";s:2:"id";s:5:"_type";a:4:{s:2:"id";s:10:"tinyint(4)";s:5:"photo";s:12:"varchar(255)";s:3:"web";s:6:"int(1)";s:3:"url";s:4:"text";}}
