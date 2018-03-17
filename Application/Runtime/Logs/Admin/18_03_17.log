@@ -1,0 +1,109 @@
+[ 2018-03-17T09:04:43+08:00 ] ::1 /fyls/Admin/Travel/doadd_travel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001341s ]
+ERR: syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION)
+
+[ 2018-03-17T09:05:35+08:00 ] ::1 /fyls/Admin/Travel/doadd_travel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+ERR: 模板不存在:./Application/Admin/View/Travel/doadd_travel.html
+
+[ 2018-03-17T09:06:39+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003364s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.1214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `form_leave` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0372s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.005367s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005498s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 192 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065572s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013017s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013091s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008319s ]
+
+[ 2018-03-17T09:06:44+08:00 ] ::1 /fyls/Admin/Leave/leave_del?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0162s ]
+SQL: DELETE FROM `form_leave` WHERE `id` = 6 [ RunTime:0.0340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001505s ]
+
+[ 2018-03-17T09:06:46+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003209s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0317s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `form_leave` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 192 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012369s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012429s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001006s ]
+
+[ 2018-03-17T09:08:05+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0516s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `form_leave` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000404s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 192 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017711s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001840s ]
+
+[ 2018-03-17T09:08:44+08:00 ] ::1 /fyls/admin.php/Member/member
+ERR: 无法加载控制器:Member
+
+[ 2018-03-17T09:18:27+08:00 ] ::1 /fyls/admin.php/Order/order
+ERR: 无法加载控制器:Order
+
