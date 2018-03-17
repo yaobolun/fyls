@@ -5,13 +5,17 @@
 <title>[title]</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/style.css">
+
 <link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css"  media="all">
+
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="__PUBLIC__/admin/js/jquery.js"></script>
 <script src="__PUBLIC__/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
 <script src="__PUBLIC__/layui/layui.js" charset="utf-8"></script>
+
 <script>
 
 	(function($){
@@ -54,29 +58,50 @@
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
+
     <dd><a href="__ROOT__/admin.php/Product/product">新闻</a></dd>
     
     <dd><a href="__ROOT__/admin.php/New/news">产品</a></dd>
     <dd><a href="__ROOT__/admin.php/Pclass/col">产品分类</a></dd>
     <dd><a href="__ROOT__/admin.php/Col/col">产品颜色</a></dd>
 
+    <dd><a href="__ROOT__/admin.php/Product/product">申请转账</a></dd>
+    
+    <dd><a href="__ROOT__/admin.php/New/news">申请到账</a></dd>
+    <dd><a href="__ROOT__/admin.php/Pclass/col">资质到账</a></dd>
+    <!-- <dd><a href="__ROOT__/admin.php/Col/col">产品颜色</a></dd> -->
+
+
    </dl>
   </li>
   <li>
    <dl>
+
     <dt> 请假 | 外出 </dt>
     <dd><a href="__ROOT__/admin.php/Leave/add_leave">申请请假</a></dd>
     <dd><a href="__ROOT__/admin.php/Travel/add_travel">申请外出</a></dd>
     <dd><a href="__ROOT__/admin.php/Leave/leave_list">请假记录</a></dd>
     <dd><a href="__ROOT__/admin.php/Travel/travel_list">外出记录</a></dd>
+
+    <dt>请假管理</dt>
+    <dd><a href="__ROOT__/admin.php/Member/member">请假列表</a></dd>
+    <dd><a href="__ROOT__/admin.php/Member/member">外出列表</a></dd>
+   <!--  <dd><a href="__ROOT__/admin.php/Member/guest">留言列表</a></dd> -->
+
    </dl>
   </li>
   <li>
    <dl>
     <dt>快递信息</dt>
+
     <dd><a href="__ROOT__/admin.php/Order/order">订单列表</a></dd>
    </dl>
   </li>
+
+    <dd><a href="__ROOT__/admin.php/Order/order">快递列表</a></dd>
+   </dl>
+  </li>  
+
   <!-- <li>
    <dl>
     <dt>网站栏目管理</dt>
@@ -95,6 +120,12 @@
    <dl>
     <dt>后台登录设置</dt>
     <dd><a href="__ROOT__/admin.php/Admin/admin">管理员</a></dd>
+
+    <dd><a href="__ROOT__/admin.php/Department/department">部门管理</a></dd>
+    <dd><a href="__ROOT__/admin.php/Station/station">岗位管理</a></dd>
+    <dd><a href="__ROOT__/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="__ROOT__/admin.php/Authority/authority">权限管理</a></dd>
+
    </dl>
   </li>
   <li>

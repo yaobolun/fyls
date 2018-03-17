@@ -15,6 +15,7 @@ class StationController extends Controller {
     //岗位列表
     public function station(){
     	$stations=M('stations');
+<<<<<<< HEAD
 		$count=$stations->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
@@ -24,6 +25,18 @@ class StationController extends Controller {
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->assign('Re',$Re);
+=======
+    	$departments = M("departments");
+		$count=$stations->where("flag = 0")->count();// 查询满足要求的总记录数
+		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+		$show= $Page->show();// 分页显示输出
+		$arr=$stations->where('flag = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$Re = $departments -> join('LEFT JOIN stations ON stations.department_id = departments.id')->where("stations.flag = 0")->select(); 
+		$this->assign('arr',$arr);
+		$this->assign('page',$show);
+		$this->assign('Re',$Re);
+		// var_dump($Re);exit;
+>>>>>>> origin/yaobolun
 		$this->display();
     }
 
@@ -38,7 +51,11 @@ class StationController extends Controller {
 			$map['department_id']=$_POST['department_id'];
 			$map['updatetime'] = date("Y-m-d H:i:s");
 			$map['flag'] = 0;
+<<<<<<< HEAD
 			$em2=$stations->where("station_name='".$map['station_name']."' and department_id = ".$_POST['department_id'])->select();
+=======
+			$em2=$stations->where("station_name='".$map['station_name']."' and flag = 0 and department_id = ".$_POST['department_id'])->select();
+>>>>>>> origin/yaobolun
 			if($em2) {
 				echo $this->jump("The administrator name cannot be repeated","Station/add");
 			}
@@ -60,18 +77,31 @@ class StationController extends Controller {
 
 	//数据修改
 	public function update(){
+<<<<<<< HEAD
 		$admin=M('departments');
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
 			$map['name']=$_POST['title'];
+=======
+		$admin=M('stations');
+		if (!empty($_POST['sub'])) {
+			$id=$_POST['id'];
+			$map['station_name']=$_POST['title'];
+>>>>>>> origin/yaobolun
 						
 			$val=$admin->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
 			if($val)
 			{
+<<<<<<< HEAD
 				echo $this->jump("修改成功","Department/department");
 			}else {
 				echo $this->jump("修改失败","Department/department");
+=======
+				echo $this->jump("修改成功","Station/station");
+			}else {
+				echo $this->jump("修改失败","Station/station");
+>>>>>>> origin/yaobolun
 			}
 		}
 		elseif(!empty($_GET['id'])){
@@ -86,6 +116,7 @@ class StationController extends Controller {
 	public function del()
 	{
 		if(!empty($_GET['id'])){
+<<<<<<< HEAD
 			$admin=M('departments');
 			$id = $_GET['id'];
 		 	$user['flag'] = 1; 
@@ -96,6 +127,18 @@ class StationController extends Controller {
 			}else 
 				{
 				echo $this->error("删除失败","Department/department");
+=======
+			$station=M('stations');
+			$id = $_GET['id'];
+		 	$user['flag'] = 1; 
+		 	$val=$station->where("flag = 0 and id = ".$id )->save($user);
+			if($val>0)
+			{
+				echo $this->jump("删除成功","Station/station");
+			}else 
+				{
+				echo $this->error("删除失败","Station/station");
+>>>>>>> origin/yaobolun
 			}		
 
 		}

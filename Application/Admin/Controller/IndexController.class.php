@@ -30,11 +30,19 @@ class IndexController extends Controller {
 		if(!empty($_POST['sub']))
 		{
 			$data=M('Admin_user');
+<<<<<<< HEAD
 			$map['Name']=$_POST['name'];
 			
 			$map['password']=md5($_POST['password']);
 			 // print_r($map['password']);die;
 			if($map['Name']=='')
+=======
+			$map['name']=$_POST['name'];
+			
+			$map['password']=md5($_POST['password']);
+			 // print_r($map['password']);die;
+			if($map['name']=='')
+>>>>>>> origin/yaobolun
 			{
 				echo $this->jump('请输入用户名',"login");
 			}
@@ -43,9 +51,15 @@ class IndexController extends Controller {
 			{
 				$value	=	$data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
+<<<<<<< HEAD
 				$_SESSION['Name']	=	$value['Name'];
 				
 				echo	$this->jump('登陆成功',"Product/product");
+=======
+				$_SESSION['name']	=	$value['name'];
+				
+				echo	$this->jump('登陆成功',"Department/department");
+>>>>>>> origin/yaobolun
 			}
 			else
 			{

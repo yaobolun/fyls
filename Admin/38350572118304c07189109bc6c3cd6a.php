@@ -95,6 +95,7 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
    </dl>
   </li>
   <li>
@@ -107,33 +108,60 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">部门列表</h2>
-       
-       <a href="/fyls/Admin/Department/department_add" class="fr top_rt_btn add_icon">添加部门</a>
+       <h2 class="fl">管理员添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Admin/admin">返回管理员列表</a>
       </div>
-      <table class="table">
-       <tr>
-        <th>编号</th>
-        <th>部门名称</th>
-        <th>最后修改时间</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center"><?php echo ($arr["department_name"]); ?></td>
-        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">员工名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
+         
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
         
-        <td class="center">
-         <a href="/fyls/Admin/Department/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Department/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">部门：</span>
+        <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" />
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">岗位：</span>
+        <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" />
+        
+       </li>
+        
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+    if($("#name").val()==''||$("#name").val().length<1)
+    {
+      alert('User name cannot be empty and no less than 1 bits');
+      return false;
+    }
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
+      return false;
+    }
+  }
+  
+</script>
 </body>
 </html>
