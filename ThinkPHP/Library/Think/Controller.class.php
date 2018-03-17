@@ -310,6 +310,7 @@ abstract class Controller {
         $query=$journal->add($map);
         // var_dump($journal);exit;
     }
+
 }
 // 设置控制器别名 便于升级
 class_alias('Think\Controller','Think\Action');

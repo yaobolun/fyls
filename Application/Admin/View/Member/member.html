@@ -1,0 +1,49 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">会员列表</h2>
+       
+      </div>
+      <section class="mtb">
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入用户名..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
+      </section>
+      <table class="table">
+       <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>头像</th>
+        <th>电话</th>
+        <th>地址</th>
+        
+        <th>操作</th>
+       </tr>
+       <volist name='arr' id='arr'>
+       <tr>
+        <td class="center">{$key+1}</td>
+         
+        <td class="center">{$arr.name}</td>
+        <td class="center"><if condition='$arr.photo neq null'><img src='__PUBLIC__/{$arr.photo}' width='50' height='50'><else/>暂无头像</if></td>
+        
+        <td class="center">{$arr.phone}</td>
+        <td class="center"><volist name='arr.address' id='address'>{$address}<br></volist><if condition='$arr.address eq null'>未添加地址</if></td>
+        
+        <td class="center">
+         <a href="__ROOT__/Admin/Member/member_mod?id={$arr.id}" title="编辑" class="link_icon">&#101;</a><!-- 
+         <a href="__ROOT__/Admin/Member/member_del?id={$arr.id}" title="删除" class="link_icon">&#100;</a> -->
+        </td>
+       </tr>
+       </volist>
+      
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

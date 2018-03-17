@@ -90,7 +90,6 @@ small,weak{color:#666}
 .admin_login dd p{color:#53c6b0;font-size:12px;text-align:center;margin:5px 0;}
 
 /*header*/
-
 header{background:#3e8bc2;overflow:hidden;}
 
 header{background:#4fa3d3;overflow:hidden;}
@@ -153,7 +152,6 @@ header .rt_nav li .quit_icon:before{content:"Q";}
 .group_btn:active{background:#0c9c6e;border:1px #0e8f61 solid;}
 .page_title{height:40px;line-height:40px;border-bottom:1px #b6b6b6 solid;margin:10px 0;}
 .page_title h2{font-size:15px;font-weight:bold;}
-
 .page_title .top_rt_btn{display:inline-block;height:30px;line-height:30px;padding:0 15px;border:1px #d2d2d2 solid;background:#f8f8f8;color:#3e8bc2; vertical-align:middle;cursor:pointer;}
 
 .page_title .top_rt_btn{display:inline-block;height:30px;line-height:30px;padding:0 15px;border:1px #d2d2d2 solid;background:#f8f8f8;color:#4fa3d3; vertical-align:middle;cursor:pointer;}

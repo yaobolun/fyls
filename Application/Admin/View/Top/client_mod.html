@@ -1,0 +1,38 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">图片修改</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Top/client">返回</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+      <li>
+        <span class="item_name" style="width:120px;">客户名称：</span>
+        <input type="text" name="name" class="textbox textbox_295" value="{$sel.name}">
+      </li>
+     <li>
+        <span class="item_name" style="width:120px;">修改图片：</span>
+        <input type="hidden" name="o_photo" value="{$sel.photo}" />
+        <img src="__PUBLIC__/{$sel.photo}" style=" width:150px"/>
+          <label class="uploadImg">
+
+           <input type="file" name="photo"/>
+
+           <span>上传图片</span>
+          </label>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">图片修改</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Top/banner">返回</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">颜色:</span>
+        <input type="text" class="textbox textbox_295" placeholder="颜色..." name="col_name" value="{$sel.col_name}"/>
+         
+       </li>
+      <input type="hidden" name='col_id' value="{$sel.col_id}"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>
