@@ -95,6 +95,8 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
   <li>
@@ -107,7 +109,7 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">部门添加</h2>
+       <h2 class="fl">岗位添加</h2>
        <a class="fr top_rt_btn" href="/fyls/Admin/Station/station">返回岗位列表</a>
       </div>
      <section>
@@ -116,7 +118,7 @@
        <li>
         <span class="item_name" style="width:120px;">部门名称：</span>
         <!-- <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" /> -->
-        <select name="department_id">
+        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
             <?php if(is_array($departments)): foreach($departments as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
                     <?php echo ($department["department_name"]); ?>
               </option><?php endforeach; endif; ?>

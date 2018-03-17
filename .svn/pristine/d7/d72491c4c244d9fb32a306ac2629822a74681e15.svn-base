@@ -1,0 +1,271 @@
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<include file="Public/m_mall/head.html"  title="{$mbx.type}"/>
+
+
+<!-- <link href="__PUBLIC__/gwc/css/index.css" rel="stylesheet" type="text/css" /> -->
+<script type="text/javascript" src="__PUBLIC__/gwc/js/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/gwc/js/Calculation.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+	//jquery特效制作复选框全选反选取消(无插件)
+	// 全选        
+	$(".allselect").click(function () {
+		
+		if($(this).attr("checked")){
+			$(".gwc_tb2 input[class=newslist]").each(function () {
+				$(this).attr("checked", true);
+				// $(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+			});
+			GetCount();
+		
+		}
+		else
+   		{
+			$(".gwc_tb2 input[class=newslist]").each(function () {
+				if ($(this).attr("checked")) {
+					$(this).attr("checked", false);
+					//$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+				} else {
+					$(this).attr("checked", true);
+					//$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+				} 
+			});
+			GetCount();
+    
+   		}
+		
+	});
+
+	//反选
+	$("#invert").click(function () {
+		$(".gwc_tb2 input[class=newslist]").each(function () {
+			if ($(this).attr("checked")) {
+				$(this).attr("checked", false);
+				//$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+			} else {
+				$(this).attr("checked", true);
+				//$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+			} 
+		});
+		GetCount();
+	});
+
+	//取消
+	$("#cancel").click(function () {
+		$(".gwc_tb2 input[class=newslist]").each(function () {
+			$(this).attr("checked", false);
+			// $(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+		});
+		GetCount();
+	});
+
+	// 所有复选(:checkbox)框点击事件
+	$(".gwc_tb2 input[class=newslist]").click(function () {
+		if ($(this).attr("checked")) {
+			//$(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+		} else {
+			// $(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+		}
+	});
+
+	// 输出
+	$(".gwc_tb2 input[class=newslist]").click(function () {
+		// $("#total2").html() = GetCount($(this));
+		GetCount();
+		//alert(conts);
+	});
+});
+//******************
+function GetCount() {
+	var conts = 0;
+	var aa = 0;
+	$(".gwc_tb2 input[class=newslist]").each(function () {
+		if ($(this).attr("checked")) {
+			for (var i = 0; i < $(this).length; i++) {
+				conts += parseInt($(this).val());
+				aa += 1;
+			}
+		}
+	});
+	$("#shuliang").text(aa);
+	$("#zong1").html((conts).toFixed(2));
+	$("#jz1").css("display", "none");
+	$("#jz2").css("display", "block");
+}
+function show_confirm()
+{
+var a=confirm("确认删除吗?");
+  
+if(a){
+}else{
+return false;
+}
+
+}
+</script>
+<style>
+table{
+	margin-bottom: 10px;
+
+}
+.gwc_tb1 {
+  width:100%;
+ color:#828282;
+  border-bottom: 1px solid #EBEBEB
+}
+.gwc_tb1 tr{
+	height:40px;
+}
+.gwc_tb2{
+width:100%;
+}
+.gwc_tb2 tr{
+    width:100%;
+	background:#F3F3F3;
+	box-shadow: 0px 1px 1px  #888888;/*边框阴影效果*/
+
+}
+.gwc_tb2 td{
+	
+
+}
+.gwc_tb3{
+
+	background:#F3F3F3;
+	width:100%;
+
+}
+..gwc_tb3 tr{
+	width:100%;
+	border:1px solid #000;
+}
+
+</style>
+
+<form action='__ROOT__/Mobile/Mall/goudel' method='post'>
+<div class="gwc" style="width:100%;margin-top:70px">
+	<table cellpadding="0" cellspacing="0" class="gwc_tb1">
+		<tr>
+			<td class="tb1_td1" style='float:left;margin-left:20px'><input id="Checkbox1" type="checkbox"  class="allselect" style=''/>&nbsp;&nbsp;&nbsp;全选</td>
+			
+			<!-- <td class="tb1_td3">商品信息</td>
+			<td class="tb1_td4">单价</td>
+			<td class="tb1_td5">数量</td>-->
+			<if condition='$data neq null'>
+			<td class="tb1_td7" style='float:right;margin-right:20px'><input type='submit' name='del' value='删除' style='border:0;background:#fff;' onclick='return show_confirm();'></td>
+
+			<a href='__ROOT__/Mobile/Mall/bianji'><td class="tb1_td6" style='float:right;margin:1px 0 0 20px;color:#828282;' >编辑</td> </a>
+			</if>
+		</tr>
+	</table>
+		   <script>
+       function   xxk1(){
+		  $("#sc").show();
+		  $("#goumai").hide();
+       }
+       
+</script>
+<if condition='$data eq null'>
+您的购物车是空的！
+</if>
+
+
+	<volist name='data' id='data'>
+	<table cellpadding="0" cellspacing="0" class="gwc_tb2">
+		<tr>
+			<td class="tb2_td1">
+			
+			<input type="checkbox"  name="newslist{$data.n}" class='newslist' id="newslist-{$data.n}" style='margin-left:15px'/>
+			<input type="hidden"  name="sid[]" value='{$data.sid}'/>
+			<input type="hidden"  name="spid[]" value='{$data.spid}'/>
+			</td>
+			<td class="tb2_td2" style='width:120px'><a href="#"><img src="__PUBLIC__/{$data.img}" width='100' height='100' style='margin:5px 0'/></a></td>
+			<td class="tb2_td3" >
+			<a href="#"><p style='color:#000;margin-bottom:15px'>{$data.title}</p><input type='hidden' value='{$data.title}' name='tit[]'>
+			<p style='color:#F4453C;margin-bottom:15px'>￥{$data.dan}</p><input type='hidden' value='{$data.dan}' name='dan[]'></a>
+			<!---商品加减算总数---->
+				<script type="text/javascript">
+				$(function () {
+					var t = $("#text_box{$data.n}");
+					$("#add{$data.n}").click(function () {
+						t.val(parseInt(t.val()) + 1)
+						setTotal(); GetCount();
+					})
+					$("#min{$data.n}").click(function () {
+						if(t.val()>0){
+							t.val(parseInt(t.val()) - 1)
+							setTotal(); GetCount();
+						}
+					})
+					function setTotal() {
+
+						$("#total{$data.n}").html((parseInt(t.val()) * {$data.dan}).toFixed(2));
+						$("#newslist-{$data.n}").val(parseInt(t.val()) * {$data.dan});
+					}
+					setTotal();
+				})
+				</script>
+				
+				<input id="min{$data.n}" name=""  style="width:30px;height:30px; border:1px solid #ccc;color:#CCCCCC;background:#f3f3f3;" type="button" value="-" /><input id="text_box{$data.n}" name="shu[]" type="text" value="{$data.shu}" style=" width:30px; height:30px; text-align:center; border:1px solid #ccc;border-left:0;border-right:0" /><input id="add{$data.n}" name="" style=" width:30px;height:30px;  border:1px solid #ccc;color:#CCCCCC;background:#f3f3f3" type="button" value="+" />
+			</td>
+			
+			<td class="tb1_td5" style='float:right;margin:70px 10px 0 0'>
+			  
+				
+				
+			</td>
+			<!-- <td class="tb1_td6"><label id="total{$data.n}" class="tot" style="color:#ff5500;font-size:14px; font-weight:bold;"></label></td> -->
+			<td class="tb1_td7"   style=' background:#DE443C;text-align:center;color:#fff'><a href="__ROOT__/Mobile/Mall/del?id={$data.sid}" style='color:#fff;' onclick='return show_confirm();'>删除</a></td>
+		</tr>
+	</table>
+</volist>
+</div>	
+	<!---总数---->
+	<script type="text/javascript">
+	$(function () {
+		$(".quanxun").click(function () {
+			setTotal();
+			//alert($(lens[0]).text());
+		});
+		function setTotal() {
+			var len = $(".tot");
+			var num = 0;
+			for (var i = 0; i < len.length; i++) {
+				num = parseInt(num) + parseInt($(len[i]).text());
+
+			}
+			//alert(len.length);
+			$("#zong1").text(parseInt(num).toFixed(2));
+			$("#shuliang").text(len.length);
+		}
+		//setTotal();
+	})
+	</script>
+
+<span style='font-size:16px;color:#008CD6;margin-left:10px'>收货地址：</span>
+			 <select name='address' style='border:0px solid red;font-size:16px;color:#008CD6;'>
+			     <volist name='address' id='address'>
+			         <option>{$address.a_address}</option>
+			     </volist>    
+			 </select>
+			 
+</div>
+
+<table class="gwc_tb3" >
+		<tr>
+		    <td class="tb3_td1" ></td>
+			<td class="tb1_td1" style='float:left;padding:8px 0px;' >
+			<input id="Checkbox2" type="checkbox"  class="allselect" style='margin-left:15px;'/>全选</td>
+			
+			<!-- <td class="tb3_td2" style='width:120px'>已选商品 <label id="shuliang" style="color:#ff5500;font-size:14px; font-weight:bold;">0</label> 件</td> -->
+			<td class="tb3_td4" style='float:right'><input type='submit' name='gou' value='提交信息' style='padding:8px 20px;color:#fff;border:0;background:#008CD6;'></td>
+			<td class="tb3_td3" style='font-size:14px;float:right;padding:8px 0px;margin-right:20px'>合计<!-- (不含运费) -->:<span>￥</span><span style=" color:#ff5500;"><label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;">0.00</label></span></td>
+			
+		</tr>
+	</table>
+<form>
+<include file="Public/m_mall/footer.html" title='Home'/>

@@ -26,6 +26,12 @@ class PeopleController extends Controller {
     }
     //增加
     public function add(){
+    	$department = M("departments");
+    	$station = M("stations");
+    	$dep = $department->where("flag = 0")->select();
+    	$sta = $station->where("flag = 0")->select();
+    	$this->assign("dep",$dep);
+    	$this->assign("sta",$sta);
 		if(!empty($_POST['sub'])){
 			$admin=M('admin_user');
 			$map['name']=$_POST['name'];
@@ -52,6 +58,57 @@ class PeopleController extends Controller {
 		}
 		else{
 			$this->display();
+		}
+	}
+
+	//数据修改
+	public function update(){
+		$department = M("departments");
+    	$station = M("stations");
+    	$dep = $department->where("flag = 0")->select();
+    	$sta = $station->where("flag = 0")->select();
+    	$this->assign("dep",$dep);
+    	$this->assign("sta",$sta);
+		$admin=M('admin_user');
+		if (!empty($_POST['sub'])) {
+			$id=$_POST['id'];
+			$map['name']=$_POST['title'];
+			$map['department_id']=$_POST['department_id'];
+			$map['station_id']=$_POST['station_id'];
+						
+			$val=$admin->where("id=".$id)->save($map);
+			//echo "<pre>";print_r($val);echo "<pre>";die;
+			if($val)
+			{
+				echo $this->jump("修改成功","People/people");
+			}else {
+				echo $this->jump("修改失败","People/people");
+			}
+		}
+		elseif(!empty($_GET['id'])){
+			$id=$_GET['id'];
+			$sel=$admin->where()->join()->find("$id");
+			$this->assign('sel',$sel);
+			$this->display();
+		}
+	}
+
+	//删除数据
+	public function del()
+	{
+		if(!empty($_GET['id'])){
+			$admin=M('admin_user');
+			$id = $_GET['id'];
+		 	$user['flag'] = 1; 
+		 	$val=$admin->where("flag = 0 and id = ".$id )->save($user);
+			if($val>0)
+			{
+				echo $this->jump("删除成功","People/people");
+			}else 
+				{
+				echo $this->error("删除失败","People/people");
+			}		
+
 		}
 	}
 

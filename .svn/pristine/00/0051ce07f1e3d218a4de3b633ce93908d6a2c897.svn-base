@@ -1,0 +1,111 @@
+<style>
+.footer{
+  height:200px;
+  background:#266ECC;
+  overflow:hidden;
+
+}
+.f_bottom{
+  margin-top: 10px;
+  height:30px;
+  background:#0B3E7C;
+ /* border:1px solid red;*/
+  float:left;
+  width:100%;
+}
+.f_bottom p{
+  width:1200px;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  margin:0 auto;
+  height:30px;
+  line-height: 30px;
+  color:#C6C6C6;
+
+}
+.f_box{
+  width:1200px;
+  margin:0 auto;
+  padding-top: 20px;
+  height:160px;
+ /* border:1px solid red;*/
+}
+.f_xt{
+  float:left;
+  width:1px;
+  height:120px;
+  margin:0 2px;
+  background: -webkit-linear-gradient(top,rgba(255,0,0,0),#fff,rgba(255,0,0,0)); /* Safari 5.1 - 6 */
+  background: -o-linear-gradient(bottom,rgba(255,0,0,0),#fff,rgba(255,0,0,0)); /* Opera 11.1 - 12*/
+  background: -moz-linear-gradient(bottom,rgba(255,0,0,0),#fff,rgba(255,0,0,0)); /* Firefox 3.6 - 15*/
+  background: linear-gradient(to bottom, rgba(255,0,0,0),#fff,rgba(255,0,0,0)); /* 标准的语法 */
+}
+.f_kuai{
+  color:#fff;
+  float:left;
+  height:120px;
+  width:25.5%;
+  padding:0 3%;
+  /*border: 1px solid red;*/
+
+}
+.f_kuai .zjci,.f_lx{
+  font-size: 20px;
+  font-family: "微软雅黑";
+  margin-bottom: 28px;
+}
+.f_kuai div  span {
+  margin-right: 15%;
+  font-size: 16px;
+  font-family: "微软雅黑";
+}
+.f_kuai div  span a{
+  color:#fff;
+}
+.f_kuai img{
+  width:128px;
+}
+
+  
+</style>
+
+<div class='footer'>
+<div class='f_box'>
+<div class='f_xt'></div>
+<div class='f_kuai'>
+  
+  <div style='width:159px;margin:0 auto'>
+  <p class='zjci'>中建CI形象</p>
+
+  <p>
+  <span style="line-height: 28px; "><a href='__ROOT__/Home/Mall/product?active=36'>施工现场</a></span>
+  <span style='margin:0;line-height: 28px; '><a href='__ROOT__/Home/Mall/product?active=16'>服装服饰</a></span></p>
+  <span style="line-height: 28px; "><a href='__ROOT__/Home/Mall/product?active=37'  style="margin-top:16px;">办公环境</a></span>
+  <span style='margin:0;line-height: 28px; '><a href='__ROOT__/Home/Mall/product?active=17'>办公用品</a></span>
+  </div>
+ 
+</div>
+<div class='f_xt'></div>
+<div class='f_kuai' style='width:25.5%;'>
+<p class='f_lx' style='text-align:center'>联系电话</p>
+<p class='f_lx' style='text-align:center;font-size:30px'>{$em.landline}</p>
+</div>
+<div class='f_xt'></div>
+<div class='f_kuai' style='width:21%;'>
+<div style='margin:0 auto;width:123px'>
+<p class='zjci'>公司地址</p>
+<p style='font-size:16px;font-family: "微软雅黑"; line-height:28px'>{$em.address}</p>
+</div>
+</div>
+<div class='f_xt'></div>
+<center>
+<div class='f_kuai'>
+<img src='__PUBLIC__/{$em.qrcode}'>
+</div>
+</center>
+<div class='f_xt'></div>
+</div>
+<div class='f_bottom'><p>{$em.pccopyright}</p></div>
+</div>
+</body>
+</html>
