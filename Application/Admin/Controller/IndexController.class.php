@@ -18,7 +18,7 @@ class IndexController extends Controller {
 			// $arr=$news->where($map)->join("report_categories on news.n_id=report_categories.id")->field('news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages')->order('news.type_id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			// $this->assign('arr',$arr);
 			// $this->assign('page',$show);
-    		$this->display("Product/product");
+    		$this->display("Admin/transfer");
     	}
     }
 	public function tc(){
@@ -45,7 +45,7 @@ class IndexController extends Controller {
 				$_SESSION['name']	=	$value['name'];
 				$_SESSION['department_id'] = $value['department_id'];
 				
-				echo	$this->jump('登陆成功',"Department/department");
+				echo	$this->jump('登陆成功',"Transfer/transfer");
 			}
 			else
 			{

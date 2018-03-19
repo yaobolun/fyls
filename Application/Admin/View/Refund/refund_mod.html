@@ -1,0 +1,94 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改退款凭证申请信息</h2>
+       <a href="__ROOT__/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证申请列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+        <li>
+        <span class="item_name" style="width:120px;">申请人：</span>
+        <input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" value="{$sel.refund_applicant}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配出年月：</span>
+        <input type="text" class="textbox textbox_295" placeholder="现金的年月日" name="refund_match" value="{$sel.refund_match}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配备企业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="公司名称" name="refund_equip" value="{$sel.refund_equip}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">合同价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="合同上的价格" name="refund_contract" value="{$sel.refund_contract}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注：</span>
+        <textarea type="text" class="textbox textbox_295" placeholder="说明" name="refund_remarks" value="{$sel.refund_remarks}"/></textarea>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">已到账金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_account" value="{$sel.refund_account}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">户名：</span>
+        <input type="text" class="textbox textbox_295" placeholder="收款人姓名" name="refund_name" value="{$sel.refund_name}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">本次打款金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_money" value="{$sel.refund_money}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">开户行：</span>
+        <input type="text" class="textbox textbox_295" placeholder="开户的所在银行" name="refund_bank" value="{$sel.refund_bank}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">账号：</span>
+        <input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" value="{$sel.refund_number}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">企业价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="refund_enterprise" value="{$sel.refund_enterprise}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">签约年限：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人与公司签约年份" name="refund_contractyears" value="{$sel.refund_contractyears}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配备人才：</span>
+        <input type="text" class="textbox textbox_295" placeholder="本人" name="refund_qualified" value="{$sel.refund_qualified}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">级别：</span>
+        <input type="text" class="textbox textbox_295" placeholder="级别" name="refund_level" value="{$sel.refund_level}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">专业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="专业" name="refund_major" value="{$sel.refund_major}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">人才价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人才价格" name="refund_talent" value="{$sel.refund_talent}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">客服：</span>
+        <input type="text" class="textbox textbox_295" placeholder="客服" name="refund_customer" value="{$sel.refund_customer}"/>
+       </li>
+
+       
+      <input type="hidden" name='id' value="{$sel.id}"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>

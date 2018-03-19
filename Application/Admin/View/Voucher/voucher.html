@@ -1,0 +1,46 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.ccc{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">退款人才凭证申请列表</h2>
+       <a href="__ROOT__/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
+      </div>
+      <table class="table">
+        <tr>
+        <th>申请人</th>
+        <th>本次到账日期</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>到账金额</th>
+        <th>操作</th>
+       </tr>
+       <volist name='arr' id='arr'>
+       <tr>
+        <td class="center ccc" title="{$arr.voucher_applicant}">{$arr.voucher_applicant}</td>
+        <td class="center ccc" title="{$arr.voucher_account}">{$arr.voucher_account}</td>
+        <td class="center ccc" title="{$arr.voucher_equip}">{$arr.voucher_equip}</td>
+        <td class="center ccc" title="{$arr.voucher_contract}">{$arr.voucher_contract}</td>
+        <td class="center ccc" title="{$arr.voucher_contract}">{$arr.voucher_contract}</td>
+        <td class="center">
+        <a href="__ROOT__/Admin/Voucher/voucher_mod?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>
+        <a href="__ROOT__/Admin/Voucher/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
+        <a href="__ROOT__/Admin/Voucher/info?id={$arr.id}" title="详细信息">详细信息</a>
+       </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

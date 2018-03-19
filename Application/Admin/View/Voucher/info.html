@@ -1,0 +1,52 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.ddd{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">转账申请详细信息</h2>
+       <a href="__ROOT__/Admin/Voucher/voucher" class="fr top_rt_btn add_icon">返回转账列表</a>
+      </div>
+      <table class="table">
+      <volist name='arr' id='arr'>
+        <tr>
+        <th>申请人</th>
+        <td class="center ddd" title="{$arr.voucher_applicant}">{$arr.voucher_applicant}</td>
+        <th>本次到账日期</th>
+        <td class="center ddd" title="{$arr.voucher_account}">{$arr.voucher_account}</td>
+        </tr>
+        <tr>
+        <th>配备企业</th>
+        <td class="center ddd" title="{$arr.voucher_equip}">{$arr.voucher_equip}</td>
+        <th>合同价格</th>
+        <td class="center ddd" title="{$arr.voucher_contract}">{$arr.voucher_contract}</td>
+        </tr>
+        <tr>
+        <th>到账金额</th>
+        <td class="center ddd" title="{$arr.voucher_amount}">{$arr.voucher_amount}</td>
+        <th>到账账户</th>
+        <td class="center ddd" title="{$arr.voucher_acc}">{$arr.voucher_acc}</td>
+        </tr>
+        <tr>
+        <th>本次到账金额</th>
+        <td class="center ddd" title="{$arr.voucher_this}">{$arr.voucher_this}</td>
+        <th>备注</th>
+        <td class="center ddd" title="{$arr.voucher_remarks}">{$arr.voucher_remarks}</td>
+        </tr>
+      </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>
