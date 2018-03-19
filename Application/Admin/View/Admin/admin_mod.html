@@ -5,10 +5,31 @@
       <div class="page_title">
        <h2 class="fl">管理员修改</h2>
        <a class="fr top_rt_btn" href="__ROOT__/Admin/Admin/admin">返回管理员列表</a>
+       <h2 class="fl">权限修改</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Authority/authority">返回权限列表</a>
       </div>
      <section>
      <form action="" method="post"  enctype="multipart/form-data">
-      <ul class="ulColumn2">
+<?php
+foreach ($auth_name as $k => $v) {
+?>
+                    <tr bgcolor="F6F7F1">
+                        <td align="right" width="20%"><?php echo $v['authority'];?></td>
+                        <td align="left" width="88%">
+              <?php
+                  if (strstr($str, $v['authority'])) {
+                    echo "<input type='checkbox' value='".$v['authority']."' name='authority[]' checked='checked'>";
+                  }else{
+                    echo "<input type='checkbox' value='".$v['authority']."' name='authority[]' >";
+                  }
+              ?>
+                          
+                        </td>
+                   </tr>  
+<?php
+}
+?> 
+     <!--  <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:120px;">管理员名称：</span>
         <input type="text" class="textbox textbox_295" value="{$sel.name}" name="title" />
@@ -24,7 +45,9 @@
         <input name="id" type="hidden" value="{$sel.id}" />
         <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
        </li>
-      </ul>
+      </ul> -->
+      <input type="hidden" name="sta_id" value="<?php echo $sta_id;?>">
+      <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
       </form>
      </section>
  </div>

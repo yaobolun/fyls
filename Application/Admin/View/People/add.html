@@ -1,0 +1,96 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">管理员添加</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/People/people">返回人员列表</a>
+      </div>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">员工名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
+         
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">部门：</span>
+        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <option value="0">--请选择--</option>
+          <foreach name="dep" item="department">
+              <option  value="{$department.id}">
+                    {$department.department_name}
+              </option>
+            </foreach>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" /> -->
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">岗位：</span>
+        <select name="station_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+          <option value="0">--请选择--</option>
+          <foreach name="sta" item="station">
+              <option  value="{$station.id}" >
+                    {$station.station_name}
+              </option>
+            </foreach>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" /> -->
+        
+       </li>
+        
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+ <script src="__PUBLIC__/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+    if($("#name").val()==''||$("#name").val().length<1)
+    {
+      alert('User name cannot be empty and no less than 1 bits');
+      return false;
+    }
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
+      return false;
+    }
+  }
+  
+</script>
+<script type="text/javascript">
+
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
+        url:"__ROOT__/admin.php/People/add",
+        type:'POST',
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+          alert(data);
+          var length = JSON.stringify(data.length);
+          alert(length);
+        }
+     });
+  }
+
+</script>
+</body>
+</html>

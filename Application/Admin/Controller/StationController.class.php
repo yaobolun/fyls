@@ -65,6 +65,7 @@ class StationController extends Controller {
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
 			$map['station_name']=$_POST['title'];			
+
 			$val=$admin->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
 			if($val)

@@ -14,13 +14,11 @@ class DepartmentController extends Controller {
     }
     //部门列表
     public function department(){
-
     	$department=M('departments');
 		$count=$department->where("flag = 0")->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		$arr=$department->where('flag = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
-
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->display();
@@ -34,7 +32,6 @@ class DepartmentController extends Controller {
 			$map['updatetime'] = date("Y-m-d H:i:s");
 			$map['flag'] = 0;
 			$em2=$department->where("department_name='".$map['department_name']."' and flag = 0")->select();
-
 			if($em2) {
 				echo $this->jump("The administrator name cannot be repeated","Department/department_add");
 			}
@@ -42,9 +39,7 @@ class DepartmentController extends Controller {
 				$query=$department->add($map);
 			
 				if($query>0){
-
 					$this->journal($_SESSION['name'],'增加了部门',$_POST['department_name']);
-
 					echo $this->jump('添加成功','Department/department');
 				}
 				else{

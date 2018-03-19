@@ -41,7 +41,7 @@ class AdminController extends Controller {
 			$map['time'] = date("Y-m-d H:i:s");
 			$map['updatetime'] = date("Y-m-d H:i:s");
 			$em2=$admin->where("name='".$map['name']."' and flag = 0")->select();
-			$em2=$admin->where("name='".$map['name']."' and flag = 0")->select();
+
 			if($em2) {
 				echo $this->jump("The administrator name cannot be repeated","Admin/admin_add");
 			}
