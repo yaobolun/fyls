@@ -107,3 +107,552 @@ ERR: 无法加载控制器:Member
 [ 2018-03-17T09:18:27+08:00 ] ::1 /fyls/admin.php/Order/order
 ERR: 无法加载控制器:Order
 
+[ 2018-03-17T10:07:28+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0366s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `form_leave` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024655s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2018-03-17T10:11:50+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052248s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001550s ]
+
+[ 2018-03-17T10:11:57+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001856s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001744s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.1155s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\fyls\Application\Admin\Controller\IndexController.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT * FROM `admin_user` WHERE `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: Name D:\phpStudy\WWW\fyls\Application\Admin\Controller\IndexController.class.php 第 53 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2018-03-17T10:11:58+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:14:23+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:14:25+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005371s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2018-03-17T10:14:25+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000693s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2018-03-17T10:14:35+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0543s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\fyls\Application\Admin\Controller\IndexController.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `admin_user` WHERE `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: Name D:\phpStudy\WWW\fyls\Application\Admin\Controller\IndexController.class.php 第 53 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2018-03-17T10:14:36+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:17:35+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:21:14+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:21:15+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:21:15+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:21:15+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:21:16+08:00 ] ::1 /fyls/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+ERR: 无法加载控制器:Login
+
+[ 2018-03-17T10:21:36+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2018-03-17T10:21:40+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001445s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0334s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000532s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2018-03-17T10:21:42+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+ERR: syntax error, unexpected '<<' (T_SL)
+
+[ 2018-03-17T10:22:24+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.1024s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0304s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044315s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044439s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001536s ]
+
+[ 2018-03-17T10:23:03+08:00 ] ::1 /fyls/admin.php/Station/station
+ERR: syntax error, unexpected '<<' (T_SL)
+
+[ 2018-03-17T10:23:25+08:00 ] ::1 /fyls/admin.php/Station/station
+ERR: syntax error, unexpected '<<' (T_SL)
+
+[ 2018-03-17T10:23:37+08:00 ] ::1 /fyls/Admin/Department/update?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0204s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\fyls\Application\Admin\Controller\DepartmentController.class.php on line 79 and defined D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\WWW\fyls\Application\Admin\Controller\DepartmentController.class.php on line 79 and defined D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `departments` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032511s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032816s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002172s ]
+
+[ 2018-03-17T10:23:40+08:00 ] ::1 /fyls/Admin/Department/update?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0332s ]
+SQL: UPDATE `departments` SET `department_name`='市场一部1' WHERE ( id=1 ) [ RunTime:0.0448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001508s ]
+
+[ 2018-03-17T10:23:43+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001832s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0292s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000364s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016266s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001332s ]
+
+[ 2018-03-17T10:24:13+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:27:37+08:00 ] ::1 /fyls/admin.php/Station/station
+ERR: syntax error, unexpected '<<' (T_SL)
+
+[ 2018-03-17T10:30:08+08:00 ] ::1 /fyls/Admin/Product/product
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+ERR: 1146:Table 'fyls.news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `news`
+ERR: 1146:Table 'fyls.news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `news`
+
+[ 2018-03-17T10:41:28+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:42:03+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:42:43+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:42:50+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:43:55+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:46:34+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:47:19+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:47:25+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:49:30+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:49:36+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:50:44+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:50:50+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `qualifications`
+
+[ 2018-03-17T10:50:59+08:00 ] ::1 /fyls/admin.php/Order/order
+ERR: 1146:Table 'fyls.transaction_information' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `transaction_information`
+ERR: 1146:Table 'fyls.transaction_information' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `transaction_information`
+
+[ 2018-03-17T10:51:02+08:00 ] ::1 /fyls/admin.php/Order/order
+ERR: 1146:Table 'fyls.transaction_information' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `transaction_information`
+ERR: 1146:Table 'fyls.transaction_information' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `transaction_information`
+
+[ 2018-03-17T11:09:24+08:00 ] ::1 /fyls/admin.php/Transfer/transfer
+ERR: 无法加载控制器:Transfer
+
+[ 2018-03-17T11:09:25+08:00 ] ::1 /fyls/admin.php/Arrival/arrival
+ERR: 无法加载控制器:Arrival
+
+[ 2018-03-17T11:09:27+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 无法加载控制器:Qualifications
+
+[ 2018-03-17T11:09:45+08:00 ] ::1 /fyls/admin.php/Order/order
+ERR: 无法加载控制器:Order
+
+[ 2018-03-17T11:09:47+08:00 ] ::1 /fyls/admin.php/Department/department
+ERR: 无法加载控制器:Department
+
+[ 2018-03-17T13:44:04+08:00 ] ::1 /fyls/admin.php/Leave/add_leave
+ERR: syntax error, unexpected '$map' (T_VARIABLE)
+
+[ 2018-03-17T13:45:15+08:00 ] ::1 /fyls/admin.php/Leave/add_leave
+ERR: syntax error, unexpected '$map' (T_VARIABLE)
+
+[ 2018-03-17T13:46:16+08:00 ] ::1 /fyls/admin.php/Leave/add_leave
+ERR: syntax error, unexpected ';', expecting ',' or ')'
+
+[ 2018-03-17T13:46:39+08:00 ] ::1 /fyls/Admin/Leave/doadd_leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0422s ]
+NOTIC: [8] Undefined index: validate D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `form_leave` (`applicant`,`leave_reason`,`start_time`,`end_time`,`uid`) VALUES ('123','阿斯顿','2018-03-07 00:00:00','2018-03-31 00:00:00','0') [ RunTime:0.1015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002378s ]
+
+[ 2018-03-17T13:46:42+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002799s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0182s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `form_leave` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000403s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 183 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024419s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001781s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001921s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001611s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001724s ]
+
+[ 2018-03-17T13:47:10+08:00 ] ::1 /fyls/Admin/Leave/doadd_leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0296s ]
+
+[ 2018-03-17T15:10:49+08:00 ] ::1 /fyls/Admin/Leave/doadd_leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001990s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002011s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.1026s ]
+NOTIC: [8] Undefined index: validate D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `form_leave` (`applicant`,`leave_reason`,`start_time`,`end_time`,`uid`) VALUES ('阿斯顿','奥术大师多','2018-03-16 00:00:00','2018-03-31 00:00:00','0') [ RunTime:0.0753s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002123s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002239s ]
+
+[ 2018-03-17T15:10:54+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0163s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0897s ]
+SQL: SELECT * FROM `form_leave` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0707s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004792s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004940s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 183 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070893s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.042540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.042655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001473s ]
+

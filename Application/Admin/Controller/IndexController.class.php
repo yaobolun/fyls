@@ -6,7 +6,7 @@ class IndexController extends Controller {
 	public function index(){
     	if($_SESSION['id']=='')
     	{
-    	echo	$this->jump('请登录',"Index/login");
+    		echo	$this->jump('请登录',"Index/login");
     	}else {
 			// $news=M('news');//实例化数据表
 			// $count=$news->count();// 查询满足要求的总记录数
@@ -29,13 +29,6 @@ class IndexController extends Controller {
 		if(!empty($_POST['sub']))
 		{
 			$data=M('Admin_user');
-
-			$map['Name']=$_POST['name'];
-			
-			$map['password']=md5($_POST['password']);
-			 // print_r($map['password']);die;
-			if($map['Name']=='')
-
 			$map['name']=$_POST['name'];
 			
 			$map['password']=md5($_POST['password']);
@@ -49,11 +42,10 @@ class IndexController extends Controller {
 			{
 				$value	=	$data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
-
-				$_SESSION['Name']	=	$value['Name'];
+				$_SESSION['name']	=	$value['name'];
+				$_SESSION['department_id'] = $value['department_id'];
 				
-				echo	$this->jump('登陆成功',"Product/product");
-				
+				echo	$this->jump('登陆成功',"Department/department");
 			}
 			else
 			{
