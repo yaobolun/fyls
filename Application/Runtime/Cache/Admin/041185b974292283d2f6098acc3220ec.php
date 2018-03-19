@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <title>后台登录</title>
 <meta name="author" content="DeathGhost" />
-<link rel="stylesheet" type="text/css" href="/zjtr/Public/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css" />
 <style>
 body{height:100%;background:#16a085;overflow:hidden;}
 canvas{z-index:-1;position:absolute;}
 </style>
-<script src="/zjtr/Public/admin/js/jquery.js"></script>
-<script src="/zjtr/Public/admin/js/verificationNumbers.js"></script>
-<script src="/zjtr/Public/admin/js/Particleground.js"></script>
+<script src="/fyls/Public/admin/js/jquery.js"></script>
+<script src="/fyls/Public/admin/js/verificationNumbers.js"></script>
+<script src="/fyls/Public/admin/js/Particleground.js"></script>
 <script>
 $(document).ready(function() {
   //粒子背景特效

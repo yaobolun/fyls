@@ -33,6 +33,7 @@ class TransferController extends Controller {
 			$map['transfer_account']=$_POST['transfer_account'];
 			$map['transfer_note']=$_POST['transfer_note'];
 			$map['transfer_paid']=$_POST['transfer_paid'];
+			$map['transfer_pic']=$_POST['transfer_pic'];
 			$map['transfer_information']=$_POST['transfer_information'];
 			$map=$transfer->create();
 			if($_FILES['transfer_pic']['tmp_name']){
@@ -76,6 +77,7 @@ class TransferController extends Controller {
 			$map['transfer_account']=$_POST['transfer_account'];
 			$map['transfer_note']=$_POST['transfer_note'];
 			$map['transfer_paid']=$_POST['transfer_paid'];
+			$map['transfer_pic']=$_POST['transfer_pic'];
 			$map['transfer_information']=$_POST['transfer_information'];
 			$val=$transfer->where("id=".$id)->save($map);
 			if($val)
@@ -105,7 +107,6 @@ class TransferController extends Controller {
         return false;
           //return  $upload->getError();
       }else{// 上传成功 获取上传文件信息
-        
           return $info['savepath'].$info['savename'];
       }
   }
@@ -130,10 +131,7 @@ class TransferController extends Controller {
 	public function info(){
 		$transfer=M('transfer');
 		$id=$_GET['id'];
-		$count=$transfer->count();// 查询满足要求的总记录数
-		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
-		$show= $Page->show();// 分页显示输出
-		$arr=$transfer->where("id=".$id)->limit($Page->firstRow.','.$Page->listRows)->select();
+		$arr=$transfer->where("id=".$id)->select();
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->display();

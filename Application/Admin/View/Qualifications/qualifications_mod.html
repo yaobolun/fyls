@@ -9,7 +9,44 @@
      <section>
      <form action="" method="post"  enctype="multipart/form-data">
       <ul class="ulColumn2">
-        <li>
+      <table class="table">
+      <tr>
+        <th>日期</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="到账的年月日" name="qualifications_date" value="{$sel.qualifications_date}" required="required"/></td>
+        <th>市场部客服</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="市场部客服公司内部人员可选" name="qualifications_customer" value="{$sel.qualifications_customer}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>申请人</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人联系方式" name="qualifications_applicant" value="{$sel.qualifications_applicant}" required="required"/></td>
+        <th>企业名称</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="公司名称" name="qualifications_enterprise" value="{$sel.qualifications_enterprise}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>资质名称</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="资质名称" name="qualifications_aptitude" value="{$sel.qualifications_aptitude}" required="required"/></td>
+        <th>本次到账日期</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="资金到账的年月日时分" name="qualifications_arrival" value="{$sel.qualifications_arrival}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>合同价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="按照合同价格" name="qualifications_contract" value="{$sel.qualifications_contract}" required="required"/></td>
+        <th>已到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="已经到账的金额" name="qualifications_money" value="{$sel.qualifications_money}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>到账账户</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="到账的账户" name="qualifications_account" value="{$sel.qualifications_account}" required="required"/></td>
+        <th>本次到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="qualifications_bmoney" value="{$sel.qualifications_bmoney}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>公关费</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="公关费" name="qualifications_relations" value="{$sel.qualifications_relations}" required="required"/></td>
+        <th>备注</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="qualifications_remarks" value="{$sel.qualifications_remarks}" required="required"/></td>
+      </tr>
+        <!-- <li>
         <span class="item_name" style="width:120px;">日期：</span>
         <input type="text" class="textbox textbox_295" placeholder="到账的年月日" name="qualifications_date" value="{$sel.qualifications_date}"/>
        </li>
@@ -55,8 +92,9 @@
        </li>
        <li>
         <span class="item_name" style="width:120px;">备注：</span>
-        <input type="text" class="textbox textbox_295" placeholder="说明" name="qualifications_remarks" value="{$sel.qualifications_remarks}"/>
-       </li>
+        <textarea type="text" class="textbox textbox_295" placeholder="说明" name="qualifications_remarks" value="{$sel.qualifications_remarks}"/></textarea>
+       </li> -->
+       </table>
       <input type="hidden" name='id' value="{$sel.id}"/>
        <li>
         <span class="item_name" style="width:120px;"></span>
