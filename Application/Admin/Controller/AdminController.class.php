@@ -16,12 +16,19 @@ class AdminController extends Controller {
 
 	public function admin(){
 		$admin=M('admin_user');
+<<<<<<< HEAD
 		$count=$admin->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 
 		$arr=$admin->where('flag = 0 and administration = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
 
+=======
+		$count=$admin->where("flag = 0")->count();// 查询满足要求的总记录数
+		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+		$show= $Page->show();// 分页显示输出
+		$arr=$admin->where('flag = 0 and administration = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
+>>>>>>> origin/yaobolun
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->display();
@@ -31,6 +38,7 @@ class AdminController extends Controller {
 			$admin=M('admin_user');
 			$map['name']=$_POST['name'];
 			$map['password']=md5($_POST['password']);
+<<<<<<< HEAD
 
 			$map['administration'] = 0;
 			$map['time'] = date("Y-m-d H:i:s");
@@ -38,12 +46,22 @@ class AdminController extends Controller {
 			$em2=$admin->where("name='".$map['name']."'")->select();
 
 
+=======
+			$map['administration'] = 0;
+			$map['time'] = date("Y-m-d H:i:s");
+			$map['updatetime'] = date("Y-m-d H:i:s");
+			$em2=$admin->where("name='".$map['name']."' and flag = 0")->select();
+>>>>>>> origin/yaobolun
 			if($em2) {
 				echo $this->jump("The administrator name cannot be repeated","Admin/admin_add");
 			}
 			else{
 				$query=$admin->add($map);
 				if($query>0){
+<<<<<<< HEAD
+=======
+					
+>>>>>>> origin/yaobolun
 					echo $this->jump('添加成功','Admin/admin');
 				}
 				else{
@@ -63,7 +81,10 @@ class AdminController extends Controller {
 			$id = $_GET['id'];
 		 	$user['flag'] = 1; 
 		 	$val=$admin->where("flag = 0 and id = ".$id )->save($user);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/yaobolun
 			if($val>0)
 			{
 				echo $this->jump("删除成功","Admin/admin");
@@ -75,7 +96,6 @@ class AdminController extends Controller {
 		}
 	}
 	//数据修改
-
 	public function admin_update(){
 		$admin=M('admin_user');
 		if (!empty($_POST['sub'])) {

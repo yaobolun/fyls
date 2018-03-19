@@ -5,12 +5,16 @@
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/yaobolun
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<<<<<<< HEAD
 =======
 <link rel="stylesheet" type="text/css" href="/zjtr/Public/admin/css/style.css">
 <!--[if lt IE 9]>
@@ -19,6 +23,8 @@
 <script src="/zjtr/Public/admin/js/jquery.js"></script>
 <script src="/zjtr/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
 >>>>>>> origin/liushuai
+=======
+>>>>>>> origin/yaobolun
 <script>
 
 	(function($){
@@ -47,16 +53,22 @@
 <!--header-->
 <header>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/yaobolun
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
   <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
+<<<<<<< HEAD
 =======
  <h1><img src="/zjtr/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
   <li><a href="/zjtr/index.php/" target="_blank" class="website_icon">站点首页</a></li>
   <li><a href="/zjtr/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
 >>>>>>> origin/liushuai
+=======
+>>>>>>> origin/yaobolun
  </ul>
 </header>
 <!--aside nav-->
@@ -67,6 +79,9 @@
   <li>
    <dl>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/yaobolun
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
     <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
@@ -74,6 +89,7 @@
     <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
     <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
+<<<<<<< HEAD
 =======
     <dt>新闻&产品</dt>
     <!--当前链接则添加class:active-->
@@ -83,26 +99,37 @@
     <dd><a href="/zjtr/admin.php/Pclass/col">产品分类</a></dd>
     <dd><a href="/zjtr/admin.php/Col/col">产品颜色</a></dd>
 >>>>>>> origin/liushuai
+=======
+>>>>>>> origin/yaobolun
 
    </dl>
   </li>
   <li>
    <dl>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/yaobolun
     <dt>请假管理</dt>
     <dd><a href="/fyls/admin.php/Member/member">请假列表</a></dd>
     <dd><a href="/fyls/admin.php/Member/member">外出列表</a></dd>
    <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
+<<<<<<< HEAD
 =======
     <dt>会员管理</dt>
     <dd><a href="/zjtr/admin.php/Member/member">会员列表</a></dd>
    <!--  <dd><a href="/zjtr/admin.php/Member/guest">留言列表</a></dd> -->
 >>>>>>> origin/liushuai
+=======
+>>>>>>> origin/yaobolun
    </dl>
   </li>
   <li>
    <dl>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/yaobolun
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Order/order">快递列表</a></dd>
    </dl>
@@ -128,6 +155,7 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+<<<<<<< HEAD
 =======
     <dt>订单信息</dt>
     <dd><a href="/zjtr/admin.php/Order/order">订单列表</a></dd>
@@ -158,6 +186,8 @@
     <dt>后台登录设置</dt>
     <dd><a href="/zjtr/admin.php/Admin/admin">管理员</a></dd>
 >>>>>>> origin/liushuai
+=======
+>>>>>>> origin/yaobolun
    </dl>
   </li>
   <li>
@@ -172,10 +202,14 @@
       <div class="page_title">
        <h2 class="fl">管理员添加</h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
        <a class="fr top_rt_btn" href="/fyls/Admin/Admin/admin">返回管理员列表</a>
 =======
        <a class="fr top_rt_btn" href="/zjtr/Admin/Admin/admin">返回管理员列表</a>
 >>>>>>> origin/liushuai
+=======
+       <a class="fr top_rt_btn" href="/fyls/Admin/Admin/admin">返回管理员列表</a>
+>>>>>>> origin/yaobolun
       </div>
      <section>
      <form action="" method="post" enctype="multipart/form-data">
@@ -201,10 +235,14 @@
  </div>
 </section>
 <<<<<<< HEAD
+<<<<<<< HEAD
  <script src="/fyls/Public/admin/js/jquery.js"></script>
 =======
  <script src="/zjtr/Public/admin/js/jquery.js"></script>
 >>>>>>> origin/liushuai
+=======
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+>>>>>>> origin/yaobolun
 <script language="javascript">  
 
   function yz(){

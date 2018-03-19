@@ -95,6 +95,10 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+<<<<<<< HEAD
+=======
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+>>>>>>> origin/yaobolun
    </dl>
   </li>
   <li>
@@ -103,7 +107,10 @@
  </ul>
 </aside>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/yaobolun
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">

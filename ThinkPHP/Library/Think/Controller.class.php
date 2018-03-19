@@ -302,6 +302,13 @@ abstract class Controller {
         // 执行后续操作
         Hook::listen('action_end');
     }
+    //日志
+    public function journal($name,$do,$thing){
+        $journal = M("journal");
+        $map['journal'] = $name.$do.$thing;
+        $query=$journal->add($map);
+        // var_dump($journal);exit;
+    }
 }
 // 设置控制器别名 便于升级
 class_alias('Think\Controller','Think\Action');

@@ -52,11 +52,7 @@
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
-<<<<<<< HEAD
-    <dd><a href="/fyls/admin.php/Product/product">请转账</a></dd>
-=======
     <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
->>>>>>> origin/yaobolun
     
     <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
     <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
@@ -107,45 +103,40 @@
  </ul>
 </aside>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/yaobolun
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">部门添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Department/department">返回部门列表</a>
+       <h2 class="fl">岗位列表</h2>
+       
+       <a href="/fyls/Admin/Station/add" class="fr top_rt_btn add_icon">添加岗位</a>
       </div>
-     <section>
-     <form action="" method="post" enctype="multipart/form-data">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:120px;">部门名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" />
-         
-       </li>
+      <table class="table">
+       <tr>
+        <th>编号</th>
+        <th>部门名称</th>
+        <th>岗位名称</th>
+        <th>最后修改时间</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($Re)): $i = 0; $__LIST__ = $Re;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$Re): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($key+1); ?></td>
+        <td class="center">
+          <?php echo ($Re["department_name"]); ?>
+        </td>
+        <td class="center"><?php echo ($Re["station_name"]); ?></td>
+        <td class="center"><?php echo ($Re["updatetime"]); ?></td>
         
-       <li>
-        <span class="item_name" style="width:120px;"></span>
-        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
-       </li>
-      </ul>
-      </form>
-     </section>
+        <td class="center">
+         <a href="/fyls/Admin/Station/update?id=<?php echo ($Re["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="/fyls/Admin/Station/del?id=<?php echo ($Re["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">  
-
-  function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
-    {
-      alert('User name cannot be empty and no less than 1 bits');
-      return false;
-    }
-  }
-  
-</script>
 </body>
 </html>

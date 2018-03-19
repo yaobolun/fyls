@@ -8,7 +8,6 @@ class IndexController extends Controller {
     	{
     	echo	$this->jump('请登录',"Index/login");
     	}else {
-
 			// $news=M('news');//实例化数据表
 			// $count=$news->count();// 查询满足要求的总记录数
 			// $Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
@@ -30,11 +29,12 @@ class IndexController extends Controller {
 		if(!empty($_POST['sub']))
 		{
 			$data=M('Admin_user');
-			$map['Name']=$_POST['name'];
+
+			$map['name']=$_POST['name'];
 			
 			$map['password']=md5($_POST['password']);
 			 // print_r($map['password']);die;
-			if($map['Name']=='')
+			if($map['name']=='')
 			{
 				echo $this->jump('请输入用户名',"login");
 			}
@@ -43,9 +43,10 @@ class IndexController extends Controller {
 			{
 				$value	=	$data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
-				$_SESSION['Name']	=	$value['Name'];
+
+				$_SESSION['name']	=	$value['name'];
 				
-				echo	$this->jump('登陆成功',"Product/product");
+				echo	$this->jump('登陆成功',"Department/department");
 			}
 			else
 			{

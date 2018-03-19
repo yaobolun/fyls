@@ -52,25 +52,42 @@
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
+<<<<<<< HEAD
     <dd><a href="/fyls/admin.php/Product/product">新闻</a></dd>
     
     <dd><a href="/fyls/admin.php/New/news">产品</a></dd>
     <dd><a href="/fyls/admin.php/Pclass/col">产品分类</a></dd>
     <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
+    
+    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
+    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
+    <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
+>>>>>>> origin/yaobolun
 
    </dl>
   </li>
   <li>
    <dl>
     <dt>请假管理</dt>
+<<<<<<< HEAD
     <dd><a href="/fyls/admin.php/Member/member">会员列表</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Member/member">请假列表</a></dd>
+    <dd><a href="/fyls/admin.php/Member/member">外出列表</a></dd>
+>>>>>>> origin/yaobolun
    <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
    </dl>
   </li>
   <li>
    <dl>
     <dt>快递信息</dt>
+<<<<<<< HEAD
     <dd><a href="/fyls/admin.php/Order/order">订单列表</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Order/order">快递列表</a></dd>
+>>>>>>> origin/yaobolun
    </dl>
   </li>  
   <!-- <li>
@@ -94,6 +111,10 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+<<<<<<< HEAD
+=======
+    <dd><a href="/fyls/admin.php/People/people">权限管理</a></dd>
+>>>>>>> origin/yaobolun
    </dl>
   </li>
   <li>

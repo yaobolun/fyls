@@ -52,11 +52,7 @@
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
-<<<<<<< HEAD
-    <dd><a href="/fyls/admin.php/Product/product">请转账</a></dd>
-=======
     <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
->>>>>>> origin/yaobolun
     
     <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
     <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
@@ -99,6 +95,7 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
    </dl>
   </li>
   <li>
@@ -107,23 +104,37 @@
  </ul>
 </aside>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/yaobolun
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">部门添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Department/department">返回部门列表</a>
+       <h2 class="fl">管理员添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Admin/admin">返回管理员列表</a>
       </div>
      <section>
      <form action="" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
        <li>
-        <span class="item_name" style="width:120px;">部门名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" />
+        <span class="item_name" style="width:120px;">员工名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
          
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">部门：</span>
+        <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" />
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">岗位：</span>
+        <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" />
+        
        </li>
         
        <li>
@@ -142,6 +153,11 @@
     if($("#name").val()==''||$("#name").val().length<1)
     {
       alert('User name cannot be empty and no less than 1 bits');
+      return false;
+    }
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
       return false;
     }
   }
