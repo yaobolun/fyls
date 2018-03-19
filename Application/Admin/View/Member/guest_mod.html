@@ -1,0 +1,53 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">留言详细内容</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Member/guest">返回</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">用户名 ：</span>
+        <input type="text" class="textbox textbox_295" value="{$sel.name}" name="Name" readonly="readonly"/> <span style="color:red"> </span>
+         
+       </li>
+     <li>
+        <span class="item_name" style="width:120px;">邮箱：</span>
+         <input type="text" class="textbox textbox_295" value="{$sel.email}" name="Email"  readonly="readonly"/>
+        
+       </li>
+      
+       <li>
+        <span class="item_name" style="width:120px;">电话：</span>
+         <input type="text" class="textbox textbox_295" value="{$sel.phone}" name="Phone" readonly="readonly"/>
+        
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">单位：</span>
+         <input type="text" class="textbox textbox_295" value="{$sel.company}" name="company"  readonly="readonly"/>
+        
+       </li>
+      
+        
+        <li>
+        <span class="item_name" style="width:120px;">留言：</span>
+         <textarea cols="40" placeholder='{$sel.message}' rows="10" class="Textare" id="message" name="Message"  readonly="readonly"/></textarea>
+        
+       </li>
+      
+      
+     <!--   <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li> -->
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>

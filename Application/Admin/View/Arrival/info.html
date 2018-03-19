@@ -1,0 +1,74 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.d{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">转账申请详细信息</h2>
+       <a href="__ROOT__/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
+      </div>
+      <table class="table">
+      <volist name='arr' id='arr'>
+        <tr>
+        <th>申请人</th>
+        <td class="center d" title="{$arr.arrival_applicant}">{$arr.arrival_applicant}</td>
+        <th>到账公司账号</th>
+        <td class="center d" title="{$arr.arrival_account}">{$arr.arrival_account}</td>
+        </tr>
+        <tr>
+        <th>到账时间</th>
+        <td class="center d" title="{$arr.arrival_time}">{$arr.arrival_time}</td>
+        <th>到账金额</th>
+        <td class="center d" title="{$arr.arrival_money}">{$arr.arrival_money}</td>
+        </tr>
+        <tr>
+        <th>已付金额</th>
+        <td class="center d" title="{$arr.arrival_paid}">{$arr.arrival_paid}</td>
+        <th>合同价格</th>
+        <td class="center d" title="{$arr.arrival_contract}">{$arr.arrival_contract}</td>
+        </tr>
+        <tr>
+        <th>配备企业</th>
+        <td class="center d" title="{$arr.arrival_equip}">{$arr.arrival_equip}</td>
+        <th>备注</th>
+        <td class="center d" title="{$arr.arrival_remarks}">{$arr.arrival_remarks}</td>
+        </tr>
+        <tr>
+        <th>企业价格</th>
+        <td class="center d" title="{$arr.arrival_enterprise}">{$arr.arrival_enterprise}</td>
+        <th>签约年限</th>
+        <td class="center d" title="{$arr.arrival_contrac}">{$arr.arrival_contrac}</td>
+        </tr>
+        <tr>
+        <th>配备人才</th>
+        <td class="center d" title="{$arr.arrival_qualified}">{$arr.arrival_qualified}</td>
+        <th>级别</th>
+        <td class="center d" title="{$arr.arrival_level}">{$arr.arrival_level}</td>
+        </tr>
+        <tr>
+        <th>专业</th>
+        <td class="center d" title="{$arr.arrival_major}">{$arr.arrival_major}</td>
+        <th>人才价格</th>
+        <td class="center d" title="{$arr.arrival_talent}">{$arr.arrival_talent}</td>
+        </tr>
+        <tr>
+        <th>客服</th>
+        <td class="center d" title="{$arr.arrival_customer}">{$arr.arrival_customer}</td>
+        </tr>
+      </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

@@ -4,12 +4,21 @@
 <meta charset="utf-8"/>
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+=======
+<link rel="stylesheet" type="text/css" href="/zjtr/Public/admin/css/style.css">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<script src="/zjtr/Public/admin/js/jquery.js"></script>
+<script src="/zjtr/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+>>>>>>> origin/liushuai
 <script>
 
 	(function($){
@@ -37,10 +46,17 @@
 <body>
 <!--header-->
 <header>
+<<<<<<< HEAD
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
   <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
+=======
+ <h1><img src="/zjtr/Public/admin/images/admin_logo.png"/></h1>
+ <ul class="rt_nav">
+  <li><a href="/zjtr/index.php/" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="/zjtr/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
+>>>>>>> origin/liushuai
  </ul>
 </header>
 <!--aside nav-->
@@ -50,6 +66,7 @@
  <ul>
   <li>
    <dl>
+<<<<<<< HEAD
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
     <dd><a href="/fyls/admin.php/Product/product">新闻</a></dd>
@@ -57,18 +74,34 @@
     <dd><a href="/fyls/admin.php/New/news">产品</a></dd>
     <dd><a href="/fyls/admin.php/Pclass/col">产品分类</a></dd>
     <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd>
+=======
+    <dt>新闻&产品</dt>
+    <!--当前链接则添加class:active-->
+    <dd><a href="/zjtr/admin.php/Product/product">新闻</a></dd>
+    
+    <dd><a href="/zjtr/admin.php/New/news">产品</a></dd>
+    <dd><a href="/zjtr/admin.php/Pclass/col">产品分类</a></dd>
+    <dd><a href="/zjtr/admin.php/Col/col">产品颜色</a></dd>
+>>>>>>> origin/liushuai
 
    </dl>
   </li>
   <li>
    <dl>
+<<<<<<< HEAD
     <dt>请假管理</dt>
     <dd><a href="/fyls/admin.php/Member/member">会员列表</a></dd>
    <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
+=======
+    <dt>会员管理</dt>
+    <dd><a href="/zjtr/admin.php/Member/member">会员列表</a></dd>
+   <!--  <dd><a href="/zjtr/admin.php/Member/guest">留言列表</a></dd> -->
+>>>>>>> origin/liushuai
    </dl>
   </li>
   <li>
    <dl>
+<<<<<<< HEAD
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Order/order">订单列表</a></dd>
    </dl>
@@ -94,6 +127,36 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Admin/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/Admin/people">人员管理</a></dd>
+=======
+    <dt>订单信息</dt>
+    <dd><a href="/zjtr/admin.php/Order/order">订单列表</a></dd>
+   </dl>
+  </li>  
+  <li>
+   <dl>
+    <dt>网站栏目管理</dt>
+    <dd><a href="/zjtr/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
+   </dl>
+  </li>
+ <li>
+  <dl>
+    <dt>前台内容显示设置</dt>
+    <!-- <dd><a href="/zjtr/admin.php/Top/ab">About Us</a></dd>
+    <dd><a href="/zjtr/admin.php/Top/co">Contact Us</a></dd> -->
+    <dd><a href="/zjtr/admin.php/Top/emph">公司信息</a></dd>
+    <dd><a href="/zjtr/admin.php/Top/banner">轮播图</a></dd>
+    <dd><a href="/zjtr/admin.php/Top/scfw?id=26">商城服务</a></dd>
+   <!--  <dd><a href="/zjtr/admin.php/Top/od">Samples and Discounts</a></dd> -->
+    <!-- <dd><a href="/zjtr/admin.php/Top/client">clients</a></dd> -->
+  <!--   <dd><a href="/zjtr/admin.php/Top/rl">Custom Research and Services</a></dd> -->
+   <!-- <dd><a href="/zjtr/admin.php/Top/sg">Shopping Guide</a></dd> -->
+   </dl>
+   </li>
+   <li>
+   <dl>
+    <dt>后台登录设置</dt>
+    <dd><a href="/zjtr/admin.php/Admin/admin">管理员</a></dd>
+>>>>>>> origin/liushuai
    </dl>
   </li>
   <li>
@@ -108,9 +171,15 @@
       <div class="page_title">
        <h2 class="fl">新闻列表</h2>
        
+<<<<<<< HEAD
        <a href="/fyls/Admin/Product/product_add" class="fr top_rt_btn add_icon">添加新闻</a>
   <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
        <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
+=======
+       <a href="/zjtr/Admin/Product/product_add" class="fr top_rt_btn add_icon">添加新闻</a>
+  <!--      <a href="/zjtr/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
+       <a href="/zjtr/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
+>>>>>>> origin/liushuai
       </div>
       <section class="mtb">
        <form action="" method="post">
@@ -132,6 +201,7 @@
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+<<<<<<< HEAD
         <td class="center"></td>
         <td style="text-align: justify;"></td>
         <td style="text-align: justify;" ></td>
@@ -143,6 +213,19 @@
         <td class="center">
          <a href="/fyls/Admin/Product/product_mod?id=<?php echo ($arr["type_id"]); ?>" title="编辑" class="link_icon">&#101;</a>
          <a href="/fyls/Admin/Product/product_del?id=<?php echo ($arr["type_id"]); ?>" title="删除" class="link_icon">&#100;</a>
+=======
+        <td class="center"><?php echo ($key+1); ?></td>
+        <td style="text-align: justify;"><?php echo (substr(htmlspecialchars_decode($arr["title"]),0,30)); ?></td>
+        <td style="text-align: justify;" ><?php echo (substr(htmlspecialchars_decode($arr["abstract"]),0,60)); ?></td>
+<!-- 
+        <td class="center"><?php echo ($arr["time"]); ?></td> -->
+        <td class="center"><?php echo ($arr["type"]); ?></td>
+      
+      
+        <td class="center">
+         <a href="/zjtr/Admin/Product/product_mod?id=<?php echo ($arr["type_id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="/zjtr/Admin/Product/product_del?id=<?php echo ($arr["type_id"]); ?>" title="删除" class="link_icon">&#100;</a>
+>>>>>>> origin/liushuai
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       

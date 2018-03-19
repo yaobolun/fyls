@@ -135,7 +135,11 @@ header .rt_nav li .quit_icon:before{content:"Q";}
 .group_btn:active{background:#0c9c6e;border:1px #0e8f61 solid;}
 .page_title{height:40px;line-height:40px;border-bottom:1px #b6b6b6 solid;margin:10px 0;}
 .page_title h2{font-size:15px;font-weight:bold;}
+<<<<<<< HEAD
 .page_title .top_rt_btn{display:inline-block;height:30px;line-height:30px;padding:0 15px;border:1px #d2d2d2 solid;background:#f8f8f8;color:#3e8bc2; vertical-align:middle;cursor:pointer;}
+=======
+.page_title .top_rt_btn{display:inline-block;height:30px;line-height:30px;padding:0 15px;border:1px #d2d2d2 solid;background:#f8f8f8;color:#19a97b; vertical-align:middle;cursor:pointer;}
+>>>>>>> origin/liushuai
 .table{width:100%;table-layout:fixed;margin:5px 0;}
 .table th{border:1px #d2d2d2 solid;height:40px;line-height:40px;}
 .table td{border:1px #d2d2d2 solid;padding:10px 8px;position:relative;}
@@ -149,6 +153,7 @@ header .rt_nav li .quit_icon:before{content:"Q";}
 .table td .inner_btn{background:#F9F;color:white;padding:5px 8px;border-radius:2px;}
 .table td .inner_btn:hover{background:#ffa4ff;color:#f8f8f8;}
 .table td .cut_title{width:265px;}
+
 .table td .link_icon{font-size:24px;font-family:'adminthemesregular';color:#3e8bc2;}
 .table td .link_icon:hover{color:#019163;}
 .current{  border:1px #fff solid;padding:5px 8px;}
