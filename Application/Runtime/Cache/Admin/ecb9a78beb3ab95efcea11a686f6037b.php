@@ -131,45 +131,46 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">我要请假</h2>
+       <h2 class="fl">假条详情</h2>
        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
       </div>
      <section>
- <form action="/fyls/Admin/Travel/doadd_travel" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
-       </li>
-      </ul>
-      </form>
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>员工请假单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">请假人：</td>
+            <td style="width:100px;"><?php echo ($find["applicant"]); ?></td>
+            <td style="width:60px;">所属部门：</td>
+            <td style="width:100px;"><?php echo ($bmname["department_name"]); ?></td>
+          </tr>
+          <tr>
+            <td>请假理由：</td>
+            <td colspan="3"><?php echo ($find["leave_reason"]); ?></td>
+          </tr><tr>
+            <td>请假时间：</td>
+            <td colspan="2"><?php echo ($find["start_time"]); ?>&nbsp;&nbsp; 到 &nbsp;&nbsp;<?php echo ($find["end_time"]); ?></td>
+            <!-- <td></td> -->
+            <td>共 &nbsp;&nbsp;<?php echo ($day); ?>&nbsp;&nbsp; 天</td>
+          </tr><tr>
+            <td>部门主管</td>
+            <td>
+			
+            </td>
+            <td>人事经理</td>
+            <td>
 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
+      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
      </section>
  </div>
 </section>
@@ -193,6 +194,16 @@
         ,type: 'datetime'
       });
     });
+
+    function yes()
+    {
+    	 var a=confirm("确认通过吗?");
+      	  if(a){
+
+          location.href = "update";
+      		}
+    }
+
 </script>
 </body>
 </html>

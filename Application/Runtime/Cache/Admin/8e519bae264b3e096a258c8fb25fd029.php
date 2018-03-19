@@ -5,13 +5,18 @@
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
+
+
 <link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
+
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
 <script src="/fyls/Public/layui/layui.js" charset="utf-8"></script>
+
 <script>
 
 	(function($){
@@ -45,38 +50,49 @@
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
-<!--aside nav-->
-<!--aside nav-->
 <aside class="lt_aside_nav content mCustomScrollbar">
-  
- <ul>
+
+ <uhl>
+ <li>
+   <dl>
+    <dt>审批列表</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
+    <dd><a href="/fyls/admin.php/Approval/travel">外出审批</a></dd>
+    </dl>
+  </li>
   <li>
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
-    <dd><a href="/fyls/admin.php/Product/product">新闻</a></dd>
-    
-    <dd><a href="/fyls/admin.php/New/news">产品</a></dd>
-    <dd><a href="/fyls/admin.php/Pclass/col">产品分类</a></dd>
-    <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd>
+    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+    </dl>
+  </li>
+  <li>
+   <dl>
+    <dt> 请假 | 外出 </dt>
+
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
 
    </dl>
   </li>
   <li>
    <dl>
-    <dt> 请假 | 外出 </dt>
-    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
-    <dd><a href="/fyls/admin.php/Leave/leave_list">请假列表</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
-   </dl>
-  </li>
-  <li>
-   <dl>
     <dt>快递信息</dt>
+
     <dd><a href="/fyls/admin.php/Order/order">订单列表</a></dd>
+    <dd><a href="/fyls/admin.php/Order/order">快递列表</a></dd>
    </dl>
   </li>
+
+    
+   </dl>
+  </li>  
+
   <!-- <li>
    <dl>
     <dt>网站栏目管理</dt>
@@ -95,6 +111,14 @@
    <dl>
     <dt>后台登录设置</dt>
     <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
+
+    <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
+    <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
+    <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    
+
+
    </dl>
   </li>
   <li>

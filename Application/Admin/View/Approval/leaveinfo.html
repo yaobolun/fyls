@@ -1,0 +1,81 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">假条详情</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
+      </div>
+     <section>
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>员工请假单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">请假人：</td>
+            <td style="width:100px;">{$find.applicant}</td>
+            <td style="width:60px;">所属部门：</td>
+            <td style="width:100px;">{$bmname.department_name}</td>
+          </tr>
+          <tr>
+            <td>请假理由：</td>
+            <td colspan="3">{$find.leave_reason}</td>
+          </tr><tr>
+            <td>请假时间：</td>
+            <td colspan="2">{$find.start_time}&nbsp;&nbsp; 到 &nbsp;&nbsp;{$find.end_time}</td>
+            <!-- <td></td> -->
+            <td>共 &nbsp;&nbsp;{$day}&nbsp;&nbsp; 天</td>
+          </tr><tr>
+            <td>部门主管</td>
+            <td>
+			
+            </td>
+            <td>人事经理</td>
+            <td>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
+      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
+     </section>
+ </div>
+</section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
+    {
+    	 var a=confirm("确认通过吗?");
+      	  if(a){
+
+          location.href = "update";
+      		}
+    }
+
+</script>
+</body>
+</html>

@@ -3498,8 +3498,11 @@ INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/yaobolun
+=======
+>>>>>>> origin/zhiwang
 [ 2018-03-14T16:48:34+08:00 ] ::1 /fyls/
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
@@ -3575,4 +3578,8 @@ INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 =======
 >>>>>>> origin/liushuai
 =======
+<<<<<<< HEAD
 >>>>>>> origin/yaobolun
+=======
+>>>>>>> origin/liushuai
+>>>>>>> origin/zhiwang

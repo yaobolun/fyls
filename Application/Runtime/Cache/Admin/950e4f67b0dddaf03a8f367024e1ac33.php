@@ -115,10 +115,17 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/323984d28b26169905472d43989d6c70.php
+<<<<<<< HEAD
+=======
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+>>>>>>> origin/yaobolun
+=======
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     
 
 
+>>>>>>> origin/zhiwang:Application/Runtime/Cache/Admin/950e4f67b0dddaf03a8f367024e1ac33.php
    </dl>
   </li>
   <li>
@@ -127,72 +134,75 @@
  </ul>
 </aside>
 
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/323984d28b26169905472d43989d6c70.php
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/yaobolun
+=======
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+>>>>>>> origin/zhiwang:Application/Runtime/Cache/Admin/950e4f67b0dddaf03a8f367024e1ac33.php
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">我要请假</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">请假审批</h2>
+       
+       <a href="#" class="fr top_rt_btn add_icon">啊啊啊</a>
+  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
+       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
       </div>
-     <section>
- <form action="/fyls/Admin/Travel/doadd_travel" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
-       </li>
-      </ul>
-      </form>
+      <section class="mtb">
 
-     </section>
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
+
+      </section>
+      <table class="table">
+       <tr>
+
+        <th>申请人</th>
+        <th>请假开始时间</th>
+        <th>请假结束时间</th>
+        <th>请假理由</th>
+        <th>假条详情</th>
+       </tr>
+       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($show["applicant"]); ?></td>
+        <td class="center"><?php echo ($show["start_time"]); ?></td>
+        <td class="center"><?php echo ($show["end_time"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["leave_reason"]); ?>"><?php echo ($show["leave_reason"]); ?></td>
+
+        <td class="center">
+         <a href="/fyls/Admin/Approval/leaveinfo?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+        </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
 
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-</script>
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
 </body>
 </html>

@@ -10,5 +10,7 @@ return array(
 'DB_PREFIX' => '', // 数据库表前缀 
 'DB_CHARSET'=> 'utf8', // 字符集
 'HOME_PATH'=>'/fyls/Admin'
-	//'配置项'=>'配置值'
+'HOME_PATH'=>'Admin',
+'TMPL_CACHE_ON' => false,//禁止模板编译缓存 
+'HTML_CACHE_ON' => false,//禁止静态缓存 
 );
