@@ -4,7 +4,7 @@
  <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">管理员添加</h2>
-       <a class="fr top_rt_btn" href="__ROOT__/Admin/Admin/admin">返回管理员列表</a>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/People/people">返回人员列表</a>
       </div>
      <section>
      <form action="" method="post" enctype="multipart/form-data">
@@ -22,7 +22,8 @@
 
        <li>
         <span class="item_name" style="width:120px;">部门：</span>
-        <select style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <option value="0">--请选择--</option>
           <foreach name="dep" item="department">
               <option  value="{$department.id}">
                     {$department.department_name}
@@ -35,7 +36,8 @@
 
        <li>
         <span class="item_name" style="width:120px;">岗位：</span>
-        <select style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+        <select name="station_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+          <option value="0">--请选择--</option>
           <foreach name="sta" item="station">
               <option  value="{$station.id}" >
                     {$station.station_name}
@@ -71,6 +73,24 @@
     }
   }
   
+</script>
+<script type="text/javascript">
+
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
+        url:"__ROOT__/admin.php/People/add",
+        type:'POST',
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+          alert(data);
+          var length = JSON.stringify(data.length);
+          alert(length);
+        }
+     });
+  }
+
 </script>
 </body>
 </html>

@@ -21,6 +21,19 @@ class AuthorityController extends Controller {
 		$arr=$authority->where('flag = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
+		//获取名称岗位
+		$sta_name = M("stations");
+		$sta_name = $sta_name->where("flag = 0")->select();
+		$this->assign('sta_name',$sta_name);
+		//获取岗位权限表
+		$have_auth = M("have_auth"); 
+		$result = $have_auth
+		->join("left join authority on authority.id = have_auth.auth_id")
+		->join("left join stations on stations.id = have_auth.station_id")
+		->field("stations.station_name,authority.authority")
+		->where("authority.flag = 0 and stations.flag = 0 and have_auth.flag = 0")->select();
+		// var_dump($result);exit;
+		$this->assign('tasks',$result);
 		$this->display();
     }
 
@@ -38,7 +51,7 @@ class AuthorityController extends Controller {
 				$query=$authority->add($map);
 			
 				if($query>0){
-					$this->journal($_SESSION['name'],'增加了权限',$_POST['authority']);
+					$this->journals($_SESSION['name'],'增加了权限',$_POST['authority']);
 					echo $this->jump('添加成功','Authority/authority');
 				}
 				else{
@@ -55,12 +68,32 @@ class AuthorityController extends Controller {
 	public function update(){
 		$authority=M('authority');
 		if (!empty($_POST['sub'])) {
-			$id=$_POST['id'];
-			$map['authority']=$_POST['title'];
-						
-			$val=$authority->where("id=".$id)->save($map);
+			$authname = array();
+			$id=$_POST['sta_id'];
+			$auth_name = $_POST['authority'];
+			//循环获取权限ID
+			foreach ($auth_name as $k => $v) {
+                $authname[] = $authority->where("flag = 0 and authority = '$v'")->field("id")->select();
+            } 
+            
+			// $map['authority']=$_POST['title'];
+			$have_auth = M("have_auth");
+			//删除原有权限
+			$del_auth = $have_auth->where("station_id = ".$id)->delete();
+			//增加新权限
+			foreach ($authname as $k => $v) {
+                        $auth = array();
+                        $auth['station_id'] = $id;
+                        $auth['delete_flag'] = 0;
+                        $auth['auth_id'] = $v[0]['id'];
+                        //现有权限
+                        // $new[]['auth_id'] = $v[0]['id'];
+                        $aa= $have_auth->where()->add($auth);
+                } 
+			// var_dump($aa);exit;		
+			// $val=$authority->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
-			if($val)
+			if($aa)
 			{
 				echo $this->jump("修改成功","Authority/authority");
 			}else {
@@ -71,6 +104,23 @@ class AuthorityController extends Controller {
 			$id=$_GET['id'];
 			$sel=$authority->where()->join()->find("$id");
 			$this->assign('sel',$sel);
+			//获得全部权限名称
+			
+			$auth_name = $authority->where("flag = 0")->select();
+			// var_dump($auth_name);exit;
+			$this->assign('auth_name',$auth_name);
+			//获得岗位ID对应的权限
+			$have_auth = M("have_auth");
+			$authority = $have_auth->join("LEFT JOIN authority ON authority.id = have_auth.auth_id")->where("station_id = ".$id)->select();
+			foreach ($authority as $k => $v) {
+                // $str = $str.",".implode(",",$v['authority']);
+                $str .= $v['authority'].',';
+                // var_dump($str);
+            }
+            // exit;
+            $this->assign("str",$str);
+            $this->assign("sta_id",$id);
+			$this->assign('authority',$authority);
 			$this->display();
 		}
 	}

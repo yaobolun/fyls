@@ -39,6 +39,7 @@ class StationController extends Controller {
 			$map['department_id']=$_POST['department_id'];
 			$map['updatetime'] = date("Y-m-d H:i:s");
 			$map['flag'] = 0;
+
 			$em2=$stations->where("station_name='".$map['station_name']."' and flag = 0 and department_id = ".$_POST['department_id'])->select();
 			if($em2) {
 				echo $this->jump("The administrator name cannot be repeated","Station/add");
@@ -64,8 +65,7 @@ class StationController extends Controller {
 		$admin=M('stations');
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
-			$map['station_name']=$_POST['title'];
-						
+			$map['station_name']=$_POST['title'];						
 			$val=$admin->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
 			if($val)
@@ -97,6 +97,7 @@ class StationController extends Controller {
 			}else 
 				{
 				echo $this->error("删除失败","Station/station");
+
 			}		
 
 		}

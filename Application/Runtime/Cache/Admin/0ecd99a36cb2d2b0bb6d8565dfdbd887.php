@@ -5,11 +5,13 @@
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
+<link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/fyls/Public/layui/layui.js" charset="utf-8"></script>
 <script>
 
 	(function($){
@@ -62,10 +64,12 @@
   </li>
   <li>
    <dl>
-    <dt>请假管理</dt>
-    <dd><a href="/fyls/admin.php/Member/member">请假列表</a></dd>
-    <dd><a href="/fyls/admin.php/Member/member">外出列表</a></dd>
-   <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
+
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
    </dl>
   </li>
   <li>
@@ -95,6 +99,8 @@
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
   <li>

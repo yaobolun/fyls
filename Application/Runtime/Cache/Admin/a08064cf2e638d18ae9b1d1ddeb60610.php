@@ -5,11 +5,13 @@
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
+<link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/fyls/Public/layui/layui.js" charset="utf-8"></script>
 <script>
 
 	(function($){
@@ -62,10 +64,12 @@
   </li>
   <li>
    <dl>
-    <dt>请假管理</dt>
-    <dd><a href="/fyls/admin.php/Member/member">请假列表</a></dd>
-    <dd><a href="/fyls/admin.php/Member/member">外出列表</a></dd>
-   <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
+
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
    </dl>
   </li>
   <li>
@@ -96,6 +100,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
   <li>
@@ -108,12 +113,24 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">权限名称修改</h2>
+       <h2 class="fl">权限修改</h2>
        <a class="fr top_rt_btn" href="/fyls/Admin/Authority/authority">返回权限列表</a>
       </div>
      <section>
      <form action="" method="post"  enctype="multipart/form-data">
-      <ul class="ulColumn2">
+<?php
+foreach ($auth_name as $k => $v) { ?>
+                    <tr bgcolor="F6F7F1">
+                        <td align="right" width="20%"><?php echo $v['authority'];?></td>
+                        <td align="left" width="88%">
+              <?php
+ if (strstr($str, $v['authority'])) { echo "<input type='checkbox' value='".$v['authority']."' name='authority[]' checked='checked'>"; }else{ echo "<input type='checkbox' value='".$v['authority']."' name='authority[]' >"; } ?>
+                          
+                        </td>
+                   </tr>  
+<?php
+} ?> 
+     <!--  <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:120px;">权限名称：</span>
         <input type="text" class="textbox textbox_295" value="<?php echo ($sel["authority"]); ?>" name="title" />
@@ -124,7 +141,9 @@
         <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
         <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
        </li>
-      </ul>
+      </ul> -->
+      <input type="hidden" name="sta_id" value="<?php echo $sta_id;?>">
+      <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
       </form>
      </section>
  </div>

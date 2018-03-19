@@ -43,9 +43,11 @@ class IndexController extends Controller {
 			{
 				$value	=	$data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
+
 				$_SESSION['name']	=	$value['name'];
 				
 				echo	$this->jump('登陆成功',"Department/department");
+
 			}
 			else
 			{

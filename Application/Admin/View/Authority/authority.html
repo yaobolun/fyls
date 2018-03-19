@@ -8,22 +8,55 @@
       </div>
       <table class="table">
        <tr>
-        <th>编号</th>
-        <th>权限名称</th>
+        <th>岗位</th>
+        <!-- <th>权限名称</th> -->
+        <?php
+          foreach($arr as $k=>$v){
+          ?>
+              <th class="gwhc_table_headCell" style="width: 9%;"><?php echo $v['authority'];?></th>
+        <?php
+        }
+        ?>
         <th>操作</th>
        </tr>
-       <volist name='arr' id='arr'>
+      
+<?php 
+foreach($sta_name as $k=>$v){
+?>       
        <tr>
-        <td class="center">{$key+1}</td>
-        <td class="center">{$arr.authority}</td>
-        
+        <td class="center"><?php echo $v['station_name']?></td>
+  <?php
+    foreach($arr as $k1=>$v1){
+  ?>      
+        <td class="center"><span><?php                                 
+                                    $a = array("sta_name"=>$v['station_name']);
+                                    $b = array("auth_name"=>$v1['authority']);
+                                    $needle = array('a'=>$a,'d'=>$b);
+                                    // var_dump($needle);
+                                    // var_dump($tasks);exit;
+                                    if (in_array($needle, $tasks)){
+                                            echo "√";
+                                    }else{
+                                            echo "×";
+                                    }
+                               
+                                      
+
+                                ?></span></td>
+  <?php
+  }
+  ?>       
         <td class="center">
-         <a href="__ROOT__/Admin/Authority/update?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>
-         <a href="__ROOT__/Admin/Authority/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
+        <a href="__ROOT__/Admin/Authority/update?id={$v.id}" title="编辑" class="link_icon">&#101;</a>
+         <a href="" title="删除" class="link_icon">&#100;</a>
+         <!-- <a href="__ROOT__/Admin/Authority/update?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>
+         <a href="__ROOT__/Admin/Authority/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a> -->
         </td>
        </tr>
-       </volist>
-      
+       
+<?php
+}
+?>     
       </table>
       <aside class="paging">
       {$page}

@@ -15,9 +15,9 @@
        </li>
         <li>
         <span class="item_name" style="width:120px;">部门：</span>
-        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
           <foreach name="dep" item="department">
-              <option  value="{$department.id}" >
+              <option  value="{$department.id}" <?php if($department['id'] == $sel['department_id']){ echo "selected='selected'";}?>>
                     {$department.department_name}
               </option>
             </foreach>
@@ -30,7 +30,7 @@
         <span class="item_name" style="width:120px;">岗位：</span>
         <select name="station_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
           <foreach name="sta" item="station">
-              <option  value="{$station.id}" >
+              <option  value="{$station.id}" <?php if($station['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
                     {$station.station_name}
               </option>
             </foreach>
@@ -60,6 +60,20 @@
   }
   
 </script>
+<script type="text/javascript">
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
+        url:"__ROOT__/admin.php/People/update",
+        type:'POST',
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+          alert(111);
+        }
+     });
+  }
 
+</script>
 </body>
 </html>

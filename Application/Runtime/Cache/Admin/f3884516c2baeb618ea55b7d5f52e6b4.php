@@ -5,11 +5,13 @@
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
+<link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/fyls/Public/layui/layui.js" charset="utf-8"></script>
 <script>
 
 	(function($){
@@ -62,16 +64,18 @@
   </li>
   <li>
    <dl>
-    <dt>请假管理</dt>
-    <dd><a href="/fyls/admin.php/Member/member">请假列表</a></dd>
-    <dd><a href="/fyls/admin.php/Member/member">外出列表</a></dd>
-   <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
+
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
    </dl>
   </li>
   <li>
    <dl>
     <dt>快递信息</dt>
-    <dd><a href="/fyls/admin.php/Order/order">快递列表</a></dd>
+    <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
   </li>  
   <!-- <li>
@@ -96,6 +100,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
   <li>
@@ -113,20 +118,34 @@
       </div>
       <table class="table">
        <tr>
-        <th>编号</th>
-        <th>权限名称</th>
+        <th>岗位</th>
+        <!-- <th>权限名称</th> -->
+        <?php
+ foreach($arr as $k=>$v){ ?>
+              <th class="gwhc_table_headCell" style="width: 9%;"><?php echo $v['authority'];?></th>
+        <?php
+ } ?>
         <th>操作</th>
        </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center"><?php echo ($arr["authority"]); ?></td>
-        
-        <td class="center">
-         <a href="/fyls/Admin/Authority/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Authority/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       
+<?php  foreach($sta_name as $k=>$v){ ?>       
+       <tr>
+        <td class="center"><?php echo $v['station_name']?></td>
+  <?php
+ foreach($arr as $k1=>$v1){ ?>      
+        <td class="center"><span><?php  $a = array("sta_name"=>$v['station_name']); $b = array("auth_name"=>$v1['authority']); $needle = array('a'=>$a,'d'=>$b); if (in_array($needle, $tasks)){ echo "√"; }else{ echo "×"; } ?></span></td>
+  <?php
+ } ?>       
+        <td class="center">
+        <a href="/fyls/Admin/Authority/update?id=<?php echo ($v["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="" title="删除" class="link_icon">&#100;</a>
+         <!-- <a href="/fyls/Admin/Authority/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="/fyls/Admin/Authority/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a> -->
+        </td>
+       </tr>
+       
+<?php
+} ?>     
       </table>
       <aside class="paging">
       <?php echo ($page); ?>

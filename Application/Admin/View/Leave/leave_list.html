@@ -1,0 +1,77 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">请假列表</h2>
+       
+       <a href="#" class="fr top_rt_btn add_icon">审批假条</a>
+  <!--      <a href="__ROOT__/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
+       <a href="__ROOT__/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
+      </div>
+      <section class="mtb">
+
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
+
+      </section>
+      <table class="table">
+       <tr>
+        <th>ID</th>
+        <th>申请人</th>
+        <th>请假开始时间</th>
+        <th>请假结束时间</th>
+        <th>请假原因</th>
+        <th>假条状态</th>
+        <th>操作</th>
+       </tr>
+       <volist name='show' id='show'>
+       <tr>
+        <td class="center">{$show.id}</td>
+        <td class="center">{$show.applicant}</td>
+        <td class="center">{$show.start_time}</td>
+        <td class="center">{$show.end_time}</td>
+        <td class="flow" title="{$show.leave_reason}">{$show.leave_reason}</td>
+        <if condition="$show.flag eq 0">
+          <td class="center">未审核</td>
+        <elseif condition="$show.flag eq 1" />
+          <td class="center">已通过</td>
+        <elseif condition="$show.flag eq 2" />
+          <td class="center">未通过</td>
+        </if>
+        <td class="center">
+         <a href="__ROOT__/Admin/Leave/leave_edit?id={$show.id}" title="编辑" class="link_icon">&#101;</a>
+         <a href="__ROOT__/Admin/Leave/leave_del?id={$show.id}" title="删除" class="link_icon">&#100;</a>
+        </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
+</body>
+</html>

@@ -5,11 +5,13 @@
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
+<link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/fyls/Public/layui/layui.js" charset="utf-8"></script>
 <script>
 
 	(function($){
@@ -62,10 +64,12 @@
   </li>
   <li>
    <dl>
-    <dt>请假管理</dt>
-    <dd><a href="/fyls/admin.php/Member/member">请假列表</a></dd>
-    <dd><a href="/fyls/admin.php/Member/member">外出列表</a></dd>
-   <!--  <dd><a href="/fyls/admin.php/Member/guest">留言列表</a></dd> -->
+
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
    </dl>
   </li>
   <li>
@@ -121,8 +125,8 @@
        </li>
         <li>
         <span class="item_name" style="width:120px;">部门：</span>
-        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-          <?php if(is_array($dep)): foreach($dep as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>" >
+        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <?php if(is_array($dep)): foreach($dep as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>" <?php if($department['id'] == $sel['department_id']){ echo "selected='selected'";}?>>
                     <?php echo ($department["department_name"]); ?>
               </option><?php endforeach; endif; ?>
         </select>
@@ -133,7 +137,7 @@
        <li>
         <span class="item_name" style="width:120px;">岗位：</span>
         <select name="station_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
-          <?php if(is_array($sta)): foreach($sta as $key=>$station): ?><option  value="<?php echo ($station["id"]); ?>" >
+          <?php if(is_array($sta)): foreach($sta as $key=>$station): ?><option  value="<?php echo ($station["id"]); ?>" <?php if($station['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
                     <?php echo ($station["station_name"]); ?>
               </option><?php endforeach; endif; ?>
         </select>
@@ -162,6 +166,20 @@
   }
   
 </script>
+<script type="text/javascript">
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
+        url:"/fyls/admin.php/People/update",
+        type:'POST',
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+          alert(111);
+        }
+     });
+  }
 
+</script>
 </body>
 </html>
