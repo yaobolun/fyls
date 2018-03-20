@@ -61,14 +61,13 @@
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>
   <li>
    <dl>
-    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
-    
-    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
-    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
+
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
 
    </dl>
@@ -106,8 +105,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
