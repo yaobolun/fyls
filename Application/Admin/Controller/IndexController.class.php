@@ -47,13 +47,12 @@ class IndexController extends Controller {
 				var_dump($_SESSION['id']);die;
 				echo	$this->jump('登陆成功',"Department/department");
 			}
-			else
+			else 
 			{
 				echo	$this->jump('账号或密码错误',"Index/login");
 			}
 		}
-		else
-		{
+		else{
 			$this->display();
 		}	
     }
