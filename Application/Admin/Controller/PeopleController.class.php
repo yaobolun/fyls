@@ -44,7 +44,11 @@ class PeopleController extends Controller {
 			$admin=M('admin_user');
 			$map['name']=$_POST['name'];
 			$map['department_id']=$_POST['department_id'];
+<<<<<<< HEAD
 			$map['station_id']=$_POST['station_id'];
+=======
+			$map['station_id']=$_POST['station'];
+>>>>>>> yaobolun
 			$map['password']=md5($_POST['password']);
 			$map['administration'] = 1;
 			$map['time'] = date("Y-m-d H:i:s");
@@ -84,13 +88,21 @@ class PeopleController extends Controller {
             echo json_encode($res);exit();
         }
 		if (!empty($_POST['sub'])) {
+<<<<<<< HEAD
 		var_dump($_POST);exit;
+=======
+>>>>>>> yaobolun
 			
 			$id=$_POST['id'];
 			$map['name']=$_POST['title'];
 			$map['department_id']=$_POST['department_id'];
+<<<<<<< HEAD
 			$map['station_id']=$_POST['station_id'];
 						
+=======
+			$map['station_id']=$_POST['station'];	
+
+>>>>>>> yaobolun
 			$val=$admin->where("id=".$id)->save($map);
 
 			if($val)

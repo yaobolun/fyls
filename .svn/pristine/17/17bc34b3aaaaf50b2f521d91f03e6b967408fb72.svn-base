@@ -1,0 +1,1 @@
+a:4:{i:0;s:6:"col_id";i:1;s:8:"col_name";s:3:"_pk";s:6:"col_id";s:5:"_type";a:2:{s:6:"col_id";s:6:"int(2)";s:8:"col_name";s:11:"varchar(20)";}}

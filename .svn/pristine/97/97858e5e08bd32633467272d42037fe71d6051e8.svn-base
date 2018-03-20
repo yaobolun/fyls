@@ -1,0 +1,30 @@
+[ 2017-10-25T15:15:04+08:00 ] ::1 /zjtr/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id=0 and web=1 ) ORDER BY id asc  [ RunTime:0.0334s ]
+SQL: SELECT * FROM `report_categories` WHERE ( type_id!=0 and web=1 ) ORDER BY id asc  [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.0162s ]
+SQL: SELECT * FROM `banner` WHERE ( web=1 )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `emph` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `emph` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `report_categories` WHERE ( ix=1 ) ORDER BY px asc  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000332s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000477s ]
+NOTIC: [8] Undefined index: er D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 31 行.
+NOTIC: [8] Undefined index: er D:\phpStudy\WWW\zjtr\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 31 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086511s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086639s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014267s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002788s ]
+

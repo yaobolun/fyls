@@ -41,6 +41,7 @@ class LeaveController extends Controller {
 		$this->assign('page',$show);
 		$this->display();
 	}
+<<<<<<< HEAD
 	public function member_mod(){
 			$user=M('user');
 				
@@ -105,6 +106,9 @@ class LeaveController extends Controller {
 			$this->display();
 		}
 	}
+=======
+
+>>>>>>> yaobolun
 
 
 
@@ -117,6 +121,7 @@ class LeaveController extends Controller {
 
 	public function doadd_leave()
 	{
+<<<<<<< HEAD
 
 		if(!empty($_POST)){
 			$user=M('form_leave');
@@ -127,6 +132,20 @@ class LeaveController extends Controller {
 				echo	$this->jump('申请成功，请等待结果！',"Leave/leave_list");
 
 			}else{
+=======
+		if(!empty($_POST)){
+
+			$user=M('form_leave');
+			
+			$map = $user->create();
+			
+			$query=$user->add($map);
+
+			if($query>0){
+				echo	$this->jump('申请成功，请等待结果！',"Leave/leave_list");
+			}
+			else{
+>>>>>>> yaobolun
 				echo	$this->jump('申请失败，请重新申请！',"Leave/add_leave");
 			}
 		}else{
@@ -136,6 +155,10 @@ class LeaveController extends Controller {
 
 	public function leave_list()
 	{
+<<<<<<< HEAD
+=======
+
+>>>>>>> yaobolun
 		$sid = session('id');
 		$leave = M('form_leave');
 		$count=$leave->count();
@@ -151,6 +174,10 @@ class LeaveController extends Controller {
 			$leave=M('form_leave');
 			$id=$_GET['id'];
 		 	$val=$leave->delete($id);
+<<<<<<< HEAD
+=======
+
+>>>>>>> yaobolun
 			if($val>0)
 			{
 				echo	$this->jump("删除成功","Leave/leave_list");
@@ -177,9 +204,84 @@ class LeaveController extends Controller {
 		}elseif(!empty($_GET['id'])){
 			$id=$_GET['id'];
 			$show=$leave->where()->join()->find("$id");
+<<<<<<< HEAD
+=======
+			// var_dump($show);exit;
+>>>>>>> yaobolun
 			$this->assign('show',$show);
 			$this->display();
 		}
 	}
 
+<<<<<<< HEAD
+=======
+		public function member_mod(){
+			$user=M('user');
+				
+			if (!empty($_POST['sub'])) {
+				$id=$_POST['id'];
+				$map=$user->create();
+				
+				$val=$user->where("id=".$id)->save($map);
+				//echo "<pre>";print_r($val);echo "<pre>";die;
+				if($val)
+				{
+					echo	$this->jump("修改成功","Member/member");
+				}else {
+					echo	$this->jump("修改失败","Member/member");
+				}
+			}elseif(!empty($_GET['id'])){
+		
+				$id=$_GET['id'];
+				$sel=$user->where()->join()->find("$id");
+				$this->assign('sel',$sel);
+				$this->display();
+			}
+		}
+
+
+
+
+	public function member_add(){
+		if(!empty($_POST['sub'])){
+			$user=M('user');
+
+			$map=$user->create();
+			
+			$query=$user->add($map);
+			if($query>0){
+				echo	$this->jump('添加成功',"Member/member");
+			}
+			else{
+				echo	$this->jump('添加失败',"Member/member_add");
+			}
+		}else{
+			$this->display();
+		}
+	}
+	
+	public function guest(){
+		$guestbook=M('guestbook');
+		$count=$guestbook->count();// 查询满足要求的总记录数
+		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+		$show= $Page->show();// 分页显示输出
+		if(!empty($_POST['sub'])){
+		 	$map['Name']=array("like","%".$_POST['name']."%");	 
+		}
+		$arr=$guestbook->where($map)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign('arr',$arr);
+		$this->assign('page',$show);
+		$this->display();
+	}
+	public function guest_mod(){
+		$guestbook=M('guestbook');	
+		if(!empty($_GET['id'])){
+			$id=$_GET['id'];
+			$sel=$guestbook->where()->join()->find("$id");
+			$this->assign('sel',$sel);
+			$this->display();
+		}
+	}
+
+>>>>>>> yaobolun
 }

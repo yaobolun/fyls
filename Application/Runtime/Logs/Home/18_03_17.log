@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ 2018-03-17T10:39:16+08:00 ] ::1 /fyls/
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
@@ -36,6 +37,8 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000446s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
 =======
+=======
+>>>>>>> yaobolun
 [ 2018-03-17T09:25:16+08:00 ] ::1 /fyls/
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
@@ -69,5 +72,8 @@ INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+<<<<<<< HEAD
 >>>>>>> origin/yaobolun
+=======
+>>>>>>> yaobolun
 

@@ -16,16 +16,29 @@
         <th>收件人电话</th>
         <th>备注</th>
         <th>状态</th>
+<<<<<<< HEAD
+=======
+        <th>操作</th>
+>>>>>>> yaobolun
        </tr>
        <volist name='arr' id='arr'>
        <tr>
         <td class="center">{$key+1}</td>
+<<<<<<< HEAD
         <td class="center">{$arr.name}</td>
         <td class="center">{$arr.updatetime}</td>
         <td class="center">{$arr.updatetime}</td>
         <td class="center">{$arr.updatetime}</td>
         <td class="center">{$arr.updatetime}</td>
         <td class="center">{$arr.updatetime}</td>
+=======
+        <td class="center">{$arr.address}</td>
+        <td class="center">{$arr.name}</td>
+        <td class="center">{$arr.people}</td>
+        <td class="center">{$arr.phone}</td>
+        <td class="center" title="{$arr.beizhu}"><?php if (strlen($arr['beizhu'])>5) $arr['beizhu']=substr($arr['beizhu'],0,5) . '...';echo $arr['beizhu'];?></td>
+        <td class="center"></td>
+>>>>>>> yaobolun
         
         <td class="center">
          <a href="__ROOT__/Admin/Admin/admin_update?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>

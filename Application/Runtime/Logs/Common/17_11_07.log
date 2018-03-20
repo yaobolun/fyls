@@ -1,0 +1,30 @@
+[ 2017-11-07T17:49:18+08:00 ] ::1 /zjtr/Public/home/jquery-1.10.2.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+ERR: 无法加载模块:Public
+
+[ 2017-11-07T17:49:27+08:00 ] ::1 /zjtr/Public/home/image/card.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+ERR: 无法加载模块:Public
+
+[ 2017-11-07T17:50:04+08:00 ] ::1 /zjtr/Public/home/image/card.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+ERR: 无法加载模块:Public
+
+[ 2017-11-07T17:50:19+08:00 ] ::1 /zjtr/Public/home/jquery-1.10.2.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001886s ]
+ERR: 无法加载模块:Public
+
+[ 2017-11-07T17:50:45+08:00 ] ::1 /zjtr/Public/home/image/card.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+ERR: 无法加载模块:Public
+
