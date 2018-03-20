@@ -31,7 +31,6 @@
 				e.preventDefault();
 				$(".content").mCustomScrollbar("scrollTo",$(this).attr("href"));
 			});
-			
 		});
 	})(jQuery);
 </script>
@@ -118,6 +117,10 @@
  </ul>
 </aside>
 
+<!-- 
+提出问题  分析问题 解决问题
+
+干了什么 该干什么  有什么问题（早上） -->
 <style type="text/css">
 .flow{
     width: 176px;

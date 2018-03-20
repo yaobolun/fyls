@@ -121,78 +121,72 @@
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
-<style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">外出记录</h2>
-       
-       <a href="#" class="fr top_rt_btn add_icon">审批</a>
-  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
-       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
+       <h2 class="fl">申请外出</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
       </div>
-      <section class="mtb">
-       <form action="" method="post">
-       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
-       <input type="submit" value="查询" class="group_btn" name="sub"/>
-       </form>
+     <section>
 
-      </section>
-      <table class="table">
-       <tr>
-        <th>ID</th>
-        <th>申请人</th>
-        <th>外出开始时间</th>
-        <th>外出结束时间</th>
-        <th>外出地址</th>
-        <th>外出原因</th>
-        <th>审批状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["id"]); ?></td>
-        <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["out_time"]); ?></td>
-        <td class="center"><?php echo ($show["back_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
-        <!-- <td class="center"><?php echo ($show["flag"]); ?></td> -->
-        <?php if($show["flag"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($show["flag"] == 1): ?>
-          <td class="center" style="color:green;">已通过</td>
-        <?php elseif($show["flag"] == 2): ?>
-          <td class="center" style="color:red;">未通过</td><?php endif; ?>
+      <form action="/fyls/Admin/Travel/travel_edit" method="post">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:200px;">申请人:</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" value="<?php echo ($show["applicant"]); ?>" />
+       </li>
+       <li>
+        <span class="item_name" style="width:200px;">外出地址:</span>
+        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="外出地址..." name="out_addr"><?php echo ($show["out_addr"]); ?></textarea>
+       </li>
+       <li>
+        <span class="item_name" style="width:200px;">外出原因:</span>
+        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..采购..." name="out_reason"><?php echo ($show["out_reason"]); ?></textarea>
+       </li>
+       <li>
+          <span class="item_name" style="width: 200px" >开始日期:</span>
+          <div class="layui-input-inline">
+            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期" value="<?php echo ($show["out_time"]); ?>">
+          </div>
+       </li>
+       <li>
+          <span class="item_name" style="width: 200px" >结束日期:</span>
+          <div class="layui-input-inline">
+            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期" value="<?php echo ($show["back_time"]); ?>">
+          </div>
+       </li>
+       <li>
+        <span class="item_name" style="width:200px;"></span>
+        <input type="hidden" name="id" value="<?php echo ($show["id"]); ?>" />
+        <input type="submit" name="sub" class="link_btn"/>
+       </li>
+      </ul>
+      </form>
 
-        <td class="center">
-         <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+     </section>
  </div>
 </section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
-<!-- <script type="text/javascript">
-  function set(id) {
-      var a=confirm("确认发货吗?");
-      if(a){
-          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  }else{
-      return false;
-    }
-  }
-</script> -->
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>
