@@ -1,0 +1,96 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">人员资料修改</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/People/people">返回人员列表</a>
+      </div>
+     <section>
+
+     <form action="" name="form1" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">人员名称：</span>
+        <input type="text" class="textbox textbox_295" value="{$sel.name}" name="title" />
+       </li>
+        <li>
+        <span class="item_name" style="width:120px;">部门：</span>
+        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <foreach name="dep" item="department">
+              <option  value="{$department.id}" <?php if($department['id'] == $sel['department_id']){ echo "selected='selected'";}?>>
+                    {$department.department_name}
+              </option>
+            </foreach>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" /> -->
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">岗位：</span>
+        <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+
+          <!-- <foreach name="sta" item="station">
+              <option  value="{$station.id}" <?php if($station['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
+                    {$station.station_name}
+              </option>
+            </foreach> -->
+            <option value="0">--请选择--</option>
+          <foreach name="sta" item="station_name">
+              <option  value="{$station_name.id}" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
+                    {$station_name.station_name}
+              </option>
+            </foreach>  
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" /> -->
+        
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+<script src="__PUBLIC__/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+    if($("#pass").val()==''||$("#pass").val().length<1)
+    {
+      alert('Password cannot be empty and no less than 1 bits');
+      return false;
+    }
+  }
+  
+</script>
+<script type="text/javascript">
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
+        url:"__ROOT__/admin.php/People/update",
+        type:'POST',
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+            var length = JSON.stringify(data.length);
+            //alert(length);
+            var jName=document.form1.station;
+            jName.length=1; 
+            for(var i=0;i<length;i++){
+                var station_name =  eval(JSON.stringify(data[i]['station_name']));
+                var station_id =  eval(JSON.stringify(data[i]['id']));
+                // alert(station_id);
+                jName[i+1]=new Option("--"+station_name+"--",station_id); 
+            }  
+        }
+     });
+  }
+
+</script>
+</body>
+</html>

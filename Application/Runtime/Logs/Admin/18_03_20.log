@@ -1,0 +1,1970 @@
+[ 2018-03-20T14:59:14+08:00 ] 127.0.0.1 /fyls/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.185011s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 模板不存在:./Application/Admin/View/Product/product.html
+
+[ 2018-03-20T14:59:29+08:00 ] 127.0.0.1 /fyls/admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.1900s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.2390s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.8971s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.767044s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.767044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T14:59:56+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:00:03+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `stations` WHERE ( station_name='主管' and flag = 0 and department_id = 1 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `stations` (`station_name`,`department_id`,`updatetime`,`flag`) VALUES ('主管','1','2018-03-20 15:00:03','0') [ RunTime:0.1490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:00:06+08:00 ] 127.0.0.1 /fyls/Admin/Station/station
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stations` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `departments` LEFT JOIN stations ON stations.department_id = departments.id  WHERE ( stations.flag = 0 )  [ RunTime:0.2660s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:00:08+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:00:14+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `stations` WHERE ( station_name='组员' and flag = 0 and department_id = 2 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `stations` (`station_name`,`department_id`,`updatetime`,`flag`) VALUES ('组员','2','2018-03-20 15:00:14','0') [ RunTime:0.0410s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:00:16+08:00 ] 127.0.0.1 /fyls/Admin/Station/station
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stations` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `departments` LEFT JOIN stations ON stations.department_id = departments.id  WHERE ( stations.flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:00:24+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:01:52+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:02:31+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0140s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:02:49+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0450s ]
+NOTIC: [8] Undefined index: station_id D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php 第 91 行.
+SQL: UPDATE `admin_user` SET `name`='规范化补贴',`department_id`='1',`station_id`=NULL WHERE ( id=9 ) [ RunTime:0.0870s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:02:51+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:03:23+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0160s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 104 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 104 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:03:33+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0160s ]
+NOTIC: [8] Undefined index: station_id D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php 第 91 行.
+
+[ 2018-03-20T15:04:12+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0150s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:04:19+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0210s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:04:25+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0200s ]
+SQL: UPDATE `admin_user` SET `name`='规范化补贴',`department_id`='2',`station_id`='2' WHERE ( id=9 ) [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:04:28+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:04:32+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0140s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:04:40+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0190s ]
+SQL: UPDATE `admin_user` SET `name`='发大V发',`department_id`='1',`station_id`='1' WHERE ( id=7 ) [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:04:42+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0240s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:04:45+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0160s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 103 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:36:39+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0270s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:37:30+08:00 ] 127.0.0.1 /fyls/admin.php/People/people
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+
+[ 2018-03-20T15:37:36+08:00 ] 127.0.0.1 /fyls/admin.php/People/people
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+
+[ 2018-03-20T15:37:55+08:00 ] 127.0.0.1 /fyls/admin.php/People/people
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+
+[ 2018-03-20T15:38:01+08:00 ] 127.0.0.1 /fyls/admin.php/People/people
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+
+[ 2018-03-20T15:39:06+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+ERR: 1054:Unknown column 'administration' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10  
+
+[ 2018-03-20T15:47:29+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:48:22+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:48:40+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0160s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 104 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 104 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:51:10+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:51:15+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `departments` WHERE ( department_name='市场一部' and flag = 0 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `departments` (`department_name`,`updatetime`,`flag`) VALUES ('市场一部','2018-03-20 15:51:15','0') [ RunTime:0.0010s ]
+ERR: Think\Controller:journal方法不存在！
+
+[ 2018-03-20T15:51:43+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `departments` WHERE ( department_name='市场一部' and flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:51:44+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:51:51+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( department_name='市场二部' and flag = 0 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `departments` (`department_name`,`updatetime`,`flag`) VALUES ('市场二部','2018-03-20 15:51:51','0') [ RunTime:0.0010s ]
+ERR: 1146:Table 'fyls.rizhi' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `rizhi`
+ERR: 1146:Table 'fyls.rizhi' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `rizhi`
+
+[ 2018-03-20T15:52:21+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `departments` WHERE ( department_name='市场二部' and flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:52:23+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:52:29+08:00 ] 127.0.0.1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `departments` WHERE ( department_name='市场三部' and flag = 0 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `departments` (`department_name`,`updatetime`,`flag`) VALUES ('市场三部','2018-03-20 15:52:29','0') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `rizhi` [ RunTime:0.0150s ]
+SQL: INSERT INTO `rizhi` (`journal`) VALUES ('admins增加了部门市场三部') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:52:31+08:00 ] 127.0.0.1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:52:42+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:52:47+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `stations` WHERE ( station_name='主管' and flag = 0 and department_id = 1 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `stations` (`station_name`,`department_id`,`updatetime`,`flag`) VALUES ('主管','1','2018-03-20 15:52:47','0') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:52:49+08:00 ] 127.0.0.1 /fyls/Admin/Station/station
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stations` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `departments` LEFT JOIN stations ON stations.department_id = departments.id  WHERE ( stations.flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:52:52+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:52:56+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `stations` WHERE ( station_name='组员' and flag = 0 and department_id = 1 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `stations` (`station_name`,`department_id`,`updatetime`,`flag`) VALUES ('组员','1','2018-03-20 15:52:56','0') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-03-20T15:52:59+08:00 ] 127.0.0.1 /fyls/Admin/Station/station
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stations` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `departments` LEFT JOIN stations ON stations.department_id = departments.id  WHERE ( stations.flag = 0 )  [ RunTime:0.0150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:53:00+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:53:06+08:00 ] 127.0.0.1 /fyls/Admin/Station/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `stations` WHERE ( station_name='主管2' and flag = 0 and department_id = 2 )  [ RunTime:0.0020s ]
+SQL: INSERT INTO `stations` (`station_name`,`department_id`,`updatetime`,`flag`) VALUES ('主管2','2','2018-03-20 15:53:06','0') [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:53:08+08:00 ] 127.0.0.1 /fyls/Admin/Station/station
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stations` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `departments` LEFT JOIN stations ON stations.department_id = departments.id  WHERE ( stations.flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T15:53:14+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:54:42+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:55:13+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0150s ]
+NOTIC: [8] Undefined index: station_id D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php 第 47 行.
+SQL: SELECT * FROM `admin_user` WHERE ( name='姚博伦' and flag = 0 )  [ RunTime:0.0020s ]
+ERR: 1048:Column 'station_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `admin_user` (`name`,`department_id`,`station_id`,`password`,`administration`,`time`,`updatetime`) VALUES ('姚博伦','1',NULL,'e10adc3949ba59abbe56e057f20f883e','1','2018-03-20 15:55:13','2018-03-20 15:55:13')
+ERR: 1048:Column 'station_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `admin_user` (`name`,`department_id`,`station_id`,`password`,`administration`,`time`,`updatetime`) VALUES ('姚博伦','1',NULL,'e10adc3949ba59abbe56e057f20f883e','1','2018-03-20 15:55:13','2018-03-20 15:55:13')
+
+[ 2018-03-20T15:56:10+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: station_id D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php 第 47 行.
+
+[ 2018-03-20T15:56:24+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:56:28+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `admin_user` WHERE ( name='姚博伦' and flag = 0 )  [ RunTime:0.0020s ]
+SQL: INSERT INTO `admin_user` (`name`,`department_id`,`station_id`,`password`,`administration`,`time`,`updatetime`) VALUES ('姚博伦','1','1','e10adc3949ba59abbe56e057f20f883e','1','2018-03-20 15:56:28','2018-03-20 15:56:28') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:56:31+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:56:35+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=13
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0190s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 104 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpstudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\PeopleController.class.php on line 104 and defined D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `admin_user` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-03-20T15:56:49+08:00 ] 127.0.0.1 /fyls/Admin/People/update?id=13
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0160s ]
+SQL: UPDATE `admin_user` SET `name`='姚博伦',`department_id`='2',`station_id`='3' WHERE ( id=13 ) [ RunTime:0.0380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T15:56:51+08:00 ] 127.0.0.1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-03-20T16:11:57+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+
+[ 2018-03-20T16:12:49+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+
+[ 2018-03-20T16:12:51+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+
+[ 2018-03-20T16:13:04+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+ERR: 1054:Unknown column 'flag' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1  
+
+[ 2018-03-20T16:21:19+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:21:37+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `expre` WHERE ( name='手机32423' and flag = 0 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `expre` (`name`,`address`,`people`,`phone`,`time`,`beizhu`) VALUES ('手机32423','111','222','111','2018-03-20 16:21:30','233') [ RunTime:0.0010s ]
+ERR: Think\Controller:jump方法不存在！
+
+[ 2018-03-20T16:21:59+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0510s ]
+SQL: SELECT * FROM `expre` WHERE ( name='手机32423' and flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:22:00+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T16:22:13+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `expre` WHERE ( name='二分二微服务' and flag = 0 )  [ RunTime:0.0020s ]
+SQL: INSERT INTO `expre` (`name`,`address`,`people`,`phone`,`time`,`beizhu`) VALUES ('二分二微服务','23饿日','2稳定繁荣','违反','2018-03-20 16:22:07','2切') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T16:22:15+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 134 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 135 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 136 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 137 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 134 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 135 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 136 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 137 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T16:22:52+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: namne D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 134 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+NOTIC: [8] Undefined index: namne D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 134 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:26:14+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0170s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: namne D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 134 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+NOTIC: [8] Undefined index: namne D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 134 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:26:48+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:27:00+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 139 行.
+NOTIC: [8] Undefined index: updatetime D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\89ff4a612efba6aa22c0170ef4790029.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:29:05+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+ERR: syntax error, unexpected ')'
+
+[ 2018-03-20T16:29:22+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+ERR: syntax error, unexpected ')'
+
+[ 2018-03-20T16:29:24+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:29:28+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: syntax error, unexpected ')'
+
+[ 2018-03-20T16:29:34+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: syntax error, unexpected ')'
+
+[ 2018-03-20T16:30:11+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: syntax error, unexpected ')'
+
+[ 2018-03-20T16:30:16+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: syntax error, unexpected ')'
+
+[ 2018-03-20T16:30:51+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: syntax error, unexpected 'echo' (T_ECHO)
+
+[ 2018-03-20T16:30:53+08:00 ] 127.0.0.1 /fyls/admin.php/Express/express
+ERR: syntax error, unexpected 'echo' (T_ECHO)
+
+[ 2018-03-20T16:32:05+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:32:28+08:00 ] 127.0.0.1 /fyls/Admin/Express/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `expre` WHERE ( name='是的高峰' and flag = 0 )  [ RunTime:0.0010s ]
+SQL: INSERT INTO `expre` (`name`,`address`,`people`,`phone`,`time`,`beizhu`) VALUES ('是的高峰','二哥','人re','eft我发图','2018-03-20 16:32:20','fckjdbwekfbuiwehbfuiwegfr8euwrfh89wefyh8w9efh89wefyh89wehfy89weh ') [ RunTime:0.0120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T16:32:31+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:33:15+08:00 ] 127.0.0.1 /fyls/Admin/Express/express
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `expre` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `expre` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `expre` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T16:44:23+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.1130s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 150 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 150 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T17:29:13+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: Think\Controller:jump方法不存在！
+
+[ 2018-03-20T17:30:05+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: Think\Controller:jump方法不存在！
+
+[ 2018-03-20T17:30:36+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T17:36:38+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T17:39:33+08:00 ] 127.0.0.1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 150 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 150 行.
+NOTIC: [8] Undefined variable: sel D:\phpstudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-03-20T17:43:29+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌',`flag`='0' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌',`flag`='0' WHERE ( id= )
+
+[ 2018-03-20T17:44:59+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `parameter` WHERE ( flag = 0  ) ORDER BY id asc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T17:45:15+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0410s ]
+SQL: SELECT * FROM `parameter` WHERE ( flag = 0  ) ORDER BY id asc  [ RunTime:0.0010s ]
+
+[ 2018-03-20T17:45:19+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `parameter` WHERE ( flag = 0  ) ORDER BY id asc  [ RunTime:0.0010s ]
+
+[ 2018-03-20T17:52:20+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: Call to a member function where() on null
+
+[ 2018-03-20T17:52:56+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌1' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌1' WHERE ( id= )
+
+[ 2018-03-20T17:53:17+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌12' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌12' WHERE ( id= )
+
+[ 2018-03-20T17:53:47+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌1233rg ' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌1233rg ' WHERE ( id= )
+
+[ 2018-03-20T17:55:11+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `parameter` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T17:55:16+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0190s ]
+NOTIC: [8] Undefined index: validate D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌123',`id`='1' WHERE ( id=1 ) [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T17:55:18+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `parameter` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-03-20T17:55:46+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `parameter` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-20T17:55:58+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0180s ]
+NOTIC: [8] Undefined index: validate D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌',`id`='0' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='强无敌',`id`='0' WHERE ( id= )
+
+[ 2018-03-20T17:59:36+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='111',`id`='0' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='111',`id`='0' WHERE ( id= )
+
+[ 2018-03-20T17:59:48+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='111',`id`='0' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='111',`id`='0' WHERE ( id= )
+
+[ 2018-03-20T18:00:26+08:00 ] 127.0.0.1 /fyls/admin.php/Parameter/parameter
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='111',`id`='0' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `parameter` SET `name`='姚氏公司',`introduce`='111',`id`='0' WHERE ( id= )
+
+[ 2018-03-20T18:04:25+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `parameter` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-20T18:04:28+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0210s ]
+NOTIC: [8] Undefined index: validate D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpstudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `parameter` SET `name`='姚氏公司',`introduce`='22233',`id`='2' WHERE ( id=2 ) [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2018-03-20T18:04:30+08:00 ] 127.0.0.1 /fyls/Admin/Parameter/parameter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `parameter` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `parameter` LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
