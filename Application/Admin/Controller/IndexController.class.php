@@ -14,7 +14,7 @@ class IndexController extends Controller {
 			// $show= $Page->show();// 分页显示输出
 			// if(!empty($_POST['sub'])){
 			//  		$map['Title']=array("like","%".$_POST['name']."%");	//搜索 
-			// 	 }
+			// 	 }1
 			// $arr=$news->where($map)->join("report_categories on news.n_id=report_categories.id")->field('news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages')->order('news.type_id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			// $this->assign('arr',$arr);
 			// $this->assign('page',$show);
