@@ -14,11 +14,9 @@ class ApprovalController extends Controller
 		$count=$leave->count();
 		$Page=new\Think\Page($count,10);
 		$show= $Page->show();
-		// $departments = M('departments as bm')->where('bm.id = 1')->join('stations as gw on bm.id=gw.department_id')->select();
-		// $gwid = M('admin_user as yh')->where('yh.id = 1')->field('station_id')->find()->join('stations as gw on yh.station_id = stations')->find();
-		$gwid = $admin_user->join("left join stations on stations.id = admin_user.station_id")->where("stations.flag = 0")->select();
+		$gwid = $admin_user->join("left join stations on stations.id = admin_user.station_id")->where("stations.flag = ".$uid)->select();
 
-		// var_dump($gwid);die;
+		var_dump($gwid);die;
 		$arr=$leave->where("flag = 0")->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $arr);
 		$this->assign('page', $show);
