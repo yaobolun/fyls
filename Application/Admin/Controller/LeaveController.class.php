@@ -104,28 +104,28 @@ class LeaveController extends Controller {
 			$this->assign('sel',$sel);
 			$this->display();
 		}
-	}
-
-
+	}    
 
 	public function add_leave()
 	{
+		$bmid = session('department_id');
+		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+		$user_id = array_column($director,'id');
+		// $name = M('admin_user')->where('station_id IN ($user_id)')->field('name')->select();
+		// var_dump($name);die;
 
-			$this->display();
-
+		$this->assign('name', $name);
+		$this->display();
 	}
 
 	public function doadd_leave()
 	{
-
 		if(!empty($_POST)){
 			$user=M('form_leave');
 			$map = $user->create();
 			$query=$user->add($map);
 			if($query>0){
-
 				echo	$this->jump('申请成功，请等待结果！',"Leave/leave_list");
-
 			}else{
 				echo	$this->jump('申请失败，请重新申请！',"Leave/add_leave");
 			}

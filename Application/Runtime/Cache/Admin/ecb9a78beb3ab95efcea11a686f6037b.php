@@ -125,6 +125,7 @@
        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
       </div>
      <section>
+     <form id="form" action="/fyls/Admin/Approval/adopt" method="post">
      <table class="layui-table" style="width:900px; height:300px;">
         <thead>
           <tr>
@@ -158,7 +159,7 @@
           </tr>
         </tbody>
       </table>
-
+      </form>
       <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
       <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
      </section>
@@ -189,8 +190,7 @@
     {
     	 var a=confirm("确认通过吗?");
       	  if(a){
-
-          location.href = "update";
+              $("#form").submit();
       		}
     }
 
