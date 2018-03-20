@@ -95,6 +95,7 @@
    <li>
    <dl>
     <dt>后台登录设置</dt>
+    <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
     <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
