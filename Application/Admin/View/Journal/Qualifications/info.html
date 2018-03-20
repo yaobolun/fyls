@@ -1,0 +1,64 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.f{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">资质凭证到账凭证申请详细信息</h2>
+       <a href="__ROOT__/Admin/Qualifications/qualifications" class="fr top_rt_btn add_icon">返回资质凭证到账凭证申请列表</a>
+      </div>
+      <table class="table">
+      <volist name='arr' id='arr'>
+        <tr>
+        <th>日期</th>
+        <td class="center f" title="{$arr.qualifications_date}">{$arr.qualifications_date}</td>
+        <th>市场部客服</th>
+        <td class="center f" title="{$arr.qualifications_customer}">{$arr.qualifications_customer}</td>
+        </tr>
+        <tr>
+        <th>申请人</th>
+        <td class="center f" title="{$arr.qualifications_applicant}">{$arr.qualifications_applicant}</td>
+        <th>企业名称</th>
+        <td class="center f" title="{$arr.qualifications_enterprise}">{$arr.qualifications_enterprise}</td>
+        </tr>
+        <tr>
+        <th>资质名称</th>
+        <td class="center f" title="{$arr.qualifications_aptitude}">{$arr.qualifications_aptitude}</td>
+        <th>本次到账日期</th>
+        <td class="center f" title="{$arr.qualifications_arrival}">{$arr.qualifications_arrival}</td>
+        </tr>
+        <tr>
+        <th>合同价格</th>
+        <td class="center f" title="{$arr.qualifications_contract}">{$arr.qualifications_contract}</td>
+        <th>已到账金额</th>
+        <td class="center f" title="{$arr.qualifications_money}">{$arr.qualifications_money}</td>
+        </tr>
+        <tr>
+        <th>到账账户</th>
+        <td class="center f" title="{$arr.qualifications_account}">{$arr.qualifications_account}</td>
+        <th>本次到账金额</th>
+        <td class="center f" title="{$arr.qualifications_bmoney}">{$arr.qualifications_bmoney}</td>
+        </tr>
+        <tr>
+        <th>公关费</th>
+        <td class="center f" title="{$arr.qualifications_relations}">{$arr.qualifications_relations}</td>
+        <th>备注</th>
+        <td class="center f" title="{$arr.qualifications_remarks}">{$arr.qualifications_remarks}</td>
+        </tr>
+      </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

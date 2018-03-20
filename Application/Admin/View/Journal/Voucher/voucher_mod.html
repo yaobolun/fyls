@@ -1,0 +1,82 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改退款人才凭证申请信息</h2>
+       <a href="__ROOT__/Admin/Voucher/voucher" class="fr top_rt_btn add_icon">返回退款人才凭证申请列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+      <table class="table">
+      <tr>
+        <th>申请人</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人" name="voucher_applicant" value="{$sel.voucher_applicant}" required="required"/></td>
+        <th>本次到账日期</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本次到账日期" name="voucher_account" value="{$sel.voucher_account}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配备企业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="配备企业" name="voucher_equip" value="{$sel.voucher_equip}" required="required"/></td>
+        <th>合同价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="合同价格" name="voucher_contract" value="{$sel.voucher_contract}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_amount" value="{$sel.voucher_amount}" required="required"/></td>
+        <th>到账账户</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="到账账户" name="voucher_acc" value="{$sel.voucher_acc}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>本次到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_this" value="{$sel.voucher_this}" required="required"/></td>
+        <th>备注</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="备注" name="voucher_remarks" value="{$sel.voucher_remarks}" required="required"/></input></td>
+      </tr>
+        <!-- <li>
+        <span class="item_name" style="width:120px;">申请人：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人" name="voucher_applicant" value="{$sel.voucher_applicant}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">本次到账日期：</span>
+        <input type="text" class="textbox textbox_295" placeholder="本次到账日期" name="voucher_account" value="{$sel.voucher_account}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配备企业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="配备企业" name="voucher_equip" value="{$sel.voucher_equip}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">合同价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="合同价格" name="voucher_contract" value="{$sel.voucher_contract}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_amount" value="{$sel.voucher_amount}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账账户：</span>
+        <input type="text" class="textbox textbox_295" placeholder="到账账户" name="voucher_acc" value="{$sel.voucher_acc}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">本次到账金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_this" value="{$sel.voucher_this}"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注：</span>
+        <textarea type="text" class="textbox textbox_295" placeholder="备注" name="voucher_remarks" value="{$sel.voucher_remarks}"/></textarea>
+       </li> -->
+       </table>
+      <input type="hidden" name='id' value="{$sel.id}"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+</body>
+</html>

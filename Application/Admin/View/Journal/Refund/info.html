@@ -1,0 +1,80 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.dd{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">退款凭证申请详细信息</h2>
+       <a href="__ROOT__/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证申请列表</a>
+      </div>
+      <table class="table">
+      <volist name='arr' id='arr'>
+        <tr>
+        <th>申请人</th>
+        <td class="center dd" title="{$arr.refund_applicant}">{$arr.refund_applicant}</td>
+        <th>配出年月</th>
+        <td class="center dd" title="{$arr.refund_match}">{$arr.refund_match}</td>
+        </tr>
+        <tr>
+        <th>配备企业</th>
+        <td class="center dd" title="{$arr.refund_equip}">{$arr.refund_equip}</td>
+        <th>合同价格</th>
+        <td class="center dd" title="{$arr.refund_contract}">{$arr.refund_contract}</td>
+        </tr>
+        <tr>
+        <th>备注</th>
+        <td class="center dd" title="{$arr.refund_remarks}">{$arr.refund_remarks}</td>
+        <th>已到账金额</th>
+        <td class="center dd" title="{$arr.refund_account}">{$arr.refund_account}</td>
+        </tr>
+        <tr>
+        <th>户名</th>
+        <td class="center dd" title="{$arr.refund_name}">{$arr.refund_name}</td>
+        <th>本次打款金额</th>
+        <td class="center dd" title="{$arr.refund_money}">{$arr.refund_money}</td>
+        </tr>
+        <tr>
+        <th>开户行</th>
+        <td class="center dd" title="{$arr.refund_bank}">{$arr.refund_bank}</td>
+        <th>账号</th>
+        <td class="center dd" title="{$arr.refund_number}">{$arr.refund_number}</td>
+        </tr>
+        <tr>
+        <th>企业价格</th>
+        <td class="center dd" title="{$arr.refund_enterprise}">{$arr.refund_enterprise}</td>
+        <th>签约年限</th>
+        <td class="center dd" title="{$arr.refund_contractyears}">{$arr.refund_contractyears}</td>
+        </tr>
+        <tr>
+        <th>配备人才</th>
+        <td class="center dd" title="{$arr.refund_qualified}">{$arr.refund_qualified}</td>
+        <th>级别</th>
+        <td class="center dd" title="{$arr.refund_level}">{$arr.refund_level}</td>
+        </tr>
+        <tr>
+        <th>专业</th>
+        <td class="center dd" title="{$arr.refund_major}">{$arr.refund_major}</td>
+        <th>人才价格</th>
+        <td class="center dd" title="{$arr.refund_talent}">{$arr.refund_talent}</td>
+        </tr>
+        <tr>
+        <th>客服</th>
+        <td class="center dd" title="{$arr.refund_customer}">{$arr.refund_customer}</td>
+        </tr>
+      </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>
