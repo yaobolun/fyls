@@ -117,83 +117,46 @@
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
-
+<style type="text/css">
+.b{    
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">假条详情</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">转账申请列表</h2>
+       <a href="/fyls/Admin/Transfer/transfer_add" class="fr top_rt_btn add_icon">添加转账申请</a>
       </div>
-     <section>
-     <table class="layui-table" style="width:900px; height:300px;">
-        <thead>
-          <tr>
-            <th colspan="4" style="height:30px;text-align:center;"><h1><b>员工请假单</b></h1></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="width:50px;">请假人：</td>
-            <td style="width:100px;"><?php echo ($find["applicant"]); ?></td>
-            <td style="width:60px;">所属部门：</td>
-            <td style="width:100px;"><?php echo ($bmname["department_name"]); ?></td>
-          </tr>
-          <tr>
-            <td>请假理由：</td>
-            <td colspan="3"><?php echo ($find["leave_reason"]); ?></td>
-          </tr><tr>
-            <td>请假时间：</td>
-            <td colspan="2"><?php echo ($find["start_time"]); ?>&nbsp;&nbsp; 到 &nbsp;&nbsp;<?php echo ($find["end_time"]); ?></td>
-            <!-- <td></td> -->
-            <td>共 &nbsp;&nbsp;<?php echo ($day); ?>&nbsp;&nbsp; 天</td>
-          </tr><tr>
-            <td>部门主管</td>
-            <td>
-			
-            </td>
-            <td>人事经理</td>
-            <td>
-
-            </td>
-          </tr>
-        </tbody>
+      <table class="table">
+        <tr>
+        <th>申请人</th>
+        <th>人才合同价格</th>
+        <th>配置企业价格</th>
+        <th>证书类别</th>
+        <th>配置企业</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center b" title="<?php echo ($arr["transfer_name"]); ?>"><?php echo ($arr["transfer_name"]); ?></td>
+        <td class="center b" title="<?php echo ($arr["transfer_contract"]); ?>"><?php echo ($arr["transfer_contract"]); ?></td>
+        <td class="center b" title="<?php echo ($arr["transfer_allocation"]); ?>"><?php echo ($arr["transfer_allocation"]); ?></td>
+        <td class="center b" title="<?php echo ($arr["transfer_certificate"]); ?>"><?php echo ($arr["transfer_certificate"]); ?></td>
+        <td class="center b" title="<?php echo ($arr["transfer_configuration"]); ?>"><?php echo ($arr["transfer_configuration"]); ?></td>
+        <td class="center">
+        <a href="/fyls/Admin/Transfer/transfer_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Transfer/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Transfer/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+       </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
-
-      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
-      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
-     </section>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-
-    function yes()
-    {
-    	 var a=confirm("确认通过吗?");
-      	  if(a){
-
-          location.href = "update";
-      		}
-    }
-
-</script>
 </body>
 </html>

@@ -112,3 +112,33 @@ ERR: 1146:Table 'fyls.voucher' doesn't exist
 ERR: 1146:Table 'fyls.voucher' doesn't exist
  [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `voucher` LIMIT 1  
 
+[ 2018-03-20T11:35:46+08:00 ] ::1 /fyls/Admin/Approval/leaveinfo?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0589s ]
+SQL: SELECT * FROM `form_leave` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0178s ]
+SQL: SELECT `department_name` FROM `departments` WHERE ( 1 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000269s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000426s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001300s ]
+
+[ 2018-03-20T11:35:53+08:00 ] ::1 /fyls/admin.php/Qualifications/qualifications
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `qualifications` LIMIT 1  
+ERR: 1146:Table 'fyls.qualifications' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `qualifications` LIMIT 1  
+
