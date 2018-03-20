@@ -31,6 +31,10 @@
 				e.preventDefault();
 				$(".content").mCustomScrollbar("scrollTo",$(this).attr("href"));
 			});
+<<<<<<< HEAD
+=======
+			
+>>>>>>> origin/master
 		});
 	})(jQuery);
 </script>
@@ -44,6 +48,7 @@
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
+<<<<<<< HEAD
 <aside class="lt_aside_nav content mCustomScrollbar">
 
  <uhl>
@@ -54,10 +59,18 @@
     <dd><a href="/fyls/admin.php/Approval/travel">外出审批</a></dd>
     </dl>
   </li>
+=======
+<!--aside nav-->
+<!--aside nav-->
+<aside class="lt_aside_nav content mCustomScrollbar">
+  
+ <ul>
+>>>>>>> origin/master
   <li>
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
+<<<<<<< HEAD
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
@@ -68,15 +81,32 @@
   <li>
    <dl>
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
+=======
+    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
+    
+    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
+    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
+    <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
+
+>>>>>>> origin/master
    </dl>
   </li>
   <li>
    <dl>
+<<<<<<< HEAD
     <dt> 请假 | 外出 </dt>
     <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
     <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
     <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
     <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
+=======
+
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
+>>>>>>> origin/master
    </dl>
   </li>
   <li>
@@ -84,11 +114,17 @@
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
+<<<<<<< HEAD
   </li>
+=======
+  </li>  
+  <!-- <li>
+>>>>>>> origin/master
    <dl>
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
    </dl>
+<<<<<<< HEAD
   </li>  
    </dl>
   </li>  
@@ -99,11 +135,30 @@
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+=======
+  </li> -->
+ <!-- <li>
+  <dl>
+    <dt>前台内容显示设置</dt>
+    <dd><a href="/fyls/admin.php/Top/emph">公司信息</a></dd>
+    <dd><a href="/fyls/admin.php/Top/banner">轮播图</a></dd>
+    <dd><a href="/fyls/admin.php/Top/scfw?id=26">商城服务</a></dd>
+   </dl>
+   </li> -->
+   <li>
+   <dl>
+    <dt>后台登录设置</dt>
+    <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
+    <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
+>>>>>>> origin/master
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -113,10 +168,13 @@
  </ul>
 </aside>
 
+<<<<<<< HEAD
 <!-- 
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
+=======
+>>>>>>> origin/master
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">

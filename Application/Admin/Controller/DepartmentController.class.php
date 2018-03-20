@@ -39,7 +39,11 @@ class DepartmentController extends Controller {
 				$query=$department->add($map);
 			
 				if($query>0){
+<<<<<<< HEAD
 					$this->journal($_SESSION['name'],'增加了部门',$_POST['department_name']);
+=======
+					$this->journals($_SESSION['name'],'增加了部门',$_POST['department_name']);
+>>>>>>> yaobolun
 					echo $this->jump('添加成功','Department/department');
 				}
 				else{

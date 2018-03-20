@@ -1,0 +1,202 @@
+[ 2017-11-07T17:49:23+08:00 ] ::1 /zjtr/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.1328s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\zjtr\Application\Admin\Controller\IndexController.class.php 第 18 行.
+SQL: SELECT news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages FROM `news` INNER JOIN report_categories on news.n_id=report_categories.id  ORDER BY news.type_id asc LIMIT 0,10   [ RunTime:0.2115s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000473s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051587s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001300s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001427s ]
+
+[ 2017-11-07T17:49:27+08:00 ] ::1 /zjtr/Admin/Product/product_mod?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0668s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 147 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 147 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `news` WHERE `Type_Id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0112s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 151 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+SQL: SELECT * FROM `report_categories`  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045042s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2017-11-07T17:49:58+08:00 ] ::1 /zjtr/Admin/Product/product_mod?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0124s ]
+NOTIC: [8] Undefined index: validate D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `news` SET `Title`='中建天润',`Abstract`='中建天润',`n_id`='20',`Details`='&lt;p&gt;&lt;img src=&quot;/ueditor/php/upload/image/20171107/1510048173206208.gif&quot; title=&quot;1510048173206208.gif&quot; alt=&quot;充电动图.gif&quot;/&gt;北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司&lt;/p&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;/ueditor/php/upload/image/20170925/1506333663708346.jpg&quot; title=&quot;1506333663708346.jpg&quot; alt=&quot;中建天润二级页面-经典案例_07.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;。&lt;br/&gt;&lt;/p&gt;' WHERE ( type_id=1 ) [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001460s ]
+
+[ 2017-11-07T17:50:01+08:00 ] ::1 /zjtr/Admin/Product/product
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0170s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( top_id=1 ) LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages,news.top_id FROM `news` INNER JOIN report_categories on news.n_id=report_categories.id  WHERE `top_id` = 1 ORDER BY news.time desc LIMIT 0,10   [ RunTime:0.0148s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014366s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2017-11-07T17:50:04+08:00 ] ::1 /zjtr/Admin/Product/product_mod?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0090s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 147 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 147 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `news` WHERE `Type_Id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0092s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 151 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+SQL: SELECT * FROM `report_categories`  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014763s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014851s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000819s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000896s ]
+
+[ 2017-11-07T17:50:39+08:00 ] ::1 /zjtr/Admin/Product/product_mod?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0154s ]
+NOTIC: [8] Undefined index: validate D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `news` SET `Title`='中建天润',`Abstract`='中建天润',`n_id`='20',`Details`='&lt;p&gt;北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司 。北京中建天润是十多年专一为中国建筑工程总公司提供CI整体策划实施的实体专业化经营公司&lt;/p&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;/ueditor/php/upload/image/20170925/1506333663708346.jpg&quot; title=&quot;1506333663708346.jpg&quot; alt=&quot;中建天润二级页面-经典案例_07.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;。&lt;br/&gt;&lt;/p&gt;' WHERE ( type_id=1 ) [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2017-11-07T17:50:42+08:00 ] ::1 /zjtr/Admin/Product/product
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001306s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0498s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( top_id=1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages,news.top_id FROM `news` INNER JOIN report_categories on news.n_id=report_categories.id  WHERE `top_id` = 1 ORDER BY news.time desc LIMIT 0,10   [ RunTime:0.0747s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017657s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001298s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001455s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002733s ]
+
+[ 2017-11-07T17:50:45+08:00 ] ::1 /zjtr/Admin/Product/product_mod?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0331s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 147 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 147 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `news` WHERE `Type_Id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `report_categories` [ RunTime:0.0084s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\WWW\zjtr\Application\Admin\Controller\ProductController.class.php on line 151 and defined D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\zjtr\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+SQL: SELECT * FROM `report_categories`  [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019088s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019196s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+

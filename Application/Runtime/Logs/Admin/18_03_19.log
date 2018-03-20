@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ 2018-03-19T09:13:21+08:00 ] ::1 /fyls/admin.php/Travel/travel_sp
 ERR: 非法操作:travel_sp
 
@@ -14484,6 +14485,8 @@ INFO: [ app_end ] --END-- [ RunTime:0.001114s ]
 [ 2018-03-19T18:44:20+08:00 ] ::1 /fyls/admin.php/Travel/travel_list
 ERR: syntax error, unexpected ''TMPL_CACHE_ON'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
 =======
+=======
+>>>>>>> yaobolun
 [ 2018-03-19T09:09:16+08:00 ] 127.0.0.1 /fyls/admin.php/People/people
 ERR: 1146:Table 'fyls.department' doesn't exist
  [ SQL语句 ] : SHOW COLUMNS FROM `department`
@@ -19583,5 +19586,8 @@ INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+<<<<<<< HEAD
 >>>>>>> origin/yaobolun
+=======
+>>>>>>> yaobolun
 
