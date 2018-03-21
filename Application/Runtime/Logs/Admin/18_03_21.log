@@ -1,0 +1,9 @@
+[ 2018-03-21T10:13:08+08:00 ] ::1 /fyls/admin.php/Travel/travel_list
+ERR: syntax error, unexpected '<<' (T_SL)
+
+[ 2018-03-21T10:17:30+08:00 ] ::1 /fyls/admin.php/Approval/leave
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( id= ) LIMIT 1  
+

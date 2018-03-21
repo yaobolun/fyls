@@ -67,7 +67,6 @@
   </li>
   <li>
    <dl>
-    <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
    </dl>
   </li>
   <li>
@@ -89,21 +88,15 @@
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
    </dl>
-  </li>  
-   </dl>
-  </li>  
    <li>
    <dl>
     <dt>后台登录设置</dt>
+    <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
     <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
-    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -112,11 +105,6 @@
   </li>
  </ul>
 </aside>
-
-<!-- 
-提出问题  分析问题 解决问题
-
-干了什么 该干什么  有什么问题（早上） -->
 <style type="text/css">
 .flow{
     width: 176px;
@@ -167,7 +155,6 @@
           <td class="center" style="color:green;">已通过</td>
         <?php elseif($show["flag"] == 2): ?>
           <td class="center" style="color:red;">未通过</td><?php endif; ?>
-
         <td class="center">
          <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
          <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a>

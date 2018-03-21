@@ -31,11 +31,8 @@ class TravelController extends Controller {
 	{	
 		// $travels = new \Model\Travel;
 
-<<<<<<< HEAD
 		if(!empty($_POST)){
-=======
-		// if(!empty($_POST)){
->>>>>>> yaobolun
+
 		// 	$z = $travels->create();
 		// 	if(!$z){
 		// 		show_bug($user->getError());
@@ -55,11 +52,7 @@ class TravelController extends Controller {
 				echo	$this->jump('申请失败，请重新申请！',"Travel/add_travel");
 			}
 		}else{
-<<<<<<< HEAD
 			$this->display('/Admin/Travel/add_travel');
-=======
-			$this->display();
->>>>>>> yaobolun
 		}
 	}
 
