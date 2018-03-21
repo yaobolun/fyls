@@ -109,49 +109,37 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请请假</h2>
+       <h2 class="fl">我要请假</h2>
        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
       </div>
      <section>
 
-     <form action="/fyls/Admin/Leave/doadd_leave" method="post">
+     <form action="/fyls/Admin/Leave/leave_edit" method="post">
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
+        <input type="text" class="textbox textbox_295" placeholder="申请人..." value="<?php echo ($show["applicant"]); ?>" name="applicant" />
        </li>
        <li>
         <span class="item_name" style="width:200px;">请假原因:</span>
-        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason"></textarea>
+        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason"><?php echo ($show["leave_reason"]); ?></textarea>
        </li>
        <li>
-          <span class="item_name" style="width: 200px;" >开始日期:</span>
+          <span class="item_name" style="width: 200px" >开始日期:</span>
           <div class="layui-input-inline">
-            <input type="text" name="start_time" class="textbox textbox_295" id="test5" placeholder="请假开始日期">
+            <input type="text" name="start_time" class="textbox textbox_295" value="<?php echo ($show["start_time"]); ?>" id="test5" placeholder="请假开始日期">
           </div>
        </li>
        <li>
-          <span class="item_name" style="width: 200px;" >结束日期:</span>
+          <span class="item_name" style="width: 200px" >结束日期:</span>
           <div class="layui-input-inline">
-            <input type="text" name="end_time" class="textbox textbox_295" id="test1" placeholder="请假结束日期">
+            <input type="text" name="end_time" class="textbox textbox_295" value="<?php echo ($show["end_time"]); ?>" id="test1" placeholder="请假结束日期">
           </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">选择您的主管:</span>
-        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
-          <option>--请选择--</option>
-
-          <?php if(is_array($name)): foreach($name as $key=>$name): ?><option name="aid" value="<?php echo ($name["id"]); ?>">
-                    <?php echo ($name["name"]); ?>
-              </option><?php endforeach; endif; ?>
-
-        </select>
        </li>
        <li>
         <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
+        <input type="hidden" name="id" value="<?php echo ($show["id"]); ?>" />
+        <input type="submit" name="sub" class="link_btn"/>
        </li>
       </ul>
       </form>

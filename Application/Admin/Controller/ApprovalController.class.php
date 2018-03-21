@@ -15,11 +15,11 @@ class ApprovalController extends Controller
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		if($condition){
 			$form_leave = M('form_leave');
-			$show = $form_leave->where('department_id='.$user_bmid.' AND aid='.$uid.' AND department_id=0')->select();
+			$show = $form_leave->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0')->select();
 			$this->assign('show', $show);
 			$this->display();
 		}else{
-			echo 22;die;
+			echo '您没有权限哦 ! ';
 			}
 	}
 	public function leaveinfo($id)
@@ -33,9 +33,9 @@ class ApprovalController extends Controller
 		$zero1 = strtotime ($kstime);
 		$zero2 = strtotime ($jstime);
 		$guonian=ceil(($zero2-$zero1)/86400);
+		$guonian = abs($guonian);
 		$departments = M('departments');
 		$bmname = $departments->where($bmid)->field('department_name')->find();
-		// var_dump($find);die;
 		$this->assign('day', $guonian);
 		$this->assign('bmname', $bmname);
 		$this->assign('find', $find);
@@ -43,15 +43,22 @@ class ApprovalController extends Controller
 		$this->display();
 	}
 	public function adopt()
-	{	
-		$map['bm_sp'] = ($_POST['bm_sp'] = 1);
+	{
+		$map['bm_sp'] = $_POST['bm_sp'];
 		$map['id'] = $_POST['qj_id'];
-		if($map['bm_sp'] == 0){
+		$map['flag'] = $_POST['flag'];
+		// var_dump($map);die;
+		if($map['bm_sp']==0){
+			$map['bm_sp'] = 1;
+			$map['flag'] = 1;
 			M('form_leave')->where('id='.$map['id'])->save($map);
 			echo    $this->jump('已通过 !', 'Approval/leave');
 		}else{
 			echo    $this->jump('出现问题了呢，提交失败！', 'Approval/leave');
 		}
-		
 	}
+	public  function jump($string,$url){
+      $url=C('HOME_PATH').'/'.$url;
+      return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
+    }
 }

@@ -109,53 +109,51 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请请假</h2>
+       <h2 class="fl">假条详情</h2>
        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
       </div>
      <section>
+     <form id="form" action="/fyls/Admin/Approval/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
+     <input type="hidden" name="qj_id" value="<?php echo ($find["id"]); ?>">
+     <input type="hidden" name="flag" value="<?php echo ($find["flag"]); ?>">
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>员工请假单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">请假人：</td>
+            <td style="width:100px;"><?php echo ($find["applicant"]); ?></td>
+            <td style="width:60px;">所属部门：</td>
+            <td style="width:100px;"><?php echo ($bmname["department_name"]); ?></td>
+          </tr>
+          <tr>
+            <td>请假理由：</td>
+            <td colspan="3"><?php echo ($find["leave_reason"]); ?></td>
+          </tr><tr>
+            <td>请假时间：</td>
+            <td colspan="2"><?php echo ($find["start_time"]); ?>&nbsp;&nbsp; 到 &nbsp;&nbsp;<?php echo ($find["end_time"]); ?></td>
+            <!-- <td></td> -->
+            <td>共 &nbsp;&nbsp;<?php echo ($day); ?>&nbsp;&nbsp; 天</td>
+          </tr><tr>
+            <td>部门主管</td>
+            <td>
+			       <?php echo ($uname); ?>
+            </td>
+            <td>人事经理</td>
+            <td>
 
-     <form action="/fyls/Admin/Leave/doadd_leave" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">请假原因:</span>
-        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason"></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px;" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="start_time" class="textbox textbox_295" id="test5" placeholder="请假开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px;" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="end_time" class="textbox textbox_295" id="test1" placeholder="请假结束日期">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">选择您的主管:</span>
-        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
-          <option>--请选择--</option>
-
-          <?php if(is_array($name)): foreach($name as $key=>$name): ?><option name="aid" value="<?php echo ($name["id"]); ?>">
-                    <?php echo ($name["name"]); ?>
-              </option><?php endforeach; endif; ?>
-
-        </select>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
-       </li>
-      </ul>
+            </td>
+          </tr>
+        </tbody>
+        <?php echo ($page); ?>
+      </table>
       </form>
-
+      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
+      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
      </section>
  </div>
 </section>
@@ -179,6 +177,15 @@
         ,type: 'datetime'
       });
     });
+
+    function yes()
+    {
+    	 var a=confirm("确认通过吗?");
+      	  if(a){
+              $("#form").submit();
+      		}
+    }
+
 </script>
 </body>
 </html>

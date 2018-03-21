@@ -9,7 +9,6 @@ class LeaveController extends Controller {
     	{
     		echo	$this->jump('请登录',"Index/login");
     	}else {
-			
     		$this->display();
     	}
     }
@@ -45,7 +44,6 @@ class LeaveController extends Controller {
 			$this->display();
 		}
 	}
-
 	public function leave_list()
 	{
 		$sid = session('id');
