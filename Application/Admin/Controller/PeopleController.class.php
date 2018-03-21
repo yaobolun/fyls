@@ -70,7 +70,6 @@ class PeopleController extends Controller {
 			$this->display();
 		}
 	}
-
 	//数据修改
 	public function update(){
 		$department = M("departments");
@@ -107,7 +106,6 @@ class PeopleController extends Controller {
 			$this->display();
 		}
 	}
-
 	//删除数据
 	public function del()
 	{
@@ -122,11 +120,9 @@ class PeopleController extends Controller {
 			}else 
 				{
 				echo $this->error("删除失败","People/people");
-			}		
-
+			}
 		}
 	}
-
 	/*跳转*/
     public  function jump($string,$url){
       $url=C('HOME_PATH').'/'.$url;

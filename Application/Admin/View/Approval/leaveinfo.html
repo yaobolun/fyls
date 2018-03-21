@@ -37,17 +37,17 @@
             <td>
 			       {$uname}
             </td>
-            <td>人事经理</td>
+            <td><button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
-
+<button class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
             </td>
           </tr>
         </tbody>
         {$page}
       </table>
       </form>
-      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
-      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
+      
+      
      </section>
  </div>
 </section>
@@ -78,6 +78,14 @@
       	  if(a){
               $("#form").submit();
       		}
+    }
+    function Not($id)
+    {
+      var b=confirm("你将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Approval/Not?id='+($id);
+      }
+
     }
 
 </script>

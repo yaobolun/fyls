@@ -72,10 +72,8 @@
   <li>
    <dl>
     <dt> 请假 | 外出 </dt>
-    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
-    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
    </dl>
   </li>
   <li>
@@ -150,15 +148,17 @@
         <?php elseif($show["flag"] == 1): ?>
           <td style="color:blue;" class="center">审批中</td>
         <?php elseif($show["flag"] == 2): ?>
-          <td class="center">已通过</td>
+          <td style="color:green;" class="center">已通过</td>
         <?php elseif($show["flag"] == 3): ?>
           <td style="color:red;" class="center">未通过</td><?php endif; ?>
-
         <td class="center">
 
         <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
+        <?php elseif($show["flag"] == 3): ?>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <?php else: ?>
           <a href="/fyls/Admin/Leave/leave_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
+
          <a href="/fyls/Admin/Leave/leave_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -172,6 +172,10 @@
     function sp()
     {
       alert('审批过程中不能修改哦！');
+    }
+    function qq()
+    {
+      alert('无法操作哦！');
     }
 </script>
 <!-- <script type="text/javascript">

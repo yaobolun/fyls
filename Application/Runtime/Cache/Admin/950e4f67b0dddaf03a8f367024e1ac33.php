@@ -72,10 +72,8 @@
   <li>
    <dl>
     <dt> 请假 | 外出 </dt>
-    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
-    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
    </dl>
   </li>
   <li>

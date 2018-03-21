@@ -17,20 +17,19 @@ class LeaveController extends Controller {
       $url=C('HOME_PATH').'/'.$url;
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
-
 	public function add_leave()
 	{
 		$bmid = session('department_id');
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
 		$user_id = array_column($director,'id');
 		$a = implode(",",$user_id);
-		$name = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
-		$this->assign('name', $name);
+		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+		// var_dump($name);die;
+		$this->assign('user', $user);
 		$this->display();
 	}
-
 	public function doadd_leave()
-	{
+	{	
 		if(!empty($_POST)){
 			$user=M('form_leave');
 			$map = $user->create();
@@ -64,10 +63,9 @@ class LeaveController extends Controller {
 			if($val>0)
 			{
 				echo	$this->jump("删除成功","Leave/leave_list");
-			}else
-				{
+			}else{
 				echo	$this->jump("删除失败","leave/leave_list");
-			}		
+			}
 		}
 	}
 

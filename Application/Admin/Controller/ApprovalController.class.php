@@ -13,14 +13,20 @@ class ApprovalController extends Controller
 		$user_qxid = $user['station_id'];
 		$user_bmid = $user['department_id'];
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
+		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
 		if($condition){
 			$form_leave = M('form_leave');
-			$show = $form_leave->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0')->select();
+			$show = $form_leave->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
+			$this->assign('show', $show);
+			$this->display();
+		}elseif($manager){
+			$form_leave = M('form_leave');
+			$show = $form_leave->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
 			$this->assign('show', $show);
 			$this->display();
 		}else{
-			echo '您没有权限哦 ! ';
-			}
+			echo $this->jump('您没有权限哦', 'Leave/leave_list');
+		}
 	}
 	public function leaveinfo($id)
 	{
@@ -53,10 +59,28 @@ class ApprovalController extends Controller
 			$map['flag'] = 1;
 			M('form_leave')->where('id='.$map['id'])->save($map);
 			echo    $this->jump('已通过 !', 'Approval/leave');
+		}elseif($map['bm_sp']==1){
+			$map['manager_sp'] = 1;
+			$map['flag'] = 2;
+			M('form_leave')->where('id='.$map['id'])->save($map);
+			echo    $this->jump('已通过 !', 'Approval/leave');
 		}else{
 			echo    $this->jump('出现问题了呢，提交失败！', 'Approval/leave');
 		}
+
 	}
+	public function Not($id)
+	{	
+		$leave = M('form_leave')->where('id='.$id)->find();
+		$leave['flag'] = 3;
+		$leave = M('form_leave')->where('id='.$id)->save($leave);
+		if($leave){
+			echo $this->jump('你拒绝了TA ！', 'Approval/leave');
+		}else{
+			echo $this->jump('操作失败！', 'Approval/leave');
+		}
+	}
+
 	public  function jump($string,$url){
       $url=C('HOME_PATH').'/'.$url;
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";

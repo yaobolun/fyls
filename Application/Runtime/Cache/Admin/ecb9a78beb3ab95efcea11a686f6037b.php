@@ -72,10 +72,8 @@
   <li>
    <dl>
     <dt> 请假 | 外出 </dt>
-    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
-    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
    </dl>
   </li>
   <li>
@@ -143,17 +141,17 @@
             <td>
 			       <?php echo ($uname); ?>
             </td>
-            <td>人事经理</td>
+            <td><button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
-
+<button class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not(<?php echo ($find["id"]); ?>)">残忍拒绝</button>
             </td>
           </tr>
         </tbody>
         <?php echo ($page); ?>
       </table>
       </form>
-      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
-      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
+      
+      
      </section>
  </div>
 </section>
@@ -184,6 +182,14 @@
       	  if(a){
               $("#form").submit();
       		}
+    }
+    function Not($id)
+    {
+      var b=confirm("你将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Approval/Not?id='+($id);
+      }
+
     }
 
 </script>
