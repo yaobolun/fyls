@@ -24,10 +24,6 @@ class StationController extends Controller {
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->assign('Re',$Re);
-<<<<<<< HEAD
-=======
-		// var_dump($Re);exit;
->>>>>>> yaobolun
 		$this->display();
     }
 
@@ -68,12 +64,7 @@ class StationController extends Controller {
 		$admin=M('stations');
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
-<<<<<<< HEAD
-			$map['station_name']=$_POST['title'];			
-
-=======
 			$map['station_name']=$_POST['title'];						
->>>>>>> yaobolun
 			$val=$admin->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
 			if($val)
@@ -105,10 +96,6 @@ class StationController extends Controller {
 			}else 
 				{
 				echo $this->error("删除失败","Station/station");
-<<<<<<< HEAD
-=======
-
->>>>>>> yaobolun
 			}		
 
 		}

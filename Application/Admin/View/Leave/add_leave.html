@@ -34,14 +34,14 @@
         <span class="item_name" style="width:200px;">选择您的主管:</span>
         <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
           <option>--请选择--</option>
+
           <foreach name="name" item="name">
-              <option  value="{$name.name}">
-                    {$director.}
+              <option name="aid" value="{$name.id}">
+                    {$name.name}
               </option>
           </foreach>
+
         </select>
-        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" /> -->
-        
        </li>
        <li>
         <span class="item_name" style="width:200px;"></span>

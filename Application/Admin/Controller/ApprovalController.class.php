@@ -11,25 +11,20 @@ class ApprovalController extends Controller
 		$admin_user = M('admin_user');
 		$user = $admin_user->where('id='.$uid)->find();
 		$user_qxid = $user['station_id'];
+		$user_bmid = $user['department_id'];
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		if($condition){
-			echo 11;die;
+			$form_leave = M('form_leave');
+			$show = $form_leave->where('department_id='.$user_bmid.' AND aid='.$uid.' AND department_id=0')->select();
+			$this->assign('show', $show);
+			$this->display();
 		}else{
 			echo 22;die;
 			}
-		// $director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
-		// $user_id = array_column($director,'id');
-
-		// $count=$leave->count();
-		// $Page=new\Think\Page($count,10);
-		// $show= $Page->show();
-		// $arr=$leave->where("flag = 0")->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
-		// $this->assign('show', $arr);
-		// $this->assign('page', $show);
-		// $this->display();
 	}
 	public function leaveinfo($id)
 	{
+		$uname = session('name');
 		$leave = M('form_leave');
 		$find = $leave->find($id);
 		$bmid = $find['department_id'];
@@ -40,16 +35,23 @@ class ApprovalController extends Controller
 		$guonian=ceil(($zero2-$zero1)/86400);
 		$departments = M('departments');
 		$bmname = $departments->where($bmid)->field('department_name')->find();
-
+		// var_dump($find);die;
 		$this->assign('day', $guonian);
 		$this->assign('bmname', $bmname);
 		$this->assign('find', $find);
+		$this->assign('uname', $uname);
 		$this->display();
 	}
-
 	public function adopt()
-	{
-		$a = $_GET[''];
-		var_dump($a);die;
+	{	
+		$map['bm_sp'] = ($_POST['bm_sp'] = 1);
+		$map['id'] = $_POST['qj_id'];
+		if($map['bm_sp'] == 0){
+			M('form_leave')->where('id='.$map['id'])->save($map);
+			echo    $this->jump('已通过 !', 'Approval/leave');
+		}else{
+			echo    $this->jump('出现问题了呢，提交失败！', 'Approval/leave');
+		}
+		
 	}
 }

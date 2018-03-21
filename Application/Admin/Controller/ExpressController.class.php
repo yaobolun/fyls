@@ -57,13 +57,9 @@ class ExpressController extends Controller {
 		}
     }
 
-<<<<<<< HEAD
-=======
     /*跳转*/
     public  function jump($string,$url){
       $url=C('HOME_PATH').'/'.$url;
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
-
->>>>>>> yaobolun
 }

@@ -16,18 +16,12 @@ class AdminController extends Controller {
 
 	public function admin(){
 		$admin=M('admin_user');
-<<<<<<< HEAD
 		$count=$admin->count();// 查询满足要求的总记录数
 		$count=$admin->where("flag = 0")->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		$arr=$admin->where('flag = 0 and administration = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$count=$admin->where("flag = 0")->count();// 查询满足要求的总记录数
-=======
-
-		$count=$admin->where("flag = 0")->count();// 查询满足要求的总记录数
-
->>>>>>> yaobolun
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		$arr=$admin->where('flag = 0 and administration = 0')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -43,13 +37,6 @@ class AdminController extends Controller {
 			$map['administration'] = 0;
 			$map['time'] = date("Y-m-d H:i:s");
 			$map['updatetime'] = date("Y-m-d H:i:s");
-<<<<<<< HEAD
-			$map['administration'] = 0;
-			$map['time'] = date("Y-m-d H:i:s");
-			$map['updatetime'] = date("Y-m-d H:i:s");
-=======
-
->>>>>>> yaobolun
 			$em2=$admin->where("name='".$map['name']."' and flag = 0")->select();
 
 			if($em2) {
@@ -58,10 +45,6 @@ class AdminController extends Controller {
 			else{
 				$query=$admin->add($map);
 				if($query>0){
-<<<<<<< HEAD
-=======
-
->>>>>>> yaobolun
 					echo $this->jump('添加成功','Admin/admin');
 				}
 				else{
@@ -81,15 +64,6 @@ class AdminController extends Controller {
 			$id = $_GET['id'];
 		 	$user['flag'] = 1; 
 		 	$val=$admin->where("flag = 0 and id = ".$id )->save($user);
-<<<<<<< HEAD
-			$id = $_GET['id'];
-		 	$user['flag'] = 1; 
-		 	$val=$admin->where("flag = 0 and id = ".$id )->save($user);
-			$id=$_GET['id'];
-		 	$val=$admin->delete($id);
-
-=======
->>>>>>> yaobolun
 			if($val>0)
 			{
 				echo $this->jump("删除成功","Admin/admin");
@@ -107,12 +81,7 @@ class AdminController extends Controller {
 			$id=$_POST['id'];
 			$map['name']=$_POST['title'];
 			$map['password']=md5($_POST['password']);
-<<<<<<< HEAD
 			$map['updatetime']=date("Y-m-d H:i:s");					
-=======
-			$map['updatetime']=date("Y-m-d H:i:s");	
-						
->>>>>>> yaobolun
 			$val=$admin->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
 			if($val)

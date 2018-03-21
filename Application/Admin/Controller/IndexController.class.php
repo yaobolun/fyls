@@ -6,33 +6,21 @@ class IndexController extends Controller {
 	public function index(){
     	if($_SESSION['id']=='')
     	{
-<<<<<<< HEAD
-    		echo	$this->jump('请登录',"Index/login");
-    	}else {
-=======
+
     	echo	$this->jump('请登录',"Index/login");
     	}else {
     		
->>>>>>> yaobolun
 			// $news=M('news');//实例化数据表
 			// $count=$news->count();// 查询满足要求的总记录数
 			// $Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 			// $show= $Page->show();// 分页显示输出
 			// if(!empty($_POST['sub'])){
 			//  		$map['Title']=array("like","%".$_POST['name']."%");	//搜索 
-<<<<<<< HEAD
-			// 	 }1
-			// $arr=$news->where($map)->join("report_categories on news.n_id=report_categories.id")->field('news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages')->order('news.type_id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
-			// $this->assign('arr',$arr);
-			// $this->assign('page',$show);
-    		$this->display("Admin/transfer");
-=======
 			// 	 }
 			// $arr=$news->where($map)->join("report_categories on news.n_id=report_categories.id")->field('news.title,news.abstract,news.U_price,news.time,news.published,report_categories.type,news.type_id,news.pages')->order('news.type_id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			// $this->assign('arr',$arr);
 			// $this->assign('page',$show);
     		$this->display("Product/product");
->>>>>>> yaobolun
     	}
     }
 	public function tc(){
@@ -56,20 +44,12 @@ class IndexController extends Controller {
 			{
 				$value	=	$data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
-<<<<<<< HEAD
 				$_SESSION['name']	=	$value['name'];
 				$_SESSION['department_id'] = $value['department_id'];
 				
 				// var_dump($_SESSION['id']);die;
 
 				echo	$this->jump('登陆成功',"Department/department");
-=======
-
-				$_SESSION['name']	=	$value['name'];
-				
-				echo	$this->jump('登陆成功',"Department/department");
-
->>>>>>> yaobolun
 			}
 			else 
 			{
