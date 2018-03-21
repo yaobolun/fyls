@@ -31,7 +31,7 @@
 				e.preventDefault();
 				$(".content").mCustomScrollbar("scrollTo",$(this).attr("href"));
 			});
-			
+
 		});
 	})(jQuery);
 </script>
@@ -45,6 +45,18 @@
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
+
+<aside class="lt_aside_nav content mCustomScrollbar">
+
+ <uhl>
+ <li>
+   <dl>
+    <dt>审批列表</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
+    <dd><a href="/fyls/admin.php/Approval/travel">外出审批</a></dd>
+    </dl>
+  </li>
+
 <!--aside nav-->
 <!--aside nav-->
 <aside class="lt_aside_nav content mCustomScrollbar">
@@ -54,6 +66,17 @@
    <dl>
     <dt>财务管理</dt>
     <!--当前链接则添加class:active-->
+    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+    </dl>
+  </li>
+  <li>
+   <dl>
+    <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
+
     <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
     
     <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
@@ -68,8 +91,16 @@
     <dt> 请假 | 外出 </dt>
     <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
     <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
+
+
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
     <dd><a href="/fyls/admin.php/Leave/leave_list">请假记录</a></dd>
     <dd><a href="/fyls/admin.php/Travel/travel_list">外出记录</a></dd>
+
    </dl>
   </li>
   <li>
@@ -77,12 +108,28 @@
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
+
+  </li>
+
   </li>  
   <!-- <li>
+>>>>>>> yaobolun
    <dl>
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
    </dl>
+<<<<<<< HEAD
+  </li>  
+   </dl>
+  </li>  
+   <li>
+   <dl>
+    <dt>后台登录设置</dt>
+    <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
+    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+=======
   </li> -->
  <!-- <li>
   <dl>
@@ -97,10 +144,12 @@
     <dt>后台登录设置</dt>
     <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
     <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
+
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -111,6 +160,12 @@
 </aside>
 
 
+<!-- 
+提出问题  分析问题 解决问题
+
+干了什么 该干什么  有什么问题（早上） -->
+
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
@@ -118,7 +173,10 @@
        <a class="fr top_rt_btn" href="/fyls/Admin/People/people">返回人员列表</a>
       </div>
      <section>
+
+
      <form action="" name="form1" method="post" enctype="multipart/form-data">
+
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:120px;">员工名称：</span>
@@ -145,6 +203,8 @@
 
        <li>
         <span class="item_name" style="width:120px;">岗位：</span>
+
+
         <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
           <option value="0">--请选择--</option>
           <?php if(is_array($sta)): foreach($sta as $key=>$station_name): ?><option  value="<?php echo ($station_name["id"]); ?>" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
@@ -153,6 +213,7 @@
           <!-- <?php if(is_array($sta)): foreach($sta as $key=>$station): ?><option  value="<?php echo ($station["id"]); ?>" >
                     <?php echo ($station["station_name"]); ?>
               </option><?php endforeach; endif; ?> -->
+
         </select>
         <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" /> -->
         
@@ -189,6 +250,7 @@
   function changeDep(){
      var department_id = $("#department_id").val();//得到第一个下拉列表的值
      $.ajax({
+
         type:'post',
         url:"/fyls/admin.php/People/add",
         data:{'did':department_id},
@@ -204,6 +266,7 @@
                 // alert(station_id);
                 jName[i+1]=new Option("--"+station_name+"--",station_id); 
             }  
+
         }
      });
   }
