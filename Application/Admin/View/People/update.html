@@ -7,12 +7,10 @@
        <a class="fr top_rt_btn" href="__ROOT__/Admin/People/people">返回人员列表</a>
       </div>
      <section>
-<<<<<<< HEAD
-     <form action="" method="post"  enctype="multipart/form-data">
-=======
+
 
      <form action="" name="form1" method="post"  enctype="multipart/form-data">
->>>>>>> yaobolun
+
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:120px;">人员名称：</span>
@@ -33,14 +31,8 @@
 
        <li>
         <span class="item_name" style="width:120px;">岗位：</span>
-<<<<<<< HEAD
-        <select name="station_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
-          <foreach name="sta" item="station">
-              <option  value="{$station.id}" <?php if($station['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
-                    {$station.station_name}
-              </option>
-            </foreach>
-=======
+
+
         <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
 
           <!-- <foreach name="sta" item="station">
@@ -54,7 +46,7 @@
                     {$station_name.station_name}
               </option>
             </foreach>  
->>>>>>> yaobolun
+
         </select>
         <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" /> -->
         
@@ -90,9 +82,7 @@
         data:{'did':department_id},
         dataType: "json",
         success:function(data){
-<<<<<<< HEAD
-          alert(111);
-=======
+
             var length = JSON.stringify(data.length);
             //alert(length);
             var jName=document.form1.station;
@@ -103,7 +93,7 @@
                 // alert(station_id);
                 jName[i+1]=new Option("--"+station_name+"--",station_id); 
             }  
->>>>>>> yaobolun
+
         }
      });
   }

@@ -72,7 +72,6 @@
   <li>
    <dl>
     <dt> 请假 | 外出 </dt>
-
     <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
     <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
    </dl>
@@ -120,8 +119,6 @@
        <h2 class="fl">外出记录</h2>
        
        <a href="/fyls/admin.php/Travel/add_travel" class="fr top_rt_btn add_icon">申请外出</a>
-  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
-       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
       </div>
       <section class="mtb">
        <form action="" method="post">

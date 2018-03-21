@@ -107,75 +107,108 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请请假</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">管理员添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/People/people">返回人员列表</a>
       </div>
      <section>
 
-     <form action="/fyls/Admin/Leave/doadd_leave" method="post">
+
+     <form action="" name="form1" method="post" enctype="multipart/form-data">
+
       <ul class="ulColumn2">
        <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
+        <span class="item_name" style="width:120px;">员工名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
+         
        </li>
        <li>
-        <span class="item_name" style="width:200px;">请假原因:</span>
-        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason"></textarea>
+        <span class="item_name" style="width:120px;">密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
+        
        </li>
+
        <li>
-          <span class="item_name" style="width: 200px;" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="start_time" class="textbox textbox_295" id="test5" placeholder="请假开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px;" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="end_time" class="textbox textbox_295" id="test1" placeholder="请假结束日期">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">选择您的主管:</span>
-        <select name="aid" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
-          <option>--请选择--</option>
-          <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
-                    <?php echo ($user["name"]); ?>
+        <span class="item_name" style="width:120px;">部门：</span>
+        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <option value="0">--请选择--</option>
+          <?php if(is_array($dep)): foreach($dep as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
+                    <?php echo ($department["department_name"]); ?>
               </option><?php endforeach; endif; ?>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" /> -->
+        
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">岗位：</span>
+
+
+        <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+          <option value="0">--请选择--</option>
+          <?php if(is_array($sta)): foreach($sta as $key=>$station_name): ?><option  value="<?php echo ($station_name["id"]); ?>" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
+                    <?php echo ($station_name["station_name"]); ?>
+              </option><?php endforeach; endif; ?>  
+          <!-- <?php if(is_array($sta)): foreach($sta as $key=>$station): ?><option  value="<?php echo ($station["id"]); ?>" >
+                    <?php echo ($station["station_name"]); ?>
+              </option><?php endforeach; endif; ?> -->
 
         </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" /> -->
+        
        </li>
+        
        <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
        </li>
       </ul>
       </form>
-
      </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+    if($("#name").val()==''||$("#name").val().length<1)
+    {
+      alert('User name cannot be empty and no less than 1 bits');
+      return false;
+    }
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
+      return false;
+    }
+  }
+  
+</script>
 <script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
 
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
 
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
+        type:'post',
+        url:"/fyls/admin.php/People/add",
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+          var length = JSON.stringify(data.length);
+            //alert(length);
+            var jName=document.form1.station;
+            jName.length=1; 
+            for(var i=0;i<length;i++){
+                var station_name =  eval(JSON.stringify(data[i]['station_name']));
+                var station_id =  eval(JSON.stringify(data[i]['id']));
+                // alert(station_id);
+                jName[i+1]=new Option("--"+station_name+"--",station_id); 
+            }  
 
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
+        }
+     });
+  }
+
 </script>
 </body>
 </html>

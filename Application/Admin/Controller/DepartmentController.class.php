@@ -40,6 +40,7 @@ class DepartmentController extends Controller {
 			
 				if($query>0){
 					$this->journals($_SESSION['name'],'增加了部门',$_POST['department_name']);
+
 					echo $this->jump('添加成功','Department/department');
 				}
 				else{
