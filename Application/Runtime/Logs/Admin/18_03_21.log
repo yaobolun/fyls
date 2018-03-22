@@ -208,3 +208,532 @@ ERR: 1052:Column 'flag' in where clause is ambiguous
 ERR: 1052:Column 'flag' in where clause is ambiguous
  [ SQL语句 ] : SELECT departments.id,departments.department_name FROM `admin_user` left join departments on admin_user.department_id = departments.id  WHERE ( flag = 0 and id = 3 ) 
 
+[ 2018-03-21T18:21:13+08:00 ] ::1 /fyls/Admin/People/update?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001357s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0412s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0075s ]
+ERR: 1052:Column 'flag' in where clause is ambiguous
+ [ SQL语句 ] : SELECT departments.id,departments.department_name FROM `admin_user` left join departments on admin_user.department_id = departments.id  WHERE ( flag = 0 and id = 3 ) 
+ERR: 1052:Column 'flag' in where clause is ambiguous
+ [ SQL语句 ] : SELECT departments.id,departments.department_name FROM `admin_user` left join departments on admin_user.department_id = departments.id  WHERE ( flag = 0 and id = 3 ) 
+
+[ 2018-03-21T18:22:56+08:00 ] ::1 /fyls/Admin/Travel/doadd_travel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000814s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `form_business_travel` [ RunTime:0.0081s ]
+NOTIC: [8] Undefined index: validate D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `form_business_travel` (`applicant`,`out_addr`,`out_reason`,`out_time`,`back_time`,`uid`) VALUES ('去玩儿','去玩儿','去玩儿','2018-03-22 00:00:00','2018-03-21 00:00:00','1') [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000902s ]
+
+[ 2018-03-21T18:22:58+08:00 ] ::1 /fyls/Admin/Travel/travel_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `form_business_travel` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_business_travel` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `form_business_travel` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\37c0d9edfcb91ce626c9f0a7d90f8cef.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014061s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2018-03-21T18:44:24+08:00 ] ::1 /fyls/admin.php/Approval/travel
+ERR: 非法操作:travel
+
+[ 2018-03-21T18:47:21+08:00 ] ::1 /fyls/Admin/Travel/travel_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001984s ]
+SQL: SHOW COLUMNS FROM `form_business_travel` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_business_travel` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `form_business_travel` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\37c0d9edfcb91ce626c9f0a7d90f8cef.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010966s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010995s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000474s ]
+
+[ 2018-03-21T18:47:22+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:33+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:34+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:34+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:34+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:34+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:34+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:35+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:51:35+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:52:01+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:52:01+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:52:01+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:52:02+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T18:52:04+08:00 ] ::1 /fyls/Admin/Travel/travel_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `form_business_travel` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_business_travel` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `form_business_travel` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\37c0d9edfcb91ce626c9f0a7d90f8cef.php 第 159 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009978s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000481s ]
+
+[ 2018-03-21T18:52:05+08:00 ] ::1 /fyls/admin.php/Permissions/travel
+ERR: 无法加载控制器:Permissions
+
+[ 2018-03-21T19:03:32+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008272s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2018-03-21T19:03:36+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0418s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'd41d8cd98f00b204e9800998ecf8427e' LIMIT 1   [ RunTime:0.0262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001140s ]
+
+[ 2018-03-21T19:03:38+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008999s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2018-03-21T19:03:43+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000828s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000886s ]
+
+[ 2018-03-21T19:03:46+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0331s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000293s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000527s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001391s ]
+
+[ 2018-03-21T19:04:28+08:00 ] ::1 /fyls/Admin/Leave/add_leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0332s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =1 AND station_name LIKE "%主管%" )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (1,8) AND department_id=1 )  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017043s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000915s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001407s ]
+
+[ 2018-03-21T19:05:09+08:00 ] ::1 /fyls/Admin/Leave/add_leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =1 AND station_name LIKE "%主管%" )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (1,8) AND department_id=1 )  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009632s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2018-03-21T19:05:27+08:00 ] ::1 /fyls/Admin/Leave/doadd_leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0323s ]
+NOTIC: [8] Undefined index: validate D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `form_leave` (`applicant`,`leave_reason`,`start_time`,`end_time`,`aid`,`uid`,`department_id`) VALUES ('qwe','去玩儿','2018-03-29 00:00:00','2018-03-21 19:05:23','1','1','1') [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001856s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001993s ]
+
+[ 2018-03-21T19:05:29+08:00 ] ::1 /fyls/Admin/Leave/leave_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `form_leave` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `form_leave` WHERE ( 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000403s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\dc1ee43855aba10e53d97e0971b01a9b.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024336s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002114s ]
+
+[ 2018-03-21T19:05:41+08:00 ] ::1 /fyls/Admin/Approval/leaveinfo?id=17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `form_leave` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0591s ]
+SQL: SELECT `department_name` FROM `departments` WHERE ( 1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\ecb9a78beb3ab95efcea11a686f6037b.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001776s ]
+
+[ 2018-03-21T19:06:57+08:00 ] ::1 /fyls/Admin/Department/department_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002112s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008547s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000472s ]
+
+[ 2018-03-21T19:07:30+08:00 ] ::1 /fyls/Admin/Approval/leaveinfo?id=17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0364s ]
+SQL: SELECT * FROM `form_leave` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0382s ]
+SQL: SELECT `department_name` FROM `departments` WHERE ( 1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\ecb9a78beb3ab95efcea11a686f6037b.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001369s ]
+
+[ 2018-03-21T19:07:38+08:00 ] ::1 /fyls/Admin/Approval/adopt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0067s ]
+SQL: UPDATE `form_leave` SET `bm_sp`='1',`id`='17',`flag`='1' WHERE ( id=17 ) [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2018-03-21T19:07:40+08:00 ] ::1 /fyls/Admin/Approval/leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `admin_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `stations` WHERE ( id =1 AND station_name LIKE "%主管%" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `stations` WHERE ( id =1 AND station_name LIKE "%经理%" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `form_leave` WHERE ( department_id=1 AND aid=1 AND bm_sp=0 AND flag <> 3 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\950e4f67b0dddaf03a8f367024e1ac33.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013243s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001203s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001274s ]
+
+[ 2018-03-21T19:08:16+08:00 ] ::1 /fyls/Admin/Approval/leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0175s ]
+SQL: SELECT * FROM `admin_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `stations` WHERE ( id =4 AND station_name LIKE "%主管%" ) LIMIT 1   [ RunTime:0.0036s ]
+SQL: SELECT * FROM `stations` WHERE ( id =4 AND station_name LIKE "%经理%" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `form_leave` WHERE ( department_id=1 AND manager_sp=0 AND bm_sp=1 AND flag <> 3 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\950e4f67b0dddaf03a8f367024e1ac33.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010061s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001143s ]
+
+[ 2018-03-21T19:08:25+08:00 ] ::1 /fyls/Admin/Approval/leaveinfo?id=15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001009s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001197s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `form_leave` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0206s ]
+SQL: SELECT `department_name` FROM `departments` WHERE ( 1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\ecb9a78beb3ab95efcea11a686f6037b.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011838s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000950s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001024s ]
+
+[ 2018-03-21T19:08:36+08:00 ] ::1 /fyls/Admin/Approval/adopt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0298s ]
+SQL: UPDATE `form_leave` SET `bm_sp`='1',`id`='15',`flag`='2',`manager_sp`='1' WHERE ( id=15 ) [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001250s ]
+
+[ 2018-03-21T19:08:39+08:00 ] ::1 /fyls/Admin/Approval/leave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `admin_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `stations` WHERE ( id =4 AND station_name LIKE "%主管%" ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `stations` WHERE ( id =4 AND station_name LIKE "%经理%" ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `form_leave` [ RunTime:0.0195s ]
+SQL: SELECT * FROM `form_leave` WHERE ( department_id=1 AND manager_sp=0 AND bm_sp=1 AND flag <> 3 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\fyls\Application\Runtime\Cache\Admin\950e4f67b0dddaf03a8f367024e1ac33.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016907s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002387s ]
+

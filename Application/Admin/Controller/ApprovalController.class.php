@@ -67,7 +67,6 @@ class ApprovalController extends Controller
 		}else{
 			echo    $this->jump('出现问题了呢，提交失败！', 'Approval/leave');
 		}
-
 	}
 	public function Not($id)
 	{	

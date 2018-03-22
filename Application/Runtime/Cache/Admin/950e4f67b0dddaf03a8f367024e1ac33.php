@@ -16,7 +16,6 @@
 
 	(function($){
 		$(window).load(function(){
-			
 			$("a[rel='load-content']").click(function(e){
 				e.preventDefault();
 				var url=$(this).attr("href");
@@ -36,7 +35,6 @@
 </script>
 </head>
 <body>
-<!--header-->
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
@@ -45,23 +43,21 @@
  </ul>
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
-
  <uhl>
  <li>
    <dl>
     <dt>审批列表</dt>
     <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-    <dd><a href="/fyls/admin.php/Approval/travel">外出审批</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出审批</a></dd>
     </dl>
   </li>
   <li>
    <dl>
     <dt>财务管理</dt>
-    <!--当前链接则添加class:active-->
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
-        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>

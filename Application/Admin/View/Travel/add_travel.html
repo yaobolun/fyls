@@ -34,6 +34,17 @@
           </div>
        </li>
        <li>
+          <span class="item_name" style="width:200px;">选择您的主管:</span>
+          <select name="aid" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <foreach name="user" item="user">
+                <option value="{$user.id}">
+                      {$user.name}
+                </option>
+            </foreach>
+          </select>
+       </li>
+       <li>
         <span class="item_name" style="width:200px;"></span>
         <input type="hidden" name="uid" value="{$Think.session.id}" />
         <input type="hidden" name="department_id" value="{$Think.session.department_id}" />

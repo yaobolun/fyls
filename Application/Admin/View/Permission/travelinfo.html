@@ -1,0 +1,100 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">外出详情</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
+      </div>
+     <section>
+     <form id="form" action="__ROOT__/Admin/Permission/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="{$find.bm_sp}">
+     <input type="hidden" name="qj_id" value="{$find.id}">
+     <input type="hidden" name="flag" value="{$find.flag}">
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>外出单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">申请人：</td>
+            <td style="width:100px;">{$find.applicant}</td>
+            <td style="width:60px;">所属部门：</td>
+            <td style="width:100px;">{$bmname.department_name}</td>
+          </tr>
+          <tr>
+            <td>外出原因：</td>
+            <td colspan="3">{$find.out_reason}</td>
+          </tr>
+          <tr>
+            <td>外出地址：</td>
+            <td colspan="3">{$find.out_addr}</td>
+          </tr>
+          <tr>
+            <td>外出时间：</td>
+            <td colspan="2">{$find.out_time}&nbsp;&nbsp; 到 &nbsp;&nbsp;{$find.back_time}</td>
+            <td>共 &nbsp;&nbsp;{$day}&nbsp;&nbsp; 天</td>
+          </tr><tr>
+            <td>部门主管</td>
+            <td>
+			       {$uname}
+            </td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
+            </td>
+          </tr>
+        </tbody>
+        {$page}
+      </table>
+      </form>
+      
+     </section>
+ </div>
+</section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
+    {
+     var a=confirm("确认通过吗?");
+      	  if(a){
+            $("#form").submit();
+      		}else{
+            return false;
+          }
+    }
+    function Not($id)
+    {
+      var b=confirm("您将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/Not?id='+($id);
+      }else{
+        return false;
+      }
+    }
+
+</script>
+</body>
+</html>

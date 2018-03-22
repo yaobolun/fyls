@@ -55,7 +55,6 @@ class LeaveController extends Controller {
 	}
 	public function leave_del()
 	{
-		//删除数据
 		if(!empty($_GET['id'])){
 			$leave=M('form_leave');
 			$id=$_GET['id'];
