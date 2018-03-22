@@ -12,7 +12,11 @@
       <table class="table">
       <tr>
         <th>日期</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="到账的年月日" name="qualifications_date" required="required"/></td>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="到账的年月日" name="qualifications_date" required="required"/>
+          </div>
+        </td>
         <th>市场部客服</th>
         <td><input type="text" class="textbox textbox_295" placeholder="市场部客服公司内部人员可选" name="qualifications_customer" required="required"/></td>
       </tr>
@@ -26,7 +30,11 @@
         <th>资质名称</th>
         <td><input type="text" class="textbox textbox_295" placeholder="资质名称" name="qualifications_aptitude" required="required"/></td>
         <th>本次到账日期</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="资金到账的年月日时分" name="qualifications_arrival" required="required"/></td>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="资金到账的年月日时分" name="qualifications_arrival" required="required"/>
+          </div>
+        </td>
       </tr>
       <tr>
         <th>合同价格</th>
@@ -105,6 +113,26 @@
  </div>
 </section>
  <script src="__PUBLIC__/admin/js/jquery.js"></script>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>

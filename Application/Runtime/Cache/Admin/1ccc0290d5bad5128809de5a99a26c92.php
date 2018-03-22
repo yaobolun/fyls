@@ -61,16 +61,13 @@
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>
   <li>
    <dl>
-    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
-    
-    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
-    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
-
    </dl>
   </li>
   <li>
@@ -87,7 +84,7 @@
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
-  </li>  
+  </li>
    <dl>
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
@@ -106,8 +103,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -121,78 +117,79 @@
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
-<style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">外出记录</h2>
-       
-       <a href="#" class="fr top_rt_btn add_icon">审批</a>
-  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
-       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
+       <h2 class="fl">到账配备信息添加</h2>
+       <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Arrival/info?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">返回到账详情</a>
       </div>
-      <section class="mtb">
-       <form action="" method="post">
-       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
-       <input type="submit" value="查询" class="group_btn" name="sub"/>
-       </form>
-
-      </section>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
-       <tr>
-        <th>ID</th>
-        <th>申请人</th>
-        <th>外出开始时间</th>
-        <th>外出结束时间</th>
-        <th>外出地址</th>
-        <th>外出原因</th>
-        <th>审批状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["id"]); ?></td>
-        <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["out_time"]); ?></td>
-        <td class="center"><?php echo ($show["back_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
-        <!-- <td class="center"><?php echo ($show["flag"]); ?></td> -->
-        <?php if($show["flag"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($show["flag"] == 1): ?>
-          <td class="center" style="color:green;">已通过</td>
-        <?php elseif($show["flag"] == 2): ?>
-          <td class="center" style="color:red;">未通过</td><?php endif; ?>
-
-        <td class="center">
-         <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_aenterprise" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="合同签约年份" name="aequipment_contrac" required="required"/>
+          </div>
         </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_qualified" required="required"/></td>
+        <th>级别</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" required="required"/></td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="aequipment_major" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" required="required"/></td>
+      </tr>
+      <tr>
+        <th>客服</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="客服" name="aequipment_customer" required="required"/></td>
+      </tr>
+      <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+      <input type="hidden" name="aid" value="<?php echo $a[1];?>">
+       </table>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" />
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
-<!-- <script type="text/javascript">
-  function set(id) {
-      var a=confirm("确认发货吗?");
-      if(a){
-          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  }else{
-      return false;
-    }
-  }
-</script> -->
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>

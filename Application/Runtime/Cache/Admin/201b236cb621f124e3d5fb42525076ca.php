@@ -118,7 +118,7 @@
 
 干了什么 该干什么  有什么问题（早上） -->
 <style type="text/css">
-.ccc{   
+.e{   
     overflow: hidden;  
     text-overflow: ellipsis;  
     white-space: nowrap;  
@@ -128,28 +128,28 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款人才凭证申请列表</h2>
-       <a href="/fyls/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
+       <h2 class="fl">资质凭证到账凭证申请列表</h2>
+       <a href="/fyls/Admin/Qualifications/qualifications_add" class="fr top_rt_btn add_icon">添加资质凭证到账申请</a>
       </div>
       <table class="table">
         <tr>
+        <th>日期</th>
+        <th>市场部客服</th>
         <th>申请人</th>
-        <th>本次到账日期</th>
-        <th>配备企业</th>
-        <th>合同价格</th>
-        <th>到账金额</th>
+        <th>企业名称</th>
+        <th>资质名称</th>
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center ccc" title="<?php echo ($arr["voucher_applicant"]); ?>"><?php echo ($arr["voucher_applicant"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_account"]); ?>"><?php echo ($arr["voucher_account"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_equip"]); ?>"><?php echo ($arr["voucher_equip"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_date"]); ?>"><?php echo ($arr["qualifications_date"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_customer"]); ?>"><?php echo ($arr["qualifications_customer"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_applicant"]); ?>"><?php echo ($arr["qualifications_applicant"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_enterprise"]); ?>"><?php echo ($arr["qualifications_enterprise"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_aptitude"]); ?>"><?php echo ($arr["qualifications_aptitude"]); ?></td>
         <td class="center">
-        <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+        <a href="/fyls/Admin/Qualifications/qualifications_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Qualifications/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Qualifications/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>

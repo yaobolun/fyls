@@ -117,46 +117,76 @@
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
-<style type="text/css">
-.ccc{   
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
-</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款人才凭证申请列表</h2>
-       <a href="/fyls/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
+       <h2 class="fl">修改到账信息</h2>
+       <a href="/fyls/Admin/Arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
       </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
-        <tr>
-        <th>申请人</th>
-        <th>本次到账日期</th>
-        <th>配备企业</th>
-        <th>合同价格</th>
-        <th>到账金额</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center ccc" title="<?php echo ($arr["voucher_applicant"]); ?>"><?php echo ($arr["voucher_applicant"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_account"]); ?>"><?php echo ($arr["voucher_account"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_equip"]); ?>"><?php echo ($arr["voucher_equip"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
-        <td class="center">
-        <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
-       </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_aenterprise" value="<?php echo ($sel["aequipment_aenterprise"]); ?>" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="合同签约年份" name="aequipment_contrac" value="<?php echo ($sel["aequipment_contrac"]); ?>" required="required"/>
+          </div>
+</td>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="姓名" name="aequipment_qualified" value="<?php echo ($sel["aequipment_qualified"]); ?>" required="required"/></td>
+        <th>级别</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" value="<?php echo ($sel["aequipment_level"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="aequipment_major" value="<?php echo ($sel["aequipment_major"]); ?>" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" value="<?php echo ($sel["aequipment_talent"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>客服</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="客服" name="aequipment_customer" value="<?php echo ($sel["aequipment_customer"]); ?>" required="required"/></td>
+      </tr>
+       </table>
+      <input type="hidden" name='id' value="<?php echo ($sel["id"]); ?>"/>
+      <input type="hidden" name='aid' value="<?php echo ($sel["aid"]); ?>"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>

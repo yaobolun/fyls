@@ -121,49 +121,75 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">假条详情</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">转账申请添加</h2>
+       <a href="/fyls/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
       </div>
      <section>
-     <table class="layui-table" style="width:900px; height:300px;">
-        <thead>
-          <tr>
-            <th colspan="4" style="height:30px;text-align:center;"><h1><b>员工请假单</b></h1></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="width:50px;">请假人：</td>
-            <td style="width:100px;"><?php echo ($find["applicant"]); ?></td>
-            <td style="width:60px;">所属部门：</td>
-            <td style="width:100px;"><?php echo ($bmname["department_name"]); ?></td>
-          </tr>
-          <tr>
-            <td>请假理由：</td>
-            <td colspan="3"><?php echo ($find["leave_reason"]); ?></td>
-          </tr><tr>
-            <td>请假时间：</td>
-            <td colspan="2"><?php echo ($find["start_time"]); ?>&nbsp;&nbsp; 到 &nbsp;&nbsp;<?php echo ($find["end_time"]); ?></td>
-            <!-- <td></td> -->
-            <td>共 &nbsp;&nbsp;<?php echo ($day); ?>&nbsp;&nbsp; 天</td>
-          </tr><tr>
-            <td>部门主管</td>
-            <td>
-			
-            </td>
-            <td>人事经理</td>
-            <td>
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
-      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
+      <table class="table">
+      <tr>
+        <th>申请人</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请转账人姓名" name="transfer_name" required="required"/></td>
+        <th>人才合同价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本人合同上的价格" name="transfer_contract" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配置企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业价格" name="transfer_allocation" required="required"/></td>
+        <th>证书类别</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="所属公司部门证书" name="transfer_certificate" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配置企业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人企业" name="transfer_configuration" required="required"/></td>
+        <th>人才姓名</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本人姓名" name="transfer_talent" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配出年月</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="转账的年月日" name="transfer_match" required="required"/>
+          </div>
+        </td>
+        <th>户名</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="收款人开户户名" name="transfer_huming" required="required"/></td>
+      </tr>
+      <tr>
+        <th>本次打款金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="transfer_amount" required="required"/></td>
+        <th>开户行</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="开户的银行" name="transfer_bank" required="required"/></td>
+      </tr>
+      <tr>
+        <th>账号</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="开户的账号" name="transfer_account" required="required"/></td>
+        <th>备注说明</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="transfer_note" required="required"/></td>
+      </tr>
+      <tr>
+        <th>已付金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="已付金额" name="transfer_paid" required="required"/></td>
+        <th>上传图片</th>
+        <td><input type="file" name="transfer_pic" required="required"/></td>
+      </tr>
+      <tr>
+        <th>财务备注信息</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" required="required"/></td>
+      </tr>
+       
+       </table>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" />
+       </li>
+      </ul>
+      </form>
      </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script type="text/javascript">
   layui.use('laydate', function(){
     var laydate = layui.laydate;
@@ -184,16 +210,6 @@
         ,type: 'datetime'
       });
     });
-
-    function yes()
-    {
-    	 var a=confirm("确认通过吗?");
-      	  if(a){
-
-          location.href = "update";
-      		}
-    }
-
 </script>
 </body>
 </html>

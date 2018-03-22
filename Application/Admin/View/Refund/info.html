@@ -12,8 +12,16 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款凭证申请详细信息</h2>
-       <a href="__ROOT__/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证申请列表</a>
+       <h2 class="fl">退款凭证企业申请详细信息</h2>
+       <?php
+
+     // $id=$GET['id'];
+     $a = explode('=',$_SERVER['QUERY_STRING']);
+     // var_dump($a[1]);exit;
+     ?>
+       <a href="__ROOT__/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证企业申请列表</a>
+       <a href="__ROOT__/Admin/Refund/refund_mod?id={$a[1]}" class="fr top_rt_btn add_icon">编辑</a>
+       <a href="__ROOT__/Admin/Requipment/requipment_add?id={$a[1]}" class="fr top_rt_btn add_icon">添加到账配备信息</a>
       </div>
       <table class="table">
       <volist name='arr' id='arr'>
@@ -47,29 +55,40 @@
         <th>账号</th>
         <td class="center dd" title="{$arr.refund_number}">{$arr.refund_number}</td>
         </tr>
-        <tr>
-        <th>企业价格</th>
-        <td class="center dd" title="{$arr.refund_enterprise}">{$arr.refund_enterprise}</td>
-        <th>签约年限</th>
-        <td class="center dd" title="{$arr.refund_contractyears}">{$arr.refund_contractyears}</td>
-        </tr>
-        <tr>
-        <th>配备人才</th>
-        <td class="center dd" title="{$arr.refund_qualified}">{$arr.refund_qualified}</td>
-        <th>级别</th>
-        <td class="center dd" title="{$arr.refund_level}">{$arr.refund_level}</td>
-        </tr>
-        <tr>
-        <th>专业</th>
-        <td class="center dd" title="{$arr.refund_major}">{$arr.refund_major}</td>
-        <th>人才价格</th>
-        <td class="center dd" title="{$arr.refund_talent}">{$arr.refund_talent}</td>
-        </tr>
-        <tr>
-        <th>客服</th>
-        <td class="center dd" title="{$arr.refund_customer}">{$arr.refund_customer}</td>
-        </tr>
       </volist>
+      </table>
+
+      <div class="page_title">
+       <h2 class="fl">退款凭证企业配备信息</h2>
+      </div>
+  <table class="table">
+
+   <tr>
+   <th>企业价格</th>
+   <th>签约年限</th>
+   <th>配备人才</th>
+   <th>级别</th>
+   <th>专业</th>
+   <th>人才价格</th>
+   <th>客服</th>
+   <th>操作</th>
+  </tr>
+       <volist name='aeq' id='uid'>
+       <tr>
+        <td class="center dd" title="{$uid.requipment_enterprise}">{$uid.requipment_enterprise}</td>
+        <td class="center dd" title="{$uid.requipment_contractyears}">{$uid.requipment_contractyears}</td>
+        <td class="center dd" title="{$uid.requipment_qualified}">{$uid.requipment_qualified}</td>
+        <td class="center dd" title="{$uid.requipment_level}">{$uid.requipment_level}</td>
+        <td class="center dd" title="{$uid.requipment_major}">{$uid.requipment_major}</td>
+        <td class="center dd" title="{$uid.requipment_talent}">{$uid.requipment_talent}</td>
+        <td class="center dd" title="{$uid.requipment_customer}">{$uid.requipment_customer}</td>
+        <td class="center">
+        <a href="__ROOT__/Admin/Requipment/requipment_mod?id={$uid.id}" title="编辑" class="link_icon">&#101;</a>
+
+        <a href="__ROOT__/Admin/Requipment/del?id={$uid.id}" title="删除" class="link_icon">&#100;</a>
+       </td>
+       </tr>
+       </volist>
       </table>
       <aside class="paging">
       {$page}

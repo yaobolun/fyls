@@ -1,0 +1,84 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">到账配备信息添加</h2>
+       <?php
+
+     // $id=$GET['id'];
+     $a = explode('=',$_SERVER['QUERY_STRING']);
+     // var_dump($a[1]);exit;
+     ?>
+       <a href="__ROOT__/Admin/Arrival/info?id={$a[1]}" class="fr top_rt_btn add_icon">返回到账详情</a>
+      </div>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
+      <table class="table">
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_aenterprise" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="合同签约年份" name="aequipment_contrac" required="required"/>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="姓名" name="aequipment_qualified" required="required"/></td>
+        <th>级别</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" required="required"/></td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="aequipment_major" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" required="required"/></td>
+      </tr>
+      <tr>
+        <th>客服</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="客服" name="aequipment_customer" required="required"/></td>
+      </tr>
+      <?php
+     // $id=$GET['id'];
+     $a = explode('=',$_SERVER['QUERY_STRING']);
+     // var_dump($a[1]);exit;
+     ?>
+      <input type="hidden" name="aid" value="<?php echo $a[1];?>">
+       </table>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" />
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+ <script src="__PUBLIC__/admin/js/jquery.js"></script>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
+</body>
+</html>

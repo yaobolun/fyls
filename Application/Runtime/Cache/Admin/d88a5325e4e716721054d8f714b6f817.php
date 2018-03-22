@@ -121,126 +121,128 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款凭证申请列表</h2>
+       <h2 class="fl">修改退款凭证申请信息</h2>
        <a href="/fyls/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证申请列表</a>
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
+     <form action="" method="post"  enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
         <th>申请人</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" value="<?php echo ($sel["refund_applicant"]); ?>"/></td>
         <th>配出年月</th>
         <td>
         <div class="layui-input-inline">
-        <input type="text" class="textbox textbox_295" id="test5" placeholder="现金的年月日" name="refund_match" required="required"/>
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="现金的年月日" name="refund_match" value="<?php echo ($sel["refund_match"]); ?>" required="required"/>
           </div>
-        </td>
+          </td>
       </tr>
       <tr>
         <th>配备企业</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="公司名称" name="refund_equip" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="公司名称" name="refund_equip" value="<?php echo ($sel["refund_equip"]); ?>"/></td>
         <th>合同价格</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="合同上的价格" name="refund_contract" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="合同上的价格" name="refund_contract" value="<?php echo ($sel["refund_contract"]); ?>"/></td>
       </tr>
       <tr>
         <th>备注</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="refund_remarks" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="refund_remarks" value="<?php echo ($sel["refund_remarks"]); ?>"/></td>
         <th>已到账金额</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_account" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_account" value="<?php echo ($sel["refund_account"]); ?>"/>></td>
       </tr>
       <tr>
         <th>户名</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="收款人姓名" name="refund_name" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="收款人姓名" name="refund_name" value="<?php echo ($sel["refund_name"]); ?>"/></td>
         <th>本次打款金额</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_money" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_money" value="<?php echo ($sel["refund_money"]); ?>"/></td>
       </tr>
       <tr>
         <th>开户行</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="开户的所在银行" name="refund_bank" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="开户的所在银行" name="refund_bank" value="<?php echo ($sel["refund_bank"]); ?>"/></td>
         <th>账号</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" value="<?php echo ($sel["refund_number"]); ?>"/></td>
       </tr>
-       <!-- <li>
+        <!-- <li>
         <span class="item_name" style="width:120px;">申请人：</span>
-        <input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" value="<?php echo ($sel["refund_applicant"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">配出年月：</span>
-        <input type="text" class="textbox textbox_295" placeholder="现金的年月日" name="refund_match" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="现金的年月日" name="refund_match" value="<?php echo ($sel["refund_match"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">配备企业：</span>
-        <input type="text" class="textbox textbox_295" placeholder="公司名称" name="refund_equip" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="公司名称" name="refund_equip" value="<?php echo ($sel["refund_equip"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">合同价格：</span>
-        <input type="text" class="textbox textbox_295" placeholder="合同上的价格" name="refund_contract" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="合同上的价格" name="refund_contract" value="<?php echo ($sel["refund_contract"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">备注：</span>
-        <textarea type="text" class="textbox textbox_295" placeholder="说明" name="refund_remarks" required="required"/></textarea>
+        <textarea type="text" class="textbox textbox_295" placeholder="说明" name="refund_remarks" value="<?php echo ($sel["refund_remarks"]); ?>"/></textarea>
        </li>
        <li>
         <span class="item_name" style="width:120px;">已到账金额：</span>
-        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_account" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_account" value="<?php echo ($sel["refund_account"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">户名：</span>
-        <input type="text" class="textbox textbox_295" placeholder="收款人姓名" name="refund_name" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="收款人姓名" name="refund_name" value="<?php echo ($sel["refund_name"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">本次打款金额：</span>
-        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_money" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="refund_money" value="<?php echo ($sel["refund_money"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">开户行：</span>
-        <input type="text" class="textbox textbox_295" placeholder="开户的所在银行" name="refund_bank" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="开户的所在银行" name="refund_bank" value="<?php echo ($sel["refund_bank"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">账号：</span>
-        <input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" value="<?php echo ($sel["refund_number"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">企业价格：</span>
-        <input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="refund_enterprise" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="refund_enterprise" value="<?php echo ($sel["refund_enterprise"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">签约年限：</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人与公司签约年份" name="refund_contractyears" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="申请人与公司签约年份" name="refund_contractyears" value="<?php echo ($sel["refund_contractyears"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">配备人才：</span>
-        <input type="text" class="textbox textbox_295" placeholder="本人" name="refund_qualified" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="本人" name="refund_qualified" value="<?php echo ($sel["refund_qualified"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">级别：</span>
-        <input type="text" class="textbox textbox_295" placeholder="级别" name="refund_level" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="级别" name="refund_level" value="<?php echo ($sel["refund_level"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">专业：</span>
-        <input type="text" class="textbox textbox_295" placeholder="专业" name="refund_major" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="专业" name="refund_major" value="<?php echo ($sel["refund_major"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">人才价格：</span>
-        <input type="text" class="textbox textbox_295" placeholder="人才价格" name="refund_talent" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="人才价格" name="refund_talent" value="<?php echo ($sel["refund_talent"]); ?>"/>
        </li>
        <li>
         <span class="item_name" style="width:120px;">客服：</span>
-        <input type="text" class="textbox textbox_295" placeholder="客服" name="refund_customer" required="required"/>
+        <input type="text" class="textbox textbox_295" placeholder="客服" name="refund_customer" value="<?php echo ($sel["refund_customer"]); ?>"/>
        </li> -->
+
        </table>
+      <input type="hidden" name='id' value="<?php echo ($sel["id"]); ?>"/>
        <li>
         <span class="item_name" style="width:120px;"></span>
-        <input type="submit" class="link_btn" name="sub" />
+        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+        <input type="submit" class="link_btn" name="sub"/>
        </li>
       </ul>
       </form>
      </section>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script type="text/javascript">
   layui.use('laydate', function(){
     var laydate = layui.laydate;

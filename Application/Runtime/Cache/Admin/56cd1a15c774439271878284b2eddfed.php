@@ -61,16 +61,13 @@
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>
   <li>
    <dl>
-    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
-    
-    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
-    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
-
    </dl>
   </li>
   <li>
@@ -87,7 +84,7 @@
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
-  </li>  
+  </li>
    <dl>
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
@@ -106,8 +103,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -117,72 +113,81 @@
  </ul>
 </aside>
 
+<!-- 
+提出问题  分析问题 解决问题
 
-提出问题  分析问题 解决问题 
-
-
-
+干了什么 该干什么  有什么问题（早上） -->
+<style type="text/css">
+.a{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">我要请假</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">转账申请详细信息</h2>
+       <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
+       <a href="/fyls/Admin/Transfer/transfer_mod?id=<?php echo ($a['1']); ?>" class="fr top_rt_btn add_icon">编辑</a>
       </div>
-     <section>
-
-     <form action="/fyls/Admin/Leave/leave_edit" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." value="<?php echo ($show["applicant"]); ?>" name="applicant" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">请假原因:</span>
-        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason"><?php echo ($show["leave_reason"]); ?></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="start_time" class="textbox textbox_295" value="<?php echo ($show["start_time"]); ?>" id="test5" placeholder="请假开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="end_time" class="textbox textbox_295" value="<?php echo ($show["end_time"]); ?>" id="test1" placeholder="请假结束日期">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="id" value="<?php echo ($show["id"]); ?>" />
-        <input type="submit" name="sub" class="link_btn"/>
-       </li>
-      </ul>
-      </form>
-
-     </section>
+      <table class="table">
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <th>申请人</th>
+        <td class="center a" title="<?php echo ($arr["transfer_name"]); ?>"><?php echo ($arr["transfer_name"]); ?></td>
+        <th>人才合同价格</th>
+        <td class="center a" title="<?php echo ($arr["transfer_contract"]); ?>"><?php echo ($arr["transfer_contract"]); ?></td>
+        </tr>
+        <tr>
+        <th>配置企业价格</th>
+        <td class="center a" title="<?php echo ($arr["transfer_allocation"]); ?>"><?php echo ($arr["transfer_allocation"]); ?></td>
+        <th>证书类别</th>
+        <td class="center a" title="<?php echo ($arr["transfer_certificate"]); ?>"><?php echo ($arr["transfer_certificate"]); ?></td>
+        </tr>
+        <tr>
+        <th>配置企业</th>
+        <td class="center a" title="<?php echo ($arr["transfer_configuration"]); ?>"><?php echo ($arr["transfer_configuration"]); ?></td>
+        <th>人才姓名</th>
+        <td class="center a" title="<?php echo ($arr["transfer_talent"]); ?>"><?php echo ($arr["transfer_talent"]); ?></td>
+        </tr>
+        <tr>
+        <th>配出年月</th>
+        <td class="center a" title="<?php echo ($arr["transfer_match"]); ?>"><?php echo ($arr["transfer_match"]); ?></td>
+        <th>户名</th>
+        <td class="center a" title="<?php echo ($arr["transfer_huming"]); ?>"><?php echo ($arr["transfer_huming"]); ?></td>
+        </tr>
+        <tr>
+        <th>本次打款金额</th>
+        <td class="center a" title="<?php echo ($arr["transfer_amount"]); ?>"><?php echo ($arr["transfer_amount"]); ?></td>
+        <th>开户行</th>
+        <td class="center a" title="<?php echo ($arr["transfer_bank"]); ?>"><?php echo ($arr["transfer_bank"]); ?></td>
+        </tr>
+        <tr>
+        <th>账号</th>
+        <td class="center a" title="<?php echo ($arr["transfer_account"]); ?>"><?php echo ($arr["transfer_account"]); ?></td>
+        <th>备注说明</th>
+        <td class="center a" title="<?php echo ($arr["transfer_note"]); ?>"><?php echo ($arr["transfer_note"]); ?></td>
+        </tr>
+        <tr>
+        <th>已付金额</th>
+        <td class="center a" title="<?php echo ($arr["transfer_paid"]); ?>"><?php echo ($arr["transfer_paid"]); ?></td>
+        <th>资料上传</th>
+        <td class="center a" title="<?php echo ($arr["transfer_pic"]); ?>"><img src="/fyls/Public/<?php echo ($arr["transfer_pic"]); ?>" style="width:20px"></td>
+        </tr>
+        <tr>
+        <th>财务备注信息</th>
+        <td class="center a" title="<?php echo ($arr["transfer_information"]); ?>"><?php echo ($arr["transfer_information"]); ?></td>
+        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-</script>
 </body>
 </html>

@@ -117,41 +117,32 @@
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
-<style type="text/css">
-.ccc{   
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款人才凭证申请列表</h2>
-       <a href="/fyls/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
+       <h2 class="fl">管理员列表</h2>
+       
+       <a href="/fyls/Admin/Admin/admin_add" class="fr top_rt_btn add_icon">添加管理员</a>
       </div>
       <table class="table">
-        <tr>
-        <th>申请人</th>
-        <th>本次到账日期</th>
-        <th>配备企业</th>
-        <th>合同价格</th>
-        <th>到账金额</th>
+       <tr>
+        <th>编号</th>
+        <th>管理员名称</th>
+        <th>最后修改时间</th>
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center ccc" title="<?php echo ($arr["voucher_applicant"]); ?>"><?php echo ($arr["voucher_applicant"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_account"]); ?>"><?php echo ($arr["voucher_account"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_equip"]); ?>"><?php echo ($arr["voucher_equip"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
+        <td class="center"><?php echo ($key+1); ?></td>
+        <td class="center"><?php echo ($arr["name"]); ?></td>
+        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
+        
         <td class="center">
-        <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
-       </td>
+         <a href="/fyls/Admin/Admin/admin_update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="/fyls/Admin/Admin/admin_del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      
       </table>
       <aside class="paging">
       <?php echo ($page); ?>

@@ -1,0 +1,51 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.d{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">到账配备详细信息</h2>
+       <a href="__ROOT__/Admin/Aequipment/aequipment" class="fr top_rt_btn add_icon">返回到账配备信息列表</a>
+      </div>
+      <table class="table">
+      <volist name='arr' id='arr'>
+        <tr>
+        <th>企业价格</th>
+        <td class="center d" title="{$arr.aequipment_aenterprise}">{$arr.aequipment_aenterprise}</td>
+        <th>签约年限</th>
+        <td class="center d" title="{$arr.aequipment_contrac}">{$arr.aequipment_contrac}</td>
+        </tr>
+        <tr>
+        <th>配备人才</th>
+        <td class="center d" title="{$arr.aequipment_qualified}">{$arr.aequipment_qualified}</td>
+        <th>级别</th>
+        <td class="center d" title="{$arr.aequipment_level}">{$arr.aequipment_level}</td>
+        </tr>
+        <tr>
+        <th>专业</th>
+        <td class="center d" title="{$arr.aequipment_major}">{$arr.aequipment_major}</td>
+        <th>人才价格</th>
+        <td class="center d" title="{$arr.aequipment_talent}">{$arr.aequipment_talent}</td>
+        </tr>
+        <tr>
+        <th>客服</th>
+        <td class="center d" title="{$arr.aequipment_customer}">{$arr.aequipment_customer}</td>
+        </tr>
+        
+      </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

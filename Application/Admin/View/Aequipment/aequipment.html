@@ -1,0 +1,47 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.cw{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">到账配备信息列表</h2>
+       <a href="__ROOT__/Admin/Aequipment/aequipment_add" class="fr top_rt_btn add_icon">添加到账配备信息</a>
+       <a href="__ROOT__/Admin/arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
+      </div>
+      <table class="table">
+        <tr>
+        <th>企业价格</th>
+        <th>签约年限</th>
+        <th>配备人才</th>
+        <th>级别</th>
+        <th>专业</th>
+        <th>操作</th>
+       </tr>
+       <volist name='arr' id='arr'>
+       <tr>
+        <td class="center cw" title="{$arr.aequipment_aenterprise}">{$arr.aequipment_aenterprise}</td>
+        <td class="center cw" title="{$arr.aequipment_contrac}">{$arr.aequipment_contrac}</td>
+        <td class="center cw" title="{$arr.aequipment_qualified}">{$arr.aequipment_qualified}</td>
+        <td class="center cw" title="{$arr.aequipment_level}">{$arr.aequipment_level}</td>
+        <td class="center cw" title="{$arr.aequipment_major}">{$arr.aequipment_major}</td>
+        <td class="center">
+        <a href="__ROOT__/Admin/Aequipment/aequipment_mod?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>
+        <a href="__ROOT__/Admin/Aequipment/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
+        <a href="__ROOT__/Admin/Aequipment/info?id={$arr.id}" title="详细信息">详细信息</a>
+       </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+</body>
+</html>

@@ -61,16 +61,13 @@
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>
   <li>
    <dl>
-    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
-    
-    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
-    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
-
    </dl>
   </li>
   <li>
@@ -87,7 +84,7 @@
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
-  </li>  
+  </li>
    <dl>
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
@@ -106,8 +103,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -117,79 +113,45 @@
  </ul>
 </aside>
 
+<!-- 
+提出问题  分析问题 解决问题
 
-提出问题  分析问题 解决问题 
+干了什么 该干什么  有什么问题（早上） -->
 
-
-<style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">请假列表</h2>
+       <h2 class="fl">人员列表</h2>
        
-       <a href="#" class="fr top_rt_btn add_icon">啊啊啊</a>
-  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
-       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
+       <a href="/fyls/Admin/People/add" class="fr top_rt_btn add_icon">添加人员</a>
       </div>
-      <section class="mtb">
-
-       <form action="" method="post">
-       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
-       <input type="submit" value="查询" class="group_btn" name="sub"/>
-       </form>
-
-      </section>
       <table class="table">
        <tr>
-        <th>ID</th>
-        <th>申请人</th>
-        <th>请假开始时间</th>
-        <th>请假结束时间</th>
-        <th>请假原因</th>
-        <th>假条状态</th>
+        <th>编号</th>
+        <th>人员名称</th>
+        <th>部门</th>
+        <th>岗位</th>
+        <th>最后修改时间</th>
         <th>操作</th>
        </tr>
-       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["id"]); ?></td>
-        <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["start_time"]); ?></td>
-        <td class="center"><?php echo ($show["end_time"]); ?></td>
-        <td class="flow" title="<?php echo ($show["leave_reason"]); ?>"><?php echo ($show["leave_reason"]); ?></td>
-        <?php if($show["flag"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($show["flag"] == 1): ?>
-          <td class="center">已通过</td>
-        <?php elseif($show["flag"] == 2): ?>
-          <td class="center">未通过</td><?php endif; ?>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($key+1); ?></td>
+        <td class="center"><?php echo ($arr["name"]); ?></td>
+        <td class="center"><?php echo ($arr["department_id"]); ?></td>
+        <td class="center"><?php echo ($arr["station_id"]); ?></td>
+        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
+        
         <td class="center">
-         <a href="/fyls/Admin/Leave/leave_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#99;</a>
-         <a href="/fyls/Admin/Leave/leave_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+         <a href="/fyls/Admin/People/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="/fyls/Admin/People/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      
       </table>
       <aside class="paging">
       <?php echo ($page); ?>
       </aside>
  </div>
 </section>
-
-<!-- <script type="text/javascript">
-  function set(id) {
-      var a=confirm("确认发货吗?");
-      if(a){
-          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  }else{
-      return false;
-    }
-  }
-</script> -->
 </body>
 </html>

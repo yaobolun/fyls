@@ -117,46 +117,41 @@
 提出问题  分析问题 解决问题
 
 干了什么 该干什么  有什么问题（早上） -->
-<style type="text/css">
-.ccc{   
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
-</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款人才凭证申请列表</h2>
-       <a href="/fyls/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
+       <h2 class="fl">部门添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Department/department">返回部门列表</a>
       </div>
-      <table class="table">
-        <tr>
-        <th>申请人</th>
-        <th>本次到账日期</th>
-        <th>配备企业</th>
-        <th>合同价格</th>
-        <th>到账金额</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center ccc" title="<?php echo ($arr["voucher_applicant"]); ?>"><?php echo ($arr["voucher_applicant"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_account"]); ?>"><?php echo ($arr["voucher_account"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_equip"]); ?>"><?php echo ($arr["voucher_equip"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
-        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
-        <td class="center">
-        <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
-       </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">部门名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" />
+         
+       </li>
+        
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+    if($("#name").val()==''||$("#name").val().length<1)
+    {
+      alert('User name cannot be empty and no less than 1 bits');
+      return false;
+    }
+  }
+  
+</script>
 </body>
 </html>

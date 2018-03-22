@@ -30,13 +30,6 @@ class RefundController extends Controller {
 			$map['refund_money']=$_POST['refund_money'];
 			$map['refund_bank']=$_POST['refund_bank'];
 			$map['refund_number']=$_POST['refund_number'];
-			$map['refund_enterprise']=$_POST['refund_enterprise'];
-			$map['refund_contractyears']=$_POST['refund_contractyears'];
-			$map['refund_qualified']=$_POST['refund_qualified'];
-			$map['refund_level']=$_POST['refund_level'];
-			$map['refund_major']=$_POST['refund_major'];
-			$map['refund_talent']=$_POST['refund_talent'];
-			$map['refund_customer']=$_POST['refund_customer'];
 			$query=$refund->add($map);
 			if($query>0){
 				echo $this->jump('添加成功','Refund/refund');
@@ -67,13 +60,6 @@ class RefundController extends Controller {
 		$map['refund_money']=$_POST['refund_money'];
 		$map['refund_bank']=$_POST['refund_bank'];
 		$map['refund_number']=$_POST['refund_number'];
-		$map['refund_enterprise']=$_POST['refund_enterprise'];
-		$map['refund_contractyears']=$_POST['refund_contractyears'];
-		$map['refund_qualified']=$_POST['refund_qualified'];
-		$map['refund_level']=$_POST['refund_level'];
-		$map['refund_major']=$_POST['refund_major'];
-		$map['refund_talent']=$_POST['refund_talent'];
-		$map['refund_customer']=$_POST['refund_customer'];
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
 
@@ -112,7 +98,10 @@ class RefundController extends Controller {
 		}
 	}
 	public function info(){
+		$uid=$_GET['id'];
 		$refund=M('refund');
+		$aeq=$refund->join('requipment ON refund.id = requipment.uid')->where("requipment.flag = 0 and refund.id=".$uid)->field("requipment.id,requipment_enterprise,requipment_contractyears,requipment_qualified,requipment_level,requipment_major,requipment_talent,requipment_customer")->select();
+		$this->assign('aeq',$aeq);
 		$id=$_GET['id'];
 		$arr=$refund->where("id=".$id)->select();
 		$this->assign('arr',$arr);

@@ -28,12 +28,6 @@ class ArrivalController extends Controller {
 			$map['arrival_equip']=$_POST['arrival_equip'];
 			$map['arrival_remarks']=$_POST['arrival_remarks'];
 			$map['arrival_enterprise']=$_POST['arrival_enterprise'];
-			$map['arrival_contrac']=$_POST['arrival_contrac'];
-			$map['arrival_qualified']=$_POST['arrival_qualified'];
-			$map['arrival_level']=$_POST['arrival_level'];
-			$map['arrival_major']=$_POST['arrival_major'];
-			$map['arrival_talent']=$_POST['arrival_talent'];
-			$map['arrival_customer']=$_POST['arrival_customer'];
 			$query=$arrival->add($map);
 			if($query>0){
 				echo $this->jump('添加成功','Arrival/arrival');
@@ -65,12 +59,6 @@ class ArrivalController extends Controller {
 			$map['arrival_equip']=$_POST['arrival_equip'];
 			$map['arrival_remarks']=$_POST['arrival_remarks'];
 			$map['arrival_enterprise']=$_POST['arrival_enterprise'];
-			$map['arrival_contrac']=$_POST['arrival_contrac'];
-			$map['arrival_qualified']=$_POST['arrival_qualified'];
-			$map['arrival_level']=$_POST['arrival_level'];
-			$map['arrival_major']=$_POST['arrival_major'];
-			$map['arrival_talent']=$_POST['arrival_talent'];
-			$map['arrival_customer']=$_POST['arrival_customer'];
 			$val=$arrival->where("id=".$id)->save($map);
 			if($val)
 			{
@@ -105,9 +93,13 @@ class ArrivalController extends Controller {
 		}
 	}
 	public function info(){
+		$aid=$_GET['id'];
 		$arrival=M('arrival');
+		$aeq=$arrival->join('aequipment ON arrival.id = aequipment.aid')->where("aequipment.flag = 0 and arrival.id=".$aid)->field("aequipment.id,aequipment_aenterprise,aequipment_contrac,aequipment_qualified,aequipment_level,aequipment_major,aequipment_talent,aequipment_customer")->select();
+		$this->assign('aeq',$aeq);
 		$id=$_GET['id'];
 		$arr=$arrival->where("id=".$id)->select();
+		// var_dump($arr);exit;
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->display();

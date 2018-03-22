@@ -61,16 +61,13 @@
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>
   <li>
    <dl>
-    <dd><a href="/fyls/admin.php/Product/product">申请转账</a></dd>
-    
-    <dd><a href="/fyls/admin.php/New/news">申请到账</a></dd>
-    <dd><a href="/fyls/admin.php/Pclass/col">资质到账</a></dd>
     <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
-
    </dl>
   </li>
   <li>
@@ -87,7 +84,7 @@
     <dt>快递信息</dt>
     <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
    </dl>
-  </li>  
+  </li>
    <dl>
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
@@ -106,8 +103,7 @@
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
   </li>
@@ -117,69 +113,51 @@
  </ul>
 </aside>
 
+<!-- 
+提出问题  分析问题 解决问题
 
+干了什么 该干什么  有什么问题（早上） -->
+<style type="text/css">
+.cw{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请请假</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">到账配备信息列表</h2>
+       <a href="/fyls/Admin/Aequipment/aequipment_add" class="fr top_rt_btn add_icon">添加到账配备信息</a>
+       <a href="/fyls/Admin/arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
       </div>
-     <section>
-
-     <form action="/fyls/Admin/Leave/doadd_leave" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">请假原因:</span>
-        <textarea style="height: 100px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="leave_reason"></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="start_time" class="textbox textbox_295" id="test5" placeholder="请假开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="end_time" class="textbox textbox_295" id="test1" placeholder="请假结束日期">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
-       </li>
-      </ul>
-      </form>
-
-     </section>
+      <table class="table">
+        <tr>
+        <th>企业价格</th>
+        <th>签约年限</th>
+        <th>配备人才</th>
+        <th>级别</th>
+        <th>专业</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center cw" title="<?php echo ($arr["aequipment_aenterprise"]); ?>"><?php echo ($arr["aequipment_aenterprise"]); ?></td>
+        <td class="center cw" title="<?php echo ($arr["aequipment_contrac"]); ?>"><?php echo ($arr["aequipment_contrac"]); ?></td>
+        <td class="center cw" title="<?php echo ($arr["aequipment_qualified"]); ?>"><?php echo ($arr["aequipment_qualified"]); ?></td>
+        <td class="center cw" title="<?php echo ($arr["aequipment_level"]); ?>"><?php echo ($arr["aequipment_level"]); ?></td>
+        <td class="center cw" title="<?php echo ($arr["aequipment_major"]); ?>"><?php echo ($arr["aequipment_major"]); ?></td>
+        <td class="center">
+        <a href="/fyls/Admin/Aequipment/aequipment_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Aequipment/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Aequipment/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+       </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-</script>
 </body>
 </html>

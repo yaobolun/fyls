@@ -14,7 +14,11 @@
         <th>申请人</th>
         <td><input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" value="{$sel.refund_applicant}"/></td>
         <th>配出年月</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="现金的年月日" name="refund_match" value="{$sel.refund_match}"/></td>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="现金的年月日" name="refund_match" value="{$sel.refund_match}" required="required"/>
+          </div>
+          </td>
       </tr>
       <tr>
         <th>配备企业</th>
@@ -39,28 +43,6 @@
         <td><input type="text" class="textbox textbox_295" placeholder="开户的所在银行" name="refund_bank" value="{$sel.refund_bank}"/></td>
         <th>账号</th>
         <td><input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" value="{$sel.refund_number}"/></td>
-      </tr>
-      <tr>
-        <th>企业价格</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="refund_enterprise" value="{$sel.refund_enterprise}"/></td>
-        <th>签约年限</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="申请人与公司签约年份" name="refund_contractyears" value="{$sel.refund_contractyears}"/></td>
-      </tr>
-      <tr>
-        <th>配备人才</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="本人" name="refund_qualified" value="{$sel.refund_qualified}"/></td>
-        <th>级别</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="级别" name="refund_level" value="{$sel.refund_level}"/></td>
-      </tr>
-      <tr>
-        <th>专业</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="refund_major" value="{$sel.refund_major}"/></td>
-        <th>人才价格</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="refund_talent" value="{$sel.refund_talent}"/></td>
-      </tr>
-      <tr>
-        <th>客服</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="客服" name="refund_customer" value="{$sel.refund_customer}"/></td>
       </tr>
         <!-- <li>
         <span class="item_name" style="width:120px;">申请人：</span>
@@ -143,5 +125,26 @@
      </section>
  </div>
 </section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>
