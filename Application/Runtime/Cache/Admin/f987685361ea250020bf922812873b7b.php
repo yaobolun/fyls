@@ -100,102 +100,46 @@
   </li>
  </ul>
 </aside>
-
+<style type="text/css">
+.ccc{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">外出详情</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">退款人才凭证申请列表</h2>
+       <a href="/fyls/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
       </div>
-     <section>
-     <form id="form" action="/fyls/Admin/Permission/adopt" method="post">
-     <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
-     <input type="hidden" name="qj_id" value="<?php echo ($find["id"]); ?>">
-     <input type="hidden" name="flag" value="<?php echo ($find["flag"]); ?>">
-     <table class="layui-table" style="width:900px; height:300px;">
-        <thead>
-          <tr>
-            <th colspan="4" style="height:30px;text-align:center;"><h1><b>外出单</b></h1></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="width:50px;">申请人：</td>
-            <td style="width:100px;"><?php echo ($find["applicant"]); ?></td>
-            <td style="width:60px;">所属部门：</td>
-            <td style="width:100px;"><?php echo ($bmname["department_name"]); ?></td>
-          </tr>
-          <tr>
-            <td>外出原因：</td>
-            <td colspan="3"><?php echo ($find["out_reason"]); ?></td>
-          </tr>
-          <tr>
-            <td>外出地址：</td>
-            <td colspan="3"><?php echo ($find["out_addr"]); ?></td>
-          </tr>
-          <tr>
-            <td>外出时间：</td>
-            <td colspan="2"><?php echo ($find["out_time"]); ?>&nbsp;&nbsp; 到 &nbsp;&nbsp;<?php echo ($find["back_time"]); ?></td>
-            <td>共 &nbsp;&nbsp;<?php echo ($day); ?>&nbsp;&nbsp; 天</td>
-          </tr><tr>
-            <td>部门主管</td>
-            <td>
-			       <?php echo ($uname); ?>
-            </td>
-            <td>
-              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
-            <td>
-              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not(<?php echo ($find["id"]); ?>)">残忍拒绝</button>
-            </td>
-          </tr>
-        </tbody>
-        <?php echo ($page); ?>
+      <table class="table">
+        <tr>
+        <th>申请人</th>
+        <th>本次到账日期</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>到账金额</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center ccc" title="<?php echo ($arr["voucher_applicant"]); ?>"><?php echo ($arr["voucher_applicant"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_account"]); ?>"><?php echo ($arr["voucher_account"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_equip"]); ?>"><?php echo ($arr["voucher_equip"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
+        <td class="center">
+        <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+       </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
-      </form>
-      
-     </section>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-
-    function yes()
-    {
-     var a=confirm("确认通过吗?");
-      	  if(a){
-            $("#form").submit();
-      		}else{
-            return false;
-          }
-    }
-    function Not($id)
-    {
-      var b=confirm("您将要拒绝了！");
-      if(b){
-        location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/Not?id='+($id);
-      }else{
-        return false;
-      }
-    }
-
-</script>
 </body>
 </html>

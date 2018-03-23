@@ -100,72 +100,46 @@
   </li>
  </ul>
 </aside>
-
+<style type="text/css">
+.e{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请外出</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">资质凭证到账凭证申请列表</h2>
+       <a href="/fyls/Admin/Qualifications/qualifications_add" class="fr top_rt_btn add_icon">添加资质凭证到账申请</a>
       </div>
-     <section>
-
-      <form action="/fyls/Admin/Travel/travel_edit" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" value="<?php echo ($show["applicant"]); ?>" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="外出地址..." name="out_addr"><?php echo ($show["out_addr"]); ?></textarea>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..采购..." name="out_reason"><?php echo ($show["out_reason"]); ?></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期" value="<?php echo ($show["out_time"]); ?>">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期" value="<?php echo ($show["back_time"]); ?>">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="id" value="<?php echo ($show["id"]); ?>" />
-        <input type="submit" name="sub" class="link_btn"/>
-       </li>
-      </ul>
-      </form>
-
-     </section>
+      <table class="table">
+        <tr>
+        <th>日期</th>
+        <th>市场部客服</th>
+        <th>申请人</th>
+        <th>企业名称</th>
+        <th>资质名称</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center e" title="<?php echo ($arr["qualifications_date"]); ?>"><?php echo ($arr["qualifications_date"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_customer"]); ?>"><?php echo ($arr["qualifications_customer"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_applicant"]); ?>"><?php echo ($arr["qualifications_applicant"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_enterprise"]); ?>"><?php echo ($arr["qualifications_enterprise"]); ?></td>
+        <td class="center e" title="<?php echo ($arr["qualifications_aptitude"]); ?>"><?php echo ($arr["qualifications_aptitude"]); ?></td>
+        <td class="center">
+        <a href="/fyls/Admin/Qualifications/qualifications_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Qualifications/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Qualifications/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+       </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-</script>
 </body>
 </html>

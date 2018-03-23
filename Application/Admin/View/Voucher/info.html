@@ -12,8 +12,15 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">转账申请详细信息</h2>
-       <a href="__ROOT__/Admin/Voucher/voucher" class="fr top_rt_btn add_icon">返回转账列表</a>
+       <h2 class="fl">退款人才凭证申请详细信息</h2>
+       <?php
+
+     // $id=$GET['id'];
+     $a = explode('=',$_SERVER['QUERY_STRING']);
+     // var_dump($a[1]);exit;
+     ?>
+       <a href="__ROOT__/Admin/Voucher/voucher" class="fr top_rt_btn add_icon">返回退款人才凭证申请列表</a>
+       <a href="__ROOT__/Admin/Voucher/voucher_mod?id={$a[1]}" class="fr top_rt_btn add_icon">编辑</a>
       </div>
       <table class="table">
       <volist name='arr' id='arr'>

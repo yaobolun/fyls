@@ -77,8 +77,12 @@ class TransferController extends Controller {
 			$map['transfer_account']=$_POST['transfer_account'];
 			$map['transfer_note']=$_POST['transfer_note'];
 			$map['transfer_paid']=$_POST['transfer_paid'];
-			$map['transfer_pic']=$_POST['transfer_pic'];
+			$map['transfer_pic']=$_FILES['transfer_pic']["name"];
 			$map['transfer_information']=$_POST['transfer_information'];
+			if($_FILES['transfer_pic']['tmp_name']){
+				$map['transfer_pic']=$this->upload($_FILES['transfer_pic']);
+			}
+			
 			$val=$transfer->where("id=".$id)->save($map);
 			if($val)
 			{
@@ -97,12 +101,14 @@ class TransferController extends Controller {
 	}
 
     public function upload($data){
+    	
       $upload = new \Think\Upload();// 实例化上传类
       $upload->maxSize   =     3145728000 ;// 设置附件上传大小
       $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
       $upload->rootPath  =      './Public/'; // 设置附件上传根目录
       // 上传单个文件 
       $info   =   $upload->uploadOne($data);
+      // var_dump($data);exit;
       if(!$info) {// 上传错误提示错误信息
         return false;
           //return  $upload->getError();

@@ -100,35 +100,41 @@
   </li>
  </ul>
 </aside>
+<style type="text/css">
+.cc{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位列表</h2>
-       
-       <a href="/fyls/Admin/Station/add" class="fr top_rt_btn add_icon">添加岗位</a>
+       <h2 class="fl">退款凭证申请列表</h2>
+       <a href="/fyls/Admin/Refund/refund_add" class="fr top_rt_btn add_icon">添加退款凭证申请</a>
       </div>
       <table class="table">
-       <tr>
-        <th>编号</th>
-        <th>部门名称</th>
-        <th>岗位名称</th>
-        <th>最后修改时间</th>
+        <tr>
+        <th>申请人</th>
+        <th>配出年月</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>备注</th>
         <th>操作</th>
        </tr>
-       <?php if(is_array($Re)): $i = 0; $__LIST__ = $Re;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$Re): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center cc" title="<?php echo ($arr["refund_applicant"]); ?>"><?php echo ($arr["refund_applicant"]); ?></td>
+        <td class="center cc" title="<?php echo ($arr["refund_match"]); ?>"><?php echo ($arr["refund_match"]); ?></td>
+        <td class="center cc" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
+        <td class="center cc" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
+        <td class="center cc" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
         <td class="center">
-          <?php echo ($Re["department_name"]); ?>
-        </td>
-        <td class="center"><?php echo ($Re["station_name"]); ?></td>
-        <td class="center"><?php echo ($Re["updatetime"]); ?></td>
-        
-        <td class="center">
-         <a href="/fyls/Admin/Station/update?id=<?php echo ($Re["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Station/del?id=<?php echo ($Re["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
+        <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Refund/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Refund/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+       </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
       </table>
       <aside class="paging">
       <?php echo ($page); ?>

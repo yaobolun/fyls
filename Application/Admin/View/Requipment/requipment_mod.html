@@ -1,0 +1,74 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改退款凭证企业配备信息</h2>
+      <a href="__ROOT__/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证企业列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+      <table class="table">
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="requipment_enterprise" value="{$sel.requipment_enterprise}" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="申请人与公司签约年份" name="requipment_contractyears" value="{$sel.requipment_contractyears}" required="required"/>
+          </div>
+</td>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本人" name="requipment_qualified" value="{$sel.requipment_qualified}" required="required"/></td>
+        <th>级别</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="级别" name="requipment_level" value="{$sel.requipment_level}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="requipment_major" value="{$sel.requipment_major}" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="requipment_talent" value="{$sel.requipment_talent}" required="required"/></td>
+      </tr>
+      <tr>
+        <th>客服</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="客服" name="requipment_customer" value="{$sel.requipment_customer}" required="required"/></td>
+      </tr>
+       </table>
+      <input type="hidden" name='id' value="{$sel.id}"/>
+      <input type="hidden" name='uid' value="{$sel.uid}"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
+</body>
+</html>

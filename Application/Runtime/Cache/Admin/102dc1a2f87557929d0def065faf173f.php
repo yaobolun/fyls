@@ -34,23 +34,22 @@
 	})(jQuery);
 </script>
 </head>
+
 <body>
-<!--header-->
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
-
  <uhl>
  <li>
    <dl>
-    <dt>审批列表</dt>
-    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-    <dd><a href="/fyls/admin.php/Permissions/travel">外出审批</a></dd>
+    <dt>审批管理</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     </dl>
   </li>
   <li>
@@ -101,41 +100,46 @@
   </li>
  </ul>
 </aside>
+<style type="text/css">
+.c{   
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">部门添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Department/department">返回部门列表</a>
+       <h2 class="fl">到账申请列表</h2>
+       <a href="/fyls/Admin/Arrival/arrival_add" class="fr top_rt_btn add_icon">添加到账申请</a>
       </div>
-     <section>
-     <form action="" method="post" enctype="multipart/form-data">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:120px;">部门名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" />
-         
-       </li>
-        
-       <li>
-        <span class="item_name" style="width:120px;"></span>
-        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
-       </li>
-      </ul>
-      </form>
-     </section>
+      <table class="table">
+        <tr>
+        <th>申请人</th>
+        <th>到账公司账号</th>
+        <th>到账时间</th>
+        <th>到账金额</th>
+        <th>配置企业</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center c" title="<?php echo ($arr["arrival_applicant"]); ?>"><?php echo ($arr["arrival_applicant"]); ?></td>
+        <td class="center c" title="<?php echo ($arr["arrival_account"]); ?>"><?php echo ($arr["arrival_account"]); ?></td>
+        <td class="center c" title="<?php echo ($arr["arrival_time"]); ?>"><?php echo ($arr["arrival_time"]); ?></td>
+        <td class="center c" title="<?php echo ($arr["arrival_money"]); ?>"><?php echo ($arr["arrival_money"]); ?></td>
+        <td class="center c" title="<?php echo ($arr["arrival_paid"]); ?>"><?php echo ($arr["arrival_paid"]); ?></td>
+        <td class="center">
+        <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+       </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">  
-
-  function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
-    {
-      alert('User name cannot be empty and no less than 1 bits');
-      return false;
-    }
-  }
-  
-</script>
 </body>
 </html>

@@ -12,8 +12,16 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">转账申请详细信息</h2>
-       <a href="__ROOT__/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
+       <h2 class="fl">到账申请详细信息</h2>
+     <?php
+
+     // $id=$GET['id'];
+     $a = explode('=',$_SERVER['QUERY_STRING']);
+     // var_dump($a[1]);exit;
+     ?>
+       <a href="__ROOT__/Admin/Arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
+       <a href="__ROOT__/Admin/Aequipment/aequipment_add?id={$a[1]}" class="fr top_rt_btn add_icon">添加到账配备信息</a>
+       <a href="__ROOT__/Admin/Arrival/arrival_mod?id={$a[1]}" class="fr top_rt_btn add_icon">编辑到账信息</a>
       </div>
       <table class="table">
       <volist name='arr' id='arr'>
@@ -41,29 +49,39 @@
         <th>备注</th>
         <td class="center d" title="{$arr.arrival_remarks}">{$arr.arrival_remarks}</td>
         </tr>
-        <tr>
-        <th>企业价格</th>
-        <td class="center d" title="{$arr.arrival_enterprise}">{$arr.arrival_enterprise}</td>
-        <th>签约年限</th>
-        <td class="center d" title="{$arr.arrival_contrac}">{$arr.arrival_contrac}</td>
-        </tr>
-        <tr>
-        <th>配备人才</th>
-        <td class="center d" title="{$arr.arrival_qualified}">{$arr.arrival_qualified}</td>
-        <th>级别</th>
-        <td class="center d" title="{$arr.arrival_level}">{$arr.arrival_level}</td>
-        </tr>
-        <tr>
-        <th>专业</th>
-        <td class="center d" title="{$arr.arrival_major}">{$arr.arrival_major}</td>
-        <th>人才价格</th>
-        <td class="center d" title="{$arr.arrival_talent}">{$arr.arrival_talent}</td>
-        </tr>
-        <tr>
-        <th>客服</th>
-        <td class="center d" title="{$arr.arrival_customer}">{$arr.arrival_customer}</td>
-        </tr>
       </volist>
+      </table>
+      <div class="page_title">
+       <h2 class="fl">到账配备信息</h2>
+      </div>
+  <table class="table">
+
+   <tr>
+   <th>企业价格</th>
+   <th>签约年限</th>
+   <th>配备人才</th>
+   <th>级别</th>
+   <th>专业</th>
+   <th>人才价格</th>
+   <th>客服</th>
+   <th>操作</th>
+  </tr>
+       <volist name='aeq' id='aid'>
+       <tr>
+        <td class="center d" title="{$aid.aequipment_aenterprise}">{$aid.aequipment_aenterprise}</td>
+        <td class="center d" title="{$aid.aequipment_contrac}">{$aid.aequipment_contrac}</td>
+        <td class="center d" title="{$aid.aequipment_qualified}">{$aid.aequipment_qualified}</td>
+        <td class="center d" title="{$aid.aequipment_level}">{$aid.aequipment_level}</td>
+        <td class="center d" title="{$aid.aequipment_major}">{$aid.aequipment_major}</td>
+        <td class="center d" title="{$aid.aequipment_talent}">{$aid.aequipment_talent}</td>
+        <td class="center d" title="{$aid.aequipment_customer}">{$aid.aequipment_customer}</td>
+        <td class="center">
+        <a href="__ROOT__/Admin/Aequipment/aequipment_mod?id={$aid.id}" title="编辑" class="link_icon">&#101;</a>
+
+        <a href="__ROOT__/Admin/Aequipment/del?id={$aid.id}" title="删除" class="link_icon">&#100;</a>
+       </td>
+       </tr>
+       </volist>
       </table>
       <aside class="paging">
       {$page}
