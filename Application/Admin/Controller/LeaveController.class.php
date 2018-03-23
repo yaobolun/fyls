@@ -49,7 +49,7 @@ class LeaveController extends Controller {
 		$leave = M('form_leave');
 		$count=$leave->count();
 		$Page=new\Think\Page($count,10);
-		$show = $leave->where($sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$show = $leave->where('uid='.$sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $show);
 		$this->display();
 	}

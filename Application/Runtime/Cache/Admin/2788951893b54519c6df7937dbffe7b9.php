@@ -34,12 +34,11 @@
 	})(jQuery);
 </script>
 </head>
-
 <body>
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
+  <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
@@ -47,9 +46,9 @@
  <uhl>
  <li>
    <dl>
-    <dt>审批管理</dt>
-    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dt>审批列表</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出审批</a></dd>
     </dl>
   </li>
   <li>
@@ -104,49 +103,65 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请外出</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">公司参数</h2>
+       <!-- <a class="fr top_rt_btn" href="/fyls/Admin/Express/express">返回管理员列表</a> -->
       </div>
      <section>
-
-      <form action="/fyls/Admin/Travel/travel_edit" method="post">
+     <form action="" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
        <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" value="<?php echo ($show["applicant"]); ?>" />
+        <span class="item_name" style="width:120px;">公司名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="公司名称" name="name" value="<?php echo ($sel["name"]); ?>"/>
+       </li>
+      <!--  <li>
+        <span class="item_name" style="width:120px;">快递地址：</span>
+        <input type="text" class="textbox textbox_295" id="address" placeholder="快递地址" name="address" />
        </li>
        <li>
-        <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="外出地址..." name="out_addr"><?php echo ($show["out_addr"]); ?></textarea>
+        <span class="item_name" style="width:120px;">收件人：</span>
+        <input type="text" class="textbox textbox_295" id="people" placeholder="收件人" name="people" />
        </li>
        <li>
-        <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..采购..." name="out_reason"><?php echo ($show["out_reason"]); ?></textarea>
+        <span class="item_name" style="width:120px;">收件人电话：</span>
+        <input type="text" class="textbox textbox_295" id="phone" placeholder="收件人电话" name="phone" />
        </li>
        <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期" value="<?php echo ($show["out_time"]); ?>">
-          </div>
-       </li>
+        <span class="item_name" style="width: 120px" >寄件日期:</span>
+            <input type="text" name="time" class="textbox textbox_295" id="test5" placeholder="寄件日期">
+       </li> -->
        <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期" value="<?php echo ($show["back_time"]); ?>">
-          </div>
+        <span class="item_name" style="width:120px;">介绍：</span>
+        <textarea name="introduce" class="textbox textbox_295" id="beihzu" cols="30" rows="10" value="<?php echo ($sel["introduce"]); ?>"><?php echo ($sel["introduce"]); ?></textarea>
+        <!-- <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" /> -->
+        
        </li>
+        
        <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="id" value="<?php echo ($show["id"]); ?>" />
-        <input type="submit" name="sub" class="link_btn"/>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
        </li>
       </ul>
+      <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
       </form>
-
      </section>
  </div>
 </section>
-<script type="text/javascript">
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+    if($("#name").val()==''||$("#name").val().length<4)
+    {
+      alert('User name cannot be empty and no less than 5 bits');
+      return false;
+    }
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
+      return false;
+    }
+  }
+
   layui.use('laydate', function(){
     var laydate = layui.laydate;
 
@@ -156,16 +171,7 @@
         ,type: 'datetime'
       });
     });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
+  
 </script>
 </body>
 </html>

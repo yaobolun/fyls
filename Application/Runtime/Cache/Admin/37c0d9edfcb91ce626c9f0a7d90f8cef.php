@@ -34,11 +34,12 @@
 	})(jQuery);
 </script>
 </head>
+
 <body>
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
@@ -46,9 +47,9 @@
  <uhl>
  <li>
    <dl>
-    <dt>审批列表</dt>
-    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-    <dd><a href="/fyls/admin.php/Permission/travel">外出审批</a></dd>
+    <dt>审批管理</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     </dl>
   </li>
   <li>
@@ -159,9 +160,13 @@
           <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <?php elseif($show["flag"] == 2): ?>
           <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+          <?php elseif($show["flag"] == 4): ?>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <?php else: ?>
           <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
         <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <?php elseif($show["flag"] == 4): ?>
+          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
         <?php else: ?>
           <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
         </td>

@@ -34,11 +34,12 @@
 	})(jQuery);
 </script>
 </head>
+
 <body>
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
@@ -46,9 +47,9 @@
  <uhl>
  <li>
    <dl>
-    <dt>审批列表</dt>
-    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-    <dd><a href="/fyls/admin.php/Permission/travel">外出审批</a></dd>
+    <dt>审批管理</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     </dl>
   </li>
   <li>

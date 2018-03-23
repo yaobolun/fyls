@@ -39,7 +39,7 @@ class TravelController extends Controller {
 		     array('back_time', 'require', '结束时间不能为空'),
 		     array('aid', 'require', '请选择一个主管'),
 		);
-		
+
 		$User = D("form_business_travel");
 		if (!$User->validate($_validate)->create()){
 		     $this->error($User->getError());
@@ -54,7 +54,6 @@ class TravelController extends Controller {
 			}
 		}
 
-		
 		// if(!empty($_POST)){
 		// 	$user=M('form_business_travel');
 		// 	$map = $user->create();
@@ -71,12 +70,12 @@ class TravelController extends Controller {
 	}
 	public function travel_list()
 	{
-
 		$sid = session('id');
+		// var_dump($sid);die;
 		$leave = M('form_business_travel');
 		$count=$leave->count();
 		$Page=new\Think\Page($count,10);
-		$show = $leave->where($sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$show = $leave->where('uid='.$sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $show);
 		$this->display();
 	}

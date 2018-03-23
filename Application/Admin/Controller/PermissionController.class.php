@@ -13,6 +13,7 @@ class PermissionController extends Controller
 		$user_bmid = $user['department_id'];
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
+		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
 		if($condition){
 			$form_business_travel = M('form_business_travel');
 			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
@@ -23,6 +24,15 @@ class PermissionController extends Controller
 			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
 			$this->assign('show', $show);
 			$this->display();
+		}elseif($Personnel){
+			$form_business_travel = M('form_business_travel');
+			$count=$form_business_travel->count();// 查询满足要求的总记录数
+			$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+			$page= $Page->show();// 分页显示输出
+			$show = $form_business_travel->select();
+			$this->assign('show', $show);
+			$this->assign('page',$page);
+			$this->display('Permission/Personnel');
 		}else{
 			echo $this->jump('您没有权限哦', 'Leave/leave_list');
 		}
@@ -84,7 +94,7 @@ class PermissionController extends Controller
 		$find['flag'] = 4;
 		$find = M('form_business_travel')->where('id='.$id)->save($find);
 		if($find){
-			echo $this->jump('Travel/travel_list');
+			echo $this->jump('已完成！', 'Travel/travel_list');
 		}else{
 			echo $this->jump('操作失败，请重新操作！', 'Travel/travel_list');
 		}
@@ -110,6 +120,20 @@ class PermissionController extends Controller
 		if($_POST['id']){
 			$find['flag'] = 5;
 			$find = M('form_business_travel')->where('id='.$_POST['id'])->save($find);
+			if($find){
+				echo json_encode('已完成');
+			}else{
+				echo json_encode('操作失败');
+			}
+		}
+	}
+	public function determine()
+	{	
+		// echo json_encode($_POST['data']);exit;
+		if($_POST['data']){
+			$find = M('form_business_travel')->where('id='.$_POST['data'])->find();
+			$find['flag'] = 6;
+			$find = M('form_business_travel')->where('id='.$_POST['data'])->save($find);
 			if($find){
 				echo json_encode('已完成');
 			}else{

@@ -104,68 +104,48 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请外出</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">岗位添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Station/station">返回岗位列表</a>
       </div>
      <section>
-
-      <form action="/fyls/Admin/Travel/travel_edit" method="post">
+     <form action="" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
        <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" value="<?php echo ($show["applicant"]); ?>" />
+        <span class="item_name" style="width:120px;">部门名称：</span>
+        <!-- <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" /> -->
+        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <?php if(is_array($departments)): foreach($departments as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
+                    <?php echo ($department["department_name"]); ?>
+              </option><?php endforeach; endif; ?>
+        </select>
+         
        </li>
        <li>
-        <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="外出地址..." name="out_addr"><?php echo ($show["out_addr"]); ?></textarea>
+        <span class="item_name" style="width:120px;">岗位名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="岗位名称..." name="station_name" />
+         
        </li>
+        
        <li>
-        <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..采购..." name="out_reason"><?php echo ($show["out_reason"]); ?></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期" value="<?php echo ($show["out_time"]); ?>">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期" value="<?php echo ($show["back_time"]); ?>">
-          </div>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="id" value="<?php echo ($show["id"]); ?>" />
-        <input type="submit" name="sub" class="link_btn"/>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
        </li>
       </ul>
       </form>
-
      </section>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">  
 
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
+  function yz(){
+    if($("#name").val()==''||$("#name").val().length<1)
+    {
+      alert('User name cannot be empty and no less than 1 bits');
+      return false;
+    }
+  }
+  
 </script>
 </body>
 </html>
