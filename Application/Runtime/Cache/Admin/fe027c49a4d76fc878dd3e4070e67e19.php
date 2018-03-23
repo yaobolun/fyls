@@ -104,30 +104,20 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Station/station">返回岗位列表</a>
+       <h2 class="fl">部门名称修改</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Department/department">返回部门列表</a>
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
+     <form action="" method="post"  enctype="multipart/form-data">
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:120px;">部门名称：</span>
-        <!-- <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" /> -->
-        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <?php if(is_array($departments)): foreach($departments as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
-                    <?php echo ($department["department_name"]); ?>
-              </option><?php endforeach; endif; ?>
-        </select>
-         
-       </li>
-       <li>
-        <span class="item_name" style="width:120px;">岗位名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="岗位名称..." name="station_name" />
-         
+        <input type="text" class="textbox textbox_295" value="<?php echo ($sel["department_name"]); ?>" name="title" />
        </li>
         
        <li>
         <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
         <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
        </li>
       </ul>
@@ -135,17 +125,18 @@
      </section>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script src="/fyls/Public/admin/js/jquery.js"></script>
 <script language="javascript">  
 
   function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
+    if($("#pass").val()==''||$("#pass").val().length<1)
     {
-      alert('User name cannot be empty and no less than 1 bits');
+      alert('Password cannot be empty and no less than 1 bits');
       return false;
     }
   }
   
 </script>
+
 </body>
 </html>

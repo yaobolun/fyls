@@ -100,52 +100,85 @@
   </li>
  </ul>
 </aside>
-
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Station/station">返回岗位列表</a>
+       <h2 class="fl">修改个人信息</h2>
+       
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:120px;">部门名称：</span>
-        <!-- <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" /> -->
-        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <?php if(is_array($departments)): foreach($departments as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
-                    <?php echo ($department["department_name"]); ?>
-              </option><?php endforeach; endif; ?>
-        </select>
-         
-       </li>
-       <li>
-        <span class="item_name" style="width:120px;">岗位名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="岗位名称..." name="station_name" />
-         
-       </li>
-        
-       <li>
-        <span class="item_name" style="width:120px;"></span>
-        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
-       </li>
-      </ul>
-      </form>
+        <div class="layui-tab">
+          <ul class="layui-tab-title">
+            <li class="layui-this">修改昵称</li>
+            <li>修改密码</li>
+
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                  <form action="/fyls/admin.php/Personal/name" method="post">
+                        <ul class="ulColumn2">
+                         <li>
+                          <span class="item_name" style="width:120px;">新昵称：</span>
+                          <input type="text" class="textbox textbox_295" required="required" name="name"/>
+                         </li>
+                         <li>
+                          <span class="item_name" style="width:120px;"></span>
+                          <input type="submit" class="link_btn" value="提交" name="sub" onClick="return yz()"/>
+                         </li>
+                        </ul>
+                  </form>
+            </div>
+            <div class="layui-tab-item">
+              <form action="/fyls/admin.php/Personal/Pass" method="post">
+                  <ul class="ulColumn2">
+                   <li>
+                    <span class="item_name" style="width:120px;">原始密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="pass" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;">新密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="password" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;">确认新密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="password1" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;"></span>
+                    <input type="submit" class="link_btn" name="sub" value="提交" onClick="return yz()"/>
+                   </li>
+                  </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+            
+
      </section>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">  
+<script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">
 
   function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
+    if($("#pass").val()==''||$("#pass").val().length<5)
     {
-      alert('User name cannot be empty and no less than 1 bits');
+      alert('请填写密码！并且大于5个字符！');
       return false;
     }
   }
+
+  layui.use('element', function(){
+  var $ = layui.jquery
+  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+  
+  
+});
   
 </script>
+
 </body>
 </html>

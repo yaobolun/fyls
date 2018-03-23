@@ -104,26 +104,21 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Station/station">返回岗位列表</a>
+       <h2 class="fl">管理员添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Admin/admin">返回管理员列表</a>
       </div>
      <section>
      <form action="" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
        <li>
-        <span class="item_name" style="width:120px;">部门名称：</span>
-        <!-- <input type="text" class="textbox textbox_295" id="name" placeholder="部门名称..." name="department_name" /> -->
-        <select name="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <?php if(is_array($departments)): foreach($departments as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
-                    <?php echo ($department["department_name"]); ?>
-              </option><?php endforeach; endif; ?>
-        </select>
+        <span class="item_name" style="width:120px;">管理员名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="管理员名称..." name="name" />
          
        </li>
        <li>
-        <span class="item_name" style="width:120px;">岗位名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="岗位名称..." name="station_name" />
-         
+        <span class="item_name" style="width:120px;">密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
+        
        </li>
         
        <li>
@@ -139,9 +134,14 @@
 <script language="javascript">  
 
   function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
+    if($("#name").val()==''||$("#name").val().length<4)
     {
-      alert('User name cannot be empty and no less than 1 bits');
+      alert('User name cannot be empty and no less than 5 bits');
+      return false;
+    }
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
       return false;
     }
   }

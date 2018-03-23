@@ -39,7 +39,7 @@
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
+  <li><a href="/fyls/admin.php/Personal/personal" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
@@ -153,22 +153,7 @@
           <td style="color:#00FF00;" class="center"><button onclick="wcz(<?php echo ($show["id"]); ?>)" class="layui-btn layui-btn-sm layui-btn-normal">已完成外出等待您的确认</button></td>
         <?php elseif($show["flag"] == 6): ?>
           <td style="color:#00FF00;" class="center">已完成</td><?php endif; ?>
-<!--    <td class="center">
-         <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($show["flag"] == 3): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php elseif($show["flag"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-          <?php elseif($show["flag"] == 4): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-          <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php elseif($show["flag"] == 4): ?>
-          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-          <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
-        </td> -->
+
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
       <aside class="paging">

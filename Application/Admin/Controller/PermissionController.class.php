@@ -14,16 +14,19 @@ class PermissionController extends Controller
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
 		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+		//判断是否是该部门下的主管
 		if($condition){
 			$form_business_travel = M('form_business_travel');
 			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
 			$this->assign('show', $show);
 			$this->display();
+		//判断是否是该部门下经理
 		}elseif($manager){
 			$form_business_travel = M('form_business_travel');
 			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
 			$this->assign('show', $show);
 			$this->display();
+		//判断是不是人事部的
 		}elseif($Personnel){
 			$form_business_travel = M('form_business_travel');
 			$count=$form_business_travel->count();// 查询满足要求的总记录数

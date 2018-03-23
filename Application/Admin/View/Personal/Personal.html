@@ -1,0 +1,83 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改个人信息</h2>
+       
+      </div>
+     <section>
+        <div class="layui-tab">
+          <ul class="layui-tab-title">
+            <li class="layui-this">修改昵称</li>
+            <li>修改密码</li>
+
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                  <form action="__ROOT__/admin.php/Personal/name" method="post">
+                        <ul class="ulColumn2">
+                         <li>
+                          <span class="item_name" style="width:120px;">新昵称：</span>
+                          <input type="text" class="textbox textbox_295" required="required" name="name"/>
+                         </li>
+                         <li>
+                          <span class="item_name" style="width:120px;"></span>
+                          <input type="submit" class="link_btn" value="提交" name="sub" onClick="return yz()"/>
+                         </li>
+                        </ul>
+                  </form>
+            </div>
+            <div class="layui-tab-item">
+              <form action="__ROOT__/admin.php/Personal/Pass" method="post">
+                  <ul class="ulColumn2">
+                   <li>
+                    <span class="item_name" style="width:120px;">原始密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="pass" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;">新密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="password" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;">确认新密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="password1" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;"></span>
+                    <input type="submit" class="link_btn" name="sub" value="提交" onClick="return yz()"/>
+                   </li>
+                  </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+            
+
+     </section>
+ </div>
+</section>
+<script src="__PUBLIC__/admin/js/jquery.js"></script>
+<script language="javascript">
+
+  function yz(){
+    if($("#pass").val()==''||$("#pass").val().length<5)
+    {
+      alert('请填写密码！并且大于5个字符！');
+      return false;
+    }
+  }
+
+  layui.use('element', function(){
+  var $ = layui.jquery
+  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+  
+  
+});
+  
+</script>
+
+</body>
+</html>
