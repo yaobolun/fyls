@@ -57,6 +57,7 @@
  </ul>
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
+<<<<<<< HEAD
 <div class="layui-collapse" lay-filter="test">
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">审批管理</h1>
@@ -113,11 +114,21 @@
     <dt>审批管理</dt>
     <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+=======
+ <uhl>
+ <li>
+   <dl>
+    <dt>审批管理</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+>>>>>>> origin/liushuai
     </dl>
   </li>
   <li>
    <dl>
     <dt>财务管理</dt>
+<<<<<<< HEAD
     <dd><a class="dd" href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
@@ -131,6 +142,24 @@
     <dt> 请假 | 外出 </dt>
     <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+    </dl>
+  </li>
+  <li>
+   <dl>
+   </dl>
+  </li>
+  <li>
+   <dl>
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+>>>>>>> origin/liushuai
    </dl>
   </li>
   <li>
@@ -146,6 +175,7 @@
    <li>
    <dl>
     <dt>后台登录设置</dt>
+<<<<<<< HEAD
     <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
@@ -153,19 +183,31 @@
     <dd><a class="dd" href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
+    <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
+    <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
+    <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
+    <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
+>>>>>>> origin/liushuai
    </dl>
-  </li>
+  </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
  </ul> -->
 </aside>
+<<<<<<< HEAD
 <script>
 layui.use(['element', 'layer'], function(){
   var element = layui.element;
   var layer = layui.layer;
 });
 </script>
+=======
+>>>>>>> origin/liushuai
 <style type="text/css">
 .cc{   
     overflow: hidden;  

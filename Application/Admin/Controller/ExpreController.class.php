@@ -56,7 +56,7 @@ class ExpreController extends Controller {
     		$this->assign('arr', $arr);
     		$this->display();
     	}else{
-    		echo '123';
+    		echo $this->jump('你没有权限哦！', 'Travel/Travel_list');
     	}
     }
     public function expre_mod()

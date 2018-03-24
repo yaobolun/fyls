@@ -7,7 +7,7 @@
        <a href="__ROOT__/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
+     <form action="__ROOT__/Admin/Transfer/transfer_doadd" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
@@ -63,7 +63,21 @@
        
        </table>
        <li>
+          <span class="item_name" style="width:200px;">选择您的主管:</span>
+          <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <foreach name="user" item="user">
+                <option value="{$user.id}">
+                      {$user.name}
+                </option>
+            </foreach>
+          </select>
+       </li>
+       <li>
         <span class="item_name" style="width:120px;"></span>
+        <input type="hidden" name="status" value="0"/>
+        <input type="hidden" name="uid" value="{$Think.session.id}" />
+        <input type="hidden" name="department_id" value="{$Think.session.department_id}" />
         <input type="submit" class="link_btn" name="sub" />
        </li>
       </ul>

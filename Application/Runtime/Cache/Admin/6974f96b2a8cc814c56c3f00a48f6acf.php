@@ -45,6 +45,7 @@
 	})(jQuery);
 </script>
 </head>
+
 <body>
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
@@ -84,12 +85,6 @@
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
-    </div>
-  </div>
-  <div class="layui-colla-item">
-    <h1 class="layui-colla-title">网站栏目管理</h1>
-    <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
     </div>
   </div>
   <div class="layui-colla-item">
@@ -152,7 +147,7 @@
     <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
-  </li>
+  </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
@@ -176,32 +171,32 @@ layui.use(['element', 'layer'], function(){
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
+        <input type="text" required="required" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
        </li>
        <li>
         <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
+        <textarea required="required" style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
        </li>
        <li>
         <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
+        <textarea required="required" style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
        </li>
        <li>
           <span class="item_name" style="width: 200px" >开始日期:</span>
           <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
+            <input required="required" type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
           </div>
        </li>
        <li>
           <span class="item_name" style="width: 200px" >结束日期:</span>
           <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
+            <input required="required" type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
           </div>
        </li>
        <li>
           <span class="item_name" style="width:200px;">选择您的主管:</span>
           <select name="aid" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <option value="">--请选择--</option>
+            <option required="required" value="">--请选择--</option>
             <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
                       <?php echo ($user["name"]); ?>
                 </option><?php endforeach; endif; ?>
