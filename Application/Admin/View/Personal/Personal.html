@@ -1,0 +1,44 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改密码</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Admin/admin">返回管理员列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">管理员名称：</span>
+        <input type="text" class="textbox textbox_295" value="{$sel.name}" name="title" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">重置密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" name="password" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="{$sel.id}" />
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+<script src="__PUBLIC__/admin/js/jquery.js"></script>
+<script language="javascript">
+
+  function yz(){
+    if($("#pass").val()==''||$("#pass").val().length<5)
+    {
+      alert('Password cannot be empty and no less than 5 bits');
+      return false;
+    }
+  }
+  
+</script>
+
+</body>
+</html>

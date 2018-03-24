@@ -37,9 +37,6 @@ class AdminController extends Controller {
 			$map['administration'] = 0;
 			$map['time'] = date("Y-m-d H:i:s");
 			$map['updatetime'] = date("Y-m-d H:i:s");
-			$map['administration'] = 0;
-			$map['time'] = date("Y-m-d H:i:s");
-			$map['updatetime'] = date("Y-m-d H:i:s");
 			$em2=$admin->where("name='".$map['name']."' and flag = 0")->select();
 
 			if($em2) {
@@ -67,12 +64,6 @@ class AdminController extends Controller {
 			$id = $_GET['id'];
 		 	$user['flag'] = 1; 
 		 	$val=$admin->where("flag = 0 and id = ".$id )->save($user);
-			$id = $_GET['id'];
-		 	$user['flag'] = 1; 
-		 	$val=$admin->where("flag = 0 and id = ".$id )->save($user);
-			$id=$_GET['id'];
-		 	$val=$admin->delete($id);
-
 			if($val>0)
 			{
 				echo $this->jump("删除成功","Admin/admin");

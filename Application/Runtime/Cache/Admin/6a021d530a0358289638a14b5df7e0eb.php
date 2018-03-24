@@ -16,7 +16,6 @@
 
 	(function($){
 		$(window).load(function(){
-			
 			$("a[rel='load-content']").click(function(e){
 				e.preventDefault();
 				var url=$(this).attr("href");
@@ -35,48 +34,44 @@
 	})(jQuery);
 </script>
 </head>
+
 <body>
-<!--header-->
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="/fyls/admin.php/Personal/personal" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
-
  <uhl>
  <li>
    <dl>
-    <dt>审批列表</dt>
-    <dd><a href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-    <dd><a href="/fyls/admin.php/Approval/travel">外出审批</a></dd>
+    <dt>审批管理</dt>
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
     </dl>
   </li>
   <li>
    <dl>
     <dt>财务管理</dt>
-    <!--当前链接则添加class:active-->
     <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
-        <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
     </dl>
   </li>
   <li>
    <dl>
-    <!-- <dd><a href="/fyls/admin.php/Col/col">产品颜色</a></dd> -->
    </dl>
   </li>
   <li>
    <dl>
     <dt> 请假 | 外出 </dt>
-    <dd><a href="/fyls/admin.php/Leave/add_leave">申请请假</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/add_travel">申请外出</a></dd>
-    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假记录</a></dd>
-    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出记录</a></dd>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
    </dl>
   </li>
   <li>
@@ -89,34 +84,23 @@
     <dt>网站栏目管理</dt>
     <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
    </dl>
-  </li>  
-   </dl>
-  </li>  
    <li>
    <dl>
     <dt>后台登录设置</dt>
+    <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
     <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
-    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
-    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
     <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
     <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
     <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
-  </li>
+  </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
  </ul>
 </aside>
-
-<!-- 
-提出问题  分析问题 解决问题
-
-干了什么 该干什么  有什么问题（早上） -->
 
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
@@ -125,7 +109,7 @@
        <a href="/fyls/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
+     <form action="/fyls/Admin/Transfer/transfer_doadd" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
@@ -181,7 +165,19 @@
        
        </table>
        <li>
+          <span class="item_name" style="width:200px;">选择您的主管:</span>
+          <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </li>
+       <li>
         <span class="item_name" style="width:120px;"></span>
+        <input type="hidden" name="status" value="0"/>
+        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
+        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
         <input type="submit" class="link_btn" name="sub" />
        </li>
       </ul>

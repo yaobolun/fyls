@@ -28,12 +28,7 @@ class PeopleController extends Controller {
     }
     //增加
     public function add(){
-    	$department = M("departments");
-    	$station = M("stations");
-    	$dep = $department->where("flag = 0")->select();
-    	$sta = $station->where("flag = 0")->select();
-    	$this->assign("dep",$dep);
-    	$this->assign("sta",$sta);
+    	
     	if(isset($_POST['did'])){
 			$station = M("stations");
             $res = $station->where("flag = 0 and department_id = ".$_POST['did'])->select();
@@ -44,7 +39,9 @@ class PeopleController extends Controller {
 			$admin=M('admin_user');
 			$map['name']=$_POST['name'];
 			$map['department_id']=$_POST['department_id'];
-			$map['station_id']=$_POST['station_id'];
+
+			$map['station_id']=$_POST['station'];
+
 			$map['password']=md5($_POST['password']);
 			$map['administration'] = 1;
 			$map['time'] = date("Y-m-d H:i:s");
@@ -65,18 +62,19 @@ class PeopleController extends Controller {
 			}
 		}
 		else{
+			$department = M("departments");
+	    	$station = M("stations");
+	    	$dep = $department->where("flag = 0")->select();
+	    	$sta = $station->where("flag = 0")->select();
+	    	$this->assign("dep",$dep);
+	    	$this->assign("sta",$sta);
 			$this->display();
 		}
 	}
-
 	//数据修改
 	public function update(){
 		$department = M("departments");
     	$station = M("stations");
-    	$dep = $department->where("flag = 0")->select();
-    	$sta = $station->where("flag = 0")->select();
-    	$this->assign("dep",$dep);
-    	$this->assign("sta",$sta);
 		$admin=M('admin_user');
 		if(isset($_POST['did'])){
 			$station = M("stations");
@@ -84,13 +82,10 @@ class PeopleController extends Controller {
             echo json_encode($res);exit();
         }
 		if (!empty($_POST['sub'])) {
-		var_dump($_POST);exit;
-			
 			$id=$_POST['id'];
 			$map['name']=$_POST['title'];
 			$map['department_id']=$_POST['department_id'];
-			$map['station_id']=$_POST['station_id'];
-						
+			$map['station_id']=$_POST['station'];
 			$val=$admin->where("id=".$id)->save($map);
 
 			if($val)
@@ -102,12 +97,15 @@ class PeopleController extends Controller {
 		}
 		elseif(!empty($_GET['id'])){
 			$id=$_GET['id'];
+			$dep = $admin->join("left join departments on admin_user.department_id = departments.id")->where("flag = 0 and id = ".$id)->field("departments.id,departments.department_name")->select();
+	    	$sta = $admin->join("left join stations on admin_user.station_id = stations.id")->where("flag = 0 and id = ".$id)->field("stations.id,stations.station_name")->select();;
+	    	$this->assign("dep",$dep);
+	    	$this->assign("sta",$sta);
 			$sel=$admin->where()->join()->find("$id");
 			$this->assign('sel',$sel);
 			$this->display();
 		}
 	}
-
 	//删除数据
 	public function del()
 	{
@@ -122,11 +120,9 @@ class PeopleController extends Controller {
 			}else 
 				{
 				echo $this->error("删除失败","People/people");
-			}		
-
+			}
 		}
 	}
-
 	/*跳转*/
     public  function jump($string,$url){
       $url=C('HOME_PATH').'/'.$url;

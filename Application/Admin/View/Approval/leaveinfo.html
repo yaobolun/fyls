@@ -7,6 +7,10 @@
        <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
       </div>
      <section>
+     <form id="form" action="__ROOT__/Admin/Approval/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="{$find.bm_sp}">
+     <input type="hidden" name="qj_id" value="{$find.id}">
+     <input type="hidden" name="flag" value="{$find.flag}">
      <table class="layui-table" style="width:900px; height:300px;">
         <thead>
           <tr>
@@ -31,18 +35,19 @@
           </tr><tr>
             <td>部门主管</td>
             <td>
-			
+			       {$uname}
             </td>
-            <td>人事经理</td>
+            <td><button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
-
+<button class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
             </td>
           </tr>
         </tbody>
+        {$page}
       </table>
-
-      <button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button>
-      <button class="layui-btn layui-btn-primary layui-btn-lg">残忍拒绝</button>
+      </form>
+      
+      
      </section>
  </div>
 </section>
@@ -71,9 +76,16 @@
     {
     	 var a=confirm("确认通过吗?");
       	  if(a){
-
-          location.href = "update";
+              $("#form").submit();
       		}
+    }
+    function Not($id)
+    {
+      var b=confirm("你将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Approval/Not?id='+($id);
+      }
+
     }
 
 </script>

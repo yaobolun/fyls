@@ -8,8 +8,7 @@ class TravelController extends Controller {
     	if($_SESSION['id']=='')
     	{
     		echo	$this->jump('请登录',"Index/login");
-    	}else {
-			
+    	}else{
     		$this->display();
     	}
     }
@@ -18,51 +17,65 @@ class TravelController extends Controller {
       $url=C('HOME_PATH').'/'.$url;
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
-
-
 	public function add_travel()
-	{
-
-			$this->display();
-
-	}
-
-	public function doadd_travel()
 	{	
-		// $travels = new \Model\Travel;
+		
+		$bmid = session('department_id');
+		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+		$user_id = array_column($director,'id');
+		$a = implode(",",$user_id);
+		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+		// var_dump($name);die;
+		$this->assign('user', $user);
+		$this->display();
+	}
+	public function doadd_travel()
+	{
+		$_validate = array(
+		     array('applicant','require', '申请人不能为空！'),
+		     array('out_addr', 'require', '请填写外出地址！'),
+		     array('out_reason', 'require', '请填写外出原因'),
+		     array('out_time', 'require', '开始时间不能为空'),
+		     array('back_time', 'require', '结束时间不能为空'),
+		     array('aid', 'require', '请选择一个主管'),
+		);
 
-		if(!empty($_POST)){
-		// 	$z = $travels->create();
-		// 	if(!$z){
-		// 		show_bug($user->getError());
-		// 		exit;
-		// 	}
-
-			$user=M('form_business_travel');
-			
+		$User = D("form_business_travel");
+		if (!$User->validate($_validate)->create()){
+		     $this->error($User->getError());
+		}else{
+		    $user=M('form_business_travel');
 			$map = $user->create();
-			
 			$query=$user->add($map);
-
 			if($query>0){
 				echo	$this->jump('申请成功，请等待结果！',"Travel/travel_list");
-			}
-			else{
+			}else{
 				echo	$this->jump('申请失败，请重新申请！',"Travel/add_travel");
 			}
-		}else{
-			$this->display('/Admin/Travel/add_travel');
 		}
-	}
 
+		// if(!empty($_POST)){
+		// 	$user=M('form_business_travel');
+		// 	$map = $user->create();
+		// 	$query=$user->add($map);
+		// 	$this->assign('check', $check);
+		// 	if($query>0){
+		// 		echo	$this->jump('申请成功，请等待结果！',"Travel/travel_list");
+		// 	}else{
+		// 		echo	$this->jump('申请失败，请重新申请！',"Travel/add_travel");
+		// 	}
+		// }else{
+		// 	$this->display('/Admin/Travel/add_travel');
+		// }
+	}
 	public function travel_list()
 	{
-
 		$sid = session('id');
+		// var_dump($sid);die;
 		$leave = M('form_business_travel');
 		$count=$leave->count();
 		$Page=new\Think\Page($count,10);
-		$show = $leave->where($sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$show = $leave->where('uid='.$sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $show);
 		$this->display();
 	}
@@ -83,7 +96,6 @@ class TravelController extends Controller {
 			}		
 		}
 	}
-
 	public function travel_edit()
 	{
 		$leave=M('form_business_travel');
@@ -108,7 +120,6 @@ class TravelController extends Controller {
 
 		public function member_mod(){
 			$user=M('user');
-				
 			if (!empty($_POST['sub'])) {
 				$id=$_POST['id'];
 				$map=$user->create();
@@ -129,6 +140,4 @@ class TravelController extends Controller {
 				$this->display();
 			}
 		}
-
-
 }

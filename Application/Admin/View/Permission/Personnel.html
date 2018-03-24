@@ -1,0 +1,115 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">外出记录</h2>
+       
+       <a href="__ROOT__/admin.php/Travel/add_travel" class="fr top_rt_btn add_icon">申请外出</a>
+      </div>
+      <section class="mtb">
+      <form action="" method="post">
+         <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+         <input type="submit" value="查询" class="group_btn" name="sub"/>
+      </form>
+      </section>
+      <table class="table">
+       <tr>
+        <th>申请人</th>
+        <th>外出开始时间</th>
+        <th>外出结束时间</th>
+        <th>外出地址</th>
+        <th>外出原因</th>
+        <th>审批状态</th>
+
+       </tr>
+       <volist name='show' id='show'>
+       <tr>
+        <td class="center">{$show.applicant}</td>
+        <td class="center">{$show.out_time}</td>
+        <td class="center">{$show.back_time}</td>
+        <td class="center flow" title="{$show.out_addr}">{$show.out_addr}</td>
+        <td class="center flow" title="{$show.out_reason}">{$show.out_reason}</td>
+
+        <if condition="$show.flag eq 0">
+          <td class="center">未审批</td>
+        <elseif condition="$show.flag eq 1" />
+          <td style="color:blue;" class="center">审批中</td>
+        <elseif condition="$show.flag eq 2" />
+          <td style="color:#CC0066;" class="center">外出中</td>
+        <elseif condition="$show.flag eq 3" />
+          <td style="color:red;" class="center">未通过（被拒绝）</td>
+        <elseif condition="$show.flag eq 4" />
+          <td style="color:#000099;" class="center">请等待主管确认</td>
+        <elseif condition="$show.flag eq 5" />
+          <td style="color:#00FF00;" class="center"><button onclick="wcz({$show.id})" class="layui-btn layui-btn-sm layui-btn-normal">已完成外出等待您的确认</button></td>
+        <elseif condition="$show.flag eq 6" />
+          <td style="color:#00FF00;" class="center">已完成</td>
+        </if>
+<!--    <td class="center">
+         <if condition="$show.flag eq 1">
+          <a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
+        <elseif condition="$show.flag eq 3"/>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+        <elseif condition="$show.flag eq 2"/>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+          <elseif condition="$show.flag eq 4"/>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+        <else />
+          <a href="__ROOT__/Admin/Travel/travel_edit?id={$show.id}" title="编辑" class="link_icon">&#101;</a>
+        </if>
+        <if condition="$show.flag eq 1">
+          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <elseif condition="$show.flag eq 4" />
+          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <else />
+          <a href="__ROOT__/Admin/Travel/travel_del?id={$show.id}" title="删除" class="link_icon">&#100;</a>
+        </if>
+        </td> -->
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+
+<script type="text/javascript">
+    // function wcz($id)
+    // {
+    //   var b=confirm("您确定该员工已回到公司吗？");
+    //   if(b){
+    //     location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/Determine?id='+($id);
+    //   }else{
+    //     return false;
+    //   }
+    // }
+
+    function wcz($id)
+    {
+      var data = $id;
+      $.ajax({
+        type:"POST",
+        url:"__ROOT__/admin.php/Permission/determine",
+        data:{'data':data},
+        dataType:"json",
+        success:function(data){
+          alert(data);
+          location.reload();
+        }
+      });
+    }
+</script>
+
+</body>
+</html>
