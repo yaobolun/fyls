@@ -11,32 +11,32 @@
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
+        <input type="text" required="required" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
        </li>
        <li>
         <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
+        <textarea required="required" style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
        </li>
        <li>
         <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
+        <textarea required="required" style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
        </li>
        <li>
           <span class="item_name" style="width: 200px" >开始日期:</span>
           <div class="layui-input-inline">
-            <input type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
+            <input required="required" type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
           </div>
        </li>
        <li>
           <span class="item_name" style="width: 200px" >结束日期:</span>
           <div class="layui-input-inline">
-            <input type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
+            <input required="required" type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
           </div>
        </li>
        <li>
           <span class="item_name" style="width:200px;">选择您的主管:</span>
           <select name="aid" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <option value="">--请选择--</option>
+            <option required="required" value="">--请选择--</option>
             <foreach name="user" item="user">
                 <option value="{$user.id}">
                       {$user.name}

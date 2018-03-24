@@ -13,21 +13,9 @@ class PermissionController extends Controller
 		$user_bmid = $user['department_id'];
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
-		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
-		//判断是否是该部门下的主管
-		if($condition){
-			$form_business_travel = M('form_business_travel');
-			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
-			$this->assign('show', $show);
-			$this->display();
-		//判断是否是该部门下经理
-		}elseif($manager){
-			$form_business_travel = M('form_business_travel');
-			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
-			$this->assign('show', $show);
-			$this->display();
-		//判断是不是人事部的
-		}elseif($Personnel){
+		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场部%"')->find();
+		//判断是不是人事的
+		if($Personnel){
 			$form_business_travel = M('form_business_travel');
 			$count=$form_business_travel->count();// 查询满足要求的总记录数
 			$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
@@ -36,6 +24,18 @@ class PermissionController extends Controller
 			$this->assign('show', $show);
 			$this->assign('page',$page);
 			$this->display('Permission/Personnel');
+		//判断是否是该部门下经理
+		}elseif($manager){
+			$form_business_travel = M('form_business_travel');
+			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
+			$this->assign('show', $show);
+			$this->display();
+		//判断是否是该部门下的主管
+		}elseif($condition){
+			$form_business_travel = M('form_business_travel');
+			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
+			$this->assign('show', $show);
+			$this->display();
 		}else{
 			echo $this->jump('您没有权限哦', 'Leave/leave_list');
 		}
@@ -81,7 +81,7 @@ class PermissionController extends Controller
 		}
 	}
 	public function Not($id)
-	{	
+	{
 		$leave = M('form_business_travel')->where('id='.$id)->find();
 		$leave['flag'] = 3;
 		$leave = M('form_business_travel')->where('id='.$id)->save($leave);

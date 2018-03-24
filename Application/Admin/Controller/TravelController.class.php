@@ -71,12 +71,13 @@ class TravelController extends Controller {
 	public function travel_list()
 	{
 		$sid = session('id');
-		// var_dump($sid);die;
 		$leave = M('form_business_travel');
 		$count=$leave->count();
 		$Page=new\Think\Page($count,10);
+		$page= $Page->show();
 		$show = $leave->where('uid='.$sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $show);
+		$this->assign('page', $page);
 		$this->display();
 	}
 	public function travel_del()

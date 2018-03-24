@@ -60,7 +60,6 @@
     <div class="layui-colla-content">
          <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
          <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
     </div>
   </div>
   <div class="layui-colla-item">
@@ -177,11 +176,14 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">外出记录</h2>
+       <h2 class="fl">请假审批</h2>
        
-       <a href="/fyls/admin.php/Travel/add_travel" class="fr top_rt_btn add_icon">申请外出</a>
+       <a href="#" class="fr top_rt_btn add_icon">啊啊啊</a>
+  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
+       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
       </div>
       <section class="mtb">
+
        <form action="" method="post">
        <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
        <input type="submit" value="查询" class="group_btn" name="sub"/>
@@ -190,49 +192,19 @@ layui.use(['element', 'layer'], function(){
       </section>
       <table class="table">
        <tr>
-        <th>ID</th>
         <th>申请人</th>
-        <th>外出开始时间</th>
-        <th>外出结束时间</th>
-        <th>外出地址</th>
-        <th>外出原因</th>
-        <th>审批状态</th>
-        <th>操作</th>
+        <th>请假开始时间</th>
+        <th>请假结束时间</th>
+        <th>请假理由</th>
+        <th>假条详情</th>
        </tr>
        <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["id"]); ?></td>
         <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["out_time"]); ?></td>
-        <td class="center"><?php echo ($show["back_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
-        <!-- <td class="center"><?php echo ($show["flag"]); ?></td> -->
-        <?php if($show["flag"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($show["flag"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($show["flag"] == 2): ?>
-          <td style="color:#CC0066;" class="center" onclick="wcz(<?php echo ($show["id"]); ?>)" ><button class="layui-btn layui-btn-sm layui-btn-normal">回来请点击</button>
-        <?php elseif($show["flag"] == 3): ?>
-          <td style="color:red;" class="center">未通过</td><!--   <button class="layui-btn">默认按钮</button> -->
-        <?php elseif($show["flag"] == 4): ?>
-          <td style="color:#000099;" class="center">请等待主管确认</td>
-        <?php elseif($show["flag"] == 5): ?>
-          <td style="color:#00FF00;" class="center">已完成外出</td><?php endif; ?>
+        <td class="center"><?php echo ($show["start_time"]); ?></td>
+        <td class="center"><?php echo ($show["end_time"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["leave_reason"]); ?>"><?php echo ($show["leave_reason"]); ?></td>
         <td class="center">
-         <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($show["flag"] == 3): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php elseif($show["flag"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-          <?php elseif($show["flag"] == 4): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-          <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php elseif($show["flag"] == 4): ?>
-          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-          <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
+         <a href="/fyls/Admin/Approval/leaveinfo?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
@@ -242,25 +214,15 @@ layui.use(['element', 'layer'], function(){
  </div>
 </section>
 
-<script type="text/javascript">
-    function sp()
-    {
-      alert('审批过程中不能操作哦！');
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
     }
-    function qq()
-    {
-      alert('无法操作哦！');
-    }
-    function wcz($id)
-    {
-      var b=confirm("如果您已经回到公司请点击确认，等待主管审核！");
-      if(b){
-        location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/goout?id='+($id);
-      }else{
-        return false;
-      }
-    }
-</script>
-
+  }
+</script> -->
 </body>
 </html>

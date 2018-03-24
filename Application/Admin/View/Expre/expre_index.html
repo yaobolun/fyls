@@ -1,0 +1,66 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">快递列表</h2>
+       
+       <a href="__ROOT__/Admin/Expre/add_expre" class="fr top_rt_btn add_icon">申请快递</a>
+      </div>
+      <table class="table">
+       <tr>
+        <th>寄件人</th>
+        <th>收件人</th>
+        <th>快递物品</th>
+        <th>寄件时间</th>
+        <th>备注信息</th>
+        <th>状态</th>
+        <th>操作</th>
+       </tr>
+       <volist name='arr' id='arr'>
+       <tr>
+        <td class="center">{$arr.name}</td>
+        <td class="center">{$arr.addressee}</td>
+        <td class="center">{$arr.goods}</td>
+        <td class="center">{$arr.time}</td>
+        <td class="center flow" title="{$arr.remarks}">{$arr.remarks}</td>
+        <if condition="$arr.flag eq 0">
+          <td class="center">未发货</td>
+        <elseif condition="$arr.flag eq 1" />
+          <td style="color:green;" class="center">已发货</td>
+        <elseif condition="$arr.flag eq 2" />
+          <td style="color:red;" class="center">被拒绝</td>
+        </if>
+        <td class="center">
+         <a onclick="expre_del({$arr.id})" title="删除" class="link_icon">&#100;</a>
+        </td>
+       </tr>
+       </volist>
+      
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+<script>
+function expre_del($id){
+   var b=confirm("您确定要删除吗！");
+    if(b){
+      location.href = "<?php echo C('HOME_PATH');?>"+'/Expre/expre_del?id='+($id);
+    }else{
+      return false;
+    }
+}
+</script>
+</body>
+</html>

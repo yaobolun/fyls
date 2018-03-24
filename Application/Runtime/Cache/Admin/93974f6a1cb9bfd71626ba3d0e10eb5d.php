@@ -25,7 +25,6 @@
 					$(".content").mCustomScrollbar("scrollTo","h2:last");
 				});
 			});
-			
 			$(".content").delegate("a[href='top']","click",function(e){
 				e.preventDefault();
 				$(".content").mCustomScrollbar("scrollTo",$(this).attr("href"));
@@ -39,12 +38,41 @@
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
+  <li><a href="/fyls/admin.php/Personal/personal" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
- <uhl>
+<div class="layui-collapse" lay-filter="test">
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">审批管理</h2>
+    <div class="layui-colla-content">
+     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">为什么前端工程师多不愿意用 Bootstrap 框架？</h2>
+    <div class="layui-colla-content">
+      <p>因为不适合。如果希望开发长期的项目或者制作产品类网站，那么就需要实现特定的设计，为了在维护项目中可以方便地按设计师要求快速修改样式，肯定会逐步编写出各种业务组件、工具类，相当于为项目自行开发一套框架。——来自知乎@Kayo</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">layui 更适合哪些开发者？</h2>
+    <div class="layui-colla-content">
+      <p>在前端技术快速变革的今天，layui 仍然坚持语义化的组织模式，甚至于模块理念都是采用类AMD组织形式，并非是有意与时代背道而驰。layui 认为以jQuery为核心的开发方式还没有到完全消亡的时候，而早期市面上基于jQuery的UI都普通做得差强人意，所以需要有一个新的UI去重新为这一领域注入活力，并采用一些更科学的架构方式。
+      <br><br>
+      因此准确地说，layui 更多是面向那些追求开发简单的前端工程师们，以及所有层次的服务端程序员。</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">贤心是男是女？</h2>
+    <div class="layui-colla-content">
+      <p>man！ 所以这个问题不要再出现了。。。</p>
+    </div>
+  </div>
+</div>
+ <ul>
  <li>
    <dl>
     <dt>审批管理</dt>
@@ -100,6 +128,12 @@
   </li>
  </ul>
 </aside>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element;
+  var layer = layui.layer;
+});
+</script>
 <style type="text/css">
 .b{    
     overflow: hidden;  

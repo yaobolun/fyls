@@ -1,0 +1,50 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">快递申请</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Expre/expre_index">返回</a>
+      </div>
+     <section>
+     <form action="__ROOT__/Admin/Expre/doadd_expre" method="post">
+      <ul class="ulColumn2">
+      <li>
+        <span class="item_name" style="width:120px;">寄件人：</span>
+        <input type="text" required="required" class="textbox textbox_295" name="name" placeholder="寄件人" name="goods" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">收件人：</span>
+        <input type="text" required="required" class="textbox textbox_295" placeholder="收件人" name="addressee" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">电话：</span>
+        <input type="text" required="required" class="textbox textbox_295" placeholder="收件人电话" name="tel" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">快递物品：</span>
+        <input type="text" required="required" class="textbox textbox_295" placeholder="快递物品" name="goods" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">快递地址：</span>
+        <input type="text" required="required" class="textbox textbox_295" placeholder="快递地址" name="address" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注：</span>
+        <textarea name="remarks" placeholder="请填写备注，比如轻拿轻放。" class="textbox textbox_295" style="height: 60px"></textarea>
+       </li>
+        <input type="hidden" name="uid" value="{$Think.session.id}">
+        <input type="hidden" name="bm_id" value="{$Think.session.department_id}">
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+ <script src="__PUBLIC__/admin/js/jquery.js"></script>
+
+</body>
+</html>
