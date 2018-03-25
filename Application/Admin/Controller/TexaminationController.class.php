@@ -7,6 +7,7 @@ class TexaminationController extends Controller
 	public function texamination()
 	{
 		$uid = session('id');
+		// var_dump($uid);exit;
 		$admin_user = M('admin_user');
 
 		$user = $admin_user->where('id='.$uid)->find();
@@ -16,13 +17,13 @@ class TexaminationController extends Controller
 		$user_bmid = $user['department_id'];
 
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务主管%"')->find();
-
+		// var_dump($condition);exit;
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务经理%"')->find();
 
 		if($condition){
 			$transfer = M('transfer');
 
-			$show = $transfer->where('department_id='.$user_bmid.' AND tid='.$uid.' AND status <> 3 AND bm_sp=0 AND flag <> 3')->select();
+			$show = $transfer->where('department_id='.$user_bmid.' AND status <> 3 AND bm_sp=0 AND flag <> 3')->select();
 			// var_dump($show);exit;
 			$this->assign('show', $show);
 

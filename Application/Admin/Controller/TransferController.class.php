@@ -7,11 +7,13 @@ class TransferController extends Controller {
 
 	public function transfer(){
 		$sid = session('id');
+		// var_dump($sid);exit;
 		$transfer=M('transfer');
 		$count=$transfer->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		$arr=$transfer->where("flag = 0 and tid=".$sid)->limit($Page->firstRow.','.$Page->listRows)->select();
+		// var_dump($arr);exit;
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->display();
@@ -20,17 +22,21 @@ class TransferController extends Controller {
 	{	
 		
 		$bmid = session('department_id');
+		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+		// var_dump($director);exit;
 		$user_id = array_column($director,'id');
+		// var_dump($user_id);exit;
 		$a = implode(",",$user_id);
+		// var_dump($a);exit;
 		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+		// var_dump($user);exit;
 		// var_dump($name);die;
 		$this->assign('user', $user);
 		$this->display();
 	}
 
 	public function transfer_doadd(){
-		
 		if(!empty($_POST['sub'])){
 			$transfer=M("transfer");
 			$map['transfer_name']=$_POST['transfer_name'];
@@ -48,8 +54,8 @@ class TransferController extends Controller {
 			$map['transfer_paid']=$_POST['transfer_paid'];
 			$map['transfer_pic']=$_POST['transfer_pic'];
 			$map['transfer_information']=$_POST['transfer_information'];
-			$map['tid']=$_POST['tid'];
 			$map['status']=$_POST['status'];
+			// var_dump($map['tid']);exit;
 			$map=$transfer->create();
 			if($_FILES['transfer_pic']['tmp_name']){
 				$map['transfer_pic']=$this->upload($_FILES['transfer_pic']);
@@ -92,7 +98,7 @@ class TransferController extends Controller {
 			$map['transfer_account']=$_POST['transfer_account'];
 			$map['transfer_note']=$_POST['transfer_note'];
 			$map['transfer_paid']=$_POST['transfer_paid'];
-			$map['transfer_pic']=$_FILES['transfer_pic']["name"];
+			$map['transfer_pic']=$_FILES['transfer_pic'];
 			$map['transfer_information']=$_POST['transfer_information'];
 			if($_FILES['transfer_pic']['tmp_name']){
 				$map['transfer_pic']=$this->upload($_FILES['transfer_pic']);

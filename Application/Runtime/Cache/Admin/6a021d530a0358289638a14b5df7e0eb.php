@@ -176,7 +176,7 @@
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input type="hidden" name="status" value="0"/>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
+        <input type="hidden" name="tid" value="<?php echo (session('id')); ?>" />
         <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
         <input type="submit" class="link_btn" name="sub" />
        </li>

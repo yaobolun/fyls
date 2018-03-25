@@ -39,7 +39,7 @@
 <header>
  <h1><img src="/fyls/Public/admin/images/admin_logo.png"/></h1>
  <ul class="rt_nav">
-  <li><a href="/fyls/index.php/" target="_blank" class="website_icon"><?php echo (session('name')); ?> </a></li>
+  <li><a href="/fyls/admin.php/Personal/personal" class="website_icon"><?php echo (session('name')); ?> </a></li>
   <li><a href="/fyls/admin.php/Index/tc" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
@@ -50,6 +50,7 @@
     <dt>审批管理</dt>
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
     </dl>
   </li>
   <li>
@@ -94,7 +95,7 @@
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
-  </li>
+  </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
