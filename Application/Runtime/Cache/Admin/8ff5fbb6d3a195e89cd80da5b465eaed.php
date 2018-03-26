@@ -52,6 +52,7 @@
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
     <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -105,63 +106,54 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">转账详情</h2>
+       <h2 class="fl">资质凭证到账详情</h2>
 <!--        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a> -->
       </div>
      <section>
-     <form id="form" action="/fyls/Admin/Texamination/adopt" method="post">
+     <form id="form" action="/fyls/Admin/Qexamination/adopt" method="post">
      <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
      <input type="hidden" name="id" value="<?php echo ($find["id"]); ?>">
      <input type="hidden" name="status" value="<?php echo ($find["status"]); ?>">
      <table class="layui-table" style="width:900px; height:300px;">
         <thead>
           <tr>
-            <th colspan="4" style="height:30px;text-align:center;"><h1><b>转账单</b></h1></th>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>资质凭证到账单</b></h1></th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td style="width:50px;">日期：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_date"]); ?></td>
+            <td style="width:50px;">市场部客服：</td>
+            <td  class="b" title="<?php echo ($find["qualifications_customer"]); ?>" style="width:100px;"><?php echo ($find["qualifications_customer"]); ?></td>
+          </tr><tr>
             <td style="width:50px;">申请人：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_name"]); ?></td>
-            <td style="width:50px;">人才合同价格：</td>
-            <td  class="b" title="<?php echo ($find["transfer_contract"]); ?>" style="width:100px;"><?php echo ($find["transfer_contract"]); ?></td>
-          </tr><tr>
-            <td style="width:50px;">配置企业价格：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_allocation"]); ?></td>
-            <td style="width:50px;">证书类别：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_certificate"]); ?></td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_applicant"]); ?></td>
+            <td style="width:50px;">企业名称：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_enterprise"]); ?></td>
           </tr>
           <tr>
-            <td style="width:50px;">配置企业：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_configuration"]); ?></td>
-            <td style="width:50px;">人才姓名：</td>
-            <td style="width:100px;"><?php echo ($find["transfer_talent"]); ?></td>
+            <td style="width:50px;">资质名称：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_aptitude"]); ?></td>
+            <td style="width:50px;">本次到账日期：</td>
+            <td style="width:100px;"><?php echo ($find["qualifications_arrival"]); ?></td>
           </tr><tr>
-            <td style="width:50px;">配出年月：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_match"]); ?></td>
-            <td style="width:50px;">户名：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_huming"]); ?></td>
+            <td style="width:50px;">合同价格：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_contract"]); ?></td>
+            <td style="width:50px;">已到账金额：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_money"]); ?></td>
           </tr>
           <tr>
-            <td style="width:50px;">本次打款金额：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_amount"]); ?></td>
-            <td style="width:50px;">开户行：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_bank"]); ?></td>
-          </tr><tr>
-            <td style="width:50px;">账号：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_account"]); ?></td>
+            <td style="width:50px;">到账账户：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_account"]); ?></td>
+            <td style="width:50px;">本次到账金额：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_bmoney"]); ?></td>
+          </tr>
+          <tr>
+            <td style="width:50px;">公关费：</td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_relations"]); ?></td>
             <td style="width:50px;">备注：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_note"]); ?></td>
-          </tr>
-          <tr>
-            <td style="width:50px;">已付金额：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_paid"]); ?></td>
-            <td style="width:50px;">资料上传：</td>
-            <td  style="width:100px;"><?php echo ($find["transfer_pic"]); ?></td>
-          </tr>
-          <tr>
-            <td>财务备注信息：</td>
-            <td  colspan="3"><?php echo ($find["transfer_information"]); ?></td>
+            <td  style="width:100px;"><?php echo ($find["qualifications_remarks"]); ?></td>
           </tr>
           <tr>
             <td>部门主管</td>
@@ -216,7 +208,7 @@
     {
       var b=confirm("您将要拒绝了！");
       if(b){
-        location.href = "<?php echo C('HOME_PATH');?>"+'/Texamination/Not?id='+($id);
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Qexamination/Not?id='+($id);
       }else{
         return false;
       }

@@ -53,6 +53,7 @@
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
     <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
     <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -103,70 +104,111 @@
   </li>
  </ul>
 </aside>
-<style type="text/css">
-.c{   
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
-</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账申请列表</h2>
-       <a href="/fyls/Admin/Arrival/arrival_add" class="fr top_rt_btn add_icon">添加到账申请</a>
+       <h2 class="fl">退款企业凭证详情</h2>
+<!--        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a> -->
       </div>
-      <table class="table">
-        <tr>
-        <th>申请人</th>
-        <th>到账公司账号</th>
-        <th>到账时间</th>
-        <th>到账金额</th>
-        <th>配置企业</th>
-        <th>审批状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center c" title="<?php echo ($arr["arrival_applicant"]); ?>"><?php echo ($arr["arrival_applicant"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_account"]); ?>"><?php echo ($arr["arrival_account"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_time"]); ?>"><?php echo ($arr["arrival_time"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_money"]); ?>"><?php echo ($arr["arrival_money"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_paid"]); ?>"><?php echo ($arr["arrival_paid"]); ?></td>
-        <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($arr["status"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($arr["status"] == 2): ?>
-          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
-        <?php elseif($arr["status"] == 3): ?>
-          <td style="color:#00FF00;" class="center">未通过</td><?php endif; ?>
-        <td class="center">
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($arr["status"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
-       </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+     <section>
+     <form id="form" action="/fyls/Admin/Rexamination/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
+     <input type="hidden" name="id" value="<?php echo ($find["id"]); ?>">
+     <input type="hidden" name="status" value="<?php echo ($find["status"]); ?>">
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>到账单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">申请人：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_applicant"]); ?></td>
+            <td style="width:50px;">配出年月：</td>
+            <td  class="b" title="<?php echo ($find["refund_match"]); ?>" style="width:100px;"><?php echo ($find["refund_match"]); ?></td>
+          </tr><tr>
+            <td style="width:50px;">配出企业：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_equip"]); ?></td>
+            <td style="width:50px;">合同价格：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_contract"]); ?></td>
+          </tr>
+          <tr>
+            <td style="width:50px;">备注：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_remarks"]); ?></td>
+            <td style="width:50px;">已到账价格：</td>
+            <td style="width:100px;"><?php echo ($find["refund_account"]); ?></td>
+          </tr><tr>
+            <td style="width:50px;">户名：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_name"]); ?></td>
+            <td style="width:50px;">本次打款金额：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_money"]); ?></td>
+          </tr>
+          <tr>
+            <td style="width:50px;">开户行：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_bank"]); ?></td>
+            <td style="width:50px;">账号：</td>
+            <td  style="width:100px;"><?php echo ($find["refund_number"]); ?></td>
+          </tr>
+          <tr>
+            <td>部门主管</td>
+            <td>
+			       <?php echo ($uname); ?>
+            </td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not(<?php echo ($find["id"]); ?>)">残忍拒绝</button>
+            </td>
+          </tr>
+        </tbody>
+        <?php echo ($page); ?>
       </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+      </form>
+      
+     </section>
  </div>
 </section>
 <script type="text/javascript">
-    function sp()
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
     {
-      alert('审批过程中不能操作哦！');
+     var a=confirm("确认通过吗?");
+      	  if(a){
+            $("#form").submit();
+      		}else{
+            return false;
+          }
     }
-    function qq()
+    function Not($id)
     {
-      alert('无法操作哦！');
+      var b=confirm("您将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Rexamination/Not?id='+($id);
+      }else{
+        return false;
+      }
     }
+
 </script>
 </body>
 </html>

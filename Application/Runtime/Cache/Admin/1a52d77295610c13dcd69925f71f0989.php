@@ -53,6 +53,8 @@
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
     <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
     <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -104,53 +106,39 @@
  </ul>
 </aside>
 <style type="text/css">
-.c{   
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
 </style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账申请列表</h2>
-       <a href="/fyls/Admin/Arrival/arrival_add" class="fr top_rt_btn add_icon">添加到账申请</a>
+       <h2 class="fl">退款企业凭证</h2>
+       <a href="#" class="fr top_rt_btn add_icon"></a>
       </div>
       <table class="table">
-        <tr>
+       <tr>
         <th>申请人</th>
-        <th>到账公司账号</th>
-        <th>到账时间</th>
-        <th>到账金额</th>
-        <th>配置企业</th>
-        <th>审批状态</th>
+        <th>配出年月</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>备注</th>
         <th>操作</th>
        </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center c" title="<?php echo ($arr["arrival_applicant"]); ?>"><?php echo ($arr["arrival_applicant"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_account"]); ?>"><?php echo ($arr["arrival_account"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_time"]); ?>"><?php echo ($arr["arrival_time"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_money"]); ?>"><?php echo ($arr["arrival_money"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_paid"]); ?>"><?php echo ($arr["arrival_paid"]); ?></td>
-        <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($arr["status"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($arr["status"] == 2): ?>
-          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
-        <?php elseif($arr["status"] == 3): ?>
-          <td style="color:#00FF00;" class="center">未通过</td><?php endif; ?>
+       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($show["refund_applicant"]); ?></td>
+        <td class="center"><?php echo ($show["refund_match"]); ?></td>
+        <td class="center"><?php echo ($show["refund_equip"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["refund_contract"]); ?>"><?php echo ($show["refund_contract"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["refund_remarks"]); ?>"><?php echo ($show["refund_remarks"]); ?></td>
         <td class="center">
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($arr["status"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
-       </td>
+         <a href="/fyls/Admin/Rexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
       <aside class="paging">
@@ -158,15 +146,16 @@
       </aside>
  </div>
 </section>
-<script type="text/javascript">
-    function sp()
-    {
-      alert('审批过程中不能操作哦！');
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
     }
-    function qq()
-    {
-      alert('无法操作哦！');
-    }
-</script>
+  }
+</script> -->
 </body>
 </html>

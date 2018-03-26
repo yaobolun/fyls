@@ -11,13 +11,29 @@ class RefundController extends Controller {
 		$count=$refund->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
-		$arr=$refund->where("flag = 0 ")->limit($Page->firstRow.','.$Page->listRows)->select();
+		$arr=$refund->where("flag = 0 and tid=".$sid)->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
 		$this->display();
 	}
-	
-	public function refund_add(){
+	public function refund_add()
+	{	
+		
+		$bmid = session('department_id');
+		// var_dump($bmid);exit;
+		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+		// var_dump($director);exit;
+		$user_id = array_column($director,'id');
+		// var_dump($user_id);exit;
+		$a = implode(",",$user_id);
+		// var_dump($a);exit;
+		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+		// var_dump($user);exit;
+		// var_dump($name);die;
+		$this->assign('user', $user);
+		$this->display();
+	}
+	public function refund_doadd(){
 		
 		if(!empty($_POST['sub'])){
 			$refund=M("refund");
@@ -31,6 +47,9 @@ class RefundController extends Controller {
 			$map['refund_money']=$_POST['refund_money'];
 			$map['refund_bank']=$_POST['refund_bank'];
 			$map['refund_number']=$_POST['refund_number'];
+			$map['status']=$_POST['status'];
+			$map['tid']=$_POST['tid'];
+			$map['department_id']=$_POST['department_id'];
 			$query=$refund->add($map);
 			if($query>0){
 				echo $this->jump('添加成功','Refund/refund');

@@ -1,0 +1,57 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">资质到账凭证审批</h2>
+       <a href="#" class="fr top_rt_btn add_icon"></a>
+      </div>
+      <table class="table">
+       <tr>
+        <th>日期</th>
+        <th>市场部客服</th>
+        <th>申请人</th>
+        <th>企业名称</th>
+        <th>资质名称</th>
+        <th>操作</th>
+       </tr>
+       <volist name='show' id='show'>
+       <tr>
+        <td class="center">{$show.qualifications_date}</td>
+        <td class="center">{$show.qualifications_customer}</td>
+        <td class="center">{$show.qualifications_applicant}</td>
+        <td class="center flow" title="{$show.qualifications_enterprise}">{$show.qualifications_enterprise}</td>
+        <td class="center flow" title="{$show.qualifications_aptitude}">{$show.qualifications_aptitude}</td>
+        <td class="center">
+         <a href="__ROOT__/Admin/Qexamination/info?id={$show.id}" title="查看详情" class="">查看</a>
+        </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
+</body>
+</html>

@@ -53,6 +53,8 @@
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
     <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
     <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -104,7 +106,7 @@
  </ul>
 </aside>
 <style type="text/css">
-.c{   
+.ccc{   
     overflow: hidden;  
     text-overflow: ellipsis;  
     white-space: nowrap;  
@@ -114,25 +116,25 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账申请列表</h2>
-       <a href="/fyls/Admin/Arrival/arrival_add" class="fr top_rt_btn add_icon">添加到账申请</a>
+       <h2 class="fl">退款人才凭证申请列表</h2>
+       <a href="/fyls/Admin/Voucher/voucher_add" class="fr top_rt_btn add_icon">添加退款人才凭证申请</a>
       </div>
       <table class="table">
         <tr>
         <th>申请人</th>
-        <th>到账公司账号</th>
-        <th>到账时间</th>
+        <th>本次到账日期</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
         <th>到账金额</th>
-        <th>配置企业</th>
         <th>审批状态</th>
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center c" title="<?php echo ($arr["arrival_applicant"]); ?>"><?php echo ($arr["arrival_applicant"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_account"]); ?>"><?php echo ($arr["arrival_account"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_time"]); ?>"><?php echo ($arr["arrival_time"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_money"]); ?>"><?php echo ($arr["arrival_money"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_paid"]); ?>"><?php echo ($arr["arrival_paid"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_applicant"]); ?>"><?php echo ($arr["voucher_applicant"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_account"]); ?>"><?php echo ($arr["voucher_account"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_equip"]); ?>"><?php echo ($arr["voucher_equip"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
+        <td class="center ccc" title="<?php echo ($arr["voucher_contract"]); ?>"><?php echo ($arr["voucher_contract"]); ?></td>
         <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
         <?php elseif($arr["status"] == 1): ?>
           <td style="color:blue;" class="center">审批中</td>
@@ -145,11 +147,11 @@
         <?php elseif($arr["status"] == 2): ?>
           <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <?php else: ?>
-        <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
+        <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
         <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
         <?php else: ?>
-        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
+        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        <a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>

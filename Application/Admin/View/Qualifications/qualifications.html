@@ -20,6 +20,7 @@
         <th>申请人</th>
         <th>企业名称</th>
         <th>资质名称</th>
+        <th>审批状态</th>
         <th>操作</th>
        </tr>
        <volist name='arr' id='arr'>
@@ -29,10 +30,29 @@
         <td class="center e" title="{$arr.qualifications_applicant}">{$arr.qualifications_applicant}</td>
         <td class="center e" title="{$arr.qualifications_enterprise}">{$arr.qualifications_enterprise}</td>
         <td class="center e" title="{$arr.qualifications_aptitude}">{$arr.qualifications_aptitude}</td>
+        <if condition="$arr.status eq 0">
+          <td class="center">未审批</td>
+        <elseif condition="$arr.status eq 1" />
+          <td style="color:blue;" class="center">审批中</td>
+        <elseif condition="$arr.status eq 2" />
+          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
+        <elseif condition="$arr.status eq 3" />
+          <td style="color:#00FF00;" class="center">未通过</td>
+        </if>
         <td class="center">
+         <if condition="$arr.status eq 1">
+          <a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
+        <elseif condition="$arr.status eq 2"/>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+        <else />
         <a href="__ROOT__/Admin/Qualifications/qualifications_mod?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>
+        </if>
+        <if condition="$arr.status eq 1">
+          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <else />
         <a href="__ROOT__/Admin/Qualifications/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
         <a href="__ROOT__/Admin/Qualifications/info?id={$arr.id}" title="详细信息">详细信息</a>
+        </if>
        </td>
        </tr>
        </volist>
@@ -42,5 +62,15 @@
       </aside>
  </div>
 </section>
+<script type="text/javascript">
+    function sp()
+    {
+      alert('审批过程中不能操作哦！');
+    }
+    function qq()
+    {
+      alert('无法操作哦！');
+    }
+</script>
 </body>
 </html>

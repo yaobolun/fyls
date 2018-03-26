@@ -106,62 +106,42 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">转账申请添加</h2>
-       <a href="/fyls/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
+       <h2 class="fl">到账申请添加</h2>
+       <a href="/fyls/Admin/Arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
       </div>
      <section>
-     <form action="/fyls/Admin/Transfer/transfer_doadd" method="post" enctype="multipart/form-data">
+     <form action="/fyls/Admin/Arrival/arrival_doadd" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
         <th>申请人</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="申请转账人姓名" name="transfer_name" required="required"/></td>
-        <th>人才合同价格</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="本人合同上的价格" name="transfer_contract" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人姓名填写" name="arrival_applicant" required="required"/></td>
+        <th>到账公司账号</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="到账公司账号" name="arrival_account" required="required"/></td>
       </tr>
       <tr>
-        <th>配置企业价格</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="企业价格" name="transfer_allocation" required="required"/></td>
-        <th>证书类别</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="所属公司部门证书" name="transfer_certificate" required="required"/></td>
-      </tr>
-      <tr>
-        <th>配置企业</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="申请人企业" name="transfer_configuration" required="required"/></td>
-        <th>人才姓名</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="本人姓名" name="transfer_talent" required="required"/></td>
-      </tr>
-      <tr>
-        <th>配出年月</th>
+        <th>到账时间</th>
         <td>
         <div class="layui-input-inline">
-        <input type="text" class="textbox textbox_295" id="test5" placeholder="转账的年月日" name="transfer_match" required="required"/>
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="到账时间" name="arrival_time" required="required"/>
           </div>
         </td>
-        <th>户名</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="收款人开户户名" name="transfer_huming" required="required"/></td>
-      </tr>
-      <tr>
-        <th>本次打款金额</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="transfer_amount" required="required"/></td>
-        <th>开户行</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="开户的银行" name="transfer_bank" required="required"/></td>
-      </tr>
-      <tr>
-        <th>账号</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="开户的账号" name="transfer_account" required="required"/></td>
-        <th>备注说明</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="transfer_note" required="required"/></td>
+        <th>到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="到账金额" name="arrival_money" required="required"/></td>
       </tr>
       <tr>
         <th>已付金额</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="已付金额" name="transfer_paid" required="required"/></td>
-        <th>上传图片</th>
-        <td><input type="file" name="transfer_pic" required="required"/></td>
+        <td><input type="text" class="textbox textbox_295" placeholder="已付金额" name="arrival_paid" required="required"/></td>
+        <th>合同价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="按照合同上的价格" name="arrival_contract" required="required"/></td>
       </tr>
       <tr>
-        <th>财务备注信息</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" required="required"/></td>
+        <th>配备企业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人企业" name="arrival_equip" required="required"/></td>
+        <th>备注</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="arrival_remarks" required="required"/></td>
+      </tr>
+      <tr>
         <th>请选择您的主管</th>
         <td>
           <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
@@ -172,13 +152,72 @@
           </select>
        </td>
        </tr>
+       <!-- <li>
+        <span class="item_name" style="width:120px;">申请人：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人姓名填写" name="arrival_applicant" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账公司账号：</span>
+        <input type="text" class="textbox textbox_295" placeholder="到账公司账号" name="arrival_account" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账时间：</span>
+        <input type="text" class="textbox textbox_295" placeholder="到账时间" name="arrival_time" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="到账金额" name="arrival_money" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">已付金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="已付金额" name="arrival_paid" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">合同价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="按照合同上的价格" name="arrival_contract" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配备企业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人企业" name="arrival_equip" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注：</span>
+        <textarea type="text" class="textbox textbox_295" placeholder="说明" name="arrival_remarks" required="required"/></textarea>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">企业价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="arrival_enterprise" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">签约年限：</span>
+        <input type="text" class="textbox textbox_295" placeholder="合同签约年份" name="arrival_contrac" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配备人才：</span>
+        <input type="text" class="textbox textbox_295" placeholder="姓名" name="arrival_qualified" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">级别：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="arrival_level" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">专业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="专业" name="arrival_major" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">人才价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人才价格" name="arrival_talent" required="required"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">客服：</span>
+        <input type="text" class="textbox textbox_295" placeholder="客服" name="arrival_customer" required="required"/>
+       </li> -->
        </table>
-       
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input type="hidden" name="status" value="0"/>
         <input type="hidden" name="tid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
+        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>"/>
         <input type="submit" class="link_btn" name="sub" />
        </li>
       </ul>

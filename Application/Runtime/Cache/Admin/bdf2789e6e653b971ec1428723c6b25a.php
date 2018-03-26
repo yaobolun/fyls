@@ -104,7 +104,9 @@
  </ul>
 </aside>
 <style type="text/css">
-.c{   
+.f{   
+    width: 500px;  
+    height: 15px;  
     overflow: hidden;  
     text-overflow: ellipsis;  
     white-space: nowrap;  
@@ -114,59 +116,54 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账申请列表</h2>
-       <a href="/fyls/Admin/Arrival/arrival_add" class="fr top_rt_btn add_icon">添加到账申请</a>
+       <h2 class="fl">资质凭证到账凭证申请详细信息</h2>
+       <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Qualifications/qualifications" class="fr top_rt_btn add_icon">返回资质凭证到账凭证申请列表</a>
+       <a href="/fyls/Admin/Qualifications/qualifications_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑</a>
       </div>
       <table class="table">
+      <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <th>日期</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_date"]); ?>"><?php echo ($arr["qualifications_date"]); ?></td>
+        <th>市场部客服</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_customer"]); ?>"><?php echo ($arr["qualifications_customer"]); ?></td>
+        </tr>
         <tr>
         <th>申请人</th>
-        <th>到账公司账号</th>
-        <th>到账时间</th>
-        <th>到账金额</th>
-        <th>配置企业</th>
-        <th>审批状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center c" title="<?php echo ($arr["arrival_applicant"]); ?>"><?php echo ($arr["arrival_applicant"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_account"]); ?>"><?php echo ($arr["arrival_account"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_time"]); ?>"><?php echo ($arr["arrival_time"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_money"]); ?>"><?php echo ($arr["arrival_money"]); ?></td>
-        <td class="center c" title="<?php echo ($arr["arrival_paid"]); ?>"><?php echo ($arr["arrival_paid"]); ?></td>
-        <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($arr["status"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($arr["status"] == 2): ?>
-          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
-        <?php elseif($arr["status"] == 3): ?>
-          <td style="color:#00FF00;" class="center">未通过</td><?php endif; ?>
-        <td class="center">
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($arr["status"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
-       </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+        <td class="center f" title="<?php echo ($arr["qualifications_applicant"]); ?>"><?php echo ($arr["qualifications_applicant"]); ?></td>
+        <th>企业名称</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_enterprise"]); ?>"><?php echo ($arr["qualifications_enterprise"]); ?></td>
+        </tr>
+        <tr>
+        <th>资质名称</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_aptitude"]); ?>"><?php echo ($arr["qualifications_aptitude"]); ?></td>
+        <th>本次到账日期</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_arrival"]); ?>"><?php echo ($arr["qualifications_arrival"]); ?></td>
+        </tr>
+        <tr>
+        <th>合同价格</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_contract"]); ?>"><?php echo ($arr["qualifications_contract"]); ?></td>
+        <th>已到账金额</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_money"]); ?>"><?php echo ($arr["qualifications_money"]); ?></td>
+        </tr>
+        <tr>
+        <th>到账账户</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_account"]); ?>"><?php echo ($arr["qualifications_account"]); ?></td>
+        <th>本次到账金额</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_bmoney"]); ?>"><?php echo ($arr["qualifications_bmoney"]); ?></td>
+        </tr>
+        <tr>
+        <th>公关费</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_relations"]); ?>"><?php echo ($arr["qualifications_relations"]); ?></td>
+        <th>备注</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_remarks"]); ?>"><?php echo ($arr["qualifications_remarks"]); ?></td>
+        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
       <aside class="paging">
       <?php echo ($page); ?>
       </aside>
  </div>
 </section>
-<script type="text/javascript">
-    function sp()
-    {
-      alert('审批过程中不能操作哦！');
-    }
-    function qq()
-    {
-      alert('无法操作哦！');
-    }
-</script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">到账审批</h2>
+       <a href="#" class="fr top_rt_btn add_icon"></a>
+      </div>
+      <table class="table">
+       <tr>
+        <th>申请人</th>
+        <th>到账公司账号</th>
+        <th>到账时间</th>
+        <th>到账金额</th>
+        <th>已付金额</th>
+        <th>操作</th>
+       </tr>
+       <volist name='show' id='show'>
+       <tr>
+        <td class="center">{$show.arrival_applicant}</td>
+        <td class="center">{$show.arrival_account}</td>
+        <td class="center">{$show.arrival_time}</td>
+        <td class="center flow" title="{$show.arrival_money}">{$show.arrival_money}</td>
+        <td class="center flow" title="{$show.arrival_paid}">{$show.arrival_paid}</td>
+        <td class="center">
+         <a href="__ROOT__/Admin/Aexamination/info?id={$show.id}" title="查看详情" class="">查看</a>
+        </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
+</body>
+</html>

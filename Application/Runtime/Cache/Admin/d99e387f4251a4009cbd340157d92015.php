@@ -51,6 +51,9 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -122,6 +125,7 @@
         <th>配备企业</th>
         <th>合同价格</th>
         <th>备注</th>
+        <th>审批状态</th>
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
@@ -130,10 +134,23 @@
         <td class="center cc" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
         <td class="center cc" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
         <td class="center cc" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
+        <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
+        <?php elseif($arr["status"] == 1): ?>
+          <td style="color:blue;" class="center">审批中</td>
+        <?php elseif($arr["status"] == 2): ?>
+          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
+        <?php elseif($arr["status"] == 3): ?>
+          <td style="color:#00FF00;" class="center">未通过</td><?php endif; ?>
         <td class="center">
-        <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
+        <?php elseif($arr["status"] == 2): ?>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+        <?php else: ?>
+        <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
+        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <?php else: ?>
         <a href="/fyls/Admin/Refund/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Refund/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+        <a href="/fyls/Admin/Refund/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
@@ -142,5 +159,15 @@
       </aside>
  </div>
 </section>
+<script type="text/javascript">
+    function sp()
+    {
+      alert('审批过程中不能操作哦！');
+    }
+    function qq()
+    {
+      alert('无法操作哦！');
+    }
+</script>
 </body>
 </html>
