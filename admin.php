@@ -23,7 +23,7 @@ define('HTML_PATH','./Html/');
 define('APP_PATH','./Application/');
 //定义默认模块
 define('BIND_MODULE','Admin');
-
+define('EXTEND_PATH','../Vendor/');	 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 

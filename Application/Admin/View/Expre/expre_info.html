@@ -1,0 +1,103 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">快递详情</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
+      </div>
+     <section>
+     <form id="form" action="__ROOT__/Admin/Expre/expre_mod" method="post">
+     <input type="hidden" name="id" value="{$expre_info.id}">
+     <table class="layui-table" style="width:900px; height:400px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>快递详情单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">收件人：</td>
+            <td style="width:100px;">{$expre_info.addressee}</td>
+            <td style="width:60px;">寄件人：</td>
+            <td style="width:100px;">{$expre_info.name}</td>
+          </tr>
+          <tr>
+            <td style="width:50px;">寄件物品：</td>
+            <td style="width:100px;">{$expre_info.goods}</td>
+            <td style="width:60px;">收方电话：</td>
+            <td style="width:100px;">{$expre_info.tel}</td>
+          </tr>
+          <tr>
+            <td style="width:50px;">所属部门：</td>
+            <td style="width:100px;">{$bmname.department_name}</td>
+            <td style="width:60px;">申请时间：</td>
+            <td style="width:100px;">{$expre_info.time}</td>
+          </tr>
+          <tr>
+            <td>收件地址：</td>
+            <td colspan="3">{$expre_info.address}</td>
+          </tr>
+          <tr>
+            <td>备注信息：</td>
+            <td colspan="3">{$expre_info.remarks}</td>
+          </tr>
+          <tr>
+          <td colspan="2"></td>
+            <td><center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></center></td>
+            <td>
+                <center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </form>
+      
+      
+     </section>
+ </div>
+</section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
+    {
+    	 var a=confirm("确认通过吗?");
+      	  if(a){
+              $("#form").submit();
+      		}else{
+            return false;
+          }
+    }
+    function Not($id)
+    {
+      var b=confirm("你将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Expre/not?id='+($id);
+      }else{
+        return false;
+      }
+
+    }
+
+</script>
+</body>
+</html>

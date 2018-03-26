@@ -21,8 +21,10 @@ class PeopleController extends Controller {
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		// $dep = $department->where()->select(); 
-		$arr=$admin->where('flag = 0 and administration = 1')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
-		$this->assign('arr',$arr);
+		// $arr=$admin->where('flag = 0 and administration = 1')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$depar = $admin->join('departments ON admin_user.department_id = departments.id')->join('stations ON admin_user.station_id = stations.id')->where('admin_user.flag = 0 and administration = 1')->limit($Page->firstRow.','.$Page->listRows)->select();
+		// var_dump($depar);die;
+		$this->assign('depar', $depar);
 		$this->assign('page',$show);
 		$this->display();
     }

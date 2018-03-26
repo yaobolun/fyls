@@ -176,6 +176,7 @@ layui.use(['element', 'layer'], function(){
        
        <a href="/fyls/Admin/Expre/add_expre" class="fr top_rt_btn add_icon">申请快递</a>
       </div>
+
       <table class="table">
        <tr>
         <th>寄件人</th>
@@ -187,7 +188,7 @@ layui.use(['element', 'layer'], function(){
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($arr["name"]); ?></td>
+        <td class="center"><<?php echo ($arr["name"]); ?></td>
         <td class="center"><?php echo ($arr["addressee"]); ?></td>
         <td class="center"><?php echo ($arr["goods"]); ?></td>
         <td class="center"><?php echo ($arr["time"]); ?></td>
@@ -201,7 +202,7 @@ layui.use(['element', 'layer'], function(){
          <a onclick="expre_del(<?php echo ($arr["id"]); ?>)" title="删除" class="link_icon">&#100;</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
+       <a href="/fyls/admin.php/Expre/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>
       </table>
       <aside class="paging">
       <?php echo ($page); ?>

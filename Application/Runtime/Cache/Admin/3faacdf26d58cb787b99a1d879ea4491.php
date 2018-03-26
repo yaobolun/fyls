@@ -176,13 +176,12 @@ layui.use(['element', 'layer'], function(){
         <th>最后修改时间</th>
         <th>操作</th>
        </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+       <?php if(is_array($depar)): $i = 0; $__LIST__ = $depar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
         <td class="center"><?php echo ($key+1); ?></td>
         <td class="center"><?php echo ($arr["name"]); ?></td>
-        <td class="center"><?php echo ($arr["department_id"]); ?></td>
-        <td class="center"><?php echo ($arr["station_id"]); ?></td>
+        <td class="center"><?php echo ($arr["department_name"]); ?></td>
+        <td class="center"><?php echo ($arr["station_name"]); ?></td>
         <td class="center"><?php echo ($arr["updatetime"]); ?></td>
-        
         <td class="center">
          <a href="/fyls/Admin/People/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
          <a href="/fyls/Admin/People/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>

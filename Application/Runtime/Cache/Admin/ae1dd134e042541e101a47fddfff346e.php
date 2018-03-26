@@ -194,8 +194,10 @@ layui.use(['element', 'layer'], function(){
         <?php elseif($arr["flag"] == 1): ?>
           <td class="center">已发货</td><?php endif; ?>
         <td class="center">
-         <a href="/fyls/Admin/Expre/expre_mod?id=<?php echo ($arr["id"]); ?>" title="确认快递" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">确认快递</button></a>
-         <a title="拒绝" class="link_icon"><button onclick="not(<?php echo ($arr["id"]); ?>)" class="layui-btn layui-btn-primary layui-btn-sm">拒绝快递</button></a>
+        <a href="/fyls/Admin/Expre/expre_info?id=<?php echo ($arr["id"]); ?>" title="快递详情哦" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">快递详情</button></a>
+
+<!--          <a href="/fyls/Admin/Expre/expre_mod?id=<?php echo ($arr["id"]); ?>" title="确认快递" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">确认快递</button></a>
+         <a title="拒绝" class="link_icon"><button onclick="not(<?php echo ($arr["id"]); ?>)" class="layui-btn layui-btn-primary layui-btn-sm">拒绝快递</button></a> -->
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
