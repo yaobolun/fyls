@@ -16,7 +16,6 @@
   border-bottom-color: rgb(233, 233, 233);
   display: block;
   padding-left:15px;
-
 }
 </style>
 
@@ -56,14 +55,7 @@
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
 <div class="layui-collapse" lay-filter="test">
-  <div class="layui-colla-item">
-    <h1 class="layui-colla-title">审批管理</h1>
-    <div class="layui-colla-content">
-         <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
-    </div>
-  </div>
+
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">财务管理</h1>
     <div class="layui-colla-content">
@@ -75,10 +67,10 @@
     </div>
   </div>
   <div class="layui-colla-item">
-    <h1 class="layui-colla-title">请假 | 外出</h1>
+    <h1 class="layui-colla-title">请假外出</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
     </div>
   </div>
   <div class="layui-colla-item">
@@ -87,6 +79,14 @@
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
     </div>
   </div>
+  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
+  <h1 class="layui-colla-title">审批管理</h1>
+  <div class="layui-colla-content">
+       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+</div>
+</div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
@@ -95,11 +95,11 @@
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/People/people">人员管理</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
     </div>
   </div>
 </div>
+  <?php else: endif; ?>
  <!-- <ul>
  <li>
    <dl>
@@ -188,7 +188,7 @@ layui.use(['element', 'layer'], function(){
         <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><<?php echo ($arr["name"]); ?></td>
+        <td class="center"><?php echo ($arr["name"]); ?></td>
         <td class="center"><?php echo ($arr["addressee"]); ?></td>
         <td class="center"><?php echo ($arr["goods"]); ?></td>
         <td class="center"><?php echo ($arr["time"]); ?></td>
@@ -198,9 +198,15 @@ layui.use(['element', 'layer'], function(){
           <td style="color:green;" class="center">已发货</td>
         <?php elseif($arr["flag"] == 2): ?>
           <td style="color:red;" class="center">被拒绝</td><?php endif; ?>
+
+        <?php if(($expre == true) OR (session('administration') == 0)): ?><td class="center">
+         <a disabled onclick="expre_del(<?php echo ($arr["id"]); ?>)" title="删除" class="link_icon">&#100;</a>
+        </td>
+        <?php else: ?>
         <td class="center">
          <a onclick="expre_del(<?php echo ($arr["id"]); ?>)" title="删除" class="link_icon">&#100;</a>
-        </td>
+        </td><?php endif; ?>
+        
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
        <a href="/fyls/admin.php/Expre/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>
       </table>

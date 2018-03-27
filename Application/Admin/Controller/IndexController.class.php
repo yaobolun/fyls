@@ -50,9 +50,8 @@ class IndexController extends Controller {
 				$_SESSION['id']		=	$value['id'];
 				$_SESSION['name']	=	$value['name'];
 				$_SESSION['department_id'] = $value['department_id'];
-				
+				$_SESSION['administration'] = $value['administration'];
 				// var_dump($_SESSION['id']);die;
-
 
 				echo	$this->jump('登陆成功',"Department/department");
 			}

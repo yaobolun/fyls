@@ -16,23 +16,19 @@
        <a href="__ROOT__/admin.php/Permission/return" class="fr top_rt_btn">回公司确认</a>
       </div>
       <section class="mtb">
-
        <form action="" method="post">
        <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
        <input type="submit" value="查询" class="group_btn" name="sub"/>
        </form>
-<!--          <div style="width: 216px; margin: 0;">
-      <button class="layui-btn layui-btn-fluid">流体按钮</button>
-    </div> -->
       </section>
       <table class="table">
        <tr>
-        <th>申请人</th>
+        <th> 申请人 </th>
         <th>外出时间</th>
         <th>回来时间</th>
         <th>外出原因</th>
         <th>外出地址</th>
-        <th>假条详情</th>
+        <th>外出详情</th>
        </tr>
        <volist name='show' id='show'>
        <tr>
@@ -48,7 +44,7 @@
        </volist>
       </table>
       <aside class="paging">
-      {$page}
+        {$page}
       </aside>
  </div>
 </section>

@@ -56,14 +56,7 @@
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
 <div class="layui-collapse" lay-filter="test">
-  <div class="layui-colla-item">
-    <h1 class="layui-colla-title">审批管理</h1>
-    <div class="layui-colla-content">
-         <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
-    </div>
-  </div>
+
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">财务管理</h1>
     <div class="layui-colla-content">
@@ -75,7 +68,7 @@
     </div>
   </div>
   <div class="layui-colla-item">
-    <h1 class="layui-colla-title">请假 | 外出</h1>
+    <h1 class="layui-colla-title">请假外出</h1>
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
@@ -87,6 +80,14 @@
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
     </div>
   </div>
+  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
+  <h1 class="layui-colla-title">审批管理</h1>
+  <div class="layui-colla-content">
+       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+  </div>
+</div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
@@ -100,6 +101,7 @@
     </div>
   </div>
 </div>
+  <?php else: ?> value3<?php endif; ?>
  <!-- <ul>
  <li>
    <dl>

@@ -37,13 +37,22 @@
             <td>
 			       {$uname}
             </td>
-            <td><button class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <if condition="session('administration') == 0">
+            <td><button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
-<button class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
+            <button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
             </td>
+            <else />
+             <td><button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td>
+            <button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
+            </td>
+            </if>
           </tr>
         </tbody>
+        <aside class="paging">
         {$page}
+        </aside>
       </table>
       </form>
       
