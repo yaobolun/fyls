@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ 2018-03-27T09:21:45+08:00 ] ::1 /fyls/Admin/Department/department
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
@@ -633,6 +634,8 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000768s ]
 =======
+=======
+>>>>>>> origin/liushuai
 [ 2018-03-27T08:53:47+08:00 ] ::1 /fyls/Admin/Index/Login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
@@ -2744,5 +2747,8 @@ NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\L
 NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
 NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
 SQL: SELECT aequipment.id,aequipment.aequipment_aenterprise,aequipment.aequipment_contrac,aequipment.aequipment_qualified,aequipment.aequipment_level,aequipment.aequipment_major,aequipment.aequipment_talent,aequipment.aequipment_customer,admin_user.id,admin_user.name FROM `admin_user` INNER JOIN aequipment ON admin_user.id = aequipment_customer   [ RunTime:0.0004s ]
+<<<<<<< HEAD
+>>>>>>> origin/liushuai
+=======
 >>>>>>> origin/liushuai
 

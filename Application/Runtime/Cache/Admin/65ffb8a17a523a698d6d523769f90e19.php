@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <title>网站后台</title>
 <meta name="author" content="DeathGhost" />
+<<<<<<< HEAD
 
 <style type="text/css">
 .dd{
@@ -22,10 +23,21 @@
 
 <link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
 <link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
+=======
+<link rel="stylesheet" type="text/css" href="/fyls/Public/admin/css/style.css">
+<link rel="stylesheet" href="/fyls/Public/layui/css/layui.css"  media="all">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+>>>>>>> origin/liushuai
 <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script src="/fyls/Public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="/fyls/Public/layui/layui.js" charset="utf-8"></script>
 <script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/liushuai
 	(function($){
 		$(window).load(function(){
 			$("a[rel='load-content']").click(function(e){
@@ -37,6 +49,10 @@
 					$(".content").mCustomScrollbar("scrollTo","h2:last");
 				});
 			});
+<<<<<<< HEAD
+=======
+			
+>>>>>>> origin/liushuai
 			$(".content").delegate("a[href='top']","click",function(e){
 				e.preventDefault();
 				$(".content").mCustomScrollbar("scrollTo",$(this).attr("href"));
@@ -55,6 +71,7 @@
  </ul>
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
+<<<<<<< HEAD
 <div class="layui-collapse" lay-filter="test">
 
   <div class="layui-colla-item">
@@ -110,6 +127,12 @@
     <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
 =======
+=======
+ <uhl>
+ <li>
+   <dl>
+    <dt>审批管理</dt>
+>>>>>>> origin/liushuai
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
@@ -117,12 +140,16 @@
     <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
     <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
     <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
+<<<<<<< HEAD
 >>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/65ffb8a17a523a698d6d523769f90e19.php
+=======
+>>>>>>> origin/liushuai
     </dl>
   </li>
   <li>
    <dl>
     <dt>财务管理</dt>
+<<<<<<< HEAD
     <dd><a class="dd" href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
@@ -136,21 +163,48 @@
     <dt> 请假 | 外出 </dt>
     <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
+    <dd><a href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
+    </dl>
+  </li>
+  <li>
+   <dl>
+   </dl>
+  </li>
+  <li>
+   <dl>
+    <dt> 请假 | 外出 </dt>
+    <dd><a href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
+    <dd><a href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+>>>>>>> origin/liushuai
    </dl>
   </li>
   <li>
    <dl>
     <dt>快递信息</dt>
+<<<<<<< HEAD
     <dd><a class="dd" href="/fyls/admin.php/Express/express">快递列表</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Express/express">快递列表</a></dd>
+>>>>>>> origin/liushuai
    </dl>
   </li>
    <dl>
     <dt>网站栏目管理</dt>
+<<<<<<< HEAD
     <dd><a class="dd" href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
+>>>>>>> origin/liushuai
    </dl>
    <li>
    <dl>
     <dt>后台登录设置</dt>
+<<<<<<< HEAD
     <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
@@ -158,11 +212,21 @@
     <dd><a class="dd" href="/fyls/admin.php/People/people">人员管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
+    <dd><a href="/fyls/admin.php/Admin/admin">管理员</a></dd>
+    <dd><a href="/fyls/admin.php/Department/department">部门管理</a></dd>
+    <dd><a href="/fyls/admin.php/Station/station">岗位管理</a></dd>
+    <dd><a href="/fyls/admin.php/People/people">人员管理</a></dd>
+    <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
+    <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
+>>>>>>> origin/liushuai
    </dl>
   </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
+<<<<<<< HEAD
  </ul> -->
 </aside>
 <script>
@@ -171,6 +235,10 @@ layui.use(['element', 'layer'], function(){
   var layer = layui.layer;
 });
 </script>
+=======
+ </ul>
+</aside>
+>>>>>>> origin/liushuai
 <style type="text/css">
 .flow{
     width: 176px;
@@ -184,6 +252,7 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
+<<<<<<< HEAD
 <<<<<<< HEAD:Application/Runtime/Cache/Admin/dc1ee43855aba10e53d97e0971b01a9b.php
        <h2 class="fl">请假列表</h2>
        <a href="/fyls/Admin/Leave/add_leave" class="fr top_rt_btn add_icon">申请请假</a>
@@ -193,6 +262,13 @@ layui.use(['element', 'layer'], function(){
 >>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/65ffb8a17a523a698d6d523769f90e19.php
       </div>
       <section class="mtb">
+=======
+       <h2 class="fl">外出审批</h2>
+       <a href="/fyls/admin.php/Permission/return" class="fr top_rt_btn">回公司确认</a>
+      </div>
+      <section class="mtb">
+
+>>>>>>> origin/liushuai
        <form action="" method="post">
        <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
        <input type="submit" value="查询" class="group_btn" name="sub"/>

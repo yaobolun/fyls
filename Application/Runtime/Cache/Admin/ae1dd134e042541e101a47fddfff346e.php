@@ -85,6 +85,11 @@
        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
 </div>
 </div>
   <div class="layui-colla-item">
@@ -100,58 +105,7 @@
   </div>
 </div>
   <?php else: endif; ?>
- <!-- <ul>
- <li>
-   <dl>
-    <dt>审批管理</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-    </dl>
-  </li>
-  <li>
-   <dl>
-    <dt>财务管理</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
-    </dl>
-  </li>
 
-  <li>
-   <dl>
-    <dt> 请假 | 外出 </dt>
-    <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
-   </dl>
-  </li>
-  <li>
-   <dl>
-    <dt>快递信息</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Express/express">快递列表</a></dd>
-   </dl>
-  </li>
-   <dl>
-    <dt>网站栏目管理</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
-   </dl>
-   <li>
-   <dl>
-    <dt>后台登录设置</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/People/people">人员管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
-   </dl>
-  </li>   
-  <li>
-   <p class="btm_infor">© 小牛在线 技术支持</p>
-  </li>
- </ul> -->
 </aside>
 <script>
 layui.use(['element', 'layer'], function(){
@@ -159,6 +113,7 @@ layui.use(['element', 'layer'], function(){
   var layer = layui.layer;
 });
 </script>
+
 <style type="text/css">
 .flow{
     width: 176px;
