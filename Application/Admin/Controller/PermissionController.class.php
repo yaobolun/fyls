@@ -13,28 +13,44 @@ class PermissionController extends Controller
 		$user_bmid = $user['department_id'];
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
-		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场部%"')->find();
+		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
 		if(session('administration') == 0){
 			$form_business_travel = M('form_business_travel');
 			$form_business_travel->count();
 			$Page=new\Think\Page($count,10);
 			$page= $Page->show();
-			$show = $form_business_travel->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			$this->assign('page', $page);
 			$this->assign('show', $show);
 			$this->display();
 		}
 		//判断是不是人事的
-		elseif($Personnel){
+		elseif($Personnel && $condition){
+			$form_business_travel = M('form_business_travel');
+			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
+			$this->assign('show', $show);
+			$this->display();
+
+			// $form_business_travel = M('form_business_travel');
+			// $count=$form_business_travel->count();// 查询满足要求的总记录数
+			// $Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+			// $page= $Page->show();// 分页显示输出
+			// $show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			// $this->assign('show', $show);
+			// $this->assign('page',$page);
+			// $this->display('Permission/Personnel');
+		//判断是否是该部门下经理
+		}elseif($Personnel && $manager){
+			// 人事的经理 看的在这
+		}elseif($Personnel){
 			$form_business_travel = M('form_business_travel');
 			$count=$form_business_travel->count();// 查询满足要求的总记录数
 			$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 			$page= $Page->show();// 分页显示输出
-			$show = $form_business_travel->select();
+			$show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			$this->assign('show', $show);
 			$this->assign('page',$page);
 			$this->display('Permission/Personnel');
-		//判断是否是该部门下经理
 		}elseif($manager){
 			$form_business_travel = M('form_business_travel');
 			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();

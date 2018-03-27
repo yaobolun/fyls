@@ -45,18 +45,19 @@ class IndexController extends Controller {
 			}
 			$count	=	$data->where($map)->count();//查询条数
 			if ($count>0)
-			{	
+			{
 				$value = $data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
 				$_SESSION['name']	=	$value['name'];
 				$_SESSION['department_id'] = $value['department_id'];
 				$_SESSION['administration'] = $value['administration'];
 				$staff = M('stations')->where('id='.$value['station_id'].' AND station_name LIKE "%员工%"')->find();
-				if($staff){
+				$bm = M('departments')->where('id='.$value['department_id'].' AND department_name LIKE "%员工%"')->find();
+				if($staff || $bm){
 					$this->assign('staff', $staff);
-					$this->display("Department/department");
+					$this->display("Department/view");
 				}else{
-					echo	$this->jump('登陆成功',"Department/department");
+					echo	$this->jump('登陆成功',"Department/view");
 				}
 
 			}else{

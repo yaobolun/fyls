@@ -132,13 +132,11 @@ layui.use(['element', 'layer'], function(){
         <td class="center"><?php echo ($key+1); ?></td>
         <td class="center"><?php echo ($arr["department_name"]); ?></td>
         <td class="center"><?php echo ($arr["updatetime"]); ?></td>
-        
         <td class="center">
          <a href="/fyls/Admin/Department/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
          <a href="/fyls/Admin/Department/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
       </table>
       <aside class="paging">
       <?php echo ($page); ?>

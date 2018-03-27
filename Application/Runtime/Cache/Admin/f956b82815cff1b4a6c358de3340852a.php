@@ -118,77 +118,33 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">申请外出</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <h2 class="fl">管理员列表</h2>
+       
+       <a href="/fyls/Admin/Admin/admin_add" class="fr top_rt_btn add_icon">添加管理员</a>
       </div>
-     <section>
- <form action="/fyls/Admin/Travel/doadd_travel" method="post">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:200px;">申请人:</span>
-        <input type="text" required="required" class="textbox textbox_295" placeholder="申请人..." name="applicant" />
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出地址:</span>
-        <textarea required="required" style="height: 60px" type="text" class="textbox textbox_295" placeholder="请假理由..." name="out_addr"></textarea>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;">外出原因:</span>
-        <textarea required="required" style="height: 60px" type="text" class="textbox textbox_295" placeholder="比如出差..收购..." name="out_reason"></textarea>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >开始日期:</span>
-          <div class="layui-input-inline">
-            <input required="required" type="text" name="out_time" class="textbox textbox_295" id="test5" placeholder="外出开始日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width: 200px" >结束日期:</span>
-          <div class="layui-input-inline">
-            <input required="required" type="text" name="back_time" class="textbox textbox_295" id="test1" placeholder="外出结束日期">
-          </div>
-       </li>
-       <li>
-          <span class="item_name" style="width:200px;">选择您的主管:</span>
-          <select name="aid" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <option required="required" value="">--请选择--</option>
-            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
-                      <?php echo ($user["name"]); ?>
-                </option><?php endforeach; endif; ?>
-          </select>
-       </li>
-       <li>
-        <span class="item_name" style="width:200px;"></span>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
-        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
-        <input type="submit" class="link_btn"/>
-       </li>
-      </ul>
-      </form>
-
-     </section>
+      <table class="table">
+       <tr>
+        <th>编号</th>
+        <th>管理员名称</th>
+        <th>最后修改时间</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($key+1); ?></td>
+        <td class="center"><?php echo ($arr["name"]); ?></td>
+        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
+        
+        <td class="center">
+         <a href="/fyls/Admin/Admin/admin_update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+         <a href="/fyls/Admin/Admin/admin_del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+        </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
-<script type="text/javascript">
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-
-    layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test1'
-        ,type: 'datetime'
-      });
-    });
-</script>
 </body>
 </html>
