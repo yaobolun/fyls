@@ -51,6 +51,9 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -109,7 +112,7 @@
        <a href="/fyls/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证申请列表</a>
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
+     <form action="/fyls/Admin/Refund/refund_doadd" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
@@ -146,6 +149,17 @@
         <th>账号</th>
         <td><input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" required="required"/></td>
       </tr>
+      <tr>
+        <th>请选择您的主管</th>
+        <td>
+          <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+       </tr>
        <!-- <li>
         <span class="item_name" style="width:120px;">申请人：</span>
         <input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" required="required"/>
@@ -217,6 +231,9 @@
        </table>
        <li>
         <span class="item_name" style="width:120px;"></span>
+        <input type="hidden" name="status" value="0"/>
+        <input type="hidden" name="tid" value="<?php echo (session('id')); ?>" />
+        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>"/>
         <input type="submit" class="link_btn" name="sub" />
        </li>
       </ul>

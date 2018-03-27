@@ -51,6 +51,10 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -169,7 +173,7 @@
         <td class="center d" title="<?php echo ($aid["aequipment_level"]); ?>"><?php echo ($aid["aequipment_level"]); ?></td>
         <td class="center d" title="<?php echo ($aid["aequipment_major"]); ?>"><?php echo ($aid["aequipment_major"]); ?></td>
         <td class="center d" title="<?php echo ($aid["aequipment_talent"]); ?>"><?php echo ($aid["aequipment_talent"]); ?></td>
-        <td class="center d" title="<?php echo ($aid["aequipment_customer"]); ?>"><?php echo ($aid["aequipment_customer"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["name"]); ?>"><?php echo ($aid["name"]); ?></td>
         <td class="center">
         <a href="/fyls/Admin/Aequipment/aequipment_mod?id=<?php echo ($aid["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
 

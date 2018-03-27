@@ -51,6 +51,8 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -101,52 +103,67 @@
   </li>
  </ul>
 </aside>
-
+<style type="text/css">
+.f{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
+</style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">管理员添加</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Admin/admin">返回管理员列表</a>
+       <h2 class="fl">资质凭证到账凭证申请详细信息</h2>
+       <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Qualifications/qualifications" class="fr top_rt_btn add_icon">返回资质凭证到账凭证申请列表</a>
+       <a href="/fyls/Admin/Qualifications/qualifications_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑</a>
       </div>
-     <section>
-     <form action="" method="post" enctype="multipart/form-data">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:120px;">管理员名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="管理员名称..." name="name" />
-         
-       </li>
-       <li>
-        <span class="item_name" style="width:120px;">密码：</span>
-        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
-        
-       </li>
-        
-       <li>
-        <span class="item_name" style="width:120px;"></span>
-        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
-       </li>
-      </ul>
-      </form>
-     </section>
+      <table class="table">
+      <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
+        <th>日期</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_date"]); ?>"><?php echo ($arr["qualifications_date"]); ?></td>
+        <th>市场部客服</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_customer"]); ?>"><?php echo ($arr["qualifications_customer"]); ?></td>
+        </tr>
+        <tr>
+        <th>申请人</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_applicant"]); ?>"><?php echo ($arr["qualifications_applicant"]); ?></td>
+        <th>企业名称</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_enterprise"]); ?>"><?php echo ($arr["qualifications_enterprise"]); ?></td>
+        </tr>
+        <tr>
+        <th>资质名称</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_aptitude"]); ?>"><?php echo ($arr["qualifications_aptitude"]); ?></td>
+        <th>本次到账日期</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_arrival"]); ?>"><?php echo ($arr["qualifications_arrival"]); ?></td>
+        </tr>
+        <tr>
+        <th>合同价格</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_contract"]); ?>"><?php echo ($arr["qualifications_contract"]); ?></td>
+        <th>已到账金额</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_money"]); ?>"><?php echo ($arr["qualifications_money"]); ?></td>
+        </tr>
+        <tr>
+        <th>到账账户</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_account"]); ?>"><?php echo ($arr["qualifications_account"]); ?></td>
+        <th>本次到账金额</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_bmoney"]); ?>"><?php echo ($arr["qualifications_bmoney"]); ?></td>
+        </tr>
+        <tr>
+        <th>公关费</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_relations"]); ?>"><?php echo ($arr["qualifications_relations"]); ?></td>
+        <th>备注</th>
+        <td class="center f" title="<?php echo ($arr["qualifications_remarks"]); ?>"><?php echo ($arr["qualifications_remarks"]); ?></td>
+        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">  
-
-  function yz(){
-    if($("#name").val()==''||$("#name").val().length<4)
-    {
-      alert('User name cannot be empty and no less than 5 bits');
-      return false;
-    }
-    if($("#pass").val()==''||$("#pass").val().length<4)
-    {
-      alert('Password cannot be empty and no less than 5 bits');
-      return false;
-    }
-  }
-  
-</script>
 </body>
 </html>

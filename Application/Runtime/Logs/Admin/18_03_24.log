@@ -11222,3 +11222,3139 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001114s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001238s ]
 
+[ 2018-03-24T18:15:31+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005467s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000493s ]
+
+[ 2018-03-24T18:15:41+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001630s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0176s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'd41d8cd98f00b204e9800998ecf8427e' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2018-03-24T18:15:43+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006556s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006631s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2018-03-24T18:15:49+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001274s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0217s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'admins' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002477s ]
+
+[ 2018-03-24T18:15:51+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0259s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021193s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021318s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001975s ]
+
+[ 2018-03-24T18:16:03+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0331s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =0 AND station_name LIKE "%主管%" )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0260s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND department_id=0 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( station_id IN () AND department_id=0 ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND department_id=0 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( station_id IN () AND department_id=0 ) 
+
+[ 2018-03-24T18:17:06+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0348s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001380s ]
+
+[ 2018-03-24T18:17:29+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0306s ]
+SQL: SELECT * FROM `admin_user` WHERE ( name='yuangong' and flag = 0 )  [ RunTime:0.0013s ]
+SQL: INSERT INTO `admin_user` (`name`,`department_id`,`station_id`,`password`,`administration`,`time`,`updatetime`) VALUES ('yuangong','15','13','e10adc3949ba59abbe56e057f20f883e','1','2018-03-24 18:17:29','2018-03-24 18:17:29') [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002147s ]
+
+[ 2018-03-24T18:17:31+08:00 ] ::1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0286s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001244s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001323s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001517s ]
+
+[ 2018-03-24T18:17:53+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0247s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020995s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021083s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001042s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001750s ]
+
+[ 2018-03-24T18:18:17+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0318s ]
+SQL: SELECT * FROM `admin_user` WHERE ( name='zhuguan' and flag = 0 )  [ RunTime:0.0021s ]
+SQL: INSERT INTO `admin_user` (`name`,`department_id`,`station_id`,`password`,`administration`,`time`,`updatetime`) VALUES ('zhuguan','15','11','e10adc3949ba59abbe56e057f20f883e','1','2018-03-24 18:18:17','2018-03-24 18:18:17') [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003587s ]
+
+[ 2018-03-24T18:18:20+08:00 ] ::1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0287s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001751s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001840s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001930s ]
+
+[ 2018-03-24T18:18:24+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0285s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0243s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002085s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002266s ]
+
+[ 2018-03-24T18:18:44+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0277s ]
+SQL: SELECT * FROM `admin_user` WHERE ( name='jingli' and flag = 0 )  [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002657s ]
+
+[ 2018-03-24T18:18:47+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0303s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0241s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 )  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `stations` WHERE ( flag = 0 )  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+NOTIC: [8] Undefined variable: sel D:\phpStudy\PHPTutorial\WWW\fyls\Application\Runtime\Cache\Admin\38350572118304c07189109bc6c3cd6a.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024776s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001864s ]
+
+[ 2018-03-24T18:19:14+08:00 ] ::1 /fyls/Admin/People/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `admin_user` WHERE ( name='jingli1' and flag = 0 )  [ RunTime:0.0011s ]
+SQL: INSERT INTO `admin_user` (`name`,`department_id`,`station_id`,`password`,`administration`,`time`,`updatetime`) VALUES ('jingli1','15','12','e10adc3949ba59abbe56e057f20f883e','1','2018-03-24 18:19:14','2018-03-24 18:19:14') [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002687s ]
+
+[ 2018-03-24T18:19:17+08:00 ] ::1 /fyls/Admin/People/people
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0291s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `admin_user` WHERE ( flag = 0 and administration = 1 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001252s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001903s ]
+
+[ 2018-03-24T18:19:57+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2018-03-24T18:20:35+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0276s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'yuangong' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'yuangong' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001750s ]
+
+[ 2018-03-24T18:20:37+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0277s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020489s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000995s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001480s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001588s ]
+
+[ 2018-03-24T18:20:45+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0244s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000311s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026231s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001986s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002082s ]
+
+[ 2018-03-24T18:21:09+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0294s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('2134','123','213','123123','312','213','2018-03-24 18:20:50','123','123','1231','13213','123','231','213','14','0','13','15','2018-03-24/5ab626954ea4e.jpg') [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003532s ]
+
+[ 2018-03-24T18:21:11+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0297s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=13 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000279s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030256s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030391s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002074s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001540s ]
+
+[ 2018-03-24T18:21:19+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0363s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000387s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000695s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048855s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048992s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002790s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002977s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002678s ]
+
+[ 2018-03-24T18:23:14+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0299s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=13 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000349s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030479s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030615s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003381s ]
+
+[ 2018-03-24T18:25:17+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2018-03-24T18:25:27+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0157s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'yuangong' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'yuangong' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000751s ]
+
+[ 2018-03-24T18:25:29+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0299s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001696s ]
+
+[ 2018-03-24T18:25:36+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0345s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000262s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000419s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033542s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033674s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004227s ]
+
+[ 2018-03-24T18:25:55+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0350s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('213422','123','213','123','213213','213','2018-03-24 18:25:40','213','123','1231123','21323','213','1123','123','14','0','13','15','2018-03-24/5ab627b3d8993.jpg') [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003516s ]
+
+[ 2018-03-24T18:25:58+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0304s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=13 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031137s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001646s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001527s ]
+
+[ 2018-03-24T18:26:03+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0293s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=13 ) LIMIT 0,10   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033102s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002199s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002139s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002285s ]
+
+[ 2018-03-24T18:27:53+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0315s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=13 ) LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028953s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029056s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001836s ]
+
+[ 2018-03-24T18:27:55+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027096s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001417s ]
+
+[ 2018-03-24T18:28:18+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0315s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('1','231','11','123123','123','231','2018-03-24 18:28:01','123','231','2','22','3','2','3','14','0','13','15','2018-03-24/5ab628429e985.jpg') [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002153s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002245s ]
+
+[ 2018-03-24T18:28:20+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0299s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=13 ) LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029155s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001682s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001563s ]
+
+[ 2018-03-24T18:31:09+08:00 ] ::1 /fyls/admin.php/Transfer/transfer
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT * FROM `transfer` WHERE ( flag = 0 and tid= ) LIMIT 0,10  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT * FROM `transfer` WHERE ( flag = 0 and tid= ) LIMIT 0,10  
+
+[ 2018-03-24T18:39:50+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0255s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000367s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000527s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029439s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001548s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002082s ]
+
+[ 2018-03-24T18:39:55+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0272s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0268s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000225s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002152s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002389s ]
+
+[ 2018-03-24T18:40:00+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000054s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000357s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000378s ]
+
+[ 2018-03-24T18:40:11+08:00 ] ::1 /fyls/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0212s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000978s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001039s ]
+
+[ 2018-03-24T18:40:13+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0254s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001552s ]
+
+[ 2018-03-24T18:40:20+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0329s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000406s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029334s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001645s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002640s ]
+
+[ 2018-03-24T18:40:38+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0311s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('23','213','123','123','123','231','2018-03-24 18:40:24','231','123','213','21323','213','123','123','9','0','10','15','2018-03-24/5ab62b2667217.jpg') [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003044s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003135s ]
+
+[ 2018-03-24T18:40:40+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0291s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030650s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030758s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001735s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001654s ]
+
+[ 2018-03-24T18:42:45+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000051s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005651s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000879s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2018-03-24T18:42:54+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0202s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'caiwu' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'caiwu' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+
+[ 2018-03-24T18:42:56+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0256s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027469s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027596s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002805s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002806s ]
+
+[ 2018-03-24T18:43:25+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005755s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2018-03-24T18:43:33+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0174s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000813s ]
+
+[ 2018-03-24T18:43:35+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0284s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020968s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001492s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001584s ]
+
+[ 2018-03-24T18:43:43+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0221s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000209s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026404s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001455s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002406s ]
+
+[ 2018-03-24T18:44:05+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0324s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('zhazha','123','12','123','3231','213','2018-03-24 18:43:51','231','123','123','213','312','123','213','9','0','10','15','2018-03-24/5ab62bf502e78.jpg') [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002092s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002209s ]
+
+[ 2018-03-24T18:44:07+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0251s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020310s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020412s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000989s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001534s ]
+
+[ 2018-03-24T18:44:59+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006084s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006119s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2018-03-24T18:45:04+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0211s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'caiwu' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'caiwu' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2018-03-24T18:45:07+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0244s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018744s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002150s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002269s ]
+
+[ 2018-03-24T18:45:14+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0297s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000414s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028121s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001470s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001986s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002100s ]
+
+[ 2018-03-24T18:45:35+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0313s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('caiwu','123','12','123','3213','213','2018-03-24 18:45:21','213','12323','231','213','123','213','123','9','0','9','15','2018-03-24/5ab62c4fc86cb.jpg') [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002388s ]
+
+[ 2018-03-24T18:45:37+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0254s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=9 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000292s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021330s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001976s ]
+
+[ 2018-03-24T18:54:05+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005932s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2018-03-24T18:54:10+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0183s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000580s ]
+
+[ 2018-03-24T18:54:12+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0299s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020884s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020990s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001573s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002269s ]
+
+[ 2018-03-24T18:57:27+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000398s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024597s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024814s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001789s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003874s ]
+
+[ 2018-03-24T18:57:46+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0290s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 49 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('renyuan ','123','1','231','2','123','2018-03-24 18:57:34','213','123','231','123','213','312','123','9','0','10','15','2018-03-24/5ab62f2abe179.jpg') [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004546s ]
+
+[ 2018-03-24T18:57:50+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0302s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032466s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001959s ]
+
+[ 2018-03-24T18:58:39+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000897s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+
+[ 2018-03-24T18:58:59+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0304s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0014s ]
+
+[ 2018-03-24T19:00:18+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006097s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2018-03-24T19:00:28+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2018-03-24T19:00:30+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0317s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027395s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001704s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001580s ]
+
+[ 2018-03-24T19:02:42+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0307s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0273s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000219s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000323s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025726s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002455s ]
+
+[ 2018-03-24T19:03:03+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0153s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 51 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('213','123','213','321','123','231','2018-03-24 19:02:48','213','231','123','213','23','213','123','9','0','10','15','2018-03-24/5ab63067376c8.jpg') [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001187s ]
+
+[ 2018-03-24T19:03:05+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020624s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001773s ]
+
+[ 2018-03-24T19:03:19+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000429s ]
+
+[ 2018-03-24T19:03:26+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0194s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'jingli' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'jingli' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2018-03-24T19:03:28+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0278s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017399s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001414s ]
+
+[ 2018-03-24T19:03:34+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0318s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000233s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000337s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026796s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001900s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003319s ]
+
+[ 2018-03-24T19:03:51+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0252s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 51 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('123','123','213','123','123','123','2018-03-24 19:03:38','213','123','123','123','123','123','231','9','0','11','15','2018-03-24/5ab63097c961d.jpg') [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003189s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003298s ]
+
+[ 2018-03-24T19:03:54+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023487s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000576s ]
+
+[ 2018-03-24T19:05:53+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0303s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029911s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030267s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001966s ]
+
+[ 2018-03-24T19:05:59+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0290s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027394s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027526s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001340s ]
+
+[ 2018-03-24T19:06:00+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%经理%" )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%人员%" )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0096s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND department_id=15 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( station_id IN () AND department_id=15 ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND department_id=15 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `admin_user` WHERE ( station_id IN () AND department_id=15 ) 
+
+[ 2018-03-24T19:06:14+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0303s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0227s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000286s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028554s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028654s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001599s ]
+
+[ 2018-03-24T19:06:32+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0316s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 51 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('231','123','213','123','123','321','2018-03-24 19:06:19','123','213','231','213','213','123','123','9','0','11','15','2018-03-24/5ab6313802185.jpg') [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001544s ]
+
+[ 2018-03-24T19:06:34+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0298s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029511s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029616s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001637s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001515s ]
+
+[ 2018-03-24T19:12:04+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0265s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001218s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001404s ]
+
+[ 2018-03-24T19:12:20+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0321s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 51 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('231','231','213','231','123','123','2018-03-24 19:12:08','123','23','123','12','213','231','321','9','0','11','15','2018-03-24/5ab632944a048.jpg') [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003930s ]
+
+[ 2018-03-24T19:12:22+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0298s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000286s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001783s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001530s ]
+
+[ 2018-03-24T19:13:00+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0331s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037145s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001612s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001527s ]
+
+[ 2018-03-24T19:13:14+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001393s ]
+
+[ 2018-03-24T19:13:34+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0313s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+
+[ 2018-03-24T19:14:08+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0289s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+
+[ 2018-03-24T19:14:47+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0014s ]
+
+[ 2018-03-24T19:15:05+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0292s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0012s ]
+
+[ 2018-03-24T19:15:33+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003557s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0258s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0219s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0010s ]
+
+[ 2018-03-24T19:24:49+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0305s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000232s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023894s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001846s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001956s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002660s ]
+
+[ 2018-03-24T19:25:06+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0301s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 56 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('123','231','23','123','123','213','2018-03-24 19:24:53','213','213','231','213','321','2312','321','9','0','11','15','2018-03-24/5ab63592e69b0.jpg') [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004135s ]
+
+[ 2018-03-24T19:25:09+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0323s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000342s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001660s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001426s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001523s ]
+
+[ 2018-03-24T19:25:52+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0289s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001014s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2018-03-24T19:25:59+08:00 ] ::1 /fyls/index.php/Admin/Transfer/transfer/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0279s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 ) LIMIT 20,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029942s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001704s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001510s ]
+
+[ 2018-03-24T19:26:02+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029323s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001561s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001639s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001494s ]
+
+[ 2018-03-24T19:26:30+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0343s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 56 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`uid`,`department_id`,`transfer_pic`) VALUES ('经理','1','1','1','1','11','2018-03-24 19:26:14','1','23','11','1','1','1','1','9','0','11','15','2018-03-24/5ab635e60c208.jpg') [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001821s ]
+
+[ 2018-03-24T19:26:32+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0335s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 ) LIMIT 0,10   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2018-03-24T19:26:34+08:00 ] ::1 /fyls/index.php/Admin/Transfer/transfer/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0283s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 ) LIMIT 20,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000939s ]
+
+[ 2018-03-24T19:28:01+08:00 ] ::1 /fyls/index.php/Admin/Transfer/transfer/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001163s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0302s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 20,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002841s ]
+
+[ 2018-03-24T19:28:04+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0284s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0197s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025833s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025927s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001432s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001507s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001384s ]
+
+[ 2018-03-24T19:28:29+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0298s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 56 行.
+
+[ 2018-03-24T19:33:24+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0234s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 55 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`department_id`,`transfer_pic`) VALUES ('we','we','weqweqe','ew','而我却翁无群','ew','2018-03-24 19:28:18','we','we','qwe','we','weq','we','ew','9','0','15','2018-03-24/5ab6378446228.jpg') [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004423s ]
+
+[ 2018-03-24T19:33:26+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0246s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000327s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041038s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001815s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001910s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001589s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001680s ]
+
+[ 2018-03-24T19:33:31+08:00 ] ::1 /fyls/index.php/Admin/Transfer/transfer/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0301s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 20,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029724s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002709s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001544s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001634s ]
+
+[ 2018-03-24T19:33:39+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0291s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0229s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018921s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001595s ]
+
+[ 2018-03-24T19:33:54+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0313s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 55 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`department_id`,`transfer_pic`) VALUES ('213','123','123','123','231','213213','2018-03-24 19:33:43','213','123','123','213','213','213','213','11','0','15','2018-03-24/5ab637a2ef539.jpg') [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001821s ]
+
+[ 2018-03-24T19:33:57+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0320s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030429s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001637s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001504s ]
+
+[ 2018-03-24T19:34:22+08:00 ] ::1 /fyls/Admin/Transfer/del?id=60
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0296s ]
+SQL: UPDATE `transfer` SET `flag`='1' WHERE ( flag = 0 and id = 60 ) [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001822s ]
+
+[ 2018-03-24T19:34:24+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0301s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=11 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000227s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000384s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044961s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001968s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002059s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001511s ]
+
+[ 2018-03-24T19:34:41+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000407s ]
+
+[ 2018-03-24T19:34:48+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'renyuan' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2018-03-24T19:34:49+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001918s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0303s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029450s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001988s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001545s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001639s ]
+
+[ 2018-03-24T19:34:54+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0295s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024091s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024196s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002106s ]
+
+[ 2018-03-24T19:35:23+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0291s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 55 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`department_id`,`transfer_pic`) VALUES ('员工12','123','12','12','1222','12','2018-03-24 19:34:59','12','12','12','123','12','12','12','10','0','15','2018-03-24/5ab637fb2a38b.jpg') [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001525s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001607s ]
+
+[ 2018-03-24T19:35:25+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001366s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0333s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000342s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021112s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021215s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000907s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001522s ]
+
+[ 2018-03-24T19:35:32+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0308s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024160s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002474s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002578s ]
+
+[ 2018-03-24T19:36:58+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0324s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027552s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001854s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001939s ]
+
+[ 2018-03-24T19:37:00+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2018-03-24T19:37:25+08:00 ] ::1 /fyls/Admin/Transfer/transfer_doadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0303s ]
+NOTIC: [8] Undefined index: transfer_pic D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 55 行.
+NOTIC: [8] Undefined index: validate D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `transfer` (`transfer_name`,`transfer_contract`,`transfer_allocation`,`transfer_certificate`,`transfer_configuration`,`transfer_talent`,`transfer_match`,`transfer_huming`,`transfer_amount`,`transfer_bank`,`transfer_account`,`transfer_note`,`transfer_paid`,`transfer_information`,`tid`,`status`,`department_id`,`transfer_pic`) VALUES ('员工2','213','12','231','32','213','2018-03-24 19:37:11','123','213','132','231','213','2312','123','10','0','15','2018-03-24/5ab638759dc67.jpg') [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001821s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001914s ]
+
+[ 2018-03-24T19:37:33+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0378s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000230s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000380s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024994s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002134s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002270s ]
+
+[ 2018-03-24T19:37:39+08:00 ] ::1 /fyls/Admin/Transfer/transfer_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+SQL: SHOW COLUMNS FROM `stations` [ RunTime:0.0375s ]
+SQL: SELECT * FROM `stations` WHERE ( department_id =15 AND station_name LIKE "%主管%" )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0265s ]
+SQL: SELECT * FROM `admin_user` WHERE ( station_id IN (11) AND department_id=15 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000218s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001846s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001983s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002307s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002453s ]
+
+[ 2018-03-24T19:38:18+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0377s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `transfer` WHERE `id` = 62 LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000295s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000447s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028331s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002138s ]
+
+[ 2018-03-24T19:38:22+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0257s ]
+SQL: UPDATE `transfer` SET `transfer_name`='员工',`transfer_contract`='213',`transfer_allocation`='12',`transfer_certificate`='231',`transfer_configuration`='32',`transfer_talent`='213',`transfer_match`='2018-03-24 19:37:11',`transfer_huming`='123',`transfer_amount`='213',`transfer_bank`='132',`transfer_account`='231',`transfer_note`='213',`transfer_paid`='2312',`transfer_pic`='',`transfer_information`='123' WHERE ( id=62 ) [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001282s ]
+
+[ 2018-03-24T19:38:24+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0307s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001451s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001532s ]
+
+[ 2018-03-24T19:38:29+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022317s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001603s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001658s ]
+
+[ 2018-03-24T19:38:36+08:00 ] ::1 /fyls/Admin/Transfer/info?id=61
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0320s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=61 )  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000377s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020756s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020898s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001439s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001525s ]
+
+[ 2018-03-24T19:38:39+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0311s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `transfer` WHERE `id` = 62 LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000308s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001602s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001895s ]
+
+[ 2018-03-24T19:38:46+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0302s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: UPDATE `transfer` SET `transfer_name`='员工',`transfer_contract`='213',`transfer_allocation`='12',`transfer_certificate`='231',`transfer_configuration`='32',`transfer_talent`='213',`transfer_match`='2018-03-24 19:37:11',`transfer_huming`='123',`transfer_amount`='213',`transfer_bank`='132',`transfer_account`='231',`transfer_note`='213',`transfer_paid`='2312',`transfer_pic`='2018-03-24/5ab638c699e77.jpg',`transfer_information`='123' WHERE ( id=62 ) [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001807s ]
+
+[ 2018-03-24T19:38:48+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000945s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0329s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021969s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001072s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001607s ]
+
+[ 2018-03-24T19:38:50+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001250s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0299s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001274s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001580s ]
+
+[ 2018-03-24T19:38:56+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0323s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `transfer` WHERE `id` = 62 LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000256s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000421s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020792s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001600s ]
+
+[ 2018-03-24T19:39:02+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0372s ]
+SQL: UPDATE `transfer` SET `transfer_name`='员工2',`transfer_contract`='213',`transfer_allocation`='12',`transfer_certificate`='231',`transfer_configuration`='32',`transfer_talent`='213',`transfer_match`='2018-03-24 19:37:11',`transfer_huming`='123',`transfer_amount`='213',`transfer_bank`='132',`transfer_account`='231',`transfer_note`='213',`transfer_paid`='2312',`transfer_pic`='',`transfer_information`='123' WHERE ( id=62 ) [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003407s ]
+
+[ 2018-03-24T19:39:05+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0367s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000242s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000413s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027635s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001520s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001535s ]
+
+[ 2018-03-24T19:39:07+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0229s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020158s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001646s ]
+
+[ 2018-03-24T19:40:08+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0306s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021717s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001554s ]
+
+[ 2018-03-24T19:40:12+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0323s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `transfer` WHERE `id` = 62 LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017139s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
+
+[ 2018-03-24T19:40:20+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0249s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: UPDATE `transfer` SET `transfer_name`='员工22',`transfer_contract`='213',`transfer_allocation`='12',`transfer_certificate`='231',`transfer_configuration`='32',`transfer_talent`='213',`transfer_match`='2018-03-24 19:37:11',`transfer_huming`='123',`transfer_amount`='213',`transfer_bank`='132',`transfer_account`='231',`transfer_note`='213',`transfer_paid`='2312',`transfer_pic`='2018-03-24/5ab63924bb6e0.jpg',`transfer_information`='123' WHERE ( id=62 ) [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002574s ]
+
+[ 2018-03-24T19:40:23+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000410s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020694s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001942s ]
+
+[ 2018-03-24T19:40:25+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0329s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0015s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022352s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022476s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003034s ]
+
+[ 2018-03-24T19:40:28+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001576s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0217s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1816 行.
+NOTIC: [2] Missing argument 1 for Think\Model::join(), called in D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php on line 118 and defined D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1664 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Model.class.php 第 1666 行.
+SQL: SELECT * FROM `transfer` WHERE `id` = 62 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001704s ]
+
+[ 2018-03-24T19:40:35+08:00 ] ::1 /fyls/Admin/Transfer/transfer_mod?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0296s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\PHPTutorial\WWW\fyls\ThinkPHP\Library\Think\Db\Driver.class.php 第 373 行.
+SQL: UPDATE `transfer` SET `transfer_name`='员工',`transfer_contract`='213',`transfer_allocation`='12',`transfer_certificate`='231',`transfer_configuration`='32',`transfer_talent`='213',`transfer_match`='2018-03-24 19:37:11',`transfer_huming`='123',`transfer_amount`='213',`transfer_bank`='132',`transfer_account`='231',`transfer_note`='213',`transfer_paid`='2312',`transfer_information`='123' WHERE ( id=62 ) [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001399s ]
+
+[ 2018-03-24T19:40:38+08:00 ] ::1 /fyls/Admin/Transfer/transfer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0338s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `transfer` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `transfer` WHERE ( flag = 0 and tid=10 ) LIMIT 0,10   [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000218s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000323s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030631s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001512s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001926s ]
+
+[ 2018-03-24T19:40:41+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000293s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001708s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001821s ]
+
+[ 2018-03-24T19:40:53+08:00 ] ::1 /fyls/Admin/Transfer/info?id=62
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000461s ]
+SQL: SHOW COLUMNS FROM `transfer` [ RunTime:0.0319s ]
+SQL: SELECT * FROM `transfer` WHERE ( id=62 )  [ RunTime:0.0013s ]
+NOTIC: [8] Undefined variable: show D:\phpStudy\PHPTutorial\WWW\fyls\Application\Admin\Controller\TransferController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019106s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001522s ]
+
+[ 2018-03-24T19:41:08+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000757s ]
+
+[ 2018-03-24T19:41:29+08:00 ] ::1 /fyls/Admin/Index/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_user` WHERE `name` = 'caiwu' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `admin_user` WHERE `name` = 'caiwu' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002687s ]
+
+[ 2018-03-24T19:41:32+08:00 ] ::1 /fyls/Admin/Department/department
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `departments` [ RunTime:0.0247s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `departments` WHERE ( flag = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `departments` WHERE ( flag = 0 ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019766s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019870s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001653s ]
+

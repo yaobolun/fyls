@@ -1,0 +1,57 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">退款企业凭证</h2>
+
+      </div>
+      <table class="table">
+       <tr>
+        <th>申请人</th>
+        <th>配出年月</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>备注</th>
+        <th>操作</th>
+       </tr>
+       <volist name='show' id='show'>
+       <tr>
+        <td class="center">{$show.refund_applicant}</td>
+        <td class="center">{$show.refund_match}</td>
+        <td class="center">{$show.refund_equip}</td>
+        <td class="center flow" title="{$show.refund_contract}">{$show.refund_contract}</td>
+        <td class="center flow" title="{$show.refund_remarks}">{$show.refund_remarks}</td>
+        <td class="center">
+         <a href="__ROOT__/Admin/Rexamination/info?id={$show.id}" title="查看详情" class="">查看</a>
+        </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
+</body>
+</html>

@@ -104,8 +104,18 @@
  <li>
    <dl>
     <dt>审批管理</dt>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/f956b82815cff1b4a6c358de3340852a.php
     <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/1a52d77295610c13dcd69925f71f0989.php
     </dl>
   </li>
   <li>
@@ -153,6 +163,7 @@
   </li>
  </ul> -->
 </aside>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/f956b82815cff1b4a6c358de3340852a.php
 <script>
 layui.use(['element', 'layer'], function(){
   var element = layui.element;
@@ -160,78 +171,59 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
+=======
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/1a52d77295610c13dcd69925f71f0989.php
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">公司参数</h2>
-       <!-- <a class="fr top_rt_btn" href="/fyls/Admin/Express/express">返回管理员列表</a> -->
+       <h2 class="fl">退款企业凭证</h2>
+
       </div>
-     <section>
-     <form action="" method="post" enctype="multipart/form-data">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:120px;">公司名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="公司名称" name="name" value="<?php echo ($sel["name"]); ?>"/>
-       </li>
-      <!--  <li>
-        <span class="item_name" style="width:120px;">快递地址：</span>
-        <input type="text" class="textbox textbox_295" id="address" placeholder="快递地址" name="address" />
-       </li>
-       <li>
-        <span class="item_name" style="width:120px;">收件人：</span>
-        <input type="text" class="textbox textbox_295" id="people" placeholder="收件人" name="people" />
-       </li>
-       <li>
-        <span class="item_name" style="width:120px;">收件人电话：</span>
-        <input type="text" class="textbox textbox_295" id="phone" placeholder="收件人电话" name="phone" />
-       </li>
-       <li>
-        <span class="item_name" style="width: 120px" >寄件日期:</span>
-            <input type="text" name="time" class="textbox textbox_295" id="test5" placeholder="寄件日期">
-       </li> -->
-       <li>
-        <span class="item_name" style="width:120px;">介绍：</span>
-        <textarea name="introduce" class="textbox textbox_295" id="beihzu" cols="30" rows="10" value="<?php echo ($sel["introduce"]); ?>"><?php echo ($sel["introduce"]); ?></textarea>
-        <!-- <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" /> -->
-        
-       </li>
-        
-       <li>
-        <span class="item_name" style="width:120px;"></span>
-        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
-       </li>
-      </ul>
-      <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
-      </form>
-     </section>
+      <table class="table">
+       <tr>
+        <th>申请人</th>
+        <th>配出年月</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>备注</th>
+        <th>操作</th>
+       </tr>
+       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($show["refund_applicant"]); ?></td>
+        <td class="center"><?php echo ($show["refund_match"]); ?></td>
+        <td class="center"><?php echo ($show["refund_equip"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["refund_contract"]); ?>"><?php echo ($show["refund_contract"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["refund_remarks"]); ?>"><?php echo ($show["refund_remarks"]); ?></td>
+        <td class="center">
+         <a href="/fyls/Admin/Rexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+        </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <aside class="paging">
+      <?php echo ($page); ?>
+      </aside>
  </div>
 </section>
- <script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">  
 
-  function yz(){
-    if($("#name").val()==''||$("#name").val().length<4)
-    {
-      alert('User name cannot be empty and no less than 5 bits');
-      return false;
-    }
-    if($("#pass").val()==''||$("#pass").val().length<4)
-    {
-      alert('Password cannot be empty and no less than 5 bits');
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
       return false;
     }
   }
-
-  layui.use('laydate', function(){
-    var laydate = layui.laydate;
-
-      //时间选择器
-      laydate.render({
-        elem: '#test5'
-        ,type: 'datetime'
-      });
-    });
-  
-</script>
+</script> -->
 </body>
 </html>

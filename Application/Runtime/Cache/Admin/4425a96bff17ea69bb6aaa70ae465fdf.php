@@ -51,6 +51,10 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -109,14 +113,18 @@
        <a href="/fyls/Admin/Voucher/voucher" class="fr top_rt_btn add_icon">返回退款人才凭证申请列表</a>
       </div>
      <section>
-     <form action="" method="post" enctype="multipart/form-data">
+     <form action="/fyls/Admin/Voucher/voucher_doadd" method="post" enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
         <th>申请人</th>
         <td><input type="text" class="textbox textbox_295" placeholder="申请人姓名填写" name="voucher_applicant" required="required"/></td>
         <th>本次到账日期</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="本次到账日期" name="voucher_account" required="required"/></td>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="本次到账日期" name="voucher_account" required="required"/>
+          </div>
+        </td>
       </tr>
       <tr>
         <th>配备企业</th>
@@ -136,6 +144,17 @@
         <th>备注</th>
         <td><input type="text" class="textbox textbox_295" placeholder="备注" name="voucher_remarks" required="required"/></input></td>
       </tr>
+      <tr>
+        <th>请选择您的主管</th>
+        <td>
+          <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+       </tr>
        <!-- <li>
         <span class="item_name" style="width:120px;">申请人：</span>
         <input type="text" class="textbox textbox_295" placeholder="申请人姓名填写" name="voucher_applicant" required="required"/>
@@ -165,6 +184,9 @@
        </table>
        <li>
         <span class="item_name" style="width:120px;"></span>
+        <input type="hidden" name="status" value="0"/>
+        <input type="hidden" name="tid" value="<?php echo (session('id')); ?>" />
+        <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>"/>
         <input type="submit" class="link_btn" name="sub" />
        </li>
       </ul>
@@ -173,6 +195,26 @@
  </div>
 </section>
  <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>

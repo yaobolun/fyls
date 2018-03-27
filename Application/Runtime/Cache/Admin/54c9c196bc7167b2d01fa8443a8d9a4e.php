@@ -104,8 +104,15 @@
  <li>
    <dl>
     <dt>审批管理</dt>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/2788951893b54519c6df7937dbffe7b9.php
     <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/54c9c196bc7167b2d01fa8443a8d9a4e.php
     </dl>
   </li>
   <li>
@@ -153,6 +160,7 @@
   </li>
  </ul> -->
 </aside>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/2788951893b54519c6df7937dbffe7b9.php
 <script>
 layui.use(['element', 'layer'], function(){
   var element = layui.element;
@@ -160,36 +168,107 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
+=======
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/54c9c196bc7167b2d01fa8443a8d9a4e.php
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">管理员列表</h2>
-       
-       <a href="/fyls/Admin/Admin/admin_add" class="fr top_rt_btn add_icon">添加管理员</a>
+       <h2 class="fl">到账详情</h2>
+<!--        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a> -->
       </div>
-      <table class="table">
-       <tr>
-        <th>编号</th>
-        <th>管理员名称</th>
-        <th>最后修改时间</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center"><?php echo ($arr["name"]); ?></td>
-        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
-        
-        <td class="center">
-         <a href="/fyls/Admin/Admin/admin_update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Admin/admin_del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
+     <section>
+     <form id="form" action="/fyls/Admin/Aexamination/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
+     <input type="hidden" name="id" value="<?php echo ($find["id"]); ?>">
+     <input type="hidden" name="status" value="<?php echo ($find["status"]); ?>">
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>到账单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">申请人：</td>
+            <td  style="width:100px;"><?php echo ($find["arrival_applicant"]); ?></td>
+            <td style="width:50px;">到账公司账号：</td>
+            <td  class="b" title="<?php echo ($find["arrival_account"]); ?>" style="width:100px;"><?php echo ($find["arrival_account"]); ?></td>
+          </tr><tr>
+            <td style="width:50px;">到账时间：</td>
+            <td  style="width:100px;"><?php echo ($find["arrival_time"]); ?></td>
+            <td style="width:50px;">到账金额：</td>
+            <td  style="width:100px;"><?php echo ($find["arrival_money"]); ?></td>
+          </tr>
+          <tr>
+            <td style="width:50px;">已付金额：</td>
+            <td  style="width:100px;"><?php echo ($find["arrival_paid"]); ?></td>
+            <td style="width:50px;">合同价格：</td>
+            <td style="width:100px;"><?php echo ($find["arrival_contract"]); ?></td>
+          </tr><tr>
+            <td style="width:50px;">配备企业：</td>
+            <td  style="width:100px;"><?php echo ($find["arrival_equip"]); ?></td>
+            <td style="width:50px;">备注：</td>
+            <td  style="width:100px;"><?php echo ($find["arrival_remarks"]); ?></td>
+          </tr>
+          <tr>
+            <td>部门主管</td>
+            <td>
+			       <?php echo ($uname); ?>
+            </td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not(<?php echo ($find["id"]); ?>)">残忍拒绝</button>
+            </td>
+          </tr>
+        </tbody>
+        <?php echo ($page); ?>
       </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+      </form>
+      
+     </section>
  </div>
 </section>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
+    {
+     var a=confirm("确认通过吗?");
+      	  if(a){
+            $("#form").submit();
+      		}else{
+            return false;
+          }
+    }
+    function Not($id)
+    {
+      var b=confirm("您将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Aexamination/Not?id='+($id);
+      }else{
+        return false;
+      }
+    }
+
+</script>
 </body>
 </html>

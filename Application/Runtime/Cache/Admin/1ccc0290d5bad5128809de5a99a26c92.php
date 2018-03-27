@@ -51,6 +51,10 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -128,7 +132,20 @@
         <th>配备人才</th>
         <td><input type="text" class="textbox textbox_295" placeholder="姓名" name="aequipment_qualified" required="required"/></td>
         <th>级别</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" required="required"/></td>
+        <td>
+        <select name="aequipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <option value="">--请选择--</option>
+        <option value="一级">一级</option>
+        <option value="二级">二级</option>
+        <option value="中级">中级</option>
+        <option value="高级">高级</option>
+        <option value="初级">初级</option>
+        <option value="注册类">注册类</option>
+        <option value="八大员">八大员</option>
+        <option value="技工">技工</option>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" required="required"/> -->
+        </td>
       </tr>
       <tr>
         <th>专业</th>
@@ -136,19 +153,21 @@
         <th>人才价格</th>
         <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" required="required"/></td>
       </tr>
+      <tr>
+        <th>请选择客服</th>
+        <td>
+          <select name="aequipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($kefu)): foreach($kefu as $key=>$kefu): ?><option value="<?php echo ($kefu["id"]); ?>">
+                      <?php echo ($kefu["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+       </tr>
       <?php
  $a = explode('=',$_SERVER['QUERY_STRING']); ?>
       <input type="hidden" name="aid" value="<?php echo $a[1];?>">
        </table>
-       <li>
-          <span class="item_name" style="width:200px;">选择客服:</span>
-          <select name="aequipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <option value="">--请选择--</option>
-            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
-                      <?php echo ($user["name"]); ?>
-                </option><?php endforeach; endif; ?>
-          </select>
-       </li>
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input type="submit" class="link_btn" name="sub" />

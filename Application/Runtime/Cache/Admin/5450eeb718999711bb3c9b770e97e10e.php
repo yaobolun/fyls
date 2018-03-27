@@ -51,6 +51,10 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -95,49 +99,111 @@
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
-  </li>
+  </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
  </ul>
 </aside>
-
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位名称修改</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Department/department">返回岗位列表</a>
+       <h2 class="fl">退款人才凭证详情</h2>
+<!--        <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a> -->
       </div>
      <section>
-     <form action="" method="post"  enctype="multipart/form-data">
-      <ul class="ulColumn2">
-       <li>
-        <span class="item_name" style="width:120px;">岗位名称：</span>
-        <input type="text" class="textbox textbox_295" value="<?php echo ($sel["station_name"]); ?>" name="title" />
-       </li>
-        
-       <li>
-        <span class="item_name" style="width:120px;"></span>
-        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
-        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
-       </li>
-      </ul>
+     <form id="form" action="/fyls/Admin/Vexamination/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
+     <input type="hidden" name="id" value="<?php echo ($find["id"]); ?>">
+     <input type="hidden" name="status" value="<?php echo ($find["status"]); ?>">
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>退款人才凭证单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">申请人：</td>
+            <td  style="width:100px;"><?php echo ($find["voucher_applicant"]); ?></td>
+            <td style="width:50px;">本次到账日期：</td>
+            <td  class="b" title="<?php echo ($find["voucher_account"]); ?>" style="width:100px;"><?php echo ($find["voucher_account"]); ?></td>
+          </tr><tr>
+            <td style="width:50px;">配备企业：</td>
+            <td  style="width:100px;"><?php echo ($find["voucher_equip"]); ?></td>
+            <td style="width:50px;">合同价格：</td>
+            <td  style="width:100px;"><?php echo ($find["voucher_contract"]); ?></td>
+          </tr>
+          <tr>
+            <td style="width:50px;">到账金额：</td>
+            <td  style="width:100px;"><?php echo ($find["voucher_amount"]); ?></td>
+            <td style="width:50px;">账户：</td>
+            <td style="width:100px;"><?php echo ($find["voucher_acc"]); ?></td>
+          </tr><tr>
+            <td style="width:50px;">本次到账金额：</td>
+            <td  style="width:100px;"><?php echo ($find["voucher_this"]); ?></td>
+            <td style="width:50px;">备注：</td>
+            <td  style="width:100px;"><?php echo ($find["voucher_remarks"]); ?></td>
+          </tr>
+          <tr>
+            <td>部门主管</td>
+            <td>
+			       <?php echo ($uname); ?>
+            </td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not(<?php echo ($find["id"]); ?>)">残忍拒绝</button>
+            </td>
+          </tr>
+        </tbody>
+        <?php echo ($page); ?>
+      </table>
       </form>
+      
      </section>
  </div>
 </section>
-<script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">  
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
-  function yz(){
-    if($("#pass").val()==''||$("#pass").val().length<1)
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
     {
-      alert('Password cannot be empty and no less than 1 bits');
-      return false;
+     var a=confirm("确认通过吗?");
+      	  if(a){
+            $("#form").submit();
+      		}else{
+            return false;
+          }
     }
-  }
-  
-</script>
+    function Not($id)
+    {
+      var b=confirm("您将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Vexamination/Not?id='+($id);
+      }else{
+        return false;
+      }
+    }
 
+</script>
 </body>
 </html>

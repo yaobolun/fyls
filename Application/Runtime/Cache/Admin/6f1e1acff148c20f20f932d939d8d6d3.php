@@ -51,6 +51,10 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -115,7 +119,7 @@
  <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">转账审批</h2>
-       <a href="#" class="fr top_rt_btn add_icon"></a>
+
       </div>
       <table class="table">
        <tr>

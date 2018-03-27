@@ -104,8 +104,18 @@
  <li>
    <dl>
     <dt>审批管理</dt>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/0ecd99a36cb2d2b0bb6d8565dfdbd887.php
     <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/3427210972588b6ecaae9423d1679f15.php
     </dl>
   </li>
   <li>
@@ -153,46 +163,66 @@
   </li>
  </ul> -->
 </aside>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/0ecd99a36cb2d2b0bb6d8565dfdbd887.php
 <script>
 layui.use(['element', 'layer'], function(){
   var element = layui.element;
   var layer = layui.layer;
 });
 </script>
+=======
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/3427210972588b6ecaae9423d1679f15.php
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位列表</h2>
-       
-       <a href="/fyls/Admin/Station/add" class="fr top_rt_btn add_icon">添加岗位</a>
+       <h2 class="fl">资质到账凭证审批</h2>
+
       </div>
       <table class="table">
        <tr>
-        <th>编号</th>
-        <th>部门名称</th>
-        <th>岗位名称</th>
-        <th>最后修改时间</th>
+        <th>日期</th>
+        <th>市场部客服</th>
+        <th>申请人</th>
+        <th>企业名称</th>
+        <th>资质名称</th>
         <th>操作</th>
        </tr>
-       <?php if(is_array($Re)): $i = 0; $__LIST__ = $Re;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$Re): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
+       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($show["qualifications_date"]); ?></td>
+        <td class="center"><?php echo ($show["qualifications_customer"]); ?></td>
+        <td class="center"><?php echo ($show["qualifications_applicant"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["qualifications_enterprise"]); ?>"><?php echo ($show["qualifications_enterprise"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["qualifications_aptitude"]); ?>"><?php echo ($show["qualifications_aptitude"]); ?></td>
         <td class="center">
-          <?php echo ($Re["department_name"]); ?>
-        </td>
-        <td class="center"><?php echo ($Re["station_name"]); ?></td>
-        <td class="center"><?php echo ($Re["updatetime"]); ?></td>
-        
-        <td class="center">
-         <a href="/fyls/Admin/Station/update?id=<?php echo ($Re["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Station/del?id=<?php echo ($Re["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+         <a href="/fyls/Admin/Qexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
       </table>
       <aside class="paging">
       <?php echo ($page); ?>
       </aside>
  </div>
 </section>
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
 </body>
 </html>

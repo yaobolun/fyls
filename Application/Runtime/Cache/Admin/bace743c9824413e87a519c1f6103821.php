@@ -50,6 +50,11 @@
     <dt>审批管理</dt>
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -94,7 +99,7 @@
     <dd><a href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
     <dd><a href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
    </dl>
-  </li>
+  </li>   
   <li>
    <p class="btm_infor">© 小牛在线 技术支持</p>
   </li>
@@ -113,62 +118,27 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">外出记录</h2>
-       
-       <a href="/fyls/admin.php/Travel/add_travel" class="fr top_rt_btn add_icon">申请外出</a>
+       <h2 class="fl">退款人才凭证审批</h2>
+
       </div>
-      <section class="mtb">
-      <form action="" method="post">
-         <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
-         <input type="submit" value="查询" class="group_btn" name="sub"/>
-      </form>
-      </section>
       <table class="table">
        <tr>
         <th>申请人</th>
-        <th>外出开始时间</th>
-        <th>外出结束时间</th>
-        <th>外出地址</th>
-        <th>外出原因</th>
-        <th>审批状态</th>
-
+        <th>本次到账日期</th>
+        <th>配备企业</th>
+        <th>合同价格</th>
+        <th>到账金额</th>
+        <th>操作</th>
        </tr>
        <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["out_time"]); ?></td>
-        <td class="center"><?php echo ($show["back_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
-
-        <?php if($show["flag"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($show["flag"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($show["flag"] == 2): ?>
-          <td style="color:#CC0066;" class="center">外出中</td>
-        <?php elseif($show["flag"] == 3): ?>
-          <td style="color:red;" class="center">未通过（被拒绝）</td>
-        <?php elseif($show["flag"] == 4): ?>
-          <td style="color:#000099;" class="center">请等待主管确认</td>
-        <?php elseif($show["flag"] == 5): ?>
-          <td style="color:#00FF00;" class="center"><button onclick="wcz(<?php echo ($show["id"]); ?>)" class="layui-btn layui-btn-sm layui-btn-normal">已完成外出等待您的确认</button></td>
-        <?php elseif($show["flag"] == 6): ?>
-          <td style="color:#00FF00;" class="center">已完成</td><?php endif; ?>
-<!--    <td class="center">
-         <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($show["flag"] == 3): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php elseif($show["flag"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-          <?php elseif($show["flag"] == 4): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-          <a href="/fyls/Admin/Travel/travel_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php elseif($show["flag"] == 4): ?>
-          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-          <a href="/fyls/Admin/Travel/travel_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
-        </td> -->
+        <td class="center"><?php echo ($show["voucher_applicant"]); ?></td>
+        <td class="center"><?php echo ($show["voucher_account"]); ?></td>
+        <td class="center"><?php echo ($show["voucher_equip"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["voucher_contract"]); ?>"><?php echo ($show["voucher_contract"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["voucher_amount"]); ?>"><?php echo ($show["voucher_amount"]); ?></td>
+        <td class="center">
+         <a href="/fyls/Admin/Vexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
       <aside class="paging">
@@ -177,32 +147,15 @@
  </div>
 </section>
 
-<script type="text/javascript">
-    // function wcz($id)
-    // {
-    //   var b=confirm("您确定该员工已回到公司吗？");
-    //   if(b){
-    //     location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/Determine?id='+($id);
-    //   }else{
-    //     return false;
-    //   }
-    // }
-
-    function wcz($id)
-    {
-      var data = $id;
-      $.ajax({
-        type:"POST",
-        url:"/fyls/admin.php/Permission/determine",
-        data:{'data':data},
-        dataType:"json",
-        success:function(data){
-          alert(data);
-          location.reload();
-        }
-      });
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
     }
-</script>
-
+  }
+</script> -->
 </body>
 </html>

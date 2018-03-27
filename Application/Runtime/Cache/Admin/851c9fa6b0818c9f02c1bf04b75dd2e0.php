@@ -104,8 +104,18 @@
  <li>
    <dl>
     <dt>审批管理</dt>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/13319fabdf35cb42221c726e4f023358.php
     <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+=======
+    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/851c9fa6b0818c9f02c1bf04b75dd2e0.php
     </dl>
   </li>
   <li>
@@ -153,6 +163,7 @@
   </li>
  </ul> -->
 </aside>
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/13319fabdf35cb42221c726e4f023358.php
 <script>
 layui.use(['element', 'layer'], function(){
   var element = layui.element;
@@ -215,12 +226,85 @@ layui.use(['element', 'layer'], function(){
           </div>
         </div>
             
+=======
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">修改到账配备信息</h2>
+       <a href="/fyls/Admin/Arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
+      </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
+
+      
+      <table class="table">
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_aenterprise" value="<?php echo ($sel["aequipment_aenterprise"]); ?>" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="合同签约年份" name="aequipment_contrac" value="<?php echo ($sel["aequipment_contrac"]); ?>" required="required"/>
+          </div>
+</td>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="姓名" name="aequipment_qualified" value="<?php echo ($sel["aequipment_qualified"]); ?>" required="required"/></td>
+        <th>级别</th>
+        <td>
+        <select name="aequipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <option value="<?php echo ($sel["aequipment_level"]); ?>">--请选择--</option>
+        <option value="一级">一级</option>
+        <option value="二级">二级</option>
+        <option value="中级">中级</option>
+        <option value="高级">高级</option>
+        <option value="初级">初级</option>
+        <option value="注册类">注册类</option>
+        <option value="八大员">八大员</option>
+        <option value="技工">技工</option>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" value="<?php echo ($sel["aequipment_level"]); ?>" required="required"/> -->
+        </td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="aequipment_major" value="<?php echo ($sel["aequipment_major"]); ?>" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" value="<?php echo ($sel["aequipment_talent"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>请选择客服</th>
+        <td>
+          <select name="aequipment_customer" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($sel)): foreach($sel as $key=>$sel): ?><option value="<?php echo ($sel["aequipment_customer"]); ?>" <?php if($sel.aequipment_customer==$sel.id) { echo "selected";}?>>
+                      <?php echo ($xiugaikefu["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+       </tr>
+       </table>
+      <input type="hidden" name='id' value="<?php echo ($sel["id"]); ?>"/>
+      <input type="hidden" name='aid' value="<?php echo ($sel["aid"]); ?>"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/851c9fa6b0818c9f02c1bf04b75dd2e0.php
      </section>
  </div>
 </section>
-<script src="/fyls/Public/admin/js/jquery.js"></script>
-<script language="javascript">
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
+<<<<<<< HEAD:Application/Runtime/Cache/Admin/13319fabdf35cb42221c726e4f023358.php
   function yz(){
     if($("#pass").val()==''||$("#pass").val().length<5)
     {
@@ -237,6 +321,24 @@ layui.use(['element', 'layer'], function(){
 });
   
 </script>
+=======
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/851c9fa6b0818c9f02c1bf04b75dd2e0.php
 
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>

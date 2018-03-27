@@ -51,6 +51,10 @@
     <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
     <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
     <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
     </dl>
   </li>
   <li>
@@ -161,22 +165,22 @@
       <tr>
         <th>财务备注信息</th>
         <td><input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" required="required"/></td>
-      </tr>
-       
-       </table>
-       <li>
-          <span class="item_name" style="width:200px;">选择您的主管:</span>
+        <th>请选择您的主管</th>
+        <td>
           <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
             <option value="">--请选择--</option>
             <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
                       <?php echo ($user["name"]); ?>
                 </option><?php endforeach; endif; ?>
           </select>
-       </li>
+       </td>
+       </tr>
+       </table>
+       
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input type="hidden" name="status" value="0"/>
-        <input type="hidden" name="uid" value="<?php echo (session('id')); ?>" />
+        <input type="hidden" name="tid" value="<?php echo (session('id')); ?>" />
         <input type="hidden" name="department_id" value="<?php echo (session('department_id')); ?>" />
         <input type="submit" class="link_btn" name="sub" />
        </li>
