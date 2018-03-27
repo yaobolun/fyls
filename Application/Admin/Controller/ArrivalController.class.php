@@ -116,8 +116,19 @@ class ArrivalController extends Controller {
 	}
 	public function info(){
 		$aid=$_GET['id'];
+		
+		// var_dump($a);exit;
 		$arrival=M('arrival');
-		$aeq=$arrival->join('aequipment ON arrival.id = aequipment.aid')->where("aequipment.flag = 0 and arrival.id=".$aid)->field("aequipment.id,aequipment_aenterprise,aequipment_contrac,aequipment_qualified,aequipment_level,aequipment_major,aequipment_talent,aequipment_customer")->select();
+		$admin_user=M('admin_user');
+		// $aeq=$arrival->join('aequipment ON arrival.id = aequipment.aid')->where("aequipment.flag = 0 and arrival.id=".$aid)->field("aequipment.id,aequipment_aenterprise,aequipment_contrac,aequipment_qualified,aequipment_level,aequipment_major,aequipment_talent,aequipment_customer")
+			 // $admin_user->join('aequipment ON admin_user.id = aequipment_customer')->where("admin_user.id = aequipment_customer")->field("admin_user.name")
+					// ->select();
+		$aeq = $arrival->join("left join aequipment on arrival.id = aequipment.aid")
+					   ->join("left join admin_user on aequipment.aequipment_customer = admin_user.id")
+					   ->where("aequipment.flag = 0 and arrival.id=".$aid)
+					   ->field("aequipment.aequipment_aenterprise,aequipment.aequipment_contrac,aequipment.aequipment_qualified,aequipment.aequipment_level,aequipment.aequipment_major,aequipment.aequipment_talent,aequipment.aequipment_customer,aequipment.id,admin_user.name")
+					   ->select();
+					   // var_dump($aeq);exit;
 		$this->assign('aeq',$aeq);
 		$id=$_GET['id'];
 		$arr=$arrival->where("id=".$id)->select();

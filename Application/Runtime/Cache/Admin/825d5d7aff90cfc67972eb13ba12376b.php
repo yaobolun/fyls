@@ -106,38 +106,79 @@
  </ul>
 </aside>
 <style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
+.d{   
+    width: 500px;  
+    height: 15px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    white-space: nowrap;  
+    cursor: pointer;  
+}  
 </style>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账审批</h2>
+       <h2 class="fl">到账申请详细信息</h2>
+     <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
+       <a href="/fyls/Admin/Aequipment/aequipment_add?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">添加到账配备信息</a>
+       <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑到账信息</a>
       </div>
       <table class="table">
-       <tr>
+      <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
         <th>申请人</th>
+        <td class="center d" title="<?php echo ($arr["arrival_applicant"]); ?>"><?php echo ($arr["arrival_applicant"]); ?></td>
         <th>到账公司账号</th>
+        <td class="center d" title="<?php echo ($arr["arrival_account"]); ?>"><?php echo ($arr["arrival_account"]); ?></td>
+        </tr>
+        <tr>
         <th>到账时间</th>
+        <td class="center d" title="<?php echo ($arr["arrival_time"]); ?>"><?php echo ($arr["arrival_time"]); ?></td>
         <th>到账金额</th>
+        <td class="center d" title="<?php echo ($arr["arrival_money"]); ?>"><?php echo ($arr["arrival_money"]); ?></td>
+        </tr>
+        <tr>
         <th>已付金额</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["arrival_applicant"]); ?></td>
-        <td class="center"><?php echo ($show["arrival_account"]); ?></td>
-        <td class="center"><?php echo ($show["arrival_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["arrival_money"]); ?>"><?php echo ($show["arrival_money"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["arrival_paid"]); ?>"><?php echo ($show["arrival_paid"]); ?></td>
+        <td class="center d" title="<?php echo ($arr["arrival_paid"]); ?>"><?php echo ($arr["arrival_paid"]); ?></td>
+        <th>合同价格</th>
+        <td class="center d" title="<?php echo ($arr["arrival_contract"]); ?>"><?php echo ($arr["arrival_contract"]); ?></td>
+        </tr>
+        <tr>
+        <th>配备企业</th>
+        <td class="center d" title="<?php echo ($arr["arrival_equip"]); ?>"><?php echo ($arr["arrival_equip"]); ?></td>
+        <th>备注</th>
+        <td class="center d" title="<?php echo ($arr["arrival_remarks"]); ?>"><?php echo ($arr["arrival_remarks"]); ?></td>
+        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </table>
+      <div class="page_title">
+       <h2 class="fl">到账配备信息</h2>
+      </div>
+  <table class="table">
+
+   <tr>
+   <th>企业价格</th>
+   <th>签约年限</th>
+   <th>配备人才</th>
+   <th>级别</th>
+   <th>专业</th>
+   <th>人才价格</th>
+   <th>客服</th>
+   <th>操作</th>
+  </tr>
+       <?php if(is_array($aeq)): $i = 0; $__LIST__ = $aeq;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$aid): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center d" title="<?php echo ($aid["aequipment_aenterprise"]); ?>"><?php echo ($aid["aequipment_aenterprise"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["aequipment_contrac"]); ?>"><?php echo ($aid["aequipment_contrac"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["aequipment_qualified"]); ?>"><?php echo ($aid["aequipment_qualified"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["aequipment_level"]); ?>"><?php echo ($aid["aequipment_level"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["aequipment_major"]); ?>"><?php echo ($aid["aequipment_major"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["aequipment_talent"]); ?>"><?php echo ($aid["aequipment_talent"]); ?></td>
+        <td class="center d" title="<?php echo ($aid["name"]); ?>"><?php echo ($aid["name"]); ?></td>
         <td class="center">
-         <a href="/fyls/Admin/Aexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
-        </td>
+        <a href="/fyls/Admin/Aequipment/aequipment_mod?id=<?php echo ($aid["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
+
+        <a href="/fyls/Admin/Aequipment/del?id=<?php echo ($aid["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+       </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
       <aside class="paging">
@@ -145,16 +186,5 @@
       </aside>
  </div>
 </section>
-
-<!-- <script type="text/javascript">
-  function set(id) {
-      var a=confirm("确认发货吗?");
-      if(a){
-          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  }else{
-      return false;
-    }
-  }
-</script> -->
 </body>
 </html>

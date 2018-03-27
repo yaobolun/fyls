@@ -119,7 +119,7 @@
  <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">转账审批</h2>
-       <a href="#" class="fr top_rt_btn add_icon"></a>
+
       </div>
       <table class="table">
        <tr>
