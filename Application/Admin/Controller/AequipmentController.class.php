@@ -15,6 +15,9 @@ class AequipmentController extends Controller {
 		$this->display();
 	}
 	public function aequipment_add(){
+		$kefu = M('admin_user')->where()->field("admin_user.id,admin_user.name")->select();
+		$this->assign('kefu', $kefu);
+		$this->assign('kefu', $kefu);
 		if(!empty($_POST['sub'])){
 			$aequipment=M("aequipment");
 			$map['aequipment_aenterprise']=$_POST['aequipment_aenterprise'];
@@ -25,11 +28,11 @@ class AequipmentController extends Controller {
 			$map['aequipment_talent']=$_POST['aequipment_talent'];
 			$map['aequipment_customer']=$_POST['aequipment_customer'];
 			$map['aid']=$_POST['aid'];
-			$a = explode('=',$_SERVER['QUERY_STRING']);
+			// $a = explode('=',$_SERVER['QUERY_STRING']);
 			// var_dump($a);exit;
 			$query=$aequipment->add($map);
 			if($query>0){
-				echo $this->jump('添加成功',"Arrival/info?id={$a[1]}");
+				echo $this->jump('添加成功',"Arrival/info?id={$map['aid']}");
 			}
 			else{
 				echo $this->jump('添加失败','Aequipment/aequipment_add');
@@ -71,10 +74,13 @@ class AequipmentController extends Controller {
 			}
 		}
 		elseif(!empty($_GET['id'])){
+			$admin_user=M('admin_user');
+
+			// var_dump($xiugaikehu);exit;
 			$id=$_GET['id'];
 			// var_dump($_GET);exit;
-			$sel=$aequipment->where()->find("$id");
-			// var_dump($sel);exit;
+			$sel=$admin_user->join('aequipment ON admin_user.id = aequipment_customer')->where()->field("aequipment.id,aequipment.aequipment_aenterprise,aequipment.aequipment_contrac,aequipment.aequipment_qualified,aequipment.aequipment_level,aequipment.aequipment_major,aequipment.aequipment_talent,aequipment.aequipment_customer,admin_user.id,admin_user.name")->select();
+			var_dump($sel);exit;
 			$this->assign('sel',$sel);
 			$this->display();
 		}

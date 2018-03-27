@@ -118,25 +118,35 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账审批</h2>
+       <h2 class="fl">请假审批</h2>
+       
+       <a href="#" class="fr top_rt_btn add_icon">啊啊啊</a>
+  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
+       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
       </div>
+      <section class="mtb">
+
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
+
+      </section>
       <table class="table">
        <tr>
         <th>申请人</th>
-        <th>到账公司账号</th>
-        <th>到账时间</th>
-        <th>到账金额</th>
-        <th>已付金额</th>
-        <th>操作</th>
+        <th>请假开始时间</th>
+        <th>请假结束时间</th>
+        <th>请假理由</th>
+        <th>假条详情</th>
        </tr>
        <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["arrival_applicant"]); ?></td>
-        <td class="center"><?php echo ($show["arrival_account"]); ?></td>
-        <td class="center"><?php echo ($show["arrival_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["arrival_money"]); ?>"><?php echo ($show["arrival_money"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["arrival_paid"]); ?>"><?php echo ($show["arrival_paid"]); ?></td>
+        <td class="center"><?php echo ($show["applicant"]); ?></td>
+        <td class="center"><?php echo ($show["start_time"]); ?></td>
+        <td class="center"><?php echo ($show["end_time"]); ?></td>
+        <td class="center flow" title="<?php echo ($show["leave_reason"]); ?>"><?php echo ($show["leave_reason"]); ?></td>
         <td class="center">
-         <a href="/fyls/Admin/Aexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+         <a href="/fyls/Admin/Approval/leaveinfo?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>

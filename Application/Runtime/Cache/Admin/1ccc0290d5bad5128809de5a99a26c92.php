@@ -105,56 +105,99 @@
   </li>
  </ul>
 </aside>
-<style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">到账审批</h2>
+       <h2 class="fl">到账配备信息添加</h2>
+       <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Arrival/info?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">返回到账详情</a>
       </div>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
-       <tr>
-        <th>申请人</th>
-        <th>到账公司账号</th>
-        <th>到账时间</th>
-        <th>到账金额</th>
-        <th>已付金额</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["arrival_applicant"]); ?></td>
-        <td class="center"><?php echo ($show["arrival_account"]); ?></td>
-        <td class="center"><?php echo ($show["arrival_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["arrival_money"]); ?>"><?php echo ($show["arrival_money"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["arrival_paid"]); ?>"><?php echo ($show["arrival_paid"]); ?></td>
-        <td class="center">
-         <a href="/fyls/Admin/Aexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_aenterprise" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="合同签约年份" name="aequipment_contrac" required="required"/>
+          </div>
         </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="姓名" name="aequipment_qualified" required="required"/></td>
+        <th>级别</th>
+        <td>
+        <select name="aequipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <option value="">--请选择--</option>
+        <option value="一级">一级</option>
+        <option value="二级">二级</option>
+        <option value="中级">中级</option>
+        <option value="高级">高级</option>
+        <option value="初级">初级</option>
+        <option value="注册类">注册类</option>
+        <option value="八大员">八大员</option>
+        <option value="技工">技工</option>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" required="required"/> -->
+        </td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="aequipment_major" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" required="required"/></td>
+      </tr>
+      <tr>
+        <th>请选择客服</th>
+        <td>
+          <select name="aequipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($kefu)): foreach($kefu as $key=>$kefu): ?><option value="<?php echo ($kefu["id"]); ?>">
+                      <?php echo ($kefu["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+       </tr>
+      <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+      <input type="hidden" name="aid" value="<?php echo $a[1];?>">
+       </table>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" />
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
 
-<!-- <script type="text/javascript">
-  function set(id) {
-      var a=confirm("确认发货吗?");
-      if(a){
-          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  }else{
-      return false;
-    }
-  }
-</script> -->
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>
