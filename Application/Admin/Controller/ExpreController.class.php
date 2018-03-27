@@ -23,7 +23,7 @@ class ExpreController extends Controller {
 		$count=$expre->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
-      
+
         $arr=$expre->where('uid='.$id)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('arr',$arr);
 		$this->assign('page',$show);
@@ -55,7 +55,10 @@ class ExpreController extends Controller {
 		$user = $admin_user->where('id='.$uid)->find();
 		$user_bmid = $user['department_id'];
 		$user_qxid = $user['station_id'];
+        M('departments')->
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场部%"')->find();
     	$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
+
     	if($condition){
     		$arr = M('expre')->where('bm_id='.$user_bmid.' AND flag=0')->select();
     		$this->assign('arr', $arr);
@@ -143,11 +146,10 @@ class ExpreController extends Controller {
             // $objPHPExcel->createSheet();
             // $objWriter = PHPExcel_IOFactory::createWriter($objExcel, 'Excel5');
             // $objWriter-save('php://output');
-            // 
      public function look(){
         
         $data = M('expre')->where('flag = 1')->field('addressee,name,goods,tel,time,address,remarks')->select();
-        
+
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');
         // Vendor('PHPExcel.PHPExcel.Writer.Excel2007.php');

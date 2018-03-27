@@ -42,15 +42,9 @@
           <td style="color:red;" class="center">被拒绝</td>
         </if>
 
-        <if condition="($expre == true) OR (session('administration') == 0)">
-        <td class="center">
-         <a disabled onclick="expre_del({$arr.id})" title="删除" class="link_icon">&#100;</a>
-        </td>
-        <else />
         <td class="center">
          <a onclick="expre_del({$arr.id})" title="删除" class="link_icon">&#100;</a>
         </td>
-        </if>
         
        </tr>
        </volist>
