@@ -9,7 +9,6 @@ class AdminController extends Controller {
     	{
     		echo $this->jump('Please login',"Index/login");
     	}else {
-			
     		$this->display();
     	}
     }

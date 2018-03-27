@@ -79,19 +79,19 @@
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
     </div>
   </div>
-  <?php if($staff != true): ?><div class="layui-colla-item">
+  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
-        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
-  </div>
-  </div>
+</div>
+</div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
@@ -114,36 +114,83 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">部门列表</h2>
+       <h2 class="fl">修改个人信息</h2>
        
-       <a href="/fyls/Admin/Department/department_add" class="fr top_rt_btn add_icon">添加部门</a>
       </div>
-      <table class="table">
-       <tr>
-        <th>编号</th>
-        <th>部门名称</th>
-        <th>最后修改时间</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center"><?php echo ($arr["department_name"]); ?></td>
-        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
-        
-        <td class="center">
-         <a href="/fyls/Admin/Department/update?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Department/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+     <section>
+        <div class="layui-tab">
+          <ul class="layui-tab-title">
+            <li class="layui-this">修改昵称</li>
+            <li>修改密码</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                  <form action="/fyls/admin.php/Personal/name" method="post">
+                        <ul class="ulColumn2">
+                         <li>
+                          <span class="item_name" style="width:120px;">新昵称：</span>
+                          <input type="text" class="textbox textbox_295" required="required" name="name"/>
+                         </li>
+                         <li>
+                          <span class="item_name" style="width:120px;"></span>
+                          <input type="submit" class="link_btn" value="提交" name="sub" onClick="return yz()"/>
+                         </li>
+                        </ul>
+                  </form>
+            </div>
+            <div class="layui-tab-item">
+              <form action="/fyls/admin.php/Personal/Pass" method="post">
+                  <ul class="ulColumn2">
+                   <li>
+                    <span class="item_name" style="width:120px;">原始密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="pass" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;">新密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="password" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;">确认新密码：</span>
+                    <input type="password" required="required" class="textbox textbox_295" name="password1" />
+                   </li>
+                   <li>
+                    <span class="item_name" style="width:120px;"></span>
+                    <input type="submit" class="link_btn" name="sub" value="提交" onClick="return yz()"/>
+                   </li>
+                  </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+            
+     </section>
  </div>
 </section>
+<script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">
+
+  function yz(){
+    if($("#pass").val()==''||$("#pass").val().length<5)
+    {
+      alert('请填写密码！并且大于5个字符！');
+      return false;
+    }
+  }
+
+  layui.use('element', function(){
+  var $ = layui.jquery
+  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+  
+  
+});
+  
+</script>
+
 </body>
 </html>

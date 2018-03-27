@@ -55,11 +55,18 @@ class ExpreController extends Controller {
 		$user = $admin_user->where('id='.$uid)->find();
 		$user_bmid = $user['department_id'];
 		$user_qxid = $user['station_id'];
-        M('departments')->
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场部%"')->find();
     	$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
-
-    	if($condition){
+        if($Personnel == true || session('administration') == 0){
+            $expre = M('expre');
+            $count=$expre->count();
+            $Page=new\Think\Page($count,10);
+            $page= $Page->show();
+            $show = $expre->select();
+            $this->assign('arr', $show);
+            $this->assign('page', $page);
+            $this->display();
+        }elseif($condition){
     		$arr = M('expre')->where('bm_id='.$user_bmid.' AND flag=0')->select();
     		$this->assign('arr', $arr);
     		$this->display();

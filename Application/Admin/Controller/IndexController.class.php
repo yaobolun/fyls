@@ -33,7 +33,7 @@ class IndexController extends Controller {
 	}
     public function login(){
 		if(!empty($_POST['sub']))
-		{
+		{ 
 			$data=M('Admin_user');
 			$map['name']=$_POST['name'];
 			
@@ -45,22 +45,24 @@ class IndexController extends Controller {
 			}
 			$count	=	$data->where($map)->count();//查询条数
 			if ($count>0)
-			{
-				$value	=	$data->where($map)->find();
+			{	
+				$value = $data->where($map)->find();
 				$_SESSION['id']		=	$value['id'];
 				$_SESSION['name']	=	$value['name'];
 				$_SESSION['department_id'] = $value['department_id'];
 				$_SESSION['administration'] = $value['administration'];
-				// var_dump($_SESSION['id']);die;
+				$staff = M('stations')->where('id='.$value['station_id'].' AND station_name LIKE "%员工%"')->find();
+				if($staff){
+					$this->assign('staff', $staff);
+					$this->display("Department/department");
+				}else{
+					echo	$this->jump('登陆成功',"Department/department");
+				}
 
-				echo	$this->jump('登陆成功',"Department/department");
-			}
-			else 
-			{
+			}else{
 				echo	$this->jump('账号或密码错误',"Index/login");
 			}
-		}
-		else{
+		}else{
 			$this->display();
 		}	
     }
