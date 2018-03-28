@@ -1,6 +1,6 @@
 <include file="Public/admin/gg/head.html"  title="网站后台"/>
 <style type="text/css">
-.dd{  
+.ddc{  
     overflow: hidden;  
     text-overflow: ellipsis;  
     white-space: nowrap;  
@@ -25,33 +25,33 @@
       <volist name='arr' id='arr'>
         <tr>
         <th>申请人</th>
-        <td class="center dd" title="{$arr.refund_applicant}">{$arr.refund_applicant}</td>
+        <td class="center ddc" title="{$arr.refund_applicant}">{$arr.refund_applicant}</td>
         <th>配出年月</th>
-        <td class="center dd" title="{$arr.refund_match}">{$arr.refund_match}</td>
+        <td class="center ddc" title="{$arr.refund_match}">{$arr.refund_match}</td>
         </tr>
         <tr>
         <th>配备企业</th>
-        <td class="center dd" title="{$arr.refund_equip}">{$arr.refund_equip}</td>
+        <td class="center ddc" title="{$arr.refund_equip}">{$arr.refund_equip}</td>
         <th>合同价格</th>
-        <td class="center dd" title="{$arr.refund_contract}">{$arr.refund_contract}</td>
+        <td class="center ddc" title="{$arr.refund_contract}">{$arr.refund_contract}</td>
         </tr>
         <tr>
         <th>备注</th>
-        <td class="center dd" title="{$arr.refund_remarks}">{$arr.refund_remarks}</td>
+        <td class="center ddc" title="{$arr.refund_remarks}">{$arr.refund_remarks}</td>
         <th>已到账金额</th>
-        <td class="center dd" title="{$arr.refund_account}">{$arr.refund_account}</td>
+        <td class="center ddc" title="{$arr.refund_account}">{$arr.refund_account}</td>
         </tr>
         <tr>
         <th>户名</th>
-        <td class="center dd" title="{$arr.refund_name}">{$arr.refund_name}</td>
+        <td class="center ddc" title="{$arr.refund_name}">{$arr.refund_name}</td>
         <th>本次打款金额</th>
-        <td class="center dd" title="{$arr.refund_money}">{$arr.refund_money}</td>
+        <td class="center ddc" title="{$arr.refund_money}">{$arr.refund_money}</td>
         </tr>
         <tr>
         <th>开户行</th>
-        <td class="center dd" title="{$arr.refund_bank}">{$arr.refund_bank}</td>
+        <td class="center ddc" title="{$arr.refund_bank}">{$arr.refund_bank}</td>
         <th>账号</th>
-        <td class="center dd" title="{$arr.refund_number}">{$arr.refund_number}</td>
+        <td class="center ddc" title="{$arr.refund_number}">{$arr.refund_number}</td>
         </tr>
       </volist>
       </table>
@@ -73,13 +73,13 @@
   </tr>
        <volist name='aeq' id='uid'>
        <tr>
-        <td class="center dd" title="{$uid.requipment_enterprise}">{$uid.requipment_enterprise}</td>
-        <td class="center dd" title="{$uid.requipment_contractyears}">{$uid.requipment_contractyears}</td>
-        <td class="center dd" title="{$uid.requipment_qualified}">{$uid.requipment_qualified}</td>
-        <td class="center dd" title="{$uid.requipment_level}">{$uid.requipment_level}</td>
-        <td class="center dd" title="{$uid.requipment_major}">{$uid.requipment_major}</td>
-        <td class="center dd" title="{$uid.requipment_talent}">{$uid.requipment_talent}</td>
-        <td class="center dd" title="{$uid.name}">{$uid.name}</td>
+        <td class="center ddc" title="{$uid.requipment_enterprise}">{$uid.requipment_enterprise}</td>
+        <td class="center ddc" title="{$uid.requipment_contractyears}">{$uid.requipment_contractyears}</td>
+        <td class="center ddc" title="{$uid.requipment_qualified}">{$uid.requipment_qualified}</td>
+        <td class="center ddc" title="{$uid.requipment_level}">{$uid.requipment_level}</td>
+        <td class="center ddc" title="{$uid.requipment_major}">{$uid.requipment_major}</td>
+        <td class="center ddc" title="{$uid.requipment_talent}">{$uid.requipment_talent}</td>
+        <td class="center ddc" title="{$uid.name}">{$uid.name}</td>
         <td class="center">
         <a href="__ROOT__/Admin/Requipment/requipment_mod?id={$uid.id}" title="编辑" class="link_icon">&#101;</a>
         <a href="__ROOT__/Admin/Requipment/del?id={$uid.id}" title="删除" class="link_icon">&#100;</a>

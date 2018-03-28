@@ -120,7 +120,7 @@ layui.use(['element', 'layer'], function(){
 </script>
 
 <style type="text/css">
-.dd{  
+.ddc{  
     overflow: hidden;  
     text-overflow: ellipsis;  
     white-space: nowrap;  
@@ -140,33 +140,33 @@ layui.use(['element', 'layer'], function(){
       <table class="table">
       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
         <th>申请人</th>
-        <td class="center dd" title="<?php echo ($arr["refund_applicant"]); ?>"><?php echo ($arr["refund_applicant"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_applicant"]); ?>"><?php echo ($arr["refund_applicant"]); ?></td>
         <th>配出年月</th>
-        <td class="center dd" title="<?php echo ($arr["refund_match"]); ?>"><?php echo ($arr["refund_match"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_match"]); ?>"><?php echo ($arr["refund_match"]); ?></td>
         </tr>
         <tr>
         <th>配备企业</th>
-        <td class="center dd" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
         <th>合同价格</th>
-        <td class="center dd" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
         </tr>
         <tr>
         <th>备注</th>
-        <td class="center dd" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
         <th>已到账金额</th>
-        <td class="center dd" title="<?php echo ($arr["refund_account"]); ?>"><?php echo ($arr["refund_account"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_account"]); ?>"><?php echo ($arr["refund_account"]); ?></td>
         </tr>
         <tr>
         <th>户名</th>
-        <td class="center dd" title="<?php echo ($arr["refund_name"]); ?>"><?php echo ($arr["refund_name"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_name"]); ?>"><?php echo ($arr["refund_name"]); ?></td>
         <th>本次打款金额</th>
-        <td class="center dd" title="<?php echo ($arr["refund_money"]); ?>"><?php echo ($arr["refund_money"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_money"]); ?>"><?php echo ($arr["refund_money"]); ?></td>
         </tr>
         <tr>
         <th>开户行</th>
-        <td class="center dd" title="<?php echo ($arr["refund_bank"]); ?>"><?php echo ($arr["refund_bank"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_bank"]); ?>"><?php echo ($arr["refund_bank"]); ?></td>
         <th>账号</th>
-        <td class="center dd" title="<?php echo ($arr["refund_number"]); ?>"><?php echo ($arr["refund_number"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_number"]); ?>"><?php echo ($arr["refund_number"]); ?></td>
         </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
 
@@ -186,13 +186,13 @@ layui.use(['element', 'layer'], function(){
    <th>操作</th>
   </tr>
        <?php if(is_array($aeq)): $i = 0; $__LIST__ = $aeq;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$uid): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center dd" title="<?php echo ($uid["requipment_enterprise"]); ?>"><?php echo ($uid["requipment_enterprise"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_contractyears"]); ?>"><?php echo ($uid["requipment_contractyears"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_qualified"]); ?>"><?php echo ($uid["requipment_qualified"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_level"]); ?>"><?php echo ($uid["requipment_level"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_major"]); ?>"><?php echo ($uid["requipment_major"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_talent"]); ?>"><?php echo ($uid["requipment_talent"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["name"]); ?>"><?php echo ($uid["name"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_enterprise"]); ?>"><?php echo ($uid["requipment_enterprise"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_contractyears"]); ?>"><?php echo ($uid["requipment_contractyears"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_qualified"]); ?>"><?php echo ($uid["requipment_qualified"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_level"]); ?>"><?php echo ($uid["requipment_level"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_major"]); ?>"><?php echo ($uid["requipment_major"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_talent"]); ?>"><?php echo ($uid["requipment_talent"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["name"]); ?>"><?php echo ($uid["name"]); ?></td>
         <td class="center">
         <a href="/fyls/Admin/Requipment/requipment_mod?id=<?php echo ($uid["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
         <a href="/fyls/Admin/Requipment/del?id=<?php echo ($uid["id"]); ?>" title="删除" class="link_icon">&#100;</a>
