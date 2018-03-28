@@ -132,8 +132,11 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">快递管理</h2>
+       <h2 class="fl">快递列表</h2>
+       
+       <a href="/fyls/Admin/Expre/add_expre" class="fr top_rt_btn add_icon">申请快递</a>
       </div>
+
       <table class="table">
        <tr>
         <th>寄件人</th>
@@ -142,7 +145,6 @@ layui.use(['element', 'layer'], function(){
         <th>寄件时间</th>
         <th>备注信息</th>
         <th>状态</th>
-        <th>操作</th>
        </tr>
        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
         <td class="center"><?php echo ($arr["name"]); ?></td>
@@ -159,13 +161,8 @@ layui.use(['element', 'layer'], function(){
           <td style="color:red;" class="center">被拒绝</td>
         <?php elseif($arr["flag"] == 4): ?>
           <td style="color:green;" class="center">已发货</td><?php endif; ?>
-        <td class="center">
-        <a href="/fyls/Admin/Expre/expre_info?id=<?php echo ($arr["id"]); ?>" title="快递详情哦" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">快递详情</button></a>
-
-<!--          <a href="/fyls/Admin/Expre/expre_mod?id=<?php echo ($arr["id"]); ?>" title="确认快递" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">确认快递</button></a>
-         <a title="拒绝" class="link_icon"><button onclick="not(<?php echo ($arr["id"]); ?>)" class="layui-btn layui-btn-primary layui-btn-sm">拒绝快递</button></a> -->
-        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+       <a href="/fyls/admin.php/Expre/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>
       </table>
       <aside class="paging">
       <?php echo ($page); ?>
@@ -173,15 +170,14 @@ layui.use(['element', 'layer'], function(){
  </div>
 </section>
 <script>
-  function not($id)
-  {
-    var b=confirm("你将要拒绝了！");
+function expre_del($id){
+   var b=confirm("您确定要删除吗！");
     if(b){
-      location.href = "<?php echo C('HOME_PATH');?>"+'/Expre/not?id='+($id);
+      location.href = "<?php echo C('HOME_PATH');?>"+'/Expre/expre_del?id='+($id);
     }else{
       return false;
     }
-  }
+}
 </script>
 </body>
 </html>

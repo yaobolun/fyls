@@ -74,13 +74,14 @@
 
       <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
       <?php else: endif; ?>
-
     </div>
   </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">我的快递</a></dd>
+        <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+        <?php else: endif; ?>
     </div>
   </div>
   <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">

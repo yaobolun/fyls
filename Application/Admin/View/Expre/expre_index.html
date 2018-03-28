@@ -37,15 +37,18 @@
         <if condition="$arr.flag eq 0">
           <td class="center">未发货</td>
         <elseif condition="$arr.flag eq 1" />
-          <td style="color:green;" class="center">已发货</td>
+          <td style="color:green;" class="center">等待行政确认</td>
+        <elseif condition="$arr.flag eq 3" />
+          <td style="color:green;" class="center">等待行政寄件</td>
         <elseif condition="$arr.flag eq 2" />
           <td style="color:red;" class="center">被拒绝</td>
+        <elseif condition="$arr.flag eq 4" />
+          <td style="color:red;" class="center">已发货</td>
         </if>
 
         <td class="center">
          <a onclick="expre_del({$arr.id})" title="删除" class="link_icon">&#100;</a>
         </td>
-        
        </tr>
        </volist>
        <a href="__ROOT__/admin.php/Expre/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>

@@ -54,9 +54,15 @@ class ExpreController extends Controller {
 		$user = $admin_user->where('id='.$uid)->find();
 		$user_bmid = $user['department_id'];
 		$user_qxid = $user['station_id'];
-        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场部%"')->find();
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
     	$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
-        if($Personnel == true || session('administration') == 0){
+        $politics = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%行政%部%"')->find();
+        $politics1 = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%行政%"')->find();
+        if($politics || $politics1){
+            $politics = M('expre')->where('flag = 1 OR flag = 3')->select();
+            $this->assign('politics', $politics);
+            $this->display();
+        }elseif(session('administration') == 0){
             $expre = M('expre');
             $count=$expre->count();
             $Page=new\Think\Page($count,10);
@@ -65,7 +71,7 @@ class ExpreController extends Controller {
             $this->assign('arr', $show);
             $this->assign('page', $page);
             $this->display();
-        }elseif($condition){
+        }elseif($condition && $Personnel){
     		$arr = M('expre')->where('bm_id='.$user_bmid.' AND flag=0')->select();
     		$this->assign('arr', $arr);
     		$this->display();
@@ -130,31 +136,16 @@ class ExpreController extends Controller {
         $this->display();
     }
 
-            //从数据库输出数据处理方式
-            // //从数据库读取数据如：
-            // $db = new Mysql($dbconfig);
-            // $sql = "SELECT * FROM 表名";
-            // $row = $db->GetAll($sql); // $row 为二维数组
-            // $count = count($row);
-            // for ($i = 2; $i <= $count+1; $i++) {
-            //  $objPHPExcel->getActiveSheet()->setCellValue('A' . $i, convertUTF8($row[$i-2][1]));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('B' . $i, convertUTF8($row[$i-2][2]));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('C' . $i, convertUTF8($row[$i-2][3]));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('D' . $i, convertUTF8($row[$i-2][4]));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('E' . $i, convertUTF8(date("Y-m-d", $row[$i-2][5])));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('F' . $i, convertUTF8($row[$i-2][6]));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('G' . $i, convertUTF8($row[$i-2][7]));
-            //  $objPHPExcel->getActiveSheet()->setCellValue('H' . $i, convertUTF8($row[$i-2][8]));
-            // }
-              
-            // 在默认sheet后，创建一个worksheet
-            // echo date('H:i:s') . " Create new Worksheet object\n";
-            // $objPHPExcel->createSheet();
-            // $objWriter = PHPExcel_IOFactory::createWriter($objExcel, 'Excel5');
-            // $objWriter-save('php://output');
+    public function expre_index_list()
+    {
+        $expre = M('expre')->where('flag = 4')->select();
+        $this->assign('arr', $expre);
+        $this->display();
+    }
+
      public function look(){
         
-        $data = M('expre')->where('flag = 1')->field('addressee,name,goods,tel,time,address,remarks')->select();
+        $data = M('expre')->where('flag = 4')->field('addressee,name,goods,tel,time,address,remarks')->select();
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');
