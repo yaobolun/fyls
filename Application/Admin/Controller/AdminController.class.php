@@ -64,8 +64,7 @@ class AdminController extends Controller {
 			}else 
 				{
 				echo $this->error("删除失败","Admin/admin");
-			}		
-
+			}
 		}
 	}
 	//数据修改
@@ -75,7 +74,7 @@ class AdminController extends Controller {
 			$id=$_POST['id'];
 			$map['name']=$_POST['title'];
 			$map['password']=md5($_POST['password']);
-			$map['updatetime']=date("Y-m-d H:i:s");					
+			$map['updatetime']=date("Y-m-d H:i:s");
 			$val=$admin->where("id=".$id)->save($map);
 			//echo "<pre>";print_r($val);echo "<pre>";die;
 			if($val)

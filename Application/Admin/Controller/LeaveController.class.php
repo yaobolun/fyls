@@ -18,9 +18,14 @@ class LeaveController extends Controller {
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
 	public function add_leave()
-	{
+	{	
+
 		$bmid = session('department_id');
+
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+		if(!$director){
+			echo $this->jump('您的部门还没有主管,无法申请', 'Leave/leave_list');
+		}
 		$user_id = array_column($director,'id');
 		$a = implode(",",$user_id);
 		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();

@@ -22,6 +22,9 @@ class TravelController extends Controller {
 		
 		$bmid = session('department_id');
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+		if(!$director){
+			echo $this->jump('您的部门还没有主管,无法申请', 'Travel/travel_list');
+		}
 		$user_id = array_column($director,'id');
 		$a = implode(",",$user_id);
 		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
@@ -135,11 +138,19 @@ class TravelController extends Controller {
 					echo	$this->jump("修改失败","Member/member");
 				}
 			}elseif(!empty($_GET['id'])){
-		
+
 				$id=$_GET['id'];
 				$sel=$user->where()->join()->find("$id");
 				$this->assign('sel',$sel);
 				$this->display();
 			}
+		}
+
+		public function travel()
+		{
+			$travel = M('form_business_travel')->where('flag = 5')->select();
+
+			$this->assign('show', $travel);
+			$this->display();
 		}
 }

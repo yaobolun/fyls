@@ -131,18 +131,23 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">请确认他们已经回到公司</h2>
-       
+       <h2 class="fl">外出审批</h2>
+       <a href="/fyls/admin.php/Permission/return" class="fr top_rt_btn">回公司确认</a>
       </div>
-
+      <section class="mtb">
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
+      </section>
       <table class="table">
        <tr>
-        <th>申请人</th>
+        <th> 申请人 </th>
         <th>外出时间</th>
         <th>回来时间</th>
         <th>外出原因</th>
         <th>外出地址</th>
-        <th>操作</th>
+        <th>外出详情</th>
        </tr>
        <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
         <td class="center"><?php echo ($show["applicant"]); ?></td>
@@ -151,41 +156,14 @@ layui.use(['element', 'layer'], function(){
         <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
         <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
         <td class="center">
-         <!-- <a href="/fyls/Admin/Permission/travelinfo?id=<?php echo ($show["id"]); ?>">已回</a> -->
-           <button onclick="back(<?php echo ($show["id"]); ?>)" class="layui-btn layui-btn-primary">已回到公司</button>
-           <!-- <button onclick="noback()" class="layui-btn layui-btn-primary">未回</button> -->
+         <a href="/fyls/Admin/Permission/travelinfo1?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
       <aside class="paging">
-      <?php echo ($page); ?>
+        <?php echo ($page); ?>
       </aside>
  </div>
 </section>
-
-<script type="text/javascript">
-  // function set(id) {
-  //     var a=confirm("确认发货吗?");
-  //     if(a){
-  //         location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  // }else{
-  //     return false;
-  //   }
-  //}
-  function back($id)
-  {
-    var id = $id;
-    $.ajax({
-      type:"POST",
-      url:"/fyls/admin.php/Permission/back",
-      data:{"id":"id"},
-      dataType:"json",
-      success:function($data){
-        alert($data);
-        location.reload();
-      }
-    });
-  }
-</script>
 </body>
 </html>

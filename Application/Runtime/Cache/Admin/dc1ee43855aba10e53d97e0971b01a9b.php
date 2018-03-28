@@ -131,29 +131,53 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">请确认他们已经回到公司</h2>
-       
+       <h2 class="fl">请假列表</h2>
+       <a href="/fyls/Admin/Leave/add_leave" class="fr top_rt_btn add_icon">申请请假</a>
       </div>
+      <section class="mtb">
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
 
+      </section>
       <table class="table">
        <tr>
+        <th>ID</th>
         <th>申请人</th>
-        <th>外出时间</th>
-        <th>回来时间</th>
-        <th>外出原因</th>
-        <th>外出地址</th>
+        <th>请假开始时间</th>
+        <th>请假结束时间</th>
+        <th>请假原因</th>
+        <th>假条状态</th>
         <th>操作</th>
        </tr>
        <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($show["id"]); ?></td>
         <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["out_time"]); ?></td>
-        <td class="center"><?php echo ($show["back_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
+        <td class="center"><?php echo ($show["start_time"]); ?></td>
+        <td class="center"><?php echo ($show["end_time"]); ?></td>
+        <td class="flow" title="<?php echo ($show["leave_reason"]); ?>"><?php echo ($show["leave_reason"]); ?></td>
+        <?php if($show["flag"] == 0): ?><td class="center">未审批</td>
+        <?php elseif($show["flag"] == 1): ?>
+          <td style="color:blue;" class="center">审批中</td>
+        <?php elseif($show["flag"] == 2): ?>
+          <td style="color:#00FF00;" class="center">已通过</td>
+        <?php elseif($show["flag"] == 3): ?>
+          <td style="color:red;" class="center">未通过</td><?php endif; ?>
         <td class="center">
-         <!-- <a href="/fyls/Admin/Permission/travelinfo?id=<?php echo ($show["id"]); ?>">已回</a> -->
-           <button onclick="back(<?php echo ($show["id"]); ?>)" class="layui-btn layui-btn-primary">已回到公司</button>
-           <!-- <button onclick="noback()" class="layui-btn layui-btn-primary">未回</button> -->
+
+        <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
+        <?php elseif($show["flag"] == 3): ?>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+        <?php elseif($show["flag"] == 2): ?>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+        <?php else: ?>
+          <a href="/fyls/Admin/Leave/leave_edit?id=<?php echo ($show["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
+        <?php if($show["flag"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+
+        <?php else: ?>
+          <a href="/fyls/Admin/Leave/leave_del?id=<?php echo ($show["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
+         
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
@@ -162,30 +186,28 @@ layui.use(['element', 'layer'], function(){
       </aside>
  </div>
 </section>
-
+<div class="wc">
+  
+</div>
 <script type="text/javascript">
-  // function set(id) {
-  //     var a=confirm("确认发货吗?");
-  //     if(a){
-  //         location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  // }else{
-  //     return false;
-  //   }
-  //}
-  function back($id)
-  {
-    var id = $id;
-    $.ajax({
-      type:"POST",
-      url:"/fyls/admin.php/Permission/back",
-      data:{"id":"id"},
-      dataType:"json",
-      success:function($data){
-        alert($data);
-        location.reload();
-      }
-    });
-  }
+    function sp()
+    {
+      alert('审批过程中无法操作哦！');
+    }
+    function qq()
+    {
+      alert('无法操作哦！');
+    }
 </script>
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
 </body>
 </html>

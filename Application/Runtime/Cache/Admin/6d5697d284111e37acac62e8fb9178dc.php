@@ -71,6 +71,7 @@
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
     </div>
   </div>
   <div class="layui-colla-item">

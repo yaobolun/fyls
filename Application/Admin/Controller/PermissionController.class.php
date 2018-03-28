@@ -41,7 +41,10 @@ class PermissionController extends Controller
 			// $this->display('Permission/Personnel');
 		//判断是否是该部门下经理
 		}elseif($Personnel && $manager){
-			// 人事的经理 看的在这
+			$form_business_travel = M('form_business_travel');
+			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND flag <> 3')->select();
+			$this->assign('show', $show);
+			$this->display();
 		}elseif($Personnel){
 			$form_business_travel = M('form_business_travel');
 			$count=$form_business_travel->count();// 查询满足要求的总记录数
@@ -80,6 +83,12 @@ class PermissionController extends Controller
 		$guonian     = abs($guonian);
 		$departments = M('departments');
 		$bmname      = $departments->where($bmid)->field('department_name')->find();
+		$uid = session('id');
+		$admin_user = M('admin_user');
+		$user = $admin_user->where('id='.$uid)->find();
+		$user_bmid = $user['department_id'];
+		$personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
+		$this->assign('personnel', $personnel);
 		$this->assign('day', $guonian);
 		$this->assign('bmname', $bmname);
 		$this->assign('find', $find);
@@ -169,6 +178,32 @@ class PermissionController extends Controller
 				echo json_encode('操作失败');
 			}
 		}
+	}
+	public function travelinfo1()
+	{
+		$uname       = session('name');
+		$leave       = M('form_business_travel');
+		$find        = $leave->find($id);
+		$bmid        = $find['department_id'];
+		$kstime      = $find['out_time'];
+		$jstime      = $find['back_time'];
+		$zero1       = strtotime ($kstime);
+		$zero2       = strtotime ($jstime);
+		$guonian     = ceil(($zero2-$zero1)/86400);
+		$guonian     = abs($guonian);
+		$departments = M('departments');
+		$bmname      = $departments->where($bmid)->field('department_name')->find();
+		$uid = session('id');
+		$admin_user = M('admin_user');
+		$user = $admin_user->where('id='.$uid)->find();
+		$user_bmid = $user['department_id'];
+		$personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
+		$this->assign('personnel', $personnel);
+		$this->assign('day', $guonian);
+		$this->assign('bmname', $bmname);
+		$this->assign('find', $find);
+		$this->assign('uname', $uname);
+		$this->display();
 	}
 	public  function jump($string,$url){
       $url=C('HOME_PATH').'/'.$url;

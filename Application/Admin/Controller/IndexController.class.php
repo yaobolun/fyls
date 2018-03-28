@@ -51,13 +51,22 @@ class IndexController extends Controller {
 				$_SESSION['name']	=	$value['name'];
 				$_SESSION['department_id'] = $value['department_id'];
 				$_SESSION['administration'] = $value['administration'];
+
 				$staff = M('stations')->where('id='.$value['station_id'].' AND station_name LIKE "%员工%"')->find();
 				$bm = M('departments')->where('id='.$value['department_id'].' AND department_name LIKE "%员工%"')->find();
+
 				if($staff || $bm){
-					$this->assign('staff', $staff);
+					session('a', 1);
 					$this->display("Department/view");
 				}else{
-					echo	$this->jump('登陆成功',"Department/view");
+					$user_bmid = session('department_id');
+					$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
+						if($Personnel){
+							session('b', 1);
+							$this->display("Department/view");
+						}else{
+							$this->display("Department/view");
+						}
 				}
 
 			}else{
@@ -65,7 +74,7 @@ class IndexController extends Controller {
 			}
 		}else{
 			$this->display();
-		}	
+		}
     }
     /*跳转*/
     public  function jump($string,$url){

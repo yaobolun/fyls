@@ -118,74 +118,103 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
-<style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">请确认他们已经回到公司</h2>
-       
+       <h2 class="fl">外出详情</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
       </div>
+     <section>
+     <form id="form" action="/fyls/Admin/Permission/adopt" method="post">
+     <input type="hidden" name="bm_sp" value="<?php echo ($find["bm_sp"]); ?>">
+     <input type="hidden" name="qj_id" value="<?php echo ($find["id"]); ?>">
+     <input type="hidden" name="flag" value="<?php echo ($find["flag"]); ?>">
+     <table class="layui-table" style="width:900px; height:300px;">
+        <thead>
+          <tr>
+            <th colspan="4" style="height:30px;text-align:center;"><h1><b>外出单</b></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50px;">申请人：</td>
+            <td style="width:100px;"><?php echo ($find["applicant"]); ?></td>
+            <td style="width:60px;">所属部门：</td>
+            <td style="width:100px;"><?php echo ($bmname["department_name"]); ?></td>
+          </tr>
+          <tr>
+            <td>外出原因：</td>
+            <td colspan="3"><?php echo ($find["out_reason"]); ?></td>
+          </tr>
+          <tr>
+            <td>外出地址：</td>
+            <td colspan="3"><?php echo ($find["out_addr"]); ?></td>
+          </tr>
+          <tr>
+            <td>外出时间：</td>
+            <td colspan="2"><?php echo ($find["out_time"]); ?>&nbsp;&nbsp; 到 &nbsp;&nbsp;<?php echo ($find["back_time"]); ?></td>
+            <td>共 &nbsp;&nbsp;<?php echo ($day); ?>&nbsp;&nbsp; 天</td>
+          </tr><tr>
+            <td>部门主管</td>
+            <td>
+			       <?php echo ($uname); ?>
+            </td>
 
-      <table class="table">
-       <tr>
-        <th>申请人</th>
-        <th>外出时间</th>
-        <th>回来时间</th>
-        <th>外出原因</th>
-        <th>外出地址</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($show["applicant"]); ?></td>
-        <td class="center"><?php echo ($show["out_time"]); ?></td>
-        <td class="center"><?php echo ($show["back_time"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_reason"]); ?>"><?php echo ($show["out_reason"]); ?></td>
-        <td class="center flow" title="<?php echo ($show["out_addr"]); ?>"><?php echo ($show["out_addr"]); ?></td>
-        <td class="center">
-         <!-- <a href="/fyls/Admin/Permission/travelinfo?id=<?php echo ($show["id"]); ?>">已回</a> -->
-           <button onclick="back(<?php echo ($show["id"]); ?>)" class="layui-btn layui-btn-primary">已回到公司</button>
-           <!-- <button onclick="noback()" class="layui-btn layui-btn-primary">未回</button> -->
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+            <td>
+            <td>
+              
+            </td>
+
+          </tr>
+        </tbody>
+        <?php echo ($page); ?>
       </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+      </form>
+      
+     </section>
  </div>
 </section>
-
 <script type="text/javascript">
-  // function set(id) {
-  //     var a=confirm("确认发货吗?");
-  //     if(a){
-  //         location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
-  // }else{
-  //     return false;
-  //   }
-  //}
-  function back($id)
-  {
-    var id = $id;
-    $.ajax({
-      type:"POST",
-      url:"/fyls/admin.php/Permission/back",
-      data:{"id":"id"},
-      dataType:"json",
-      success:function($data){
-        alert($data);
-        location.reload();
-      }
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
     });
-  }
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+
+    function yes()
+    {
+     var a=confirm("确认通过吗?");
+      	  if(a){
+            $("#form").submit();
+      		}else{
+            return false;
+          }
+    }
+    function Not($id)
+    {
+      var b=confirm("您将要拒绝了！");
+      if(b){
+        location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/Not?id='+($id);
+      }else{
+        return false;
+      }
+    }
+
 </script>
 </body>
 </html>
