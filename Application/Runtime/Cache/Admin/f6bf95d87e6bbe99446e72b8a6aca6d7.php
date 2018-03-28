@@ -114,90 +114,98 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
-<style type="text/css">
-.dd{  
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-} 
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款凭证企业申请详细信息</h2>
+       <h2 class="fl">退款凭证企业配备信息添加</h2>
        <?php
  $a = explode('=',$_SERVER['QUERY_STRING']); ?>
-       <a href="/fyls/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证企业申请列表</a>
-       <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑</a>
-       <a href="/fyls/Admin/Requipment/requipment_add?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">添加退款凭证企业配备信息</a>
+       <a href="/fyls/Admin/Refund/info?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">返回退款凭证企业详情</a>
       </div>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
-      <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <th>申请人</th>
-        <td class="center dd" title="<?php echo ($arr["refund_applicant"]); ?>"><?php echo ($arr["refund_applicant"]); ?></td>
-        <th>配出年月</th>
-        <td class="center dd" title="<?php echo ($arr["refund_match"]); ?>"><?php echo ($arr["refund_match"]); ?></td>
-        </tr>
-        <tr>
-        <th>配备企业</th>
-        <td class="center dd" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
-        <th>合同价格</th>
-        <td class="center dd" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
-        </tr>
-        <tr>
-        <th>备注</th>
-        <td class="center dd" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
-        <th>已到账金额</th>
-        <td class="center dd" title="<?php echo ($arr["refund_account"]); ?>"><?php echo ($arr["refund_account"]); ?></td>
-        </tr>
-        <tr>
-        <th>户名</th>
-        <td class="center dd" title="<?php echo ($arr["refund_name"]); ?>"><?php echo ($arr["refund_name"]); ?></td>
-        <th>本次打款金额</th>
-        <td class="center dd" title="<?php echo ($arr["refund_money"]); ?>"><?php echo ($arr["refund_money"]); ?></td>
-        </tr>
-        <tr>
-        <th>开户行</th>
-        <td class="center dd" title="<?php echo ($arr["refund_bank"]); ?>"><?php echo ($arr["refund_bank"]); ?></td>
-        <th>账号</th>
-        <td class="center dd" title="<?php echo ($arr["refund_number"]); ?>"><?php echo ($arr["refund_number"]); ?></td>
-        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-
-      <div class="page_title">
-       <h2 class="fl">退款凭证企业配备信息</h2>
-      </div>
-  <table class="table">
-
-   <tr>
-   <th>企业价格</th>
-   <th>签约年限</th>
-   <th>配备人才</th>
-   <th>级别</th>
-   <th>专业</th>
-   <th>人才价格</th>
-   <th>客服</th>
-   <th>操作</th>
-  </tr>
-       <?php if(is_array($aeq)): $i = 0; $__LIST__ = $aeq;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$uid): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center dd" title="<?php echo ($uid["requipment_enterprise"]); ?>"><?php echo ($uid["requipment_enterprise"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_contractyears"]); ?>"><?php echo ($uid["requipment_contractyears"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_qualified"]); ?>"><?php echo ($uid["requipment_qualified"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_level"]); ?>"><?php echo ($uid["requipment_level"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_major"]); ?>"><?php echo ($uid["requipment_major"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_talent"]); ?>"><?php echo ($uid["requipment_talent"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["name"]); ?>"><?php echo ($uid["name"]); ?></td>
-        <td class="center">
-        <a href="/fyls/Admin/Requipment/requipment_mod?id=<?php echo ($uid["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-        <a href="/fyls/Admin/Requipment/del?id=<?php echo ($uid["id"]); ?>" title="删除" class="link_icon">&#100;</a>
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="requipment_enterprise" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="申请人与公司签约年份" name="requipment_contractyears" required="required"/>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本人" name="requipment_qualified" required="required"/></td>
+        <th>级别</th>
+        <td>
+        <select name="requipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <option value="">--请选择--</option>
+        <option value="一级">一级</option>
+        <option value="二级">二级</option>
+        <option value="中级">中级</option>
+        <option value="高级">高级</option>
+        <option value="初级">初级</option>
+        <option value="注册类">注册类</option>
+        <option value="八大员">八大员</option>
+        <option value="技工">技工</option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="requipment_major" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="requipment_talent" required="required"/></td>
+      </tr>
+      <tr>
+        <th>请选择客服</th>
+        <td>
+          <select name="requipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($kefu)): foreach($kefu as $key=>$kefu): ?><option value="<?php echo ($kefu["id"]); ?>">
+                      <?php echo ($kefu["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+       </tr>
+      <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+      <input type="hidden" name="uid" value="<?php echo $a[1];?>">
+       </table>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" />
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script type="text/javascript">
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
+</script>
 </body>
 </html>

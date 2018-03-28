@@ -15,7 +15,7 @@ class AequipmentController extends Controller {
 		$this->display();
 	}
 	public function aequipment_add(){
-		$kefu = M('admin_user')->where()->field("admin_user.id,admin_user.name")->select();
+		$kefu = M('admin_user')->where("administration = 1")->field("admin_user.id,admin_user.name")->select();
 		$this->assign('kefu', $kefu);
 		$this->assign('kefu', $kefu);
 		if(!empty($_POST['sub'])){

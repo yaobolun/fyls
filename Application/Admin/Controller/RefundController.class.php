@@ -119,8 +119,16 @@ class RefundController extends Controller {
 	}
 	public function info(){
 		$uid=$_GET['id'];
+        // var_dump($uid);
 		$refund=M('refund');
-		$aeq=$refund->join('requipment ON refund.id = requipment.uid')->where("requipment.flag = 0 and refund.id=".$uid)->field("requipment.id,requipment_enterprise,requipment_contractyears,requipment_qualified,requipment_level,requipment_major,requipment_talent,requipment_customer")->select();
+        $admin_user=M('admin_user');
+        $aeq = $refund->join("left join requipment on refund.id = requipment.uid")
+                       ->join("left join admin_user on requipment.requipment_customer = admin_user.id")
+                       ->where("requipment.flag = 0 and refund.id=".$uid)
+                       ->field("requipment.id,requipment_enterprise,requipment_contractyears,requipment_qualified,requipment_level,requipment_major,requipment_talent,requipment_customer,admin_user.name")
+                       ->select();
+                       // var_dump($aeq);exit;
+		// $aeq=$refund->join('requipment ON refund.id = requipment.uid')->where("requipment.flag = 0 and refund.id=".$uid)->field("requipment.id,requipment_enterprise,requipment_contractyears,requipment_qualified,requipment_level,requipment_major,requipment_talent,requipment_customer")->select();
 		$this->assign('aeq',$aeq);
 		$id=$_GET['id'];
 		$arr=$refund->where("id=".$id)->select();
