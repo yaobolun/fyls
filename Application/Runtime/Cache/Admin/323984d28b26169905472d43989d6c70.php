@@ -82,16 +82,27 @@
   <?php if($staff != true): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
+<<<<<<< HEAD
         <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+=======
+       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+>>>>>>> origin/liushuai
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
+<<<<<<< HEAD
   </div>
   </div>
+=======
+</div>
+</div>
+>>>>>>> origin/liushuai
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">

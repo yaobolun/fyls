@@ -36,6 +36,30 @@
         </td>
        </tr>
        </volist>
+       <volist name='renshi' id='renshi'>
+       <tr>
+        <td class="center">{$renshi.voucher_applicant}</td>
+        <td class="center">{$renshi.voucher_account}</td>
+        <td class="center">{$renshi.voucher_equip}</td>
+        <td class="center flow" title="{$renshi.voucher_contract}">{$renshi.voucher_contract}</td>
+        <td class="center flow" title="{$renshi.voucher_amount}">{$renshi.voucher_amount}</td>
+        <td class="center">
+         <a href="javascript:;" title="人事无法操作" class="">人事无法操作</a>
+        </td>
+       </tr>
+       </volist>
+       <volist name='guanli' id='guanli'>
+       <tr>
+        <td class="center">{$guanli.voucher_applicant}</td>
+        <td class="center">{$guanli.voucher_account}</td>
+        <td class="center">{$guanli.voucher_equip}</td>
+        <td class="center flow" title="{$guanli.voucher_contract}">{$guanli.voucher_contract}</td>
+        <td class="center flow" title="{$guanli.voucher_amount}">{$guanli.voucher_amount}</td>
+        <td class="center">
+         <a href="javascript:;" title="管理员无法操作" class="">管理员无法操作</a>
+        </td>
+       </tr>
+       </volist>
       </table>
       <aside class="paging">
       {$page}

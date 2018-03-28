@@ -30,7 +30,19 @@
         <th>配备人才</th>
         <td><input type="text" class="textbox textbox_295" placeholder="本人" name="requipment_qualified" required="required"/></td>
         <th>级别</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="级别" name="requipment_level" required="required"/></td>
+        <td>
+        <select name="requipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <option value="">--请选择--</option>
+        <option value="一级">一级</option>
+        <option value="二级">二级</option>
+        <option value="中级">中级</option>
+        <option value="高级">高级</option>
+        <option value="初级">初级</option>
+        <option value="注册类">注册类</option>
+        <option value="八大员">八大员</option>
+        <option value="技工">技工</option>
+        </select>
+        </td>
       </tr>
       <tr>
         <th>专业</th>
@@ -39,9 +51,18 @@
         <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="requipment_talent" required="required"/></td>
       </tr>
       <tr>
-        <th>客服</th>
-        <td><input type="text" class="textbox textbox_295" placeholder="客服" name="requipment_customer" required="required"/></td>
-      </tr>
+        <th>请选择客服</th>
+        <td>
+          <select name="requipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <foreach name="kefu" item="kefu">
+                <option value="{$kefu.id}">
+                      {$kefu.name}
+                </option>
+            </foreach>
+          </select>
+       </td>
+       </tr>
       <?php
      // $id=$GET['id'];
      $a = explode('=',$_SERVER['QUERY_STRING']);

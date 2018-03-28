@@ -19,7 +19,8 @@ class TexaminationController extends Controller
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务主管%"')->find();
 		// var_dump($condition);exit;
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务经理%"')->find();
-
+		$renshi = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%人事%"')->find();
+		$guanli = M('admin_user')->where('administration = 0')->find();
 		if($condition){
 			$transfer = M('transfer');
 
@@ -34,6 +35,18 @@ class TexaminationController extends Controller
 			$show = $transfer->where('department_id='.$user_bmid.' AND status <> 3 AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
 			
 			$this->assign('show', $show);
+			$this->display();
+		}elseif($renshi){
+			$transfer = M('transfer');
+			$renshi = $transfer->where(' status = 2 AND bm_sp=1 AND manager_sp=1 AND flag <> 3')->select();
+			// var_dump($renshi);exit;
+			$this->assign('renshi', $renshi);
+			$this->display();
+		}elseif($guanli){
+			$transfer = M('transfer');
+			$guanli = $transfer->where(' status = 2 AND bm_sp=1 AND manager_sp=1 AND flag <> 3')->select();
+			// var_dump($renshi);exit;
+			$this->assign('guanli', $guanli);
 			$this->display();
 		}else{
 			echo $this->jump('您没有权限哦', 'Transfer/transfer');

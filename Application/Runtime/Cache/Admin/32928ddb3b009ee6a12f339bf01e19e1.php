@@ -16,7 +16,6 @@
   border-bottom-color: rgb(233, 233, 233);
   display: block;
   padding-left:15px;
-
 }
 </style>
 
@@ -56,14 +55,7 @@
 </header>
 <aside class="lt_aside_nav content mCustomScrollbar">
 <div class="layui-collapse" lay-filter="test">
-  <div class="layui-colla-item">
-    <h1 class="layui-colla-title">审批管理</h1>
-    <div class="layui-colla-content">
-         <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-         <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
-    </div>
-  </div>
+
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">财务管理</h1>
     <div class="layui-colla-content">
@@ -75,10 +67,10 @@
     </div>
   </div>
   <div class="layui-colla-item">
-    <h1 class="layui-colla-title">请假 | 外出</h1>
+    <h1 class="layui-colla-title">请假外出</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
     </div>
   </div>
   <div class="layui-colla-item">
@@ -87,6 +79,19 @@
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
     </div>
   </div>
+  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
+  <h1 class="layui-colla-title">审批管理</h1>
+  <div class="layui-colla-content">
+       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
+</div>
+</div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
@@ -95,75 +100,13 @@
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/People/people">人员管理</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
     </div>
   </div>
 </div>
- <!-- <ul>
- <li>
-   <dl>
-    <dt>审批管理</dt>
-<<<<<<< HEAD:Application/Runtime/Cache/Admin/3faacdf26d58cb787b99a1d879ea4491.php
-    <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-=======
-    <dd><a href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-    <dd><a href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-    <dd><a href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
-    <dd><a href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
-    <dd><a href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
-    <dd><a href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
-    <dd><a href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
->>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/32928ddb3b009ee6a12f339bf01e19e1.php
-    </dl>
-  </li>
-  <li>
-   <dl>
-    <dt>财务管理</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Transfer/transfer">转账申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Arrival/arrival">到账申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Qualifications/qualifications">资质凭证到账凭证申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Refund/refund">退款企业凭证申请列表</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Voucher/voucher">退款人才凭证申请列表</a></dd>
-    </dl>
-  </li>
+  <?php else: endif; ?>
 
-  <li>
-   <dl>
-    <dt> 请假 | 外出 </dt>
-    <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
-   </dl>
-  </li>
-  <li>
-   <dl>
-    <dt>快递信息</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Express/express">快递列表</a></dd>
-   </dl>
-  </li>
-   <dl>
-    <dt>网站栏目管理</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Lanmu/lanmu">栏目名称及图标</a></dd>
-   </dl>
-   <li>
-   <dl>
-    <dt>后台登录设置</dt>
-    <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/People/people">人员管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Authority/authority">权限管理</a></dd>
-    <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
-   </dl>
-  </li>   
-  <li>
-   <p class="btm_infor">© 小牛在线 技术支持</p>
-  </li>
- </ul> -->
 </aside>
-<<<<<<< HEAD:Application/Runtime/Cache/Admin/3faacdf26d58cb787b99a1d879ea4491.php
 <script>
 layui.use(['element', 'layer'], function(){
   var element = layui.element;
@@ -171,7 +114,6 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
-=======
 <style type="text/css">
 .flow{
     width: 176px;
@@ -182,7 +124,6 @@ layui.use(['element', 'layer'], function(){
     cursor: pointer;
 }
 </style>
->>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/32928ddb3b009ee6a12f339bf01e19e1.php
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
@@ -197,23 +138,34 @@ layui.use(['element', 'layer'], function(){
         <th>已付金额</th>
         <th>操作</th>
        </tr>
-<<<<<<< HEAD:Application/Runtime/Cache/Admin/3faacdf26d58cb787b99a1d879ea4491.php
-       <?php if(is_array($depar)): $i = 0; $__LIST__ = $depar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center"><?php echo ($arr["name"]); ?></td>
-        <td class="center"><?php echo ($arr["department_name"]); ?></td>
-        <td class="center"><?php echo ($arr["station_name"]); ?></td>
-        <td class="center"><?php echo ($arr["updatetime"]); ?></td>
-=======
        <?php if(is_array($show)): $i = 0; $__LIST__ = $show;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$show): $mod = ($i % 2 );++$i;?><tr>
         <td class="center"><?php echo ($show["arrival_applicant"]); ?></td>
         <td class="center"><?php echo ($show["arrival_account"]); ?></td>
         <td class="center"><?php echo ($show["arrival_time"]); ?></td>
         <td class="center flow" title="<?php echo ($show["arrival_money"]); ?>"><?php echo ($show["arrival_money"]); ?></td>
         <td class="center flow" title="<?php echo ($show["arrival_paid"]); ?>"><?php echo ($show["arrival_paid"]); ?></td>
->>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/32928ddb3b009ee6a12f339bf01e19e1.php
         <td class="center">
          <a href="/fyls/Admin/Aexamination/info?id=<?php echo ($show["id"]); ?>" title="查看详情" class="">查看</a>
+        </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+       <?php if(is_array($renshi)): $i = 0; $__LIST__ = $renshi;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$renshi): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($renshi["arrival_applicant"]); ?></td>
+        <td class="center"><?php echo ($renshi["arrival_account"]); ?></td>
+        <td class="center"><?php echo ($renshi["arrival_time"]); ?></td>
+        <td class="center flow" title="<?php echo ($renshi["arrival_money"]); ?>"><?php echo ($renshi["arrival_money"]); ?></td>
+        <td class="center flow" title="<?php echo ($renshi["arrival_paid"]); ?>"><?php echo ($renshi["arrival_paid"]); ?></td>
+        <td class="center">
+         <a href="javascript:;" title="人事无法操作" class="">人事无法操作</a>
+        </td>
+       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+       <?php if(is_array($guanli)): $i = 0; $__LIST__ = $guanli;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$guanli): $mod = ($i % 2 );++$i;?><tr>
+        <td class="center"><?php echo ($guanli["arrival_applicant"]); ?></td>
+        <td class="center"><?php echo ($guanli["arrival_account"]); ?></td>
+        <td class="center"><?php echo ($guanli["arrival_time"]); ?></td>
+        <td class="center flow" title="<?php echo ($guanli["arrival_money"]); ?>"><?php echo ($guanli["arrival_money"]); ?></td>
+        <td class="center flow" title="<?php echo ($guanli["arrival_paid"]); ?>"><?php echo ($guanli["arrival_paid"]); ?></td>
+        <td class="center">
+         <a href="javascript:;" title="管理员无法操作" class="">管理员无法操作</a>
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>

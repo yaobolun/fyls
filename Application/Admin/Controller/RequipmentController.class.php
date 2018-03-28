@@ -5,6 +5,9 @@ header("Content-Type: text/html;charset=utf-8");
 
 class RequipmentController extends Controller {
 	public function requipment_add(){
+		$kefu = M('admin_user')->where("administration = 1")->field("admin_user.id,admin_user.name")->select();
+		$this->assign('kefu', $kefu);
+		$this->assign('kefu', $kefu);
 		if(!empty($_POST['sub'])){
 			$requipment=M("requipment");
 			$map['requipment_enterprise']=$_POST['requipment_enterprise'];
@@ -15,11 +18,11 @@ class RequipmentController extends Controller {
 			$map['requipment_talent']=$_POST['requipment_talent'];
 			$map['requipment_customer']=$_POST['requipment_customer'];
 			$map['uid']=$_POST['uid'];
-			$a = explode('=',$_SERVER['QUERY_STRING']);
+			// $a = explode('=',$_SERVER['QUERY_STRING']);
 			// var_dump($_POST);exit;
 			$query=$requipment->add($map);
 			if($query>0){
-				echo $this->jump('添加成功',"Refund/info?id={$a[1]}");
+				echo $this->jump('添加成功',"Refund/info?id={$map['uid']}");
 			}
 			else{
 				echo $this->jump('添加失败','Aequipment/aequipment_add');
@@ -81,9 +84,12 @@ class RequipmentController extends Controller {
 		}
 		elseif(!empty($_GET['id'])){
 			$id=$_GET['id'];
-			// var_dump($_GET);exit;
-			$sel=$requipment->where()->find("$id");
+			$admin_user=M('admin_user');
+			$requipment=M('requipment');
+			$user=$admin_user->where("administration = 1")->field("id,name")->select();
+			$sel=$requipment->where("id = ".$id)->find();
 			// var_dump($sel);exit;
+			$this->assign('user',$user);
 			$this->assign('sel',$sel);
 			$this->display();
 		}

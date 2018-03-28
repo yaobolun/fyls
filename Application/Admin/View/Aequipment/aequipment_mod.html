@@ -27,7 +27,7 @@
         <th>级别</th>
         <td>
         <select name="aequipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-        <option value="{$sel.aequipment_level}">--请选择--</option>
+        <option value="{$sel.aequipment_level}">{$sel.aequipment_level}</option>
         <option value="一级">一级</option>
         <option value="二级">二级</option>
         <option value="中级">中级</option>
@@ -50,11 +50,9 @@
         <th>请选择客服</th>
         <td>
           <select name="aequipment_customer" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
-            <option value="">--请选择--</option>
-            <foreach name="sel" item="sel">
-                <option value="{$sel.aequipment_customer}" <?php if($sel.aequipment_customer==$sel.id) {
-                  echo "selected";}?>>
-                      {$xiugaikefu.name}
+            <foreach name="user" item="user">
+                <option value="{$user.id}" <?php if($user['id'] == $sel['aequipment_customer']) echo "selected";?>>
+                      {$user.name}
                 </option>
             </foreach>
           </select>
