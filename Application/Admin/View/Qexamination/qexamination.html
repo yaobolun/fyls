@@ -36,6 +36,30 @@
         </td>
        </tr>
        </volist>
+       <volist name='renshi' id='renshi'>
+       <tr>
+        <td class="center">{$renshi.qualifications_date}</td>
+        <td class="center">{$renshi.qualifications_customer}</td>
+        <td class="center">{$renshi.qualifications_applicant}</td>
+        <td class="center flow" title="{$renshi.qualifications_enterprise}">{$renshi.qualifications_enterprise}</td>
+        <td class="center flow" title="{$renshi.qualifications_aptitude}">{$renshi.qualifications_aptitude}</td>
+        <td class="center">
+         <a href="javascript:;" title="人事无法操作" class="">人事无法操作</a>
+        </td>
+       </tr>
+       </volist>
+       <volist name='guanli' id='guanli'>
+       <tr>
+        <td class="center">{$guanli.qualifications_date}</td>
+        <td class="center">{$guanli.qualifications_customer}</td>
+        <td class="center">{$guanli.qualifications_applicant}</td>
+        <td class="center flow" title="{$guanli.qualifications_enterprise}">{$guanli.qualifications_enterprise}</td>
+        <td class="center flow" title="{$guanli.qualifications_aptitude}">{$guanli.qualifications_aptitude}</td>
+        <td class="center">
+         <a href="javascript:;" title="管理员无法操作" class="">管理员无法操作</a>
+        </td>
+       </tr>
+       </volist>
       </table>
       <aside class="paging">
       {$page}

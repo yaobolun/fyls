@@ -20,6 +20,9 @@ class RexaminationController extends Controller
 		// var_dump($condition);exit;
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务经理%"')->find();
 
+		$renshi = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%人事%"')->find();
+		$guanli = M('admin_user')->where('administration = 0')->find();
+
 		if($condition){
 			$refund = M('refund');
 
@@ -34,6 +37,18 @@ class RexaminationController extends Controller
 			$show = $refund->where('department_id='.$user_bmid.' AND status <> 3 AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
 			
 			$this->assign('show', $show);
+			$this->display();
+		}elseif($renshi){
+			$refund = M('refund');
+			$renshi = $refund->where(' status = 2 AND bm_sp=1 AND manager_sp=1 AND flag <> 3')->select();
+			// var_dump($renshi);exit;
+			$this->assign('renshi', $renshi);
+			$this->display();
+		}elseif($guanli){
+			$refund = M('refund');
+			$guanli = $refund->where(' status = 2 AND bm_sp=1 AND manager_sp=1 AND flag <> 3')->select();
+			// var_dump($renshi);exit;
+			$this->assign('guanli', $guanli);
 			$this->display();
 		}else{
 			echo $this->jump('您没有权限哦', 'Refund/refund');

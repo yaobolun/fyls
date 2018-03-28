@@ -36,6 +36,30 @@
         </td>
        </tr>
        </volist>
+       <volist name='renshi' id='renshi'>
+       <tr>
+        <td class="center">{$renshi.transfer_name}</td>
+        <td class="center">{$renshi.transfer_contract}</td>
+        <td class="center">{$renshi.transfer_allocation}</td>
+        <td class="center flow" title="{$renshi.transfer_certificate}">{$renshi.transfer_certificate}</td>
+        <td class="center flow" title="{$renshi.transfer_configuration}">{$renshi.transfer_configuration}</td>
+        <td class="center">
+         <a href="javascript:;" title="人事无法操作" class="">人事无法操作</a>
+        </td>
+       </tr>
+       </volist>
+       <volist name='guanli' id='guanli'>
+       <tr>
+        <td class="center">{$guanli.transfer_name}</td>
+        <td class="center">{$guanli.transfer_contract}</td>
+        <td class="center">{$guanli.transfer_allocation}</td>
+        <td class="center flow" title="{$guanli.transfer_certificate}">{$guanli.transfer_certificate}</td>
+        <td class="center flow" title="{$guanli.transfer_configuration}">{$guanli.transfer_configuration}</td>
+        <td class="center">
+         <a href="javascript:;" title="管理员无法操作" class="">管理员无法操作</a>
+        </td>
+       </tr>
+       </volist>
       </table>
       <aside class="paging">
       {$page}

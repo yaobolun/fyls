@@ -35,6 +35,30 @@
         </td>
        </tr>
        </volist>
+       <volist name='renshi' id='renshi'>
+       <tr>
+        <td class="center">{$renshi.arrival_applicant}</td>
+        <td class="center">{$renshi.arrival_account}</td>
+        <td class="center">{$renshi.arrival_time}</td>
+        <td class="center flow" title="{$renshi.arrival_money}">{$renshi.arrival_money}</td>
+        <td class="center flow" title="{$renshi.arrival_paid}">{$renshi.arrival_paid}</td>
+        <td class="center">
+         <a href="javascript:;" title="人事无法操作" class="">人事无法操作</a>
+        </td>
+       </tr>
+       </volist>
+       <volist name='guanli' id='guanli'>
+       <tr>
+        <td class="center">{$guanli.arrival_applicant}</td>
+        <td class="center">{$guanli.arrival_account}</td>
+        <td class="center">{$guanli.arrival_time}</td>
+        <td class="center flow" title="{$guanli.arrival_money}">{$guanli.arrival_money}</td>
+        <td class="center flow" title="{$guanli.arrival_paid}">{$guanli.arrival_paid}</td>
+        <td class="center">
+         <a href="javascript:;" title="管理员无法操作" class="">管理员无法操作</a>
+        </td>
+       </tr>
+       </volist>
       </table>
       <aside class="paging">
       {$page}
