@@ -119,71 +119,102 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
-<style type="text/css">
-.e{   
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">资质凭证到账凭证申请列表</h2>
-       <a href="/fyls/Admin/Qualifications/qualifications_add" class="fr top_rt_btn add_icon">添加资质凭证到账申请</a>
+       <h2 class="fl">修改转账信息</h2>
+       <a href="/fyls/Admin/Transfer/transfer" class="fr top_rt_btn add_icon">返回转账列表</a>
       </div>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
-        <tr>
-        <th>日期</th>
-        <th>市场部客服</th>
+      <tr>
         <th>申请人</th>
-        <th>企业名称</th>
-        <th>资质名称</th>
-        <th>审批状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center e" title="<?php echo ($arr["qualifications_date"]); ?>"><?php echo ($arr["qualifications_date"]); ?></td>
-        <td class="center e" title="<?php echo ($arr["qualifications_customer"]); ?>"><?php echo ($arr["qualifications_customer"]); ?></td>
-        <td class="center e" title="<?php echo ($arr["qualifications_applicant"]); ?>"><?php echo ($arr["qualifications_applicant"]); ?></td>
-        <td class="center e" title="<?php echo ($arr["qualifications_enterprise"]); ?>"><?php echo ($arr["qualifications_enterprise"]); ?></td>
-        <td class="center e" title="<?php echo ($arr["qualifications_aptitude"]); ?>"><?php echo ($arr["qualifications_aptitude"]); ?></td>
-        <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($arr["status"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($arr["status"] == 2): ?>
-          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
-        <?php elseif($arr["status"] == 3): ?>
-          <td style="color:#00FF00;" class="center">未通过</td><?php endif; ?>
-        <td class="center">
-         <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($arr["status"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Qualifications/qualifications_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Qualifications/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Qualifications/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
-       </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-       <a href="/fyls/admin.php/Qualifications/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请转账人姓名" name="transfer_name" value="<?php echo ($sel["transfer_name"]); ?>" required="required"/></td>
+        <th>人才合同价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本人合同上的价格" name="transfer_contract" value="<?php echo ($sel["transfer_contract"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配置企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业价格" name="transfer_allocation" value="<?php echo ($sel["transfer_allocation"]); ?>" required="required"/></td>
+        <th>证书类别</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="所属公司部门证书" name="transfer_certificate" value="<?php echo ($sel["transfer_certificate"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配置企业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人企业" name="transfer_configuration" value="<?php echo ($sel["transfer_configuration"]); ?>" required="required"/></td>
+        <th>人才姓名</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本人姓名" name="transfer_talent" value="<?php echo ($sel["transfer_talent"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配出年月</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="转账的年月日" name="transfer_match" value="<?php echo ($sel["transfer_match"]); ?>" required="required"/>
+        </div>
+        </td>
+        <th>户名</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="收款人开户户名" name="transfer_huming" value="<?php echo ($sel["transfer_huming"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>本次打款金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写） ￥全款  预付款 尾款 介绍费" name="transfer_amount" value="<?php echo ($sel["transfer_amount"]); ?>" required="required"/></td>
+        <th>开户行</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="开户的银行" name="transfer_bank" value="<?php echo ($sel["transfer_bank"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>账号</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="开户的账号" name="transfer_account" value="<?php echo ($sel["transfer_account"]); ?>" required="required"/></td>
+        <th>备注说明</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="说明" name="transfer_note" value="<?php echo ($sel["transfer_note"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>已付金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="已付金额" name="transfer_paid" value="<?php echo ($sel["transfer_paid"]); ?>" required="required"/></td>
+        <th>上传图片</th>
+        <td><input type="file" name="transfer_pic" value="<?php echo ($sel["transfer_pic"]); ?>"/>
+        <input type="text" name="transfer_pic" value="<?php echo ($sel["transfer_pic"]); ?>" disabled="true" title="图片路径" style="width:307px;"/></td>
+      </tr>
+      
+      <tr>
+        <th>财务备注信息</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" value="<?php echo ($sel["transfer_information"]); ?>" required="required"/></td>
+      </tr>
+      
+       </table>
+      <!-- <input type="hidden" name='id' value="<?php echo ($sel["id"]); ?>"/> -->
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
 <script type="text/javascript">
-    function sp()
-    {
-      alert('审批过程中不能操作哦！');
-    }
-    function qq()
-    {
-      alert('无法操作哦！');
-    }
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
 </script>
 </body>
 </html>

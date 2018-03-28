@@ -47,7 +47,7 @@
       <tr>
         <th>请选择客服</th>
         <td>
-          <select name="requipment_customer" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+          <select name="requipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
             <foreach name="user" item="user">
                 <option value="{$user.id}" <?php if($user['id'] == $sel['requipment_customer']) echo "selected";?>>
                       {$user.name}
