@@ -20,7 +20,7 @@ class ExpreController extends Controller {
     	$expre=M('expre');
     	$id = session('id');
         $bmid = session('department_id');
-		$count=$expre->count();// 查询满足要求的总记录数
+		$count=$expre->where('uid='.$id)->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
         $arr=$expre->where('uid='.$id)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -31,7 +31,7 @@ class ExpreController extends Controller {
 
     //申请快递
     public function add_expre(){
-    		$this->display();
+    	$this->display();
     }
     public function doadd_expre()
     {
@@ -54,15 +54,14 @@ class ExpreController extends Controller {
 		$user = $admin_user->where('id='.$uid)->find();
 		$user_bmid = $user['department_id'];
 		$user_qxid = $user['station_id'];
-        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
     	$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
-        $politics = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%行政%部%"')->find();
-        $politics1 = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%行政%"')->find();
-        if($politics || $politics1){
-            $politics = M('expre')->where('flag = 1 OR flag = 3')->select();
-            $this->assign('politics', $politics);
-            $this->display();
-        }elseif(session('administration') == 0){
+        $manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
+        $politics = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%行政1%"')->find();
+        $politics3 = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%行政1%"')->find();
+
+        $politics1 = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%行政2%"')->find();
+        $politics2 = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%行政2%"')->find();
+        if(session('administration') == 0){
             $expre = M('expre');
             $count=$expre->count();
             $Page=new\Think\Page($count,10);
@@ -71,34 +70,91 @@ class ExpreController extends Controller {
             $this->assign('arr', $show);
             $this->assign('page', $page);
             $this->display();
-        }elseif($condition && $Personnel){
-    		$arr = M('expre')->where('bm_id='.$user_bmid.' AND flag=0')->select();
-    		$this->assign('arr', $arr);
-    		$this->display();
+            //主管查看这里
+        }elseif($condition){
+            $arr = M('expre');
+            $count=$arr->where('bm_id='.$user_bmid.' AND flag=0')->count();
+            $Page=new\Think\Page($count,10);
+            $page= $Page->show();
+            $arr = $arr->where('bm_id='.$user_bmid.' AND flag=0')->select();
+            $this->assign('arr', $arr);
+            $this->assign('page', $page);
+            $this->display();
+            //经理查看这
+        }elseif($manager){
+            $arr = M('expre');
+            $count=$arr->where('bm_id='.$user_bmid.' AND flag=1')->count();
+            $Page=new\Think\Page($count,10);
+            $page= $Page->show();
+            $arr = $arr->where('bm_id='.$user_bmid.' AND flag=1')->select();
+            $this->assign('arr', $arr);
+            $this->assign('page', $page);
+            $this->display();
+            //行政1查看这
+        }elseif($politics || $politics3){
+            $arr = M('expre');
+            $count=$arr->where('flag=2')->count();
+            $Page=new\Think\Page($count,10);
+            $page= $Page->show();
+            $arr = $arr->where('flag=2')->select();
+            $this->assign('arr', $arr);
+            $this->assign('page', $page);
+            $this->display();
+            //行政2查看这
+        }elseif($politics1 || $politics2){
+    		$arr = M('expre');
+            $count=$arr->where('flag=3')->count();
+            $Page=new\Think\Page($count,10);
+            $page= $Page->show();
+            $arr = $arr->where('flag=3')->select();
+            $this->assign('arr', $arr);
+            $this->assign('page', $page);
+            $this->display();
     	}else{
-    		echo $this->jump('你没有权限哦！', 'Travel/Travel_list');
+    		echo $this->jump('你没有权限哦！', 'Department/view');
     	}
     }
     public function expre_mod()
     {
     	$id = $_POST['id'];
-
     	$expre = M('expre');
     	$find = $expre->where('id='.$id)->find();
-    	$find['flag'] = 1;
-    	$update = $expre->where('id='.$find['id'])->save($find);
-    	if($update){
-    		echo $this->jump('已通过！', 'Expre/express');
-    	}else{
-    		echo $this->jump('操作出错了!', 'Expre/express');
-    	}
+        if($find['flag'] == 0){
+            $find['flag'] = 1;
+            $update = $expre->where('id='.$find['id'])->save($find);
+            if($update>0){
+                echo $this->jump('已通过！', 'Expre/express');
+            }else{
+                echo $this->jump('操作出错了!', 'Expre/express');
+            }
+        }elseif($find['flag'] == 1){
+            $find['flag'] = 2;
+            $update = $expre->where('id='.$find['id'])->save($find);
+            if($update>0){
+                echo $this->jump('已通过！', 'Expre/express');
+            }else{
+                echo $this->jump('操作出错了!', 'Expre/express');
+            }
+        }elseif($find['flag'] == 2){
+            $find['flag'] = 3;
+            $update = $expre->where('id='.$find['id'])->save($find);
+            if($update>0){
+                echo $this->jump('已通过！', 'Expre/express');
+            }else{
+                echo $this->jump('操作出错了!', 'Expre/express');
+            }
+        }elseif($find['flag'] == 3){
+            echo $this->jump('请填写快递其他信息！', 'Expre/express_info?id='.$find['id']);
+        }else{
+            echo '111111';
+        }
 
     }
     public function not($id)
     {
     	$expre = M('expre');
     	$one_expre = $expre->where('id='.$id)->find();
-		$one_expre['flag'] = 2;
+		$one_expre['flag'] = 6;
 		$leave = $expre->where('id='.$id)->save($one_expre);
 		if($leave){
 			echo $this->jump('你拒绝了TA ！', 'Expre/express');
@@ -112,9 +168,9 @@ class ExpreController extends Controller {
     	$expre = M('expre');
     	$del = $expre->where('id='.$id)->delete();
     	if($del){
-    		echo $this->jump('删除成功', 'Expre/express');
+    		echo $this->jump('删除成功', 'Expre/expre_index');
     	}else{
-    		echo $this->jump('操作失败！', 'Expre/express');
+    		echo $this->jump('操作失败！', 'Expre/expre_index');
     	}
     }
 
@@ -141,6 +197,31 @@ class ExpreController extends Controller {
         $expre = M('expre')->where('flag = 4')->select();
         $this->assign('arr', $expre);
         $this->display();
+    }
+
+    public function express_info()
+    {
+        $id = $_GET['id'];
+        $expre = M('expre')->where('id='.$id)->find();
+        $this->assign('arr', $expre);
+        $this->display();
+    }
+
+    public function expre_info_add()
+    {   
+        $arr['number'] = $_POST['number'];
+        $arr['company_name'] = $_POST['company_name'];
+        $arr['flag'] = 4;
+        $expre = M('expre')->where('id='.$_POST['id'])->save($arr);
+
+        if($expre>0){
+
+            $this->journals($_SESSION['name'],"确认了".$expre['name']."发送的".$expre['goods'],。);
+
+            echo $this->jump('提交成功！', 'Expre/express');
+        }else{
+            echo $this->jump('操作失败！', 'Expre/express');
+        }
     }
 
      public function look(){
@@ -278,5 +359,23 @@ class ExpreController extends Controller {
         header("Content-Disposition:attachment;filename=\"$fileName\"");
         header("Content-Transfer-Encoding:binary");
         $objWriter->save('php://output'); 
+    }
+    public function expre_modd()
+    {
+        $id = $_GET['id'];
+        $arr = M('expre')->where('id='.$id)->find();
+        $this->assign('arr', $arr);
+        $this->display();
+    }
+    public function dodoadd_expre()
+    {
+        $arr = $_POST;
+        $arr['flag'] = 0;
+        $res = M('expre')->where('id='.$_POST['id'])->save($arr);
+        if($res>0){
+            echo $this->jump('成功!', 'Expre/expre_index');
+        }else{
+            echo $this->jump('操作失败!', 'Expre/expre_index');
+        }
     }
 }

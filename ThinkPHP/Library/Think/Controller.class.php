@@ -304,8 +304,9 @@ abstract class Controller {
     }
     //日志
     public function journals($name,$do,$thing){
-        $journals = M("rizhi");
+        $journals = M("journal");
         $map['journal'] = $name.$do.$thing;
+        $map['time'] = strtotime('Y-m-d H:i:s', time());
         $query=$journals->add($map);
     }
 }

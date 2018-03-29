@@ -72,14 +72,10 @@
 <script language="javascript">  
 
   function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
-    {
-      alert('User name cannot be empty and no less than 1 bits');
-      return false;
-    }
+
     if($("#pass").val()==''||$("#pass").val().length<4)
     {
-      alert('Password cannot be empty and no less than 5 bits');
+      alert('密码不能少于5位');
       return false;
     }
   }

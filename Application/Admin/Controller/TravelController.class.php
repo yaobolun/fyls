@@ -18,7 +18,7 @@ class TravelController extends Controller {
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
 	public function add_travel()
-	{	
+	{
 		
 		$bmid = session('department_id');
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
@@ -76,7 +76,7 @@ class TravelController extends Controller {
 		$sid = session('id');
 		// var_dump($sid);die;
 		$leave = M('form_business_travel');
-		$count=$leave->count();
+		$count=$leave->where('uid='.$sid)->count();
 		$Page=new\Think\Page($count,10);
 		$page= $Page->show();
 		$show = $leave->where('uid='.$sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -91,23 +91,21 @@ class TravelController extends Controller {
 			$leave=M('form_business_travel');
 			$id=$_GET['id'];
 		 	$val=$leave->delete($id);
-
 			if($val>0)
 			{
 				echo	$this->jump("删除成功","Travel/travel_list");
-			}else
-				{
+			}else{
 				echo	$this->jump("删除失败","Travel/travel_list");
-			}		
+			}
 		}
 	}
 	public function travel_edit()
 	{
 		$leave=M('form_business_travel');
-
 		if(!empty($_POST['sub'])){
 			$id = $_POST['id'];
 			$map = $leave->create();
+			$map['flag'] = 0;
 			$val = $leave->where("id=".$id)->save($map);
 			if($val){
 				echo $this->jump('修改成功', 'Travel/travel_list');

@@ -52,8 +52,6 @@
 
         <if condition="$show.flag eq 1">
           <a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <elseif condition="$show.flag eq 3"/>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <elseif condition="$show.flag eq 2"/>
           <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <else />
@@ -61,7 +59,6 @@
         </if>
         <if condition="$show.flag eq 1">
           <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-
         <else />
           <a href="__ROOT__/Admin/Leave/leave_del?id={$show.id}" title="删除" class="link_icon">&#100;</a>
         </if>

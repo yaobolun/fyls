@@ -34,8 +34,7 @@ class DepartmentController extends Controller {
 			$em2=$department->where("department_name='".$map['department_name']."' and flag = 0")->select();
 			if($em2) {
 				echo $this->jump("The administrator name cannot be repeated","Department/department_add");
-			}
-			else{
+			}else{
 				$query=$department->add($map);
 			
 				if($query>0){

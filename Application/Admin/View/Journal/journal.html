@@ -8,14 +8,16 @@
       </div>
       <table class="table">
        <tr>
-        <th>编号</th>
-        <th>日志</th>
+        <th style="width:100px;">编号</th>
+        <th style="width:300px;">操作时间</th>
+        <th style="width:600px;">日志</th>
         <!-- <th>最后修改时间</th> -->
         <!-- <th>操作</th> -->
        </tr>
        <volist name='arr' id='arr'>
        <tr>
         <td class="center">{$key+1}</td>
+        <td class="center">{$arr.time}</td>
         <td class="center">{$arr.journal}</td>
         <!-- <td class="center">{$arr.updatetime}</td> -->
         

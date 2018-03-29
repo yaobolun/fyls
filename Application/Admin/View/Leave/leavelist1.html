@@ -1,0 +1,78 @@
+
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+<style type="text/css">
+.flow{
+    width: 176px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+</style>
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">请假审批</h2>
+       
+      </div>
+      <section class="mtb">
+
+       <form action="" method="post">
+       <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
+       <input type="submit" value="查询" class="group_btn" name="sub"/>
+       </form>
+
+      </section>
+      <table class="table">
+       <tr>
+        <th>申请人</th>
+        <th>请假开始时间</th>
+        <th>请假结束时间</th>
+        <th>请假理由</th>
+        <th>假条详情</th>
+       </tr>
+       <volist name='show' id='show'>
+       <tr>
+        <td class="center">{$show.applicant}</td>
+        <td class="center">{$show.start_time}</td>
+        <td class="center">{$show.end_time}</td>
+        <td class="center flow" title="{$show.leave_reason}">{$show.leave_reason}</td>
+        <td class="center">
+         <a href="__ROOT__/Admin/Approval/leaveinfo1?id={$show.id}" title="查看详情" class="">查看</a>
+        </td>
+       </tr>
+       </volist>
+      </table>
+      <aside class="paging">
+      {$page}
+      </aside>
+ </div>
+</section>
+
+<!-- <script type="text/javascript">
+  function set(id) {
+      var a=confirm("确认发货吗?");
+      if(a){
+          location.href = <?php echo "'".C('HOME_PATH')."'";?>+'/Order/send?id='+id;
+  }else{
+      return false;
+    }
+  }
+</script> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

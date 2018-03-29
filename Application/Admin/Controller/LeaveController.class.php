@@ -18,8 +18,7 @@ class LeaveController extends Controller {
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
 	public function add_leave()
-	{	
-
+	{
 		$bmid = session('department_id');
 
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
@@ -36,6 +35,7 @@ class LeaveController extends Controller {
 	public function doadd_leave()
 	{	
 		if(!empty($_POST)){
+			// var_dump($_POST);die;
 			$user=M('form_leave');
 			$map = $user->create();
 			$query=$user->add($map);
@@ -52,10 +52,12 @@ class LeaveController extends Controller {
 	{
 		$sid = session('id');
 		$leave = M('form_leave');
-		$count=$leave->count();
+		$count=$leave->where('uid='.$sid)->count();
 		$Page=new\Think\Page($count,10);
+		$page= $Page->show();
 		$show = $leave->where('uid='.$sid)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $show);
+		$this->assign('page', $page);
 		$this->display();
 	}
 	public function leave_del()
@@ -79,11 +81,12 @@ class LeaveController extends Controller {
 		if(!empty($_POST['sub'])){
 			$id = $_POST['id'];
 			$map = $leave->create();
+			$map['flag'] = 0;
 			$val = $leave->where("id=".$id)->save($map);
-			if($val){
-				echo $this->jump('修改成功', 'Leave/leave_list');
+			if($val>0){
+				echo $this->jump('成功', 'Leave/leave_list');
 			}else{
-				echo $this->jump('修改失败', 'Leave/leave_list');
+				echo $this->jump('失败了', 'Leave/leave_list');
 			}
 		}elseif(!empty($_GET['id'])){
 			$id=$_GET['id'];
@@ -148,7 +151,7 @@ class LeaveController extends Controller {
 		$this->display();
 	}
 	public function guest_mod(){
-		$guestbook=M('guestbook');	
+		$guestbook=M('guestbook');
 		if(!empty($_GET['id'])){
 			$id=$_GET['id'];
 			$sel=$guestbook->where()->join()->find("$id");
@@ -156,5 +159,17 @@ class LeaveController extends Controller {
 			$this->display();
 		}
 	}
+	public function leavelist1()
+	{
+		$form_leave = M('form_leave');
+		$count=$form_leave->count();// 查询满足要求的总记录数
+		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+		$page= $Page->show();// 分页显示输出
+		$show = $form_leave->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('page',$page);
+		$this->display('');
+	}
+
 
 }

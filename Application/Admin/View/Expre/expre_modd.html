@@ -1,0 +1,49 @@
+<include file="Public/admin/gg/head.html"  title="网站后台"/>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+      <div class="page_title">
+       <h2 class="fl">快递申请</h2>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Expre/expre_index">返回</a>
+      </div>
+     <section>
+     <form action="__ROOT__/Admin/Expre/dodoadd_expre" method="post">
+      <ul class="ulColumn2">
+      <li>
+        <span class="item_name" style="width:120px;">寄件人：</span>
+        <input type="text" required="required" value="{$arr.name}" class="textbox textbox_295" name="name" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">收件人：</span>
+        <input type="text" required="required" value="{$arr.addressee}" class="textbox textbox_295" name="addressee" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">电话：</span>
+        <input type="text" required="required" value="{$arr.tel}" class="textbox textbox_295" name="tel" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">快递物品：</span>
+        <input type="text" required="required" value="{$arr.goods}" class="textbox textbox_295" name="goods" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">快递地址：</span>
+        <input type="text" required="required" value="{$arr.address}" class="textbox textbox_295" name="address" />
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注：</span>
+        <textarea name="remarks" class="textbox textbox_295" style="height: 60px">{$arr.remarks}</textarea>
+       </li>
+        <input type="hidden" name="id" value="{$arr.id}">
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn"/>
+       </li>
+      </ul>
+      </form>
+     </section>
+ </div>
+</section>
+ <script src="__PUBLIC__/admin/js/jquery.js"></script>
+
+</body>
+</html>

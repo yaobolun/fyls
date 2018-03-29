@@ -71,49 +71,35 @@
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
-<<<<<<< HEAD
 
-      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
       <?php else: endif; ?>
-
-=======
->>>>>>> origin/liushuai
     </div>
   </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">我的快递</a></dd>
+        <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+        <?php else: endif; ?>
     </div>
   </div>
-<<<<<<< HEAD
   <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
         <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
-=======
-  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
-  <h1 class="layui-colla-title">审批管理</h1>
-  <div class="layui-colla-content">
-       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
->>>>>>> origin/liushuai
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
-<<<<<<< HEAD
   </div>
   </div>
-=======
-</div>
-</div>
->>>>>>> origin/liushuai
-  <div class="layui-colla-item">
+    <?php else: endif; ?>
+  <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
@@ -124,8 +110,9 @@
       <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
     </div>
   </div>
-</div>
   <?php else: endif; ?>
+</div>
+
 
 </aside>
 <script>
@@ -202,14 +189,10 @@ layui.use(['element', 'layer'], function(){
 <script language="javascript">  
 
   function yz(){
-    if($("#name").val()==''||$("#name").val().length<1)
-    {
-      alert('User name cannot be empty and no less than 1 bits');
-      return false;
-    }
+
     if($("#pass").val()==''||$("#pass").val().length<4)
     {
-      alert('Password cannot be empty and no less than 5 bits');
+      alert('密码不能少于5位');
       return false;
     }
   }

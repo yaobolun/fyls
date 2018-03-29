@@ -16,78 +16,93 @@ class PermissionController extends Controller
 		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
 		if(session('administration') == 0){
 			$form_business_travel = M('form_business_travel');
-			$form_business_travel->count();
+			$count = $form_business_travel->count();
 			$Page=new\Think\Page($count,10);
 			$page= $Page->show();
 			$show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			$this->assign('page', $page);
 			$this->assign('show', $show);
-			$this->display();
-		}
-		//判断是不是人事的
-		elseif($Personnel && $condition){
-			$form_business_travel = M('form_business_travel');
-			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
-			$this->assign('show', $show);
-			$this->display();
-
-			// $form_business_travel = M('form_business_travel');
-			// $count=$form_business_travel->count();// 查询满足要求的总记录数
-			// $Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
-			// $page= $Page->show();// 分页显示输出
-			// $show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
-			// $this->assign('show', $show);
-			// $this->assign('page',$page);
-			// $this->display('Permission/Personnel');
-		//判断是否是该部门下经理
-		}elseif($Personnel && $manager){
-			$form_business_travel = M('form_business_travel');
-			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND flag <> 3')->select();
-			$this->assign('show', $show);
-			$this->display();
-		}elseif($Personnel){
-			$form_business_travel = M('form_business_travel');
-			$count=$form_business_travel->count();// 查询满足要求的总记录数
-			$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
-			$page= $Page->show();// 分页显示输出
-			$show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
-			$this->assign('show', $show);
-			$this->assign('page',$page);
-			$this->display('Permission/Personnel');
-		}elseif($manager){
-			$form_business_travel = M('form_business_travel');
-			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
-			$this->assign('show', $show);
-			$this->display();
-		//判断是否是该部门下的主管
+			$this->display();	
 		}elseif($condition){
 			$form_business_travel = M('form_business_travel');
-			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
+			$count = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->count();
+			$Page=new\Think\Page($count,10);
+			$page= $Page->show();
+			$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$this->assign('page', $page);
 			$this->assign('show', $show);
 			$this->display();
-		}else{
+		}elseif($manager){
+			$form_business_travel = M('form_business_travel');
+			$count = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->count();
+			$Page=new\Think\Page($count,10);
+			$page= $Page->show();
+			$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$this->assign('show', $show);
+			$this->assign('page', $page);
+			$this->display();
+		}
+		// //判断是不是人事的主管
+		// elseif($Personnel && $condition){
+		// 	$form_business_travel = M('form_business_travel');
+		// 	$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
+		// 	$this->assign('show', $show);
+		// 	$this->display();
+		// //判断是否是经理
+		// }elseif($Personnel && $manager){
+		// 	$form_business_travel = M('form_business_travel');
+		// 	$show = $form_business_travel->where('department_id='.$user_bmid.' AND manager_sp=0 AND flag <> 3')->select();
+		// 	$this->assign('show', $show);
+		// 	$this->display();
+		// }elseif($Personnel){
+		// 	$form_business_travel = M('form_business_travel');
+		// 	$count=$form_business_travel->count();// 查询满足要求的总记录数
+		// 	$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
+		// 	$page= $Page->show();// 分页显示输出
+		// 	$show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		// 	$this->assign('show', $show);
+		// 	$this->assign('page',$page);
+		// 	$this->display('Permission/Personnel');
+		//} elseif($manager){
+		// 	$form_business_travel = M('form_business_travel');
+		// 	$show = $form_business_travel->where('manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
+		// 	$this->assign('show', $show);
+		// 	$this->display();
+		
+		// }
+		//判断是否是该部门下的主管
+		// elseif($condition){
+		// 	$form_business_travel = M('form_business_travel');
+		// 	$show = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->select();
+		// 	$this->assign('show', $show);
+		// 	$this->display();
+		// }
+		else{
 			echo $this->jump('您没有权限哦', 'Leave/leave_list');
 		}
 	}
 	public function travelinfo($id)
 	{	
-		$uname       = session('name');
 		$leave       = M('form_business_travel');
-		$find        = $leave->find($id);
+		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid        = $find['department_id'];
 		$kstime      = $find['out_time'];
 		$jstime      = $find['back_time'];
+		$unameid = $find['aid'];
 		$zero1       = strtotime ($kstime);
 		$zero2       = strtotime ($jstime);
 		$guonian     = ceil(($zero2-$zero1)/86400);
 		$guonian     = abs($guonian);
 		$departments = M('departments');
-		$bmname      = $departments->where($bmid)->field('department_name')->find();
-		$uid = session('id');
-		$admin_user = M('admin_user');
-		$user = $admin_user->where('id='.$uid)->find();
-		$user_bmid = $user['department_id'];
-		$personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
+		$bmname      = $departments->where('id='.$bmid)->find();
+		$bmname = $bmname['department_name'];
+		$uname = M('admin_user')->where('id='.$unameid)->find();
+		$uname = $uname['name'];
+		// $uid = session('id');
+		// $admin_user = M('admin_user');
+		// $user = $admin_user->where('id='.$uid)->find();
+		// $user_bmid = $user['department_id'];
+		// $personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
 		$this->assign('personnel', $personnel);
 		$this->assign('day', $guonian);
 		$this->assign('bmname', $bmname);

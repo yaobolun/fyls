@@ -4,7 +4,7 @@
  <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">假条详情</h2>
-       <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Approval/leave">返回</a>
       </div>
      <section>
      <form id="form" action="__ROOT__/Admin/Approval/adopt" method="post">
@@ -22,7 +22,7 @@
             <td style="width:50px;">请假人：</td>
             <td style="width:100px;">{$find.applicant}</td>
             <td style="width:60px;">所属部门：</td>
-            <td style="width:100px;">{$bmname.department_name}</td>
+            <td style="width:100px;">{$bmname}</td>
           </tr>
           <tr>
             <td>请假理由：</td>
@@ -38,14 +38,14 @@
 			       {$uname}
             </td>
             <if condition="session('administration') == 0">
-            <td><button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td><button disabled  class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
             <button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
             </td>
             <else />
-             <td><button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+             <td><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
-            <button disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
+            <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
             </td>
             </if>
           </tr>
@@ -86,13 +86,17 @@
     	 var a=confirm("确认通过吗?");
       	  if(a){
               $("#form").submit();
-      		}
+      		}else{
+            return false;
+          }
     }
     function Not($id)
     {
       var b=confirm("你将要拒绝了！");
       if(b){
         location.href = "<?php echo C('HOME_PATH');?>"+'/Approval/Not?id='+($id);
+      }else{
+        return false;
       }
 
     }

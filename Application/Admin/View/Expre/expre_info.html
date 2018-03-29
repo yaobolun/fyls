@@ -44,9 +44,9 @@
           </tr>
           <tr>
           <td colspan="2"></td>
-            <td><center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></center></td>
+            <td><center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">确认</button></center></td>
             <td>
-                <center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button></center>
+                <center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$expre_info.id})">残忍拒绝</button></center>
             </td>
           </tr>
         </tbody>
@@ -80,7 +80,7 @@
 
     function yes()
     {
-    	 var a=confirm("确认通过吗?");
+    	 var a=confirm("确认吗?");
       	  if(a){
               $("#form").submit();
       		}else{

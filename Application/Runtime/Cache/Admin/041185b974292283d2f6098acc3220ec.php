@@ -31,8 +31,8 @@ $(document).ready(function() {
 <body>
 <dl class="admin_login">
  <dt>
-  <strong>站点后台管理系统</strong>
-  <em>Management System</em>
+  <strong>丰元立世OA管理系统</strong>
+  <em>Management System</em>  
  </dt>
  <form action="" method="post">
  <dd class="user_icon">

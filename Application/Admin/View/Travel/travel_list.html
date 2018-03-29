@@ -50,7 +50,7 @@
         <elseif condition="$show.flag eq 2" />
           <td style="color:#CC0066;" class="center" onclick="wcz({$show.id})" ><button class="layui-btn layui-btn-sm layui-btn-normal">回来请点击</button>
         <elseif condition="$show.flag eq 3" />
-          <td style="color:red;" class="center">未通过</td><!--   <button class="layui-btn">默认按钮</button> -->
+          <td style="color:red;" class="center">未通过</td>
         <elseif condition="$show.flag eq 4" />
           <td style="color:#000099;" class="center">请等待主管确认</td>
         <elseif condition="$show.flag eq 5" />
@@ -59,19 +59,23 @@
         <td class="center">
          <if condition="$show.flag eq 1">
           <a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <elseif condition="$show.flag eq 3"/>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <elseif condition="$show.flag eq 2"/>
           <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
           <elseif condition="$show.flag eq 4"/>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
+          <elseif condition="$show.flag eq 5"/>
           <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
         <else />
           <a href="__ROOT__/Admin/Travel/travel_edit?id={$show.id}" title="编辑" class="link_icon">&#101;</a>
         </if>
         <if condition="$show.flag eq 1">
           <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <elseif condition="$show.flag eq 2" />
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#100;</a>
         <elseif condition="$show.flag eq 4" />
-          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#100;</a>
+          <elseif condition="$show.flag eq 5" />
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#100;</a>
         <else />
           <a href="__ROOT__/Admin/Travel/travel_del?id={$show.id}" title="删除" class="link_icon">&#100;</a>
         </if>
