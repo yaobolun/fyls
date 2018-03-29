@@ -100,9 +100,9 @@
   </div>
     <?php else: endif; ?>
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
-    <h1 class="layui-colla-title">后台登录设置</h1>
+    <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
+      <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
@@ -143,13 +143,12 @@ layui.use(['element', 'layer'], function(){
        <li>
         <span class="item_name" style="width:120px;">密码：</span>
         <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
-        
        </li>
 
        <li>
         <span class="item_name" style="width:120px;">部门：</span>
-        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
-          <option value="0">--请选择--</option>
+        <select required="required" name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <option value="">--请选择--</option>
           <?php if(is_array($dep)): foreach($dep as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
                     <?php echo ($department["department_name"]); ?>
               </option><?php endforeach; endif; ?>
@@ -162,8 +161,8 @@ layui.use(['element', 'layer'], function(){
         <span class="item_name" style="width:120px;">岗位：</span>
 
 
-        <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
-          <option value="0">--请选择--</option>
+        <select required="required" name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+          <option value="">--请选择--</option>
           <?php if(is_array($sta)): foreach($sta as $key=>$station_name): ?><option  value="<?php echo ($station_name["id"]); ?>" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
                     <?php echo ($station_name["station_name"]); ?>
               </option><?php endforeach; endif; ?>  

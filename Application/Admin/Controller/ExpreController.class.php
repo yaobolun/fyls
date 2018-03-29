@@ -216,7 +216,8 @@ class ExpreController extends Controller {
 
         if($expre>0){
 
-            $this->journals($_SESSION['name'],"确认了".$expre['name']."发送的".$expre['goods'],。);
+            $expre = M('expre')->where('id='.$_POST['id'])->find();
+            $this->journals($_SESSION['name'],"确认了", $expre['name']."邮寄的".$expre['goods'],。);
 
             echo $this->jump('提交成功！', 'Expre/express');
         }else{

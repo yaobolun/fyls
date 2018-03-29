@@ -100,7 +100,7 @@
   </div>
     <?php else: endif; ?>
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
-    <h1 class="layui-colla-title">后台登录设置</h1>
+    <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
       <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>

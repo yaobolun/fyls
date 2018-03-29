@@ -55,7 +55,11 @@ class PeopleController extends Controller {
 			}
 			else{
 				$query=$admin->add($map);
+				$user = M('admin_user')->where('id='.$query)->find();
+				$user = $user['name'];
 				if($query>0){
+					$this->journals($_SESSION['name'],'添加了员工',$user);
+
 					echo $this->jump('添加成功','People/people');
 				}
 				else{

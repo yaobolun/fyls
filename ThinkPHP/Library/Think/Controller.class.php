@@ -306,7 +306,7 @@ abstract class Controller {
     public function journals($name,$do,$thing){
         $journals = M("journal");
         $map['journal'] = $name.$do.$thing;
-        $map['time'] = strtotime('Y-m-d H:i:s', time());
+        $map['time'] = date('Y-m-d H:i:s',time());
         $query=$journals->add($map);
     }
 }

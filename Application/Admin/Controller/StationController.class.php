@@ -41,12 +41,15 @@ class StationController extends Controller {
 
 			$em2=$stations->where("station_name='".$map['station_name']."' and flag = 0 and department_id = ".$_POST['department_id'])->select();
 			if($em2) {
-				echo $this->jump("The administrator name cannot be repeated","Station/add");
+				echo $this->jump("不能重复添加","Station/add");
 			}
 			else{
 				$query=$stations->add($map);
-			
+				
 				if($query>0){
+					$find = M('stations')->where('id='.$query)->find();
+					$name = $find['station_name'];
+					$this->journals($_SESSION['name'],'增加了岗位',$name);
 					echo $this->jump('添加成功','Station/station');
 				}
 				else{

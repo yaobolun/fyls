@@ -100,9 +100,9 @@
   </div>
     <?php else: endif; ?>
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
-    <h1 class="layui-colla-title">后台登录设置</h1>
+    <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
+      <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
@@ -127,7 +127,7 @@ layui.use(['element', 'layer'], function(){
  <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">申请外出</h2>
-       <a class="fr top_rt_btn" href="/fyls/Admin/Product/product">返回</a>
+       <a class="fr top_rt_btn" href="/fyls/Admin/Travel/travel_list">返回</a>
       </div>
      <section>
  <form action="/fyls/Admin/Travel/doadd_travel" method="post">
@@ -158,7 +158,7 @@ layui.use(['element', 'layer'], function(){
        </li>
        <li>
           <span class="item_name" style="width:200px;">选择您的主管:</span>
-          <select name="aid" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+          <select name="aid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
             <option required="required" value="">--请选择--</option>
             <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
                       <?php echo ($user["name"]); ?>

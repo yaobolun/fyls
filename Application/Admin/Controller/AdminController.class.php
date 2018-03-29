@@ -39,6 +39,10 @@ class AdminController extends Controller {
 			else{
 				$query=$admin->add($map);
 				if($query>0){
+					$user = M('admin_user')->where('id='.$query)->find();
+					$user = $user['name'];
+					$this->journals($_SESSION['name'],'添加了管理员',$user);
+
 					echo $this->jump('添加成功','Admin/admin');
 				}
 				else{

@@ -20,13 +20,12 @@
        <li>
         <span class="item_name" style="width:120px;">密码：</span>
         <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
-        
        </li>
 
        <li>
         <span class="item_name" style="width:120px;">部门：</span>
-        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
-          <option value="0">--请选择--</option>
+        <select required="required" name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <option value="">--请选择--</option>
           <foreach name="dep" item="department">
               <option  value="{$department.id}">
                     {$department.department_name}
@@ -41,8 +40,8 @@
         <span class="item_name" style="width:120px;">岗位：</span>
 
 
-        <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
-          <option value="0">--请选择--</option>
+        <select required="required" name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+          <option value="">--请选择--</option>
           <foreach name="sta" item="station_name">
               <option  value="{$station_name.id}" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
                     {$station_name.station_name}
