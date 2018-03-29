@@ -49,6 +49,7 @@ class RefundController extends Controller {
 			$map['refund_number']=$_POST['refund_number'];
 			$map['status']=$_POST['status'];
 			$map['tid']=$_POST['tid'];
+            $map['zid']=$_POST['zid'];
 			$map['department_id']=$_POST['department_id'];
 			$query=$refund->add($map);
 			if($query>0){
@@ -80,6 +81,8 @@ class RefundController extends Controller {
 		$map['refund_money']=$_POST['refund_money'];
 		$map['refund_bank']=$_POST['refund_bank'];
 		$map['refund_number']=$_POST['refund_number'];
+        $map['status']=$_POST['status'];
+        $map['zid']=$_POST['zid'];
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
 
@@ -94,6 +97,18 @@ class RefundController extends Controller {
 		elseif(!empty($_GET['id'])){
 	
 			$id=$_GET['id'];
+            $bmid = session('department_id');
+        // var_dump($bmid);exit;
+        $director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        // var_dump($director);exit;
+        $user_id = array_column($director,'id');
+        // var_dump($user_id);exit;
+        $a = implode(",",$user_id);
+        // var_dump($a);exit;
+        $user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+        // var_dump($user);exit;
+        // var_dump($name);die;
+        $this->assign('user', $user);
 			$sel=$refund->where()->join()->find("$id");
 			$this->assign('sel',$sel);
 			$this->display();

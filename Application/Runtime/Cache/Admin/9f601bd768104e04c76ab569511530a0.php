@@ -134,7 +134,7 @@ layui.use(['element', 'layer'], function(){
        <?php
  $a = explode('=',$_SERVER['QUERY_STRING']); ?>
        <a href="/fyls/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证企业申请列表</a>
-       <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑</a>
+       <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑退款凭证企业</a>
        <a href="/fyls/Admin/Requipment/requipment_add?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">添加退款凭证企业配备信息</a>
       </div>
       <table class="table">

@@ -16,9 +16,9 @@ class TexaminationController extends Controller
 						
 		$user_bmid = $user['department_id'];
 
-		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务主管%"')->find();
+		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		// var_dump($condition);exit;
-		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%财务经理%"')->find();
+		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
 		$renshi = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%人事%"')->find();
 		$guanli = M('admin_user')->where('administration = 0')->find();
 		if($condition){

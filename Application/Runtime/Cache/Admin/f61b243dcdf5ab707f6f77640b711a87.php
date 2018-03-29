@@ -71,27 +71,32 @@
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
+
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+      <?php else: endif; ?>
     </div>
   </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">我的快递</a></dd>
+        <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+        <?php else: endif; ?>
     </div>
   </div>
-  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
+  <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
-       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
-</div>
-</div>
+  </div>
+  </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
@@ -122,7 +127,7 @@ layui.use(['element', 'layer'], function(){
        <a href="/fyls/Admin/Arrival/arrival" class="fr top_rt_btn add_icon">返回到账列表</a>
       </div>
      <section>
-     <form action="/fyls/Admin/Aequipment/aequipment_edit" method="post"  enctype="multipart/form-data">
+     <form action="" method="post"  enctype="multipart/form-data">
       <ul class="ulColumn2">
       <table class="table">
       <tr>
@@ -213,11 +218,22 @@ layui.use(['element', 'layer'], function(){
         <span class="item_name" style="width:120px;">客服：</span>
         <input type="text" class="textbox textbox_295" placeholder="客服" name="arrival_customer" value="<?php echo ($sel["arrival_customer"]); ?>"/>
        </li> -->
+       <tr>
+        <th>请选择您的主管</th>
+        <td>
+          <select name="zid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>" <?php if($user['id'] == $sel['zid']) echo "selected";?>>
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+      </tr>
        </table>
       <input type="hidden" name='id' value="<?php echo ($sel["id"]); ?>"/>
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+        <input type="hidden" name="status" value="0"/>
         <input type="submit" class="link_btn" name="sub"/>
        </li>
       </ul>

@@ -181,6 +181,14 @@ layui.use(['element', 'layer'], function(){
       <tr>
         <th>财务备注信息</th>
         <td><input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" value="<?php echo ($sel["transfer_information"]); ?>" required="required"/></td>
+        <th>请选择您的主管</th>
+        <td>
+          <select name="zid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>" <?php if($user['id'] == $sel['zid']) echo "selected";?>>
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
       </tr>
       
        </table>
@@ -188,6 +196,7 @@ layui.use(['element', 'layer'], function(){
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+        <input type="hidden" name="status" value="0"/>
         <input type="submit" class="link_btn" name="sub"/>
        </li>
       </ul>

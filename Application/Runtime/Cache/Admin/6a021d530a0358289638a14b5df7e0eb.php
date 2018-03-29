@@ -181,7 +181,7 @@ layui.use(['element', 'layer'], function(){
         <td><input type="text" class="textbox textbox_295" placeholder="财务备注" name="transfer_information" required="required"/></td>
         <th>请选择您的主管</th>
         <td>
-          <select name="tid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+          <select name="zid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
             <option value="">--请选择--</option>
             <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>">
                       <?php echo ($user["name"]); ?>

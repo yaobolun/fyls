@@ -130,7 +130,7 @@ layui.use(['element', 'layer'], function(){
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款凭证申请列表</h2>
+       <h2 class="fl">退款企业凭证申请列表</h2>
        <a href="/fyls/Admin/Refund/refund_add" class="fr top_rt_btn add_icon">添加退款凭证申请</a>
       </div>
       <table class="table">
@@ -164,8 +164,9 @@ layui.use(['element', 'layer'], function(){
         <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
         <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
         <?php else: ?>
-        <a href="/fyls/Admin/Refund/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Refund/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
+        <a href="/fyls/Admin/Refund/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
+        <?php if($arr["status"] == 0): ?><a href="/fyls/Admin/Refund/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+        <?php else: endif; ?>
        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
        <a href="/fyls/admin.php/Refund/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>

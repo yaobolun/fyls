@@ -164,6 +164,16 @@ layui.use(['element', 'layer'], function(){
         <th>账号</th>
         <td><input type="text" class="textbox textbox_295" placeholder="开户时的账户号" name="refund_number" value="<?php echo ($sel["refund_number"]); ?>"/></td>
       </tr>
+      <tr>
+        <th>请选择您的主管</th>
+        <td>
+          <select name="zid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>" <?php if($user['id'] == $sel['zid']) echo "selected";?>>
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+      </tr>
         <!-- <li>
         <span class="item_name" style="width:120px;">申请人：</span>
         <input type="text" class="textbox textbox_295" placeholder="退款申请人姓名" name="refund_applicant" value="<?php echo ($sel["refund_applicant"]); ?>"/>
@@ -238,6 +248,7 @@ layui.use(['element', 'layer'], function(){
        <li>
         <span class="item_name" style="width:120px;"></span>
         <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+        <input type="hidden" name="status" value="0"/>
         <input type="submit" class="link_btn" name="sub"/>
        </li>
       </ul>

@@ -51,7 +51,10 @@
           <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
         <else />
         <a href="__ROOT__/Admin/Voucher/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
+        </if>
+        <if condition="$arr.status eq 0">
         <a href="__ROOT__/Admin/Voucher/info?id={$arr.id}" title="详细信息">详细信息</a>
+        <else />
         </if>
        </td>
        </tr>

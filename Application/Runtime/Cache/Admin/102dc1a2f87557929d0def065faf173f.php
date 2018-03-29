@@ -164,8 +164,9 @@ layui.use(['element', 'layer'], function(){
         <a href="/fyls/Admin/Arrival/arrival_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
         <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
         <?php else: ?>
-        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        <a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a><?php endif; ?>
+        <a href="/fyls/Admin/Arrival/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
+        <?php if($arr["status"] == 0): ?><a href="/fyls/Admin/Arrival/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
+        <?php else: endif; ?>
        </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
        <a href="/fyls/admin.php/Arrival/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>

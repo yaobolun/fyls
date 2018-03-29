@@ -119,69 +119,95 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
-<style type="text/css">
-.flow{
-    width: 176px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-}
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">快递管理</h2>
+       <h2 class="fl">修改退款人才凭证申请信息</h2>
+       <a href="/fyls/Admin/Voucher/voucher" class="fr top_rt_btn add_icon">返回退款人才凭证申请列表</a>
       </div>
+     <section>
+     <form action="" method="post"  enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
+      <tr>
+        <th>申请人</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="申请人" name="voucher_applicant" value="<?php echo ($sel["voucher_applicant"]); ?>" required="required"/></td>
+        <th>本次到账日期</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="本次到账日期" name="voucher_account" value="<?php echo ($sel["voucher_account"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>配备企业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="配备企业" name="voucher_equip" value="<?php echo ($sel["voucher_equip"]); ?>" required="required"/></td>
+        <th>合同价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="合同价格" name="voucher_contract" value="<?php echo ($sel["voucher_contract"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_amount" value="<?php echo ($sel["voucher_amount"]); ?>" required="required"/></td>
+        <th>到账账户</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="到账账户" name="voucher_acc" value="<?php echo ($sel["voucher_acc"]); ?>" required="required"/></td>
+      </tr>
+      <tr>
+        <th>本次到账金额</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_this" value="<?php echo ($sel["voucher_this"]); ?>" required="required"/></td>
+        <th>备注</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="备注" name="voucher_remarks" value="<?php echo ($sel["voucher_remarks"]); ?>" required="required"/></input></td>
+      </tr>
+        <!-- <li>
+        <span class="item_name" style="width:120px;">申请人：</span>
+        <input type="text" class="textbox textbox_295" placeholder="申请人" name="voucher_applicant" value="<?php echo ($sel["voucher_applicant"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">本次到账日期：</span>
+        <input type="text" class="textbox textbox_295" placeholder="本次到账日期" name="voucher_account" value="<?php echo ($sel["voucher_account"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">配备企业：</span>
+        <input type="text" class="textbox textbox_295" placeholder="配备企业" name="voucher_equip" value="<?php echo ($sel["voucher_equip"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">合同价格：</span>
+        <input type="text" class="textbox textbox_295" placeholder="合同价格" name="voucher_contract" value="<?php echo ($sel["voucher_contract"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_amount" value="<?php echo ($sel["voucher_amount"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">到账账户：</span>
+        <input type="text" class="textbox textbox_295" placeholder="到账账户" name="voucher_acc" value="<?php echo ($sel["voucher_acc"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">本次到账金额：</span>
+        <input type="text" class="textbox textbox_295" placeholder="人民币（大写)￥全款 预付款 尾款 服务费" name="voucher_this" value="<?php echo ($sel["voucher_this"]); ?>"/>
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">备注：</span>
+        <textarea type="text" class="textbox textbox_295" placeholder="备注" name="voucher_remarks" value="<?php echo ($sel["voucher_remarks"]); ?>"/></textarea>
+       </li> -->
        <tr>
-        <th>寄件人</th>
-        <th>收件人</th>
-        <th>快递物品</th>
-        <th>寄件时间</th>
-        <th>备注信息</th>
-        <th>状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($arr["name"]); ?></td>
-        <td class="center"><?php echo ($arr["addressee"]); ?></td>
-        <td class="center"><?php echo ($arr["goods"]); ?></td>
-        <td class="center"><?php echo ($arr["time"]); ?></td>
-        <td class="center flow" title="<?php echo ($arr["remarks"]); ?>"><?php echo ($arr["remarks"]); ?></td>
-        <?php if($arr["flag"] == 0): ?><td class="center">未发货</td>
-        <?php elseif($arr["flag"] == 1): ?>
-          <td style="color:green;" class="center">等待行政确认</td>
-        <?php elseif($arr["flag"] == 3): ?>
-          <td style="color:green;" class="center">等待行政寄件</td>
-        <?php elseif($arr["flag"] == 2): ?>
-          <td style="color:red;" class="center">被拒绝</td>
-        <?php elseif($arr["flag"] == 4): ?>
-          <td style="color:green;" class="center">已发货</td><?php endif; ?>
-        <td class="center">
-        <a href="/fyls/Admin/Expre/expre_info?id=<?php echo ($arr["id"]); ?>" title="快递详情哦" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">快递详情</button></a>
-
-<!--          <a href="/fyls/Admin/Expre/expre_mod?id=<?php echo ($arr["id"]); ?>" title="确认快递" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">确认快递</button></a>
-         <a title="拒绝" class="link_icon"><button onclick="not(<?php echo ($arr["id"]); ?>)" class="layui-btn layui-btn-primary layui-btn-sm">拒绝快递</button></a> -->
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+        <th>请选择您的主管</th>
+        <td>
+          <select name="zid" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <?php if(is_array($user)): foreach($user as $key=>$user): ?><option value="<?php echo ($user["id"]); ?>" <?php if($user['id'] == $sel['zid']) echo "selected";?>>
+                      <?php echo ($user["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
+       </td>
+      </tr>
+       </table>
+      <input type="hidden" name='id' value="<?php echo ($sel["id"]); ?>"/>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="hidden" name="status" value="0"/>
+        <input name="id" type="hidden" value="<?php echo ($sel["id"]); ?>" />
+        <input type="submit" class="link_btn" name="sub"/>
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
-<script>
-  function not($id)
-  {
-    var b=confirm("你将要拒绝了！");
-    if(b){
-      location.href = "<?php echo C('HOME_PATH');?>"+'/Expre/not?id='+($id);
-    }else{
-      return false;
-    }
-  }
-</script>
 </body>
 </html>

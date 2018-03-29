@@ -48,7 +48,8 @@ class ArrivalController extends Controller {
 			$map['arrival_remarks']=$_POST['arrival_remarks'];
 			$map['arrival_enterprise']=$_POST['arrival_enterprise'];
 			$map['status']=$_POST['status'];
-			$map['tid']=$_POST['tid'];
+			$map['zid']=$_POST['zid'];
+            $map['tid']=$_POST['tid'];
 			$map['department_id']=$_POST['department_id'];
 			$query=$arrival->add($map);
 			if($query>0){
@@ -81,6 +82,8 @@ class ArrivalController extends Controller {
 			$map['arrival_equip']=$_POST['arrival_equip'];
 			$map['arrival_remarks']=$_POST['arrival_remarks'];
 			$map['arrival_enterprise']=$_POST['arrival_enterprise'];
+            $map['status']=$_POST['status'];
+            $map['zid']=$_POST['zid'];
 			$val=$arrival->where("id=".$id)->save($map);
 			if($val)
 			{
@@ -92,6 +95,18 @@ class ArrivalController extends Controller {
 		elseif(!empty($_GET['id'])){
 	
 			$id=$_GET['id'];
+            $bmid = session('department_id');
+        // var_dump($bmid);exit;
+        $director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        // var_dump($director);exit;
+        $user_id = array_column($director,'id');
+        // var_dump($user_id);exit;
+        $a = implode(",",$user_id);
+        // var_dump($a);exit;
+        $user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+        // var_dump($user);exit;
+        // var_dump($name);die;
+        $this->assign('user', $user);
 			$sel=$arrival->where()->join()->find("$id");
 			$this->assign('sel',$sel);
 			$this->display();
