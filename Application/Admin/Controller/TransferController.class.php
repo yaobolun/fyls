@@ -9,7 +9,7 @@ class TransferController extends Controller {
 		$sid = session('id');
 		// var_dump($sid);exit;
 		$transfer=M('transfer');
-		$count=$transfer->count();// 查询满足要求的总记录数
+		$count=$transfer->where("flag = 0 and tid=".$sid)->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		$arr=$transfer->where("flag = 0 and tid=".$sid)->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -55,6 +55,8 @@ class TransferController extends Controller {
 			$map['transfer_pic']=$_POST['transfer_pic'];
 			$map['transfer_information']=$_POST['transfer_information'];
 			$map['status']=$_POST['status'];
+            $map['zid']=$_POST['zid'];
+            $map['tid']=$_POST['tid'];
 			// var_dump($map['tid']);exit;
 			$map=$transfer->create();
 			if($_FILES['transfer_pic']['tmp_name']){
@@ -80,9 +82,8 @@ class TransferController extends Controller {
     }
 
     public function transfer_mod()
-	{
-		$transfer=M('transfer');
-			
+	{	
+        $transfer=M("transfer");
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
 			$map['transfer_name']=$_POST['transfer_name'];
@@ -100,6 +101,8 @@ class TransferController extends Controller {
 			$map['transfer_paid']=$_POST['transfer_paid'];
 			$map['transfer_pic']=$_FILES['transfer_pic'];
 			$map['transfer_information']=$_POST['transfer_information'];
+            $map['status']=$_POST['status'];
+            $map['zid']=$_POST['zid'];
 			if($_FILES['transfer_pic']['tmp_name']){
 				$map['transfer_pic']=$this->upload($_FILES['transfer_pic']);
 			}
@@ -113,9 +116,21 @@ class TransferController extends Controller {
 			}
 		}
 		elseif(!empty($_GET['id'])){
-	
+	        $transfer=M("transfer");
+            $bmid = session('department_id');
+        // var_dump($bmid);exit;
+        $director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        // var_dump($director);exit;
+        $user_id = array_column($director,'id');
+        // var_dump($user_id);exit;
+        $a = implode(",",$user_id);
+        // var_dump($a);exit;
+        $user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+        // var_dump($user);exit;
+        // var_dump($name);die;
+        $this->assign('user', $user);
 			$id=$_GET['id'];
-			$sel=$transfer->where()->join()->find("$id");
+			$sel=$transfer->where("id=".$id)->find();
 			$this->assign('sel',$sel);
 			$this->display();
 		}

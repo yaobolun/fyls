@@ -71,27 +71,32 @@
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
+
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+      <?php else: endif; ?>
     </div>
   </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">快递列表</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">我的快递</a></dd>
+        <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+        <?php else: endif; ?>
     </div>
   </div>
-  <?php if(session('administration') == 0): ?><div class="layui-colla-item">
+  <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
-       <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
-       <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
-       <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Rexamination/rexamination">退款企业凭证管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
-</div>
-</div>
+  </div>
+  </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
@@ -115,7 +120,7 @@ layui.use(['element', 'layer'], function(){
 </script>
 
 <style type="text/css">
-.dd{  
+.ddc{  
     overflow: hidden;  
     text-overflow: ellipsis;  
     white-space: nowrap;  
@@ -129,39 +134,39 @@ layui.use(['element', 'layer'], function(){
        <?php
  $a = explode('=',$_SERVER['QUERY_STRING']); ?>
        <a href="/fyls/Admin/Refund/refund" class="fr top_rt_btn add_icon">返回退款凭证企业申请列表</a>
-       <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑</a>
+       <a href="/fyls/Admin/Refund/refund_mod?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">编辑退款凭证企业</a>
        <a href="/fyls/Admin/Requipment/requipment_add?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">添加退款凭证企业配备信息</a>
       </div>
       <table class="table">
       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
         <th>申请人</th>
-        <td class="center dd" title="<?php echo ($arr["refund_applicant"]); ?>"><?php echo ($arr["refund_applicant"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_applicant"]); ?>"><?php echo ($arr["refund_applicant"]); ?></td>
         <th>配出年月</th>
-        <td class="center dd" title="<?php echo ($arr["refund_match"]); ?>"><?php echo ($arr["refund_match"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_match"]); ?>"><?php echo ($arr["refund_match"]); ?></td>
         </tr>
         <tr>
         <th>配备企业</th>
-        <td class="center dd" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_equip"]); ?>"><?php echo ($arr["refund_equip"]); ?></td>
         <th>合同价格</th>
-        <td class="center dd" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_contract"]); ?>"><?php echo ($arr["refund_contract"]); ?></td>
         </tr>
         <tr>
         <th>备注</th>
-        <td class="center dd" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_remarks"]); ?>"><?php echo ($arr["refund_remarks"]); ?></td>
         <th>已到账金额</th>
-        <td class="center dd" title="<?php echo ($arr["refund_account"]); ?>"><?php echo ($arr["refund_account"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_account"]); ?>"><?php echo ($arr["refund_account"]); ?></td>
         </tr>
         <tr>
         <th>户名</th>
-        <td class="center dd" title="<?php echo ($arr["refund_name"]); ?>"><?php echo ($arr["refund_name"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_name"]); ?>"><?php echo ($arr["refund_name"]); ?></td>
         <th>本次打款金额</th>
-        <td class="center dd" title="<?php echo ($arr["refund_money"]); ?>"><?php echo ($arr["refund_money"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_money"]); ?>"><?php echo ($arr["refund_money"]); ?></td>
         </tr>
         <tr>
         <th>开户行</th>
-        <td class="center dd" title="<?php echo ($arr["refund_bank"]); ?>"><?php echo ($arr["refund_bank"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_bank"]); ?>"><?php echo ($arr["refund_bank"]); ?></td>
         <th>账号</th>
-        <td class="center dd" title="<?php echo ($arr["refund_number"]); ?>"><?php echo ($arr["refund_number"]); ?></td>
+        <td class="center ddc" title="<?php echo ($arr["refund_number"]); ?>"><?php echo ($arr["refund_number"]); ?></td>
         </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
 
@@ -181,13 +186,13 @@ layui.use(['element', 'layer'], function(){
    <th>操作</th>
   </tr>
        <?php if(is_array($aeq)): $i = 0; $__LIST__ = $aeq;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$uid): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center dd" title="<?php echo ($uid["requipment_enterprise"]); ?>"><?php echo ($uid["requipment_enterprise"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_contractyears"]); ?>"><?php echo ($uid["requipment_contractyears"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_qualified"]); ?>"><?php echo ($uid["requipment_qualified"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_level"]); ?>"><?php echo ($uid["requipment_level"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_major"]); ?>"><?php echo ($uid["requipment_major"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["requipment_talent"]); ?>"><?php echo ($uid["requipment_talent"]); ?></td>
-        <td class="center dd" title="<?php echo ($uid["name"]); ?>"><?php echo ($uid["name"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_enterprise"]); ?>"><?php echo ($uid["requipment_enterprise"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_contractyears"]); ?>"><?php echo ($uid["requipment_contractyears"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_qualified"]); ?>"><?php echo ($uid["requipment_qualified"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_level"]); ?>"><?php echo ($uid["requipment_level"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_major"]); ?>"><?php echo ($uid["requipment_major"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["requipment_talent"]); ?>"><?php echo ($uid["requipment_talent"]); ?></td>
+        <td class="center ddc" title="<?php echo ($uid["name"]); ?>"><?php echo ($uid["name"]); ?></td>
         <td class="center">
         <a href="/fyls/Admin/Requipment/requipment_mod?id=<?php echo ($uid["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
         <a href="/fyls/Admin/Requipment/del?id=<?php echo ($uid["id"]); ?>" title="删除" class="link_icon">&#100;</a>

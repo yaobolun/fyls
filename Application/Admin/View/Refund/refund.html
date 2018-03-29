@@ -10,7 +10,7 @@
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">退款凭证申请列表</h2>
+       <h2 class="fl">退款企业凭证申请列表</h2>
        <a href="__ROOT__/Admin/Refund/refund_add" class="fr top_rt_btn add_icon">添加退款凭证申请</a>
       </div>
       <table class="table">
@@ -51,7 +51,10 @@
           <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
         <else />
         <a href="__ROOT__/Admin/Refund/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
+        </if>
+        <if condition="$arr.status eq 0">
         <a href="__ROOT__/Admin/Refund/info?id={$arr.id}" title="详细信息">详细信息</a>
+        <else />
         </if>
        </td>
        </tr>

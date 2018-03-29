@@ -73,8 +73,12 @@
 
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
 
+<<<<<<< HEAD
       <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+=======
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+>>>>>>> origin/liushuai
       <?php else: endif; ?>
     </div>
   </div>

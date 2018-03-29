@@ -72,8 +72,7 @@
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
 
-      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
       <?php else: endif; ?>
     </div>
   </div>
@@ -98,8 +97,7 @@
         <dd><a class="dd" href="/fyls/admin.php/Vexamination/vexamination">退款人才凭证管理</a></dd>
   </div>
   </div>
-    <?php else: endif; ?>
-  <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
+  <div class="layui-colla-item">
     <h1 class="layui-colla-title">后台登录设置</h1>
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
@@ -110,9 +108,8 @@
       <dd><a class="dd" href="/fyls/admin.php/Journal/journal">日志管理</a></dd>
     </div>
   </div>
-  <?php else: endif; ?>
 </div>
-
+  <?php else: endif; ?>
 
 </aside>
 <script>
@@ -137,6 +134,9 @@ layui.use(['element', 'layer'], function(){
       <div class="page_title">
        <h2 class="fl">请假审批</h2>
        
+       <a href="#" class="fr top_rt_btn add_icon">啊啊啊</a>
+  <!--      <a href="/fyls/Admin/Product/user" class="fr top_rt_btn add_icon">批量导入产品</a>
+       <a href="/fyls/Admin/Product/excel_out" class="fr top_rt_btn add_icon">批量导出产品</a> -->
       </div>
       <section class="mtb">
 
@@ -164,7 +164,7 @@ layui.use(['element', 'layer'], function(){
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
-      <aside class="paging">
+<aside class="paging">
       <?php echo ($page); ?>
       </aside>
  </div>
