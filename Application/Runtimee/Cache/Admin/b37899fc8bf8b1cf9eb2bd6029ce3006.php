@@ -130,38 +130,8 @@ layui.use(['element', 'layer'], function(){
 
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
-      <div class="page_title">
-       <h2 class="fl">岗位列表</h2>
-       
-       <a href="/fyls/Admin/Station/add" class="fr top_rt_btn add_icon">添加岗位</a>
+      <h1>丰元立世OA管理系统</h1>
       </div>
-      <table class="table">
-       <tr>
-        <th>编号</th>
-        <th>部门名称</th>
-        <th>岗位名称</th>
-        <th>最后修改时间</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($Re)): $i = 0; $__LIST__ = $Re;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$Re): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center">
-          <?php echo ($Re["department_name"]); ?>
-        </td>
-        <td class="center"><?php echo ($Re["station_name"]); ?></td>
-        <td class="center"><?php echo ($Re["updatetime"]); ?></td>
-        
-        <td class="center">
-         <a href="/fyls/Admin/Station/update?id=<?php echo ($Re["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Station/del?id=<?php echo ($Re["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
- </div>
 </section>
 </body>
 </html>

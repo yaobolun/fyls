@@ -69,33 +69,28 @@
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">请假外出</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
 
-<!--       <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
-      <?php else: endif; ?> -->
+      <?php else: endif; ?>
     </div>
   </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">我的快递</a></dd>
-<!--         <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
-        <?php else: endif; ?> -->
+        <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+        <?php else: endif; ?>
     </div>
   </div>
   <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
-      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
-      <?php else: endif; ?>
-      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
-        <?php else: endif; ?>
-        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出审批</a></dd>
-        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递审批</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
@@ -107,7 +102,6 @@
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
     <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
-
       <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
@@ -128,40 +122,107 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">岗位列表</h2>
-       
-       <a href="/fyls/Admin/Station/add" class="fr top_rt_btn add_icon">添加岗位</a>
+       <h2 class="fl">管理员添加</h2>
+       <a class="fr top_rt_btn" href="/fyls/Admin/People/people">返回人员列表</a>
       </div>
-      <table class="table">
-       <tr>
-        <th>编号</th>
-        <th>部门名称</th>
-        <th>岗位名称</th>
-        <th>最后修改时间</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($Re)): $i = 0; $__LIST__ = $Re;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$Re): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center"><?php echo ($key+1); ?></td>
-        <td class="center">
-          <?php echo ($Re["department_name"]); ?>
-        </td>
-        <td class="center"><?php echo ($Re["station_name"]); ?></td>
-        <td class="center"><?php echo ($Re["updatetime"]); ?></td>
+     <section>
+
+
+     <form action="" name="form1" method="post" enctype="multipart/form-data">
+
+      <ul class="ulColumn2">
+       <li>
+        <span class="item_name" style="width:120px;">员工名称：</span>
+        <input type="text" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
+         
+       </li>
+       <li>
+        <span class="item_name" style="width:120px;">密码：</span>
+        <input type="password" class="textbox textbox_295" id="pass" placeholder="密码..." name="password" />
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">部门：</span>
+        <select required="required" name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+          <option value="">--请选择--</option>
+          <?php if(is_array($dep)): foreach($dep as $key=>$department): ?><option  value="<?php echo ($department["id"]); ?>">
+                    <?php echo ($department["department_name"]); ?>
+              </option><?php endforeach; endif; ?>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="department_id" /> -->
         
-        <td class="center">
-         <a href="/fyls/Admin/Station/update?id=<?php echo ($Re["id"]); ?>" title="编辑" class="link_icon">&#101;</a>
-         <a href="/fyls/Admin/Station/del?id=<?php echo ($Re["id"]); ?>" title="删除" class="link_icon">&#100;</a>
-        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-      
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+       </li>
+
+       <li>
+        <span class="item_name" style="width:120px;">岗位：</span>
+
+
+        <select required="required" name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+          <option value="">--请选择--</option>
+          <?php if(is_array($sta)): foreach($sta as $key=>$station_name): ?><option  value="<?php echo ($station_name["id"]); ?>" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
+                    <?php echo ($station_name["station_name"]); ?>
+              </option><?php endforeach; endif; ?>  
+          <!-- <?php if(is_array($sta)): foreach($sta as $key=>$station): ?><option  value="<?php echo ($station["id"]); ?>" >
+                    <?php echo ($station["station_name"]); ?>
+              </option><?php endforeach; endif; ?> -->
+
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" id="pass" placeholder="" name="station_id" /> -->
+        
+       </li>
+        
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" onClick="return yz()"/>
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
+<script language="javascript">  
+
+  function yz(){
+
+    if($("#pass").val()==''||$("#pass").val().length<4)
+    {
+      alert('密码不能少于5位');
+      return false;
+    }
+  }
+  
+</script>
+<script type="text/javascript">
+
+  function changeDep(){
+     var department_id = $("#department_id").val();//得到第一个下拉列表的值
+     $.ajax({
+
+        type:'post',
+        url:"/fyls/admin.php/People/add",
+        data:{'did':department_id},
+        dataType: "json",
+        success:function(data){
+          var length = JSON.stringify(data.length);
+            //alert(length);
+            var jName=document.form1.station;
+            jName.length=1; 
+            for(var i=0;i<length;i++){
+                var station_name =  eval(JSON.stringify(data[i]['station_name']));
+                var station_id =  eval(JSON.stringify(data[i]['id']));
+                // alert(station_id);
+                jName[i+1]=new Option("--"+station_name+"--",station_id); 
+            }  
+
+        }
+     });
+  }
+
+</script>
 </body>
 </html>
