@@ -6,6 +6,7 @@ class TexaminationController extends Controller
 {
 	public function texamination()
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$uid = session('id');
 		// var_dump($uid);exit;
 		$admin_user = M('admin_user');
@@ -27,13 +28,10 @@ class TexaminationController extends Controller
 			$show = $transfer->where('department_id='.$user_bmid.' AND status <> 3 AND bm_sp=0 AND flag <> 3')->select();
 			// var_dump($show);exit;
 			$this->assign('show', $show);
-
 			$this->display();
 		}elseif($manager){
 			$transfer = M('transfer');
-
 			$show = $transfer->where('department_id='.$user_bmid.' AND status <> 3 AND manager_sp=0 AND bm_sp=1 AND flag <> 3')->select();
-			
 			$this->assign('show', $show);
 			$this->display();
 		}elseif($renshi){
@@ -59,6 +57,7 @@ class TexaminationController extends Controller
     }
     public function info($id)
 	{	
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$uname       = session('name');
 		$leave       = M('transfer');
 		$find        = $leave->find($id);
@@ -72,6 +71,7 @@ class TexaminationController extends Controller
 	}
 	public function adopt()
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$map['bm_sp'] = $_POST['bm_sp'];
 		$map['id'] = $_POST['id'];
 		$map['status'] = $_POST['status'];
@@ -95,6 +95,7 @@ class TexaminationController extends Controller
 	}
 	public function Not($id)
 	{	
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$leave = M('transfer')->where('id='.$id)->find();
 		$leave['status'] = 3;
 		$leave = M('transfer')->where('id='.$id)->save($leave);

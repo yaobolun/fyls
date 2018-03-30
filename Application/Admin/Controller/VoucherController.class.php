@@ -6,6 +6,7 @@ header("Content-Type: text/html;charset=utf-8");
 class VoucherController extends Controller {
 
 	public function voucher(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$sid = session('id');
 		$voucher=M('voucher');
 		$count=$voucher->where("flag = 0 and tid=".$sid)->count();// 查询满足要求的总记录数
@@ -18,7 +19,7 @@ class VoucherController extends Controller {
 	}
 	public function voucher_add()
 	{	
-		
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
@@ -38,7 +39,7 @@ class VoucherController extends Controller {
 		$this->display();
 	}
 	public function voucher_doadd(){
-		
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$voucher=M("voucher");
 			$map['voucher_applicant']=$_POST['voucher_applicant'];
@@ -73,6 +74,7 @@ class VoucherController extends Controller {
     }
     public function voucher_mod()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$voucher=M('voucher');
 			
 		if (!empty($_POST['sub'])) {
@@ -118,6 +120,7 @@ class VoucherController extends Controller {
 	}
 	public function del()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$rencai=M('voucher');
 			$id=$_GET['id'];
@@ -134,6 +137,7 @@ class VoucherController extends Controller {
 		}
 	}
 	public function info(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$voucher=M('voucher');
 		$id=$_GET['id'];
 		$arr=$voucher->where("id=".$id)->select();
@@ -142,6 +146,7 @@ class VoucherController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
          $user_bmid = session('department_id');
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
         $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
@@ -289,7 +294,7 @@ class VoucherController extends Controller {
         header("Content-Type:application/vnd.ms-execl");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
-        header("Content-Disposition:attachment;filename=\"$fileName\"");
+        header("Content-Disposition:attachment;filename=\"退款人才凭证.xls\"");
         header("Content-Transfer-Encoding:binary");
         $objWriter->save('php://output'); 
     }

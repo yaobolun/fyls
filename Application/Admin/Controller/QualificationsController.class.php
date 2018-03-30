@@ -5,6 +5,7 @@ header("Content-Type: text/html;charset=utf-8");
 
 class QualificationsController extends Controller {
 	public function qualifications(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$sid = session('id');
 		$qualifications=M('qualifications');
 		$count=$qualifications->where("flag = 0 and tid=".$sid)->count();// 查询满足要求的总记录数
@@ -17,7 +18,7 @@ class QualificationsController extends Controller {
 	}
 	public function qualifications_add()
 	{	
-		
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
@@ -37,6 +38,7 @@ class QualificationsController extends Controller {
 		$this->display();
 	}
 	public function qualifications_doadd(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$qualifications=M("qualifications");
 			$map['qualifications_date']=$_POST['qualifications_date'];
@@ -74,6 +76,7 @@ class QualificationsController extends Controller {
     }
     public function qualifications_mod()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$qualifications=M('qualifications');
 			
 		if (!empty($_POST['sub'])) {
@@ -124,6 +127,7 @@ class QualificationsController extends Controller {
 	//删除数据
 	public function del()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$daozhang=M('qualifications');
 			$id=$_GET['id'];
@@ -140,6 +144,7 @@ class QualificationsController extends Controller {
 		}
 	}
 	public function info(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$qualifications=M('qualifications');
 		$id=$_GET['id'];
 		$arr=$qualifications->where("id=".$id)->select();
@@ -148,6 +153,7 @@ class QualificationsController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
         $user_bmid = session('department_id');
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
         $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
@@ -331,7 +337,7 @@ class QualificationsController extends Controller {
         header("Content-Type:application/vnd.ms-execl");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
-        header("Content-Disposition:attachment;filename=\"$fileName\"");
+        header("Content-Disposition:attachment;filename=\">资质凭证到账凭证.xls\"");
         header("Content-Transfer-Encoding:binary");
         $objWriter->save('php://output'); 
     }

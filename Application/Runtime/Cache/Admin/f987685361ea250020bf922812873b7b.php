@@ -166,8 +166,10 @@ layui.use(['element', 'layer'], function(){
         <?php else: ?>
         <a href="/fyls/Admin/Voucher/voucher_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
         <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <?php elseif($arr["status"] == 2): ?>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#100;</a>
         <?php else: ?>
-        <a href="/fyls/Admin/Voucher/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
+         <a href="/fyls/Admin/Transfer/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
         <?php if($arr["status"] == 0): ?><a href="/fyls/Admin/Voucher/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
         <?php else: endif; ?>
        </td>

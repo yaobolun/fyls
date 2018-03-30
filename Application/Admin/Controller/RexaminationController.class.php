@@ -6,6 +6,7 @@ class RexaminationController extends Controller
 {
 	public function rexamination()
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$uid = session('id');
 		// var_dump($uid);exit;
 		$admin_user = M('admin_user');
@@ -61,6 +62,7 @@ class RexaminationController extends Controller
     }
     public function info($id)
 	{	
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$uname       = session('name');
 		$leave       = M('refund');
 		$find        = $leave->find($id);
@@ -74,6 +76,7 @@ class RexaminationController extends Controller
 	}
 	public function adopt()
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$map['bm_sp'] = $_POST['bm_sp'];
 		$map['id'] = $_POST['id'];
 		$map['status'] = $_POST['status'];
@@ -97,6 +100,7 @@ class RexaminationController extends Controller
 	}
 	public function Not($id)
 	{	
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$leave = M('refund')->where('id='.$id)->find();
 		$leave['status'] = 3;
 		$leave = M('refund')->where('id='.$id)->save($leave);

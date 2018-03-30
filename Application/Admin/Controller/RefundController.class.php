@@ -6,6 +6,7 @@ header("Content-Type: text/html;charset=utf-8");
 class RefundController extends Controller {
 
 	public function refund(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$sid = session('id');
 		$refund=M('refund');
 		$count=$refund->where("flag = 0 and tid=".$sid)->count();// 查询满足要求的总记录数
@@ -18,7 +19,7 @@ class RefundController extends Controller {
 	}
 	public function refund_add()
 	{	
-		
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
@@ -38,7 +39,7 @@ class RefundController extends Controller {
 		$this->display();
 	}
 	public function refund_doadd(){
-		
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$refund=M("refund");
 			$map['refund_applicant']=$_POST['refund_applicant'];
@@ -75,6 +76,7 @@ class RefundController extends Controller {
 
     public function refund_mod()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$refund=M('refund');
 		$map['refund_applicant']=$_POST['refund_applicant'];
 		$map['refund_match']=$_POST['refund_match'];
@@ -124,6 +126,7 @@ class RefundController extends Controller {
     //删除数据
 	public function del()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$tuikuan=M('refund');
 			$id=$_GET['id'];
@@ -140,6 +143,7 @@ class RefundController extends Controller {
 		}
 	}
 	public function info(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$uid=$_GET['id'];
         // var_dump($uid);
 		$refund=M('refund');
@@ -159,6 +163,7 @@ class RefundController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
         $user_bmid = session('department_id');
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
         $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
@@ -326,7 +331,7 @@ class RefundController extends Controller {
         header("Content-Type:application/vnd.ms-execl");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
-        header("Content-Disposition:attachment;filename=\"$fileName\"");
+        header("Content-Disposition:attachment;filename=\"退款凭证企业.xls\"");
         header("Content-Transfer-Encoding:binary");
         $objWriter->save('php://output'); 
     }
