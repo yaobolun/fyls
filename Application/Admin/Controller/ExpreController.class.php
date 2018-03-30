@@ -226,8 +226,17 @@ class ExpreController extends Controller {
     }
 
      public function look(){
-        
-        $data = M('expre')->where('flag = 4')->field('addressee,name,goods,tel,time,address,remarks')->select();
+        $user_bmid = session('department_id');
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+        $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
+
+        if(session('administration') == 0 || $Personnel || $station){
+            $data = M('expre')->where('flag = 4')->field('addressee,name,goods,tel,time,address,remarks')->select();
+        }else{
+            $id = session('id');
+            $data = M('expre')->where('uid='.$id.' AND flag=4')->field('addressee,name,goods,tel,time,address,remarks')->select();
+        }
+
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');

@@ -99,8 +99,15 @@ class ApprovalController extends Controller
 		}elseif($map['bm_sp']==1){
 			$map['manager_sp'] = 1;
 			$map['flag'] = 2;
-			M('form_leave')->where('id='.$map['id'])->save($map);
-			echo    $this->jump('已通过 !', 'Approval/leave');
+			$res = M('form_leave')->where('id='.$map['id'])->save($map);
+			if($res>0){
+				$res = M('form_leave')->where('id='.$map['id'])->find();
+				$this->journals($_SESSION['name'],'通过了', $res['applicant']."申请的请假");
+				echo    $this->jump('已通过 !', 'Approval/leave');
+			}else{
+				echo    $this->jump('操作失败 !', 'Approval/leave');
+			}
+			
 		}else{
 			echo    $this->jump('出现问题了呢，提交失败！', 'Approval/leave');
 		}
@@ -118,18 +125,20 @@ class ApprovalController extends Controller
 	}
 	public function leaveinfo1()
 	{
-		$uname = session('name');
 		$leave = M('form_leave');
-		$find = $leave->find($id);
+		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid = $find['department_id'];
+		$departments = M('departments');
+		$bmname = $departments->where('id='.$bmid)->find();
+		$bmname = $bmname['department_name'];
+		$user = M('admin_user')->where('id='.$find['aid'])->find();
+		$uname = $user['name'];
 		$kstime = $find['start_time'];
 		$jstime = $find['end_time'];
 		$zero1 = strtotime ($kstime);
 		$zero2 = strtotime ($jstime);
 		$guonian=ceil(($zero2-$zero1)/86400);
 		$guonian = abs($guonian);
-		$departments = M('departments');
-		$bmname = $departments->where($bmid)->field('department_name')->find();
 		$this->assign('day', $guonian);
 		$this->assign('bmname', $bmname);
 		$this->assign('find', $find);

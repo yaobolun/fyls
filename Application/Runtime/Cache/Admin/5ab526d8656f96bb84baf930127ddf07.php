@@ -88,10 +88,10 @@
   <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
-            <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
       <?php else: endif; ?>
-              <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
         <?php else: endif; ?>
         <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出审批</a></dd>

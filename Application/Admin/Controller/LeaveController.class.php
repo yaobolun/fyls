@@ -20,7 +20,6 @@ class LeaveController extends Controller {
 	public function add_leave()
 	{
 		$bmid = session('department_id');
-
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
 		if(!$director){
 			$this->assign('user', $user);
@@ -169,7 +168,7 @@ class LeaveController extends Controller {
 		$show = $form_leave->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('show', $show);
 		$this->assign('page',$page);
-		$this->display('');
+		$this->display();
 	}
 
 

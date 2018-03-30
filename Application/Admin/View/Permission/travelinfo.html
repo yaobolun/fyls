@@ -41,12 +41,19 @@
             <td>
 			       {$uname}
             </td>
-
+            <if condition="$_SESSION['administration'] != 0">
             <td>
               <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
             <td>
               <button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
             </td>
+            <else />
+            <td>
+              <button type="button" disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">通过</button></td>
+            <td>
+              <button type="button" disabled class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$find.id})">残忍拒绝</button>
+            </td>
+            </if>
 
           </tr>
         </tbody>

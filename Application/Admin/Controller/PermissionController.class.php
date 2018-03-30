@@ -13,7 +13,7 @@ class PermissionController extends Controller
 		$user_bmid = $user['department_id'];
 		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
 		$manager = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%经理%"')->find();
-		$Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
+		// $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
 		if(session('administration') == 0){
 			$form_business_travel = M('form_business_travel');
 			$count = $form_business_travel->count();
@@ -22,7 +22,7 @@ class PermissionController extends Controller
 			$show = $form_business_travel->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 			$this->assign('page', $page);
 			$this->assign('show', $show);
-			$this->display();	
+			$this->display();
 		}elseif($condition){
 			$form_business_travel = M('form_business_travel');
 			$count = $form_business_travel->where('department_id='.$user_bmid.' AND aid='.$uid.' AND bm_sp=0 AND flag <> 3')->count();
@@ -174,6 +174,9 @@ class PermissionController extends Controller
 			$find['flag'] = 5;
 			$find = M('form_business_travel')->where('id='.$_POST['id'])->save($find);
 			if($find){
+				$res = M('form_business_travel')->where('id='.$_POST['id'])->find();
+				$res = $res['applicant'];
+				$this->journals($_SESSION['name'],'完成了',$res.'的外出');
 				echo json_encode('已完成');
 			}else{
 				echo json_encode('操作失败');
@@ -181,8 +184,7 @@ class PermissionController extends Controller
 		}
 	}
 	public function determine()
-	{	
-		// echo json_encode($_POST['data']);exit;
+	{
 		if($_POST['data']){
 			$find = M('form_business_travel')->where('id='.$_POST['data'])->find();
 			$find['flag'] = 6;
@@ -196,24 +198,28 @@ class PermissionController extends Controller
 	}
 	public function travelinfo1()
 	{
-		$uname       = session('name');
 		$leave       = M('form_business_travel');
-		$find        = $leave->find($id);
+		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid        = $find['department_id'];
 		$kstime      = $find['out_time'];
 		$jstime      = $find['back_time'];
+		$unameid     = $find['aid'];
 		$zero1       = strtotime ($kstime);
 		$zero2       = strtotime ($jstime);
 		$guonian     = ceil(($zero2-$zero1)/86400);
 		$guonian     = abs($guonian);
 		$departments = M('departments');
-		$bmname      = $departments->where($bmid)->field('department_name')->find();
-		$uid = session('id');
-		$admin_user = M('admin_user');
-		$user = $admin_user->where('id='.$uid)->find();
-		$user_bmid = $user['department_id'];
-		$personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
-		$this->assign('personnel', $personnel);
+		$bmname      = $departments->where('id='.$bmid)->find();
+		$bmname = $bmname['department_name'];
+		$uname = M('admin_user');
+		$uname = $uname->where('id='.$unameid)->find();
+		$uname = $uname['name'];
+		// $uid = session('id');
+		// $admin_user = M('admin_user');
+		// $user = $admin_user->where('id='.$uid)->find();
+		// $user_bmid = $user['department_id'];
+		// $personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%市场%部%"')->find();
+		// $this->assign('personnel', $personnel);
 		$this->assign('day', $guonian);
 		$this->assign('bmname', $bmname);
 		$this->assign('find', $find);
