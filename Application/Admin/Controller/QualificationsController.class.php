@@ -21,6 +21,10 @@ class QualificationsController extends Controller {
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        if(!$director){
+            $this->assign('user', $user);
+            $this->display();
+        }
 		// var_dump($director);exit;
 		$user_id = array_column($director,'id');
 		// var_dump($user_id);exit;
@@ -53,6 +57,7 @@ class QualificationsController extends Controller {
 			$map['department_id']=$_POST['department_id'];
 			$query=$qualifications->add($map);
 			if($query>0){
+                $this->journals($_SESSION['name'],'申请了资质凭证到账凭证',$_POST['qualifications_date']);
 				echo $this->jump('添加成功','Qualifications/qualifications');
 			}
 			else{
@@ -90,6 +95,7 @@ class QualificationsController extends Controller {
 			$val=$qualifications->where("id=".$id)->save($map);
 			if($val)
 			{
+                $this->journals($_SESSION['name'],'修改了资质凭证到账凭证',$_POST['qualifications_date']);
 				echo $this->jump("修改成功","Qualifications/qualifications");
 			}else {
 				echo $this->jump("修改失败","Qualifications/qualifications");
@@ -125,6 +131,7 @@ class QualificationsController extends Controller {
 		 	$val=$daozhang->where("flag = 0 and id = ".$id)->save($qualifications);
 			if($val>0)
 			{
+                $this->journals($_SESSION['name'],'删除了资质凭证到账凭证',$_POST['qualifications_date']);
 				echo $this->jump("删除成功","Qualifications/qualifications");
 			}else 
 				{
@@ -141,8 +148,18 @@ class QualificationsController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        $user_bmid = session('department_id');
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+        $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
+
+        if(session('administration') == 0 || $Personnel || $station){
+            $data = M('qualifications')->where('status = 2 AND flag=0')->field('qualifications_date,qualifications_customer,qualifications_applicant,qualifications_enterprise,qualifications_aptitude,qualifications_arrival,qualifications_contract,qualifications_money,qualifications_account,qualifications_bmoney,qualifications_bmoney,qualifications_remarks')->select();
+        }else{
+            $id = session('id');
+            $data = M('qualifications')->where('tid='.$id.' AND status = 2 AND flag=0')->field('qualifications_date,qualifications_customer,qualifications_applicant,qualifications_enterprise,qualifications_aptitude,qualifications_arrival,qualifications_contract,qualifications_money,qualifications_account,qualifications_bmoney,qualifications_bmoney,qualifications_remarks')->select();
+        }
         
-        $data = M('qualifications')->where('status = 2')->field('qualifications_date,qualifications_customer,qualifications_applicant,qualifications_enterprise,qualifications_aptitude,qualifications_arrival,qualifications_contract,qualifications_money,qualifications_account,qualifications_bmoney,qualifications_bmoney,qualifications_remarks')->select();
+        // $data = M('qualifications')->where('status = 2')->field('qualifications_date,qualifications_customer,qualifications_applicant,qualifications_enterprise,qualifications_aptitude,qualifications_arrival,qualifications_contract,qualifications_money,qualifications_account,qualifications_bmoney,qualifications_bmoney,qualifications_remarks')->select();
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');

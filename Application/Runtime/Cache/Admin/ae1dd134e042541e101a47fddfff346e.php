@@ -100,9 +100,9 @@
   </div>
     <?php else: endif; ?>
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
-    <h1 class="layui-colla-title">后台登录设置</h1>
+    <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd>
+      <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Station/station">岗位管理</a></dd>
@@ -166,9 +166,6 @@ layui.use(['element', 'layer'], function(){
           <td style="color:red;" class="center">被拒绝</td><?php endif; ?>
         <td class="center">
         <a href="/fyls/Admin/Expre/expre_info?id=<?php echo ($arr["id"]); ?>" title="快递详情哦" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">快递详情</button></a>
-
-<!--          <a href="/fyls/Admin/Expre/expre_mod?id=<?php echo ($arr["id"]); ?>" title="确认快递" class="link_icon"><button class="layui-btn layui-btn-primary layui-btn-sm">确认快递</button></a>
-         <a title="拒绝" class="link_icon"><button onclick="not(<?php echo ($arr["id"]); ?>)" class="layui-btn layui-btn-primary layui-btn-sm">拒绝快递</button></a> -->
         </td>
        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
       </table>

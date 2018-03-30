@@ -23,6 +23,10 @@ class ArrivalController extends Controller {
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        if(!$director){
+            $this->assign('user', $user);
+            $this->display();
+        }
 		// var_dump($director);exit;
 		$user_id = array_column($director,'id');
 		// var_dump($user_id);exit;
@@ -53,6 +57,7 @@ class ArrivalController extends Controller {
 			$map['department_id']=$_POST['department_id'];
 			$query=$arrival->add($map);
 			if($query>0){
+                $this->journals($_SESSION['name'],'申请了到账',$_POST['arrival_applicant']);
 				echo $this->jump('添加成功','Arrival/arrival');
 			}
 			else{
@@ -87,6 +92,7 @@ class ArrivalController extends Controller {
 			$val=$arrival->where("id=".$id)->save($map);
 			if($val)
 			{
+                $this->journals($_SESSION['name'],'修改了到账',$_POST['arrival_applicant']);
 				echo $this->jump("修改成功","Arrival/arrival");
 			}else {
 				echo $this->jump("修改失败","Arrival/arrival");
@@ -122,6 +128,7 @@ class ArrivalController extends Controller {
 		 	$val=$daozhang->where("flag = 0 and id = ".$id)->save($arrival);
 			if($val>0)
 			{
+                $this->journals($_SESSION['name'],'删除了到账',$_POST['arrival_applicant']);
 				echo $this->jump("删除成功","Arrival/arrival");
 			}else 
 				{
@@ -153,8 +160,18 @@ class ArrivalController extends Controller {
 		$this->display();
 	}
 	public function look(){
+         $user_bmid = session('department_id');
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+        $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
+
+        if(session('administration') == 0 || $Personnel || $station){
+            $data = M('arrival')->where('status = 2 AND flag=0')->field('arrival_applicant,arrival_account,arrival_time,arrival_money,arrival_paid,arrival_contract,arrival_equip,arrival_remarks')->select();
+        }else{
+            $id = session('id');
+            $data = M('arrival')->where('tid='.$id.' AND status = 2 AND flag=0')->field('arrival_applicant,arrival_account,arrival_time,arrival_money,arrival_paid,arrival_contract,arrival_equip,arrival_remarks')->select();
+        }
         
-        $data = M('Arrival')->where('status = 2')->field('arrival_applicant,arrival_account,arrival_time,arrival_money,arrival_paid,arrival_contract,arrival_equip,arrival_remarks')->select();
+        // $data = M('Arrival')->where('status = 2')->field('arrival_applicant,arrival_account,arrival_time,arrival_money,arrival_paid,arrival_contract,arrival_equip,arrival_remarks')->select();
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');

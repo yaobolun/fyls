@@ -22,6 +22,7 @@ class RequipmentController extends Controller {
 			// var_dump($_POST);exit;
 			$query=$requipment->add($map);
 			if($query>0){
+				$this->journals($_SESSION['name'],'申请了退款凭证企业配备信息',$_POST['requipment_enterprise']);
 				echo $this->jump('添加成功',"Refund/info?id={$map['uid']}");
 			}
 			else{
@@ -48,6 +49,7 @@ class RequipmentController extends Controller {
 		 	$a=$rpeibei->where("id = ".$id)->field("uid")->find();
 			if($val>0)
 			{
+				$this->journals($_SESSION['name'],'删除了退款凭证企业配备信息',$_POST['requipment_enterprise']);
 				echo $this->jump("删除成功","Refund/info?id={$a['uid']}");
 			}else 
 				{
@@ -77,6 +79,7 @@ class RequipmentController extends Controller {
 			// var_dump($_POST);exit;
 			if($val)
 			{
+				$this->journals($_SESSION['name'],'修改了退款凭证企业配备信息',$_POST['requipment_enterprise']);
 				echo $this->jump("修改成功","Refund/info?id={$map['uid']}");
 			}else {
 				echo $this->jump("修改失败","Refund/info?id={$map['uid']}");
