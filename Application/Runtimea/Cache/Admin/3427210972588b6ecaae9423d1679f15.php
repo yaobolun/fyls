@@ -72,9 +72,15 @@
       <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
 
+<<<<<<< HEAD:Application/Runtimea/Cache/Admin/3427210972588b6ecaae9423d1679f15.php
 <!--       <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
       <?php else: endif; ?> -->
+=======
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
+      <?php else: endif; ?>
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/3427210972588b6ecaae9423d1679f15.php
     </div>
   </div>
   <div class="layui-colla-item">
@@ -107,7 +113,10 @@
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
     <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
+<<<<<<< HEAD:Application/Runtimea/Cache/Admin/3427210972588b6ecaae9423d1679f15.php
 
+=======
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/3427210972588b6ecaae9423d1679f15.php
       <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>

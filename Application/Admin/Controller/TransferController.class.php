@@ -6,6 +6,7 @@ header("Content-Type: text/html;charset=utf-8");
 class TransferController extends Controller {
 
 	public function transfer(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$sid = session('id');
 		// var_dump($sid);exit;
 		$transfer=M('transfer');
@@ -20,6 +21,7 @@ class TransferController extends Controller {
 	}
 	public function transfer_add()
 	{	
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		// $administration = session('administration');
         // var_dump($administration);exit;
 		$bmid = session('department_id');
@@ -43,6 +45,7 @@ class TransferController extends Controller {
 	}
 
 	public function transfer_doadd(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$transfer=M("transfer");
 			$map['transfer_name']=$_POST['transfer_name'];
@@ -90,6 +93,7 @@ class TransferController extends Controller {
 
     public function transfer_mod()
 	{	
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
         $transfer=M("transfer");
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
@@ -145,7 +149,7 @@ class TransferController extends Controller {
 	}
 
     public function upload($data){
-    	
+    	if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
       $upload = new \Think\Upload();// 实例化上传类
       $upload->maxSize   =     3145728000 ;// 设置附件上传大小
       $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
@@ -163,6 +167,7 @@ class TransferController extends Controller {
   //删除数据
 	public function del()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$zhuanzhang=M('transfer');
 			$id=$_GET['id'];
@@ -180,6 +185,7 @@ class TransferController extends Controller {
 	}
 
 	public function info(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$transfer=M('transfer');
 		$id=$_GET['id'];
 		$arr=$transfer->where("id=".$id)->select();
@@ -188,6 +194,7 @@ class TransferController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
         $user_bmid = session('department_id');
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
         $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
@@ -400,7 +407,7 @@ class TransferController extends Controller {
         header("Content-Type:application/vnd.ms-execl");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
-        header("Content-Disposition:attachment;filename=\"$fileName\"");
+        header("Content-Disposition:attachment;filename=\"转账.xls\"");
         header("Content-Transfer-Encoding:binary");
         $objWriter->save('php://output'); 
     }

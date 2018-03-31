@@ -5,6 +5,7 @@ header("Content-Type: text/html;charset=utf-8");
 
 class ArrivalController extends Controller {
 	public function arrival(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$sid = session('id');
 		// var_dump($sid);exit;
 		$arrival=M('arrival');
@@ -19,7 +20,7 @@ class ArrivalController extends Controller {
 
 	public function arrival_add()
 	{	
-		
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
@@ -40,6 +41,7 @@ class ArrivalController extends Controller {
 	}
 
 	public function arrival_doadd(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$arrival=M("arrival");
 			$map['arrival_applicant']=$_POST['arrival_applicant'];
@@ -74,6 +76,7 @@ class ArrivalController extends Controller {
     }
     public function arrival_mod()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$arrival=M('arrival');
 			
 		if (!empty($_POST['sub'])) {
@@ -121,6 +124,7 @@ class ArrivalController extends Controller {
 	//删除数据
 	public function del()
 	{
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$daozhang=M('arrival');
 			$id=$_GET['id'];
@@ -137,6 +141,7 @@ class ArrivalController extends Controller {
 		}
 	}
 	public function info(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$aid=$_GET['id'];
 		
 		// var_dump($a);exit;
@@ -160,6 +165,7 @@ class ArrivalController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
          $user_bmid = session('department_id');
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
         $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
@@ -305,7 +311,7 @@ class ArrivalController extends Controller {
         header("Content-Type:application/vnd.ms-execl");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
-        header("Content-Disposition:attachment;filename=\"$fileName\"");
+        header("Content-Disposition:attachment;filename=\"到账.xls\"");
         header("Content-Transfer-Encoding:binary");
         $objWriter->save('php://output'); 
     }

@@ -107,7 +107,10 @@
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
     <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
+<<<<<<< HEAD:Application/Runtimea/Cache/Admin/65890965872ecc72650ba6e7e1ef8142.php
 
+=======
+>>>>>>> origin/liushuai:Application/Runtime/Cache/Admin/65890965872ecc72650ba6e7e1ef8142.php
       <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>

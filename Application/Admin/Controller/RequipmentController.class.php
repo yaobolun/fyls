@@ -5,6 +5,7 @@ header("Content-Type: text/html;charset=utf-8");
 
 class RequipmentController extends Controller {
 	public function requipment_add(){
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$kefu = M('admin_user')->where("administration = 1")->field("admin_user.id,admin_user.name")->select();
 		$this->assign('kefu', $kefu);
 		$this->assign('kefu', $kefu);
@@ -39,6 +40,7 @@ class RequipmentController extends Controller {
     }
     public function del()
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$rpeibei=M('requipment');
 			$id=$_GET['id'];
@@ -59,6 +61,7 @@ class RequipmentController extends Controller {
 	}
 	public function requipment_mod($id)
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$requipment=M('requipment');
 			$_GET['id'];
 			// var_dump($_GET);exit;

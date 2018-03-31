@@ -5,6 +5,7 @@ header("Content-Type: text/html;charset=utf-8");
 
 class AequipmentController extends Controller {
 	public function aequipment(){
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$aequipment=M('aequipment');
 		$count=$aequipment->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
@@ -15,6 +16,7 @@ class AequipmentController extends Controller {
 		$this->display();
 	}
 	public function aequipment_add(){
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$kefu = M('admin_user')->where("administration = 1")->field("admin_user.id,admin_user.name")->select();
 		$this->assign('kefu', $kefu);
 		$this->assign('kefu', $kefu);
@@ -49,6 +51,7 @@ class AequipmentController extends Controller {
     }
     public function aequipment_mod($id)
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$aequipment=M('aequipment');
 			$_GET['id'];
 			// var_dump($_GET);exit;
@@ -97,6 +100,7 @@ class AequipmentController extends Controller {
 	}
 	public function del()
 	{
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$apeibei=M('aequipment');
 			$id=$_GET['id'];
@@ -116,6 +120,7 @@ class AequipmentController extends Controller {
 		}
 	}
 	public function info(){
+		if($_SESSION['id']==''){echo $this->jump('请登录',"Index/login");}
 		$aequipment=M('aequipment');
 		$id=$_GET['id'];
 		$arr=$aequipment->where("id=".$id)->select();

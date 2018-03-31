@@ -54,6 +54,12 @@ class IndexController extends Controller {
 				$_SESSION['station_id'] = $value['station_id'];
 				$staff = M('stations')->where('id='.$value['station_id'].' AND station_name LIKE "%员工%"')->find();
 				$bm = M('departments')->where('id='.$value['department_id'].' AND department_name LIKE "%员工%"')->find();
+				$xze = M('stations')->where('id='.$value['station_id'].' AND station_name LIKE "%行政%"')->find();
+				$xzw = M('departments')->where('id='.$value['department_id'].' AND department_name LIKE "%后勤%"')->find();
+				
+				if($xze || $xzw){
+					session('x', 1);
+				}
 
 				if($staff || $bm){
 					session('a', 1);

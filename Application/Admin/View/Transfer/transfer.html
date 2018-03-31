@@ -48,9 +48,11 @@
         <a href="__ROOT__/Admin/Transfer/transfer_mod?id={$arr.id}" title="编辑" class="link_icon">&#101;</a>
         </if>
         <if condition="$arr.status eq 1">
-          <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
+        <elseif condition="$arr.status eq 2"/>
+          <a disabled="disabled" onclick="qq();" class="link_icon">&#100;</a>
         <else />
-        <a href="__ROOT__/Admin/Transfer/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
+         <a href="__ROOT__/Admin/Transfer/del?id={$arr.id}" title="删除" class="link_icon">&#100;</a>
         </if>
         <if condition="$arr.status eq 0">
         <a href="__ROOT__/Admin/Transfer/info?id={$arr.id}" title="详细信息">详细信息</a>

@@ -69,33 +69,28 @@
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">请假外出</h1>
     <div class="layui-colla-content">
-      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">我的请假</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">我的外出</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Leave/leave_list">请假管理</a></dd>
+      <dd><a class="dd" href="/fyls/admin.php/Travel/travel_list">外出管理</a></dd>
 
-<!--       <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
+      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
-      <?php else: endif; ?> -->
+      <?php else: endif; ?>
     </div>
   </div>
   <div class="layui-colla-item">
     <h1 class="layui-colla-title">快递信息</h1>
     <div class="layui-colla-content">
       <dd><a class="dd" href="/fyls/admin.php/Expre/expre_index">我的快递</a></dd>
-<!--         <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
-        <?php else: endif; ?> -->
+        <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
+        <?php else: endif; ?>
     </div>
   </div>
   <?php if(!isset($_SESSION['a'])): ?><div class="layui-colla-item">
   <h1 class="layui-colla-title">审批管理</h1>
   <div class="layui-colla-content">
-      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Leave/leavelist1">请假列表</a></dd>
-      <dd><a class="dd" href="/fyls/admin.php/Travel/travel">外出列表</a></dd>
-      <?php else: endif; ?>
-      <?php if(isset($_SESSION['b'])): ?><dd><a class="dd" href="/fyls/admin.php/Expre/expre_index_list">快递列表</a></dd>
-        <?php else: endif; ?>
-        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假审批</a></dd>
-        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出审批</a></dd>
-        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递审批</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Approval/leave">请假管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Permission/travel">外出管理</a></dd>
+        <dd><a class="dd" href="/fyls/admin.php/Expre/express">快递管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Texamination/texamination">转账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Aexamination/aexamination">到账管理</a></dd>
         <dd><a class="dd" href="/fyls/admin.php/Qexamination/qexamination">资质凭证到账凭证管理</a></dd>
@@ -107,7 +102,6 @@
   <?php if($_SESSION['administration'] == 0): ?><div class="layui-colla-item">
     <h1 class="layui-colla-title">后台设置</h1>
     <div class="layui-colla-content">
-
       <!-- <dd><a class="dd" href="/fyls/admin.php/Parameter/parameter">参数</a></dd> -->
       <dd><a class="dd" href="/fyls/admin.php/Admin/admin">管理员</a></dd>
       <dd><a class="dd" href="/fyls/admin.php/Department/department">部门管理</a></dd>
@@ -128,74 +122,99 @@ layui.use(['element', 'layer'], function(){
 });
 </script>
 
-<style type="text/css">
-.b{    
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    cursor: pointer;  
-}  
-</style>
+
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
       <div class="page_title">
-       <h2 class="fl">转账申请列表</h2>
-       <a href="/fyls/Admin/Transfer/transfer_add" class="fr top_rt_btn add_icon">添加转账申请</a>
+       <h2 class="fl">到账配备信息添加</h2>
+       <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+       <a href="/fyls/Admin/Arrival/info?id=<?php echo ($a[1]); ?>" class="fr top_rt_btn add_icon">返回到账详情</a>
       </div>
+     <section>
+     <form action="" method="post" enctype="multipart/form-data">
+      <ul class="ulColumn2">
       <table class="table">
-        <tr>
-        <th>申请人</th>
-        <th>人才合同价格</th>
-        <th>配置企业价格</th>
-        <th>证书类别</th>
-        <th>配置企业</th>
-        <th>审批状态</th>
-        <th>操作</th>
-       </tr>
-       <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$arr): $mod = ($i % 2 );++$i;?><tr>
-        <td class="center b" title="<?php echo ($arr["transfer_name"]); ?>"><?php echo ($arr["transfer_name"]); ?></td>
-        <td class="center b" title="<?php echo ($arr["transfer_contract"]); ?>"><?php echo ($arr["transfer_contract"]); ?></td>
-        <td class="center b" title="<?php echo ($arr["transfer_allocation"]); ?>"><?php echo ($arr["transfer_allocation"]); ?></td>
-        <td class="center b" title="<?php echo ($arr["transfer_certificate"]); ?>"><?php echo ($arr["transfer_certificate"]); ?></td>
-        <td class="center b" title="<?php echo ($arr["transfer_configuration"]); ?>"><?php echo ($arr["transfer_configuration"]); ?></td>
-        <?php if($arr["status"] == 0): ?><td class="center">未审批</td>
-        <?php elseif($arr["status"] == 1): ?>
-          <td style="color:blue;" class="center">审批中</td>
-        <?php elseif($arr["status"] == 2): ?>
-          <td style="color:red;" class="center">已审批</td><!--   <button class="layui-btn">默认按钮</button> -->
-        <?php elseif($arr["status"] == 3): ?>
-          <td style="color:#00FF00;" class="center">未通过</td><?php endif; ?>
-        <td class="center">
-         <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#101;</a>
-        <?php elseif($arr["status"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#101;</a>
-        <?php else: ?>
-        <a href="/fyls/Admin/Transfer/transfer_mod?id=<?php echo ($arr["id"]); ?>" title="编辑" class="link_icon">&#101;</a><?php endif; ?>
-        <?php if($arr["status"] == 1): ?><a disabled="disabled" onclick="sp();" class="link_icon">&#100;</a>
-        <?php elseif($arr["status"] == 2): ?>
-          <a disabled="disabled" onclick="qq();" class="link_icon">&#100;</a>
-        <?php else: ?>
-         <a href="/fyls/Admin/Transfer/del?id=<?php echo ($arr["id"]); ?>" title="删除" class="link_icon">&#100;</a><?php endif; ?>
-        <?php if($arr["status"] == 0): ?><a href="/fyls/Admin/Transfer/info?id=<?php echo ($arr["id"]); ?>" title="详细信息">详细信息</a>
-        <?php else: endif; ?>
+      <tr>
+        <th>企业价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="企业注册资金" name="aequipment_aenterprise" required="required"/></td>
+        <th>签约年限</th>
+        <td>
+        <div class="layui-input-inline">
+        <input type="text" class="textbox textbox_295" id="test5" placeholder="合同签约年份" name="aequipment_contrac" required="required"/>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>配备人才</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="姓名" name="aequipment_qualified" required="required"/></td>
+        <th>级别</th>
+        <td>
+        <select name="aequipment_level" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+        <option value="">--请选择--</option>
+        <option value="一级">一级</option>
+        <option value="二级">二级</option>
+        <option value="中级">中级</option>
+        <option value="高级">高级</option>
+        <option value="初级">初级</option>
+        <option value="注册类">注册类</option>
+        <option value="八大员">八大员</option>
+        <option value="技工">技工</option>
+        </select>
+        <!-- <input type="text" class="textbox textbox_295" placeholder="申请人所在公司级别" name="aequipment_level" required="required"/> -->
+        </td>
+      </tr>
+      <tr>
+        <th>专业</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="专业" name="aequipment_major" required="required"/></td>
+        <th>人才价格</th>
+        <td><input type="text" class="textbox textbox_295" placeholder="人才价格" name="aequipment_talent" required="required"/></td>
+      </tr>
+      <tr>
+        <th>请选择客服</th>
+        <td>
+          <select name="aequipment_customer" required="required" style='width:307px;height:38px;border: 1px #4fa3d3 solid;'>
+            <option value="">--请选择--</option>
+            <?php if(is_array($kefu)): foreach($kefu as $key=>$kefu): ?><option value="<?php echo ($kefu["id"]); ?>">
+                      <?php echo ($kefu["name"]); ?>
+                </option><?php endforeach; endif; ?>
+          </select>
        </td>
-       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-       <a href="/fyls/admin.php/Transfer/look"><button class="layui-btn layui-btn-primary">导出Excel表格</button></a>
-      </table>
-      <aside class="paging">
-      <?php echo ($page); ?>
-      </aside>
+       </tr>
+      <?php
+ $a = explode('=',$_SERVER['QUERY_STRING']); ?>
+      <input type="hidden" name="aid" value="<?php echo $a[1];?>">
+       </table>
+       <li>
+        <span class="item_name" style="width:120px;"></span>
+        <input type="submit" class="link_btn" name="sub" />
+       </li>
+      </ul>
+      </form>
+     </section>
  </div>
 </section>
+ <script src="/fyls/Public/admin/js/jquery.js"></script>
 <script type="text/javascript">
-    function sp()
-    {
-      alert('审批过程中不能操作哦！');
-    }
-    function qq()
-    {
-      alert('无法操作哦！');
-    }
+  layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+      });
+    });
+
+    layui.use('laydate', function(){
+    var laydate = layui.laydate;
+
+      //时间选择器
+      laydate.render({
+        elem: '#test1'
+        ,type: 'datetime'
+      });
+    });
 </script>
 </body>
 </html>
