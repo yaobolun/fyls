@@ -31,7 +31,8 @@ class AequipmentController extends Controller {
 			// $a = explode('=',$_SERVER['QUERY_STRING']);
 			// var_dump($a);exit;
 			$query=$aequipment->add($map);
-			if($query>0){
+			if($query>0){	
+				$this->journals($_SESSION['name'],'申请了到账配备信息',$_POST['aequipment_aenterprise']);
 				echo $this->jump('添加成功',"Arrival/info?id={$map['aid']}");
 			}
 			else{
@@ -71,6 +72,7 @@ class AequipmentController extends Controller {
 			// var_dump($_POST);exit;
 			if($val)
 			{
+				$this->journals($_SESSION['name'],'修改了到账配备信息',$_POST['aequipment_aenterprise']);
 				echo $this->jump("修改成功","Arrival/info?id={$map['aid']}");
 			}else {
 				echo $this->jump("修改失败","Arrival/info?id={$map['aid']}");
@@ -105,6 +107,7 @@ class AequipmentController extends Controller {
 		 	$a=$apeibei->where("id = ".$id)->field("aid")->find();
 			if($val>0)
 			{
+				$this->journals($_SESSION['name'],'删除了到账配备信息',$_POST['aequipment_aenterprise']);
 				echo $this->jump("删除成功","Arrival/info?id={$a['aid']}");
 			}else 
 				{

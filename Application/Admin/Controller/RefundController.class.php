@@ -22,6 +22,10 @@ class RefundController extends Controller {
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        if(!$director){
+            $this->assign('user', $user);
+            $this->display();
+        }
 		// var_dump($director);exit;
 		$user_id = array_column($director,'id');
 		// var_dump($user_id);exit;
@@ -53,6 +57,7 @@ class RefundController extends Controller {
 			$map['department_id']=$_POST['department_id'];
 			$query=$refund->add($map);
 			if($query>0){
+                $this->journals($_SESSION['name'],'申请了退款凭证企业',$_POST['refund_applicant']);
 				echo $this->jump('添加成功','Refund/refund');
 			}
 			else{
@@ -89,6 +94,7 @@ class RefundController extends Controller {
 			$val=$refund->where("id=".$id)->save($map);
 			if($val)
 			{
+                $this->journals($_SESSION['name'],'修改了退款凭证企业',$_POST['refund_applicant']);
 				echo $this->jump("修改成功","Refund/refund");
 			}else {
 				echo $this->jump("修改失败","Refund/refund");
@@ -125,6 +131,7 @@ class RefundController extends Controller {
 		 	$val=$tuikuan->where("flag = 0 and id = ".$id)->save($refund);
 			if($val>0)
 			{
+                $this->journals($_SESSION['name'],'删除了退款凭证企业',$_POST['refund_applicant']);
 				echo $this->jump("删除成功","Refund/refund");
 			}else 
 				{
@@ -152,8 +159,18 @@ class RefundController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        $user_bmid = session('department_id');
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+        $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
+
+        if(session('administration') == 0 || $Personnel || $station){
+            $data = M('refund')->where('status = 2 AND flag=0')->field('refund_applicant,refund_match,refund_equip,refund_contract,refund_remarks,refund_account,refund_name,refund_money,refund_bank,refund_number')->select();
+        }else{
+            $id = session('id');
+            $data = M('refund')->where('tid='.$id.' AND status = 2 AND flag=0')->field('refund_applicant,refund_match,refund_equip,refund_contract,refund_remarks,refund_account,refund_name,refund_money,refund_bank,refund_number')->select();
+        }
         
-        $data = M('refund')->where('status = 2')->field('refund_applicant,refund_match,refund_equip,refund_contract,refund_remarks,refund_account,refund_name,refund_money,refund_bank,refund_number')->select();
+        // $data = M('refund')->where('status = 2')->field('refund_applicant,refund_match,refund_equip,refund_contract,refund_remarks,refund_account,refund_name,refund_money,refund_bank,refund_number')->select();
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');

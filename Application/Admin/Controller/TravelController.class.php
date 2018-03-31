@@ -19,7 +19,7 @@ class TravelController extends Controller {
     }
 	public function add_travel()
 	{
-		
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$bmid = session('department_id');
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
 		if(!$director){
@@ -34,7 +34,8 @@ class TravelController extends Controller {
 		$this->display();
 	}
 	public function doadd_travel()
-	{
+	{	
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$_validate = array(
 		     array('applicant','require', '申请人不能为空！'),
 		     array('out_addr', 'require', '请填写外出地址！'),
@@ -73,7 +74,8 @@ class TravelController extends Controller {
 		// }
 	}
 	public function travel_list()
-	{
+	{	
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$sid = session('id');
 		// var_dump($sid);die;
 		$leave = M('form_business_travel');

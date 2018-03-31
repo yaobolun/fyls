@@ -18,7 +18,8 @@
        </li>
         <li>
         <span class="item_name" style="width:120px;">部门：</span>
-        <select name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+        <select required="required" name="department_id" id="department_id" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' onchange="changeDep()">
+              <option value="">--请选择--</option>
           <foreach name="dep" item="department">
               <option  value="{$department.id}" <?php if($department['id'] == $sel['department_id']){ echo "selected='selected'";}?>>
                     {$department.department_name}
@@ -33,14 +34,14 @@
         <span class="item_name" style="width:120px;">岗位：</span>
 
 
-        <select name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
+        <select required="required" name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
 
           <!-- <foreach name="sta" item="station">
               <option  value="{$station.id}" <?php if($station['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
                     {$station.station_name}
               </option>
             </foreach> -->
-            <option value="0">--请选择--</option>
+            <option value="">--请选择--</option>
           <foreach name="sta" item="station_name">
               <option  value="{$station_name.id}" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>
                     {$station_name.station_name}

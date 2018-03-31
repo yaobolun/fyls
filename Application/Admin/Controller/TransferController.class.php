@@ -20,16 +20,22 @@ class TransferController extends Controller {
 	}
 	public function transfer_add()
 	{	
-		
+		// $administration = session('administration');
+        // var_dump($administration);exit;
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        if(!$director){
+            $this->assign('user', $user);
+            $this->display();
+        }
 		// var_dump($director);exit;
 		$user_id = array_column($director,'id');
 		// var_dump($user_id);exit;
 		$a = implode(",",$user_id);
+        // var_dump($a);exit;
 		// var_dump($a);exit;
-		$user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
+        $user = M('admin_user')->where('station_id IN ('.$a.') AND department_id='.$bmid)->select();
 		// var_dump($user);exit;
 		// var_dump($name);die;
 		$this->assign('user', $user);
@@ -64,6 +70,7 @@ class TransferController extends Controller {
 			}
 			$query=$transfer->add($map);
 			if($query>0){
+                $this->journals($_SESSION['name'],'申请了转账',$_POST['transfer_name']);
 				echo $this->jump('添加成功','Transfer/transfer');
 			}
 			else{
@@ -110,6 +117,7 @@ class TransferController extends Controller {
 			$val=$transfer->where("id=".$id)->save($map);
 			if($val)
 			{
+                $this->journals($_SESSION['name'],'修改了转账',$_POST['transfer_name']);
 				echo $this->jump("修改成功","Transfer/transfer");
 			}else {
 				echo $this->jump("修改失败","Transfer/transfer");
@@ -162,6 +170,7 @@ class TransferController extends Controller {
 		 	$val=$zhuanzhang->where("flag = 0 and id = ".$id)->save($transfer);
 			if($val>0)
 			{
+                $this->journals($_SESSION['name'],'删除了转账',$_POST['transfer_name']);
 				echo $this->jump("删除成功","Transfer/transfer");
 			}else 
 				{
@@ -179,8 +188,18 @@ class TransferController extends Controller {
 		$this->display();
 	}
 	public function look(){
+        $user_bmid = session('department_id');
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+        $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
+
+        if(session('administration') == 0 || $Personnel || $station){
+            $data = M('transfer')->where('status = 2 AND flag=0')->field('transfer_name,transfer_contract,transfer_allocation,transfer_certificate,transfer_configuration,transfer_talent,transfer_match,transfer_huming,transfer_amount,transfer_bank,transfer_account,transfer_note,transfer_paid,transfer_pic,transfer_information')->select();
+        }else{
+            $id = session('id');
+            $data = M('transfer')->where('tid='.$id.' AND status = 2 AND flag=0')->field('transfer_name,transfer_contract,transfer_allocation,transfer_certificate,transfer_configuration,transfer_talent,transfer_match,transfer_huming,transfer_amount,transfer_bank,transfer_account,transfer_note,transfer_paid,transfer_pic,transfer_information')->select();
+        }
         
-        $data = M('transfer')->where('status = 2')->field('transfer_name,transfer_contract,transfer_allocation,transfer_certificate,transfer_configuration,transfer_talent,transfer_match,transfer_huming,transfer_amount,transfer_bank,transfer_account,transfer_note,transfer_paid,transfer_pic,transfer_information')->select();
+        // $data = M('transfer')->where('status = 2')->field('transfer_name,transfer_contract,transfer_allocation,transfer_certificate,transfer_configuration,transfer_talent,transfer_match,transfer_huming,transfer_amount,transfer_bank,transfer_account,transfer_note,transfer_paid,transfer_pic,transfer_information')->select();
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');

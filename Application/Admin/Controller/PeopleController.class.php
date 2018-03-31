@@ -15,14 +15,14 @@ class PeopleController extends Controller {
     }
 
     public function people(){
-
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
     	$admin=M('admin_user');
 		$count=$admin->where("flag = 0")->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		// $dep = $department->where()->select(); 
 		// $arr=$admin->where('flag = 0 and administration = 1')->order('id asc')->limit($Page->firstRow.','.$Page->listRows)->select();
-		$depar = $admin->join('departments ON admin_user.department_id = departments.id')->join('stations ON admin_user.station_id = stations.id')->where('admin_user.flag = 0 and administration = 1')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$depar = $admin->join('departments ON admin_user.department_id = departments.id')->join('stations ON admin_user.station_id = stations.id')->where('admin_user.flag = 0 and administration = 1')->limit($Page->firstRow.','.$Page->listRows)->field('admin_user.id, admin_user.name, departments.department_name, stations.station_name, admin_user.updatetime')->select();
 		// var_dump($depar);die;
 		$this->assign('depar', $depar);
 		$this->assign('page',$show);
@@ -30,7 +30,7 @@ class PeopleController extends Controller {
     }
     //增加
     public function add(){
-    	
+    	if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	if(isset($_POST['did'])){
 			$station = M("stations");
             $res = $station->where("flag = 0 and department_id = ".$_POST['did'])->select();
@@ -92,6 +92,7 @@ class PeopleController extends Controller {
 			$map['name']=$_POST['title'];
 			$map['department_id']=$_POST['department_id'];
 			$map['station_id']=$_POST['station'];
+			$map['updatetime'] = date('y-m-d h:i:s',time());
 			$val=$admin->where("id=".$id)->save($map);
 
 			if($val)
@@ -103,11 +104,15 @@ class PeopleController extends Controller {
 		}
 		elseif(!empty($_GET['id'])){
 			$id=$_GET['id'];
-			$dep = $admin->join("left join departments on admin_user.department_id = departments.id")->where("flag = 0 and id = ".$id)->field("departments.id,departments.department_name")->select();
-	    	$sta = $admin->join("left join stations on admin_user.station_id = stations.id")->where("flag = 0 and id = ".$id)->field("stations.id,stations.station_name")->select();;
+			// $dep = $admin->join("left join departments on admin_user.department_id = departments.id")->where("admin_user.flag = 0")->field("departments.id,departments.department_name")->select();
+			$dep = M('departments')->field('department_name, id')->select();
+			// var_dump($dep);die;
+	    	$sta = $admin->join("left join stations on admin_user.station_id = stations.id")->where("admin_user.flag = 0 ")->field("stations.id,stations.station_name")->select();
+	    	// $sta = M('stations')->field('station_name, id')->select();
 	    	$this->assign("dep",$dep);
 	    	$this->assign("sta",$sta);
-			$sel=$admin->where()->join()->find("$id");
+
+			$sel=$admin->where('id='.$id)->find();
 			$this->assign('sel',$sel);
 			$this->display();
 		}

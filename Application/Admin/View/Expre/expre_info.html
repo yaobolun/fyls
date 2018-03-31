@@ -4,7 +4,7 @@
  <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">快递详情</h2>
-       <a class="fr top_rt_btn" href="__ROOT__/Admin/Product/product">返回</a>
+       <a class="fr top_rt_btn" href="__ROOT__/Admin/Expre/expre_index">返回</a>
       </div>
      <section>
      <form id="form" action="__ROOT__/Admin/Expre/expre_mod" method="post">
@@ -44,10 +44,17 @@
           </tr>
           <tr>
           <td colspan="2"></td>
-            <td><center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">确认</button></center></td>
+            <if condition="session('administration') == 0">
+            <td><center><button disabled type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">确认</button></center></td>
+            <td>
+                <center><button disabled type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$expre_info.id})">残忍拒绝</button></center>
+            </td>
+            <else />
+              <td><center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="yes()">确认</button></center></td>
             <td>
                 <center><button type="button" class="layui-btn layui-btn-primary layui-btn-lg" onclick="Not({$expre_info.id})">残忍拒绝</button></center>
             </td>
+            </if>
           </tr>
         </tbody>
       </table>

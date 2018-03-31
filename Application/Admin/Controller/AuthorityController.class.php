@@ -14,6 +14,8 @@ class AuthorityController extends Controller {
     }
     //权限列表
     public function authority(){
+    	
+    	if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
     	$authority=M('authority');
 		$count=$authority->where("flag = 0")->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
@@ -66,6 +68,7 @@ class AuthorityController extends Controller {
 
 	//数据修改
 	public function update(){
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$authority=M('authority');
 		if (!empty($_POST['sub'])) {
 			$authname = array();
@@ -127,7 +130,7 @@ class AuthorityController extends Controller {
 
 	//删除数据
 	public function del()
-	{
+	{if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$authority=M('authority');
 			$id = $_GET['id'];

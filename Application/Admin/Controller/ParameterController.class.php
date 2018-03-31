@@ -15,6 +15,7 @@ class ParameterController extends Controller {
     }
 
     public function parameter(){
+    	if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	$parameter=M('parameter');
 		if (!empty($_POST['sub'])) {
 			$map=$parameter->create();

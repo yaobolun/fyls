@@ -22,6 +22,10 @@ class VoucherController extends Controller {
 		$bmid = session('department_id');
 		// var_dump($bmid);exit;
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
+        if(!$director){
+            $this->assign('user', $user);
+            $this->display();
+        }
 		// var_dump($director);exit;
 		$user_id = array_column($director,'id');
 		// var_dump($user_id);exit;
@@ -51,6 +55,7 @@ class VoucherController extends Controller {
 			$map['department_id']=$_POST['department_id'];
 			$query=$voucher->add($map);
 			if($query>0){
+                 $this->journals($_SESSION['name'],'申请了退款人才凭证',$_POST['voucher_applicant']);
 				echo $this->jump('添加成功','Voucher/voucher');
 			}
 			else{
@@ -85,6 +90,7 @@ class VoucherController extends Controller {
 			$val=$voucher->where("id=".$id)->save($map);
 			if($val)
 			{
+                $this->journals($_SESSION['name'],'修改了退款人才凭证',$_POST['voucher_applicant']);
 				echo $this->jump("修改成功","Voucher/voucher");
 			}else {
 				echo $this->jump("修改失败","Voucher/voucher");
@@ -119,6 +125,7 @@ class VoucherController extends Controller {
 		 	$val=$rencai->where("flag = 0 and id = ".$id)->save($voucher);
 			if($val>0)
 			{
+                $this->journals($_SESSION['name'],'删除了退款人才凭证',$_POST['voucher_applicant']);
 				echo $this->jump("删除成功","Voucher/voucher");
 			}else 
 				{
@@ -135,8 +142,18 @@ class VoucherController extends Controller {
 		$this->display();
 	}
 	public function look(){
+         $user_bmid = session('department_id');
+        $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
+        $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
+
+        if(session('administration') == 0 || $Personnel || $station){
+            $data = M('voucher')->where('status = 2 AND flag=0')->field('voucher_applicant,voucher_account,voucher_equip,voucher_contract,voucher_amount,voucher_acc,voucher_this,voucher_remarks')->select();
+        }else{
+            $id = session('id');
+            $data = M('voucher')->where('tid='.$id.' AND status = 2 AND flag=0')->field('voucher_applicant,voucher_account,voucher_equip,voucher_contract,voucher_amount,voucher_acc,voucher_this,voucher_remarks')->select();
+        }
         
-        $data = M('voucher')->where('status = 2')->field('voucher_applicant,voucher_account,voucher_equip,voucher_contract,voucher_amount,voucher_acc,voucher_this,voucher_remarks')->select();
+        // $data = M('voucher')->where('status = 2')->field('voucher_applicant,voucher_account,voucher_equip,voucher_contract,voucher_amount,voucher_acc,voucher_this,voucher_remarks')->select();
 
         // 导出Exl
         // Vendor('PHPExcel.PHPExcel.php');

@@ -16,7 +16,7 @@ class ExpreController extends Controller {
     	}
     }
 
-    public function expre_index(){
+    public function expre_index(){if($_SESSION['id']==''){echo  $this->jump('请登录',"Index/login");}
     	$expre=M('expre');
     	$id = session('id');
         $bmid = session('department_id');
@@ -30,11 +30,11 @@ class ExpreController extends Controller {
     }
 
     //申请快递
-    public function add_expre(){
+    public function add_expre(){if($_SESSION['id']==''){echo    $this->jump('请登录',"Index/login");}
     	$this->display();
     }
     public function doadd_expre()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	$expre = M('expre');
     	$map = $expre->create();
     	date_default_timezone_set('prc');
@@ -48,7 +48,7 @@ class ExpreController extends Controller {
     }
 
     public function express()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	$uid = session('id');
 		$admin_user = M('admin_user');
 		$user = $admin_user->where('id='.$uid)->find();
@@ -115,7 +115,7 @@ class ExpreController extends Controller {
     	}
     }
     public function expre_mod()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	$id = $_POST['id'];
     	$expre = M('expre');
     	$find = $expre->where('id='.$id)->find();
@@ -151,7 +151,7 @@ class ExpreController extends Controller {
 
     }
     public function not($id)
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	$expre = M('expre');
     	$one_expre = $expre->where('id='.$id)->find();
 		$one_expre['flag'] = 6;
@@ -163,7 +163,7 @@ class ExpreController extends Controller {
 		}
     }
     public function expre_del($id)
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
     	// var_dump($id);die;
     	$expre = M('expre');
     	$del = $expre->where('id='.$id)->delete();
@@ -181,7 +181,7 @@ class ExpreController extends Controller {
     }
 
     public function expre_info()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
         $id = $_GET['id'];
         $expre = M('expre');
         $expre_info = $expre->where('id='.$id)->find();
@@ -193,14 +193,14 @@ class ExpreController extends Controller {
     }
 
     public function expre_index_list()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
         $expre = M('expre')->where('flag = 4')->select();
         $this->assign('arr', $expre);
         $this->display();
     }
 
     public function express_info()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
         $id = $_GET['id'];
         $expre = M('expre')->where('id='.$id)->find();
         $this->assign('arr', $expre);
@@ -208,7 +208,7 @@ class ExpreController extends Controller {
     }
 
     public function expre_info_add()
-    {   
+    {   if($_SESSION['id']==''){echo    $this->jump('请登录',"Index/login");}
         $arr['number'] = $_POST['number'];
         $arr['company_name'] = $_POST['company_name'];
         $arr['flag'] = 4;
@@ -225,7 +225,7 @@ class ExpreController extends Controller {
         }
     }
 
-     public function look(){
+     public function look(){if($_SESSION['id']==''){echo    $this->jump('请登录',"Index/login");}
         $user_bmid = session('department_id');
         $Personnel = M('departments')->where('id ='.$user_bmid.' AND department_name LIKE "%人事%"')->find();
         $station = M('stations')->where('id='.$_SESSION['station_id'].' AND station_name LIKE "%人事%" ')->find();
@@ -344,7 +344,7 @@ class ExpreController extends Controller {
             
         }
         
-        $fileName = 'test';
+        $fileName = '快递';
         $date = date("Y-m-d",time());
         $fileName .= "_{$date}.xls";
         $fileName = iconv("utf-8", "gb2312", $fileName);
@@ -371,14 +371,14 @@ class ExpreController extends Controller {
         $objWriter->save('php://output'); 
     }
     public function expre_modd()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
         $id = $_GET['id'];
         $arr = M('expre')->where('id='.$id)->find();
         $this->assign('arr', $arr);
         $this->display();
     }
     public function dodoadd_expre()
-    {
+    {if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
         $arr = $_POST;
         $arr['flag'] = 0;
         $res = M('expre')->where('id='.$_POST['id'])->save($arr);

@@ -18,7 +18,12 @@ class LeaveController extends Controller {
       return "<script language='javascript' type='text/javascript'>alert('".$string."');window.location.href='".$url."'; </script>";
     }
 	public function add_leave()
-	{
+	{	
+		if($_SESSION['id']=='')
+    	{
+
+    	echo	$this->jump('请登录',"Index/login");
+    	}
 		$bmid = session('department_id');
 		$director = M('stations')->where('department_id ='.$bmid.' AND station_name LIKE "%主管%"')->select();
 		if(!$director){
@@ -34,6 +39,7 @@ class LeaveController extends Controller {
 	}
 	public function doadd_leave()
 	{	
+		if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
 		if(!empty($_POST)){
 			// var_dump($_POST);die;
 			$user=M('form_leave');
@@ -50,6 +56,10 @@ class LeaveController extends Controller {
 	}
 	public function leave_list()
 	{
+		if($_SESSION['id']=='')
+    	{
+    		echo	$this->jump('请登录',"Index/login");
+    	}
 		$sid = session('id');
 		$leave = M('form_leave');
 		$count=$leave->where('uid='.$sid)->count();
@@ -86,7 +96,7 @@ class LeaveController extends Controller {
 			if($val>0){
 				echo $this->jump('成功', 'Leave/leave_list');
 			}else{
-				echo $this->jump('失败了', 'Leave/leave_list');
+				echo $this->jump('您未作任何修改', 'Leave/leave_list');
 			}
 		}elseif(!empty($_GET['id'])){
 			$id=$_GET['id'];
@@ -138,12 +148,13 @@ class LeaveController extends Controller {
 	}
 	
 	public function guest(){
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$guestbook=M('guestbook');
 		$count=$guestbook->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
 		$show= $Page->show();// 分页显示输出
 		if(!empty($_POST['sub'])){
-		 	$map['Name']=array("like","%".$_POST['name']."%");	 
+		 	$map['Name']=array("like","%".$_POST['name']."%");
 		}
 		$arr=$guestbook->where($map)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('arr',$arr);
@@ -169,6 +180,50 @@ class LeaveController extends Controller {
 		$this->assign('show', $show);
 		$this->assign('page',$page);
 		$this->display();
+	}
+	public function goout($id)
+	{
+		$find['flag'] = 4;
+		$find = M('form_leave')->where('id='.$id)->save($find);
+		if($find){
+			echo $this->jump('已完成！', 'Leave/leave_list');
+		}else{
+			echo $this->jump('操作失败，请重新操作！', 'Leave/leave_list');
+		}
+	}
+	public function return(){
+		$uid = session('id');
+		$admin_user = M('admin_user');
+		$user = $admin_user->where('id='.$uid)->find();
+		$user_qxid = $user['station_id'];
+		$user_bmid = $user['department_id'];
+		$condition = M('stations')->where('id ='.$user_qxid.' AND station_name LIKE "%主管%"')->find();
+		if($condition){
+			$return = M('form_leave')->where('flag=4')->select();
+			$this->assign('show',$return);
+			$this->display('Leave/return');
+		}else{
+			$hello = '您不是主管哦！';
+			echo "<script>alert('{$hello}');history.go(-1)</script>"; 
+		}
+	}
+	public function back()
+	{	if($_SESSION['id']=='')
+    	{
+    	echo	$this->jump('请登录',"Index/login");
+    	}
+		if($_POST['id']){
+			$find['flag'] = 5;
+			$find = M('form_leave')->where('id='.$_POST['id'])->save($find);
+			if($find){
+				$res = M('form_leave')->where('id='.$_POST['id'])->find();
+				$res = $res['applicant'];
+				$this->journals($_SESSION['name'],'完成了',$res.'的请假');
+				echo json_encode('已完成');
+			}else{
+				echo json_encode('操作失败');
+			}
+		}
 	}
 
 

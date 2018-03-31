@@ -5,7 +5,11 @@ header("Content-Type: text/html;charset=utf-8");
 class PermissionController extends Controller
 {
 	public function travel()
-	{
+	{if($_SESSION['id']=='')
+    	{
+
+    	echo	$this->jump('请登录',"Index/login");
+    	}
 		$uid = session('id');
 		$admin_user = M('admin_user');
 		$user = $admin_user->where('id='.$uid)->find();
@@ -82,7 +86,11 @@ class PermissionController extends Controller
 		}
 	}
 	public function travelinfo($id)
-	{	
+	{	if($_SESSION['id']=='')
+    	{
+
+    	echo	$this->jump('请登录',"Index/login");
+    	}
 		$leave       = M('form_business_travel');
 		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid        = $find['department_id'];
@@ -111,7 +119,11 @@ class PermissionController extends Controller
 		$this->display();
 	}
 	public function adopt()
-	{
+	{if($_SESSION['id']=='')
+    	{
+
+    	echo	$this->jump('请登录',"Index/login");
+    	}
 		$map['bm_sp'] = $_POST['bm_sp'];
 		$map['id'] = $_POST['qj_id'];
 		$map['flag'] = $_POST['flag'];
@@ -169,7 +181,11 @@ class PermissionController extends Controller
 		}
 	}
 	public function back()
-	{
+	{	if($_SESSION['id']=='')
+    	{
+
+    	echo	$this->jump('请登录',"Index/login");
+    	}
 		if($_POST['id']){
 			$find['flag'] = 5;
 			$find = M('form_business_travel')->where('id='.$_POST['id'])->save($find);
@@ -198,6 +214,11 @@ class PermissionController extends Controller
 	}
 	public function travelinfo1()
 	{
+		if($_SESSION['id']=='')
+    	{
+
+    	echo	$this->jump('请登录',"Index/login");
+    	}
 		$leave       = M('form_business_travel');
 		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid        = $find['department_id'];

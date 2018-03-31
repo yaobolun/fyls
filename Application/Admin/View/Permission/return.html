@@ -34,7 +34,7 @@
         <td class="center flow" title="{$show.out_addr}">{$show.out_addr}</td>
         <td class="center">
          <!-- <a href="__ROOT__/Admin/Permission/travelinfo?id={$show.id}">已回</a> -->
-           <button onclick="back({$show.id})" class="layui-btn layui-btn-primary">已回到公司</button>
+           <button type="button" onclick="back({$show.id})" class="layui-btn layui-btn-primary">已回到公司</button>
            <!-- <button onclick="noback()" class="layui-btn layui-btn-primary">未回</button> -->
         </td>
        </tr>
@@ -56,18 +56,23 @@
   //   }
   //}
   function back($id)
-  {
-    var id = $id;
-    $.ajax({
-      type:"POST",
-      url:"__ROOT__/admin.php/Permission/back",
-      data:{"id":"id"},
-      dataType:"json",
-      success:function($data){
-        alert($data);
-        location.reload();
-      }
-    });
+  { 
+    var a = confirm('确定TA已经回到公司吗？');
+    if(a){
+      var id = $id;
+          $.ajax({
+            type:"POST",
+            url:"__ROOT__/admin.php/Permission/back",
+            data:{"id":"id"},
+            dataType:"json",
+            success:function($data){
+              alert($data);
+              location.reload();
+            }
+          });
+    }else{
+      return false;
+    }
   }
 </script>
 </body>

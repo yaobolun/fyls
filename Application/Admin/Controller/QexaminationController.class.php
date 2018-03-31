@@ -76,6 +76,9 @@ class QexaminationController extends Controller
 		$map['bm_sp'] = $_POST['bm_sp'];
 		$map['id'] = $_POST['id'];
 		$map['status'] = $_POST['status'];
+		$qualifications = M('qualifications');
+		$jingli = $qualifications->where("id=".$_POST['id'])->field("qualifications_applicant")->select();
+
 
 		if($map['bm_sp']==0){
 			$map['bm_sp'] = 1;
@@ -86,6 +89,7 @@ class QexaminationController extends Controller
 			$map['manager_sp'] = 1;
 			$map['status'] = 2;
 			M('qualifications')->where('id='.$map['id'])->save($map);
+			$this->journals($_SESSION['name'],'通过了申请',$jingli[0]["qualifications_applicant"]);
 			echo    $this->jump('已通过 !', 'Qexamination/qexamination');
 		}else{
 			echo    $this->jump('出现问题了呢，提交失败！', 'Qexamination/qexamination');

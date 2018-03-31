@@ -14,6 +14,7 @@ class AdminController extends Controller {
     }
 
 	public function admin(){
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$admin=M('admin_user');
 		$count=$admin->where("flag = 0")->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
@@ -24,6 +25,7 @@ class AdminController extends Controller {
 		$this->display();
 	}
 	public function admin_add(){
+		if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$admin=M('admin_user');
 			$map['name']=$_POST['name'];
@@ -73,6 +75,7 @@ class AdminController extends Controller {
 	}
 	//数据修改
 	public function admin_update(){
+		if($_SESSION['id']==''){echo   $this->jump('请登录',"Index/login");}
 		$admin=M('admin_user');
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];

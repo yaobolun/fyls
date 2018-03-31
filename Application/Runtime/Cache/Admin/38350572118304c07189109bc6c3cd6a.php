@@ -143,7 +143,7 @@ layui.use(['element', 'layer'], function(){
       <ul class="ulColumn2">
        <li>
         <span class="item_name" style="width:120px;">员工名称：</span>
-        <input type="text" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
+        <input type="text" required="required" class="textbox textbox_295" id="name" placeholder="员工名称..." name="name" />
          
        </li>
        <li>
@@ -165,8 +165,6 @@ layui.use(['element', 'layer'], function(){
 
        <li>
         <span class="item_name" style="width:120px;">岗位：</span>
-
-
         <select required="required" name="station" style='width:307px;height:38px;border: 1px #4fa3d3 solid;' >
           <option value="">--请选择--</option>
           <?php if(is_array($sta)): foreach($sta as $key=>$station_name): ?><option  value="<?php echo ($station_name["id"]); ?>" <?php if($station_name['id'] == $sel['station_id']){ echo "selected='selected'";}?>>

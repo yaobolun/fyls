@@ -17,10 +17,10 @@
        <a href="__ROOT__/admin.php/Travel/add_travel" class="fr top_rt_btn add_icon">申请外出</a>
       </div>
       <section class="mtb">
-       <form action="" method="post">
+<!--        <form action="" method="post">
        <input type="text" class="textbox textbox_225" placeholder="输入标题..." name="name"/>
        <input type="submit" value="查询" class="group_btn" name="sub"/>
-       </form>
+       </form> -->
 
       </section>
       <table class="table">
@@ -100,7 +100,7 @@
     }
     function wcz($id)
     {
-      var b=confirm("如果您已经回到公司请点击确认，等待主管审核！");
+      var b=confirm("如果您已经回到公司请点击确认，等待主管查看！");
       if(b){
         location.href = "<?php echo C('HOME_PATH');?>"+'/Permission/goout?id='+($id);
       }else{

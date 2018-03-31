@@ -14,6 +14,7 @@ class DepartmentController extends Controller {
     }
     //部门列表
     public function department(){
+    	if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
     	$department=M('departments');
 		$count=$department->where("flag = 0")->count();// 查询满足要求的总记录数
 		$Page=new\Think\Page($count,10);//实例化分页类 传入总记录数和每页显示的记录数
@@ -25,7 +26,7 @@ class DepartmentController extends Controller {
     }
 
     //增加部门
-    public function department_add(){
+    public function department_add(){if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		if(!empty($_POST['sub'])){
 			$department=M('departments');
 			$map['department_name']=$_POST['department_name'];
@@ -54,6 +55,7 @@ class DepartmentController extends Controller {
 
 	//数据修改
 	public function update(){
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$admin=M('departments');
 		if (!empty($_POST['sub'])) {
 			$id=$_POST['id'];
@@ -78,7 +80,7 @@ class DepartmentController extends Controller {
 
 	//删除数据
 	public function del()
-	{
+	{if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		if(!empty($_GET['id'])){
 			$department=M('departments');
 			$id = $_GET['id'];

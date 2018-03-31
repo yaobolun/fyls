@@ -6,7 +6,8 @@ header("Content-Type: text/html;charset=utf-8");
 class ApprovalController extends Controller
 {
 	public function leave()
-	{
+	{	
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$uid = session('id');
 		$admin_user = M('admin_user');
 		$user = $admin_user->where('id='.$uid)->find();
@@ -64,7 +65,7 @@ class ApprovalController extends Controller
 	}
 	public function leaveinfo()
 	{	
-
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$leave = M('form_leave');
 		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid = $find['department_id'];
@@ -86,7 +87,8 @@ class ApprovalController extends Controller
 		$this->display();
 	}
 	public function adopt()
-	{
+	{	
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$map['bm_sp'] = $_POST['bm_sp'];
 		$map['id'] = $_POST['qj_id'];
 		$map['flag'] = $_POST['flag'];
@@ -124,7 +126,8 @@ class ApprovalController extends Controller
 		}
 	}
 	public function leaveinfo1()
-	{
+	{	
+		if($_SESSION['id']==''){echo	$this->jump('请登录',"Index/login");}
 		$leave = M('form_leave');
 		$find = $leave->where('id='.$_GET['id'])->find();
 		$bmid = $find['department_id'];
